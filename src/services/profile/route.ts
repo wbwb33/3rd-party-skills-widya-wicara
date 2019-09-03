@@ -1,9 +1,10 @@
-import controller from "./controller";
-import { route } from "../../utils/";
+import Profile from "./controller";
+import { Endpoint } from "../../utils/";
 
-const root: string = "/profile";
+const route = new Endpoint("/profile");
 
 export default [
-    route(root).get("/", controller.index),
-    route(root).get("/:id", controller.show),
+    route.get("/", Profile.index),
+    route.get("/:id", Profile.show),
+    route.get("/:type/edit", Profile.edit)
 ];

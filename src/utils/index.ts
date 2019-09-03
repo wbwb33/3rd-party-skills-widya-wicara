@@ -15,7 +15,7 @@ type Handler = (
     req: Request,
     res: Response,
     next: NextFunction
-) => Promise<void> | void;
+) => void;
 
 type Route = {
     path: string;
@@ -35,35 +35,42 @@ export const applyServices = (routes: Route[], router: Router) => {
     }
 };
 
-export const route = (rootpath: string) => {
-    return {
-        get: (path: string, handler: Handler) => {
-            return {
-                method: "get",
-                path: rootpath + path,
-                handler: handler
-            }
-        },
-        post: (path: string, handler: Handler) => {
-            return {
-                method: "post",
-                path: rootpath + path,
-                handler: handler
-            }
-        },
-        put: (path: string, handler: Handler) => {
-            return {
-                method: "put",
-                path: rootpath + path,
-                handler: handler
-            }
-        },
-        delete: (path: string, handler: Handler) => {
-            return {
-                method: "delete",
-                path: rootpath + path,
-                handler: handler
-            }
-        },
+export class Endpoint {
+    rootpath: string;
+
+    constructor(rootpath: string) {
+        this.rootpath = rootpath;
+    }
+
+    get(path: string, handler: Handler | Handler[]): Route {
+        return {
+            method: "get",
+            path: this.rootpath + path,
+            handler: handler
+        }
+    }
+
+    post(path: string, handler: Handler | Handler[]): Route {
+        return {
+            method: "post",
+            path: this.rootpath + path,
+            handler: handler
+        }
+    }
+
+    put(path: string, handler: Handler | Handler[]): Route {
+        return {
+            method: "put",
+            path: this.rootpath + path,
+            handler: handler
+        }
+    }
+
+    delete(path: string, handler: Handler | Handler[]): Route {
+        return {
+            method: "delete",
+            path: this.rootpath + path,
+            handler: handler
+        }
     }
 }

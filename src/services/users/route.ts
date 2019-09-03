@@ -1,8 +1,11 @@
-import user from "./controller";
-import { route } from "../../utils";
+import User from "./controller";
+import { Endpoint } from "../../utils";
+import { Auth } from "../../middleware/auth"
 
-const root: string = "/user";
+const route = new Endpoint("/user");
 
 export default [
-    route(root).get("/", user.index),
+    route.get("/", [Auth.verifyToken, User.index]),
+    route.post("/", User.register),
+    route.post("/login", User.login),
 ];

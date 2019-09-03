@@ -1,13 +1,21 @@
 import { Request, Response } from "express";
 
-const index = async (req: Request, res: Response) => {
-    res.send({ "profile": "hello", "profile2": "world", "profile3": "hello", "profile4": "world", });
-    res.status(200);
-};
+class Profile {
+    public async index(req: Request, res: Response) {
+        res.status(200);
+        return res.send({ "profile": "hello", "profile2": "world", "profile3": "hello", "profile4": "world", });
+    };
 
-const show = async (req: Request, res: Response) => {
-    res.send({ "show": "profile" + req.params.id })
-    res.status(201);
-};
+    public async show(req: Request, res: Response) {
+        res.status(201);
+        return res.send({ "show": "profile: " + req.params.id });
+    };
 
-export default { index, show };
+    public async edit(req: Request, res: Response) {
+        res.status(202);
+        return res.send({ "edit": "yes: " + req.params.type });
+    }
+}
+
+const profile = new Profile();
+export default profile;
