@@ -16,12 +16,13 @@ export const Auth = {
         const repo = await getRepository(User);
 
         const bearerToken = req.headers.authorization;
-        const token = (bearerToken as any).replace("Bearer ", "");
         // console.log(token);
 
-        if (!token) {
+        if (!bearerToken) {
             return res.status(400).send({ 'message': 'Token is not provided' });
         }
+
+        const token = (bearerToken as any).replace("Bearer ", "");
 
         try {
             const decoded = await jwt.verify(<string>token, <string>process.env.SECRET);
