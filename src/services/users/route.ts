@@ -6,6 +6,7 @@ const route = new Endpoint("/user");
 
 export default [
     route.get("/", [Auth.verifyToken, User.index]),
+    route.put("/", [Auth.verifyToken, User.update]),
     route.post("/", User.register),
     route.post("/login", User.login),
 ];

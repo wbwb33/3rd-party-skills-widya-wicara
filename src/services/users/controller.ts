@@ -1,10 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import { getRepository } from "typeorm";
+import { Request, Response } from "express";
+import { getRepository, UpdateResult } from "typeorm";
 import { User } from "./entity";
 import { validate } from "class-validator";
-import { errorState } from "../../utils/error_state";
-import { Services } from "../services";
-import Helper from "../auth_services";
+import { Services } from "../base_services";
 
 class UserController extends Services {
 
@@ -13,7 +11,7 @@ class UserController extends Services {
      */
     public index = async (req: Request, res: Response) => {
         const user = await getRepository(User).findOne((req as any).user.id);
-        return res.send(user).status(200);
+        return res.sendOK({ action: `get user`, data: <object>user });
     };
 
     /**
@@ -22,7 +20,7 @@ class UserController extends Services {
     public register = async (req: Request, res: Response) => {
         const rn = this.randomInt();
         const repo = await getRepository(User);
-        const hashPassword = Helper.hashPassword(req.body.password);
+        const hashPassword = this.hashPassword(req.body.password);
 
         const user = new User();
         user.username = req.body.username;
@@ -42,16 +40,17 @@ class UserController extends Services {
                 const property = e.property;
                 return { property, error };
             });
-            return res.send(err).status(400);
+            return res.sendError(err);
         }
 
         await repo.save(user)
-            .then((user: User) => {
-                return res.send({ "message": "Berhasil add user" }).status(201);
+            .then((user) => {
+                const userData = { name: user.name, username: user.username, email: user.email }
+                return res.sendInsertOK({ action: "register user", data: userData });
             })
             .catch((errors) => {
                 console.log(errors);
-                return errorState(res, errors);
+                return res.sendInsertError(errors);
             });
     };
 
@@ -59,32 +58,108 @@ class UserController extends Services {
         const repo = await getRepository(User);
 
         if (!req.body.email || !req.body.password) {
-            return res.status(400).send({ 'message': 'Some values are missing' });
+            return res.sendError('some values are missing');
         };
 
         try {
             const rows = await repo.createQueryBuilder("user")
                 .where({ email: req.body.email })
                 .addSelect("user.password")
+                .select(["user.password", "user.id"])
                 .getOne();
 
             if (!rows) {
-                return res.status(400).send({ 'error': 'Email tidak ditemukan' });
+                return res.sendError("email not found");
             }
 
-            if (!Helper.comparePassword(rows.password, req.body.password)) {
-                return res.status(400).send({ 'error': 'Password yang anda masukkan salah' });
+            if (!this.comparePassword(rows.password, req.body.password)) {
+                return res.sendError("password not match");
             }
 
-            const token = await Helper.generateToken(rows.id);
-            return res.status(200).send({ token });
+            const token = await this.generateToken(rows.id);
+            return res.sendOK({ action: "user login", data: { token } });
 
         } catch (error) {
-            return res.status(400).send("error")
+            return res.sendError(error)
         }
     };
 
-    // public destroy
+    public update = async (req: Request, res: Response) => {
+        const id = (req as any).user.id;
+
+        const repo = await getRepository(User);
+        const currentUser = await getRepository(User).createQueryBuilder("user")
+            .whereInIds(id)
+            .addSelect(["user.password", "user.token"])
+            .getOne();
+
+        const hashPassword = req.body.password != null ? this.hashPassword(req.body.password) : null;
+
+        const user = new User();
+        user.id = parseInt(id);
+        user.username = req.body.username || (currentUser as any).username;
+        user.email = req.body.email || (currentUser as any).email;
+        user.password = hashPassword || (currentUser as any).password;
+        user.name = req.body.name || (currentUser as any).name;
+        user.token = (currentUser as any).token;
+        user.method = req.body.method || (currentUser as any).method;
+        user.googleid = req.body.googleid || (currentUser as any).googleid;
+
+        const errors = await validate(user);
+
+        if (errors.length > 0) {
+            const err = errors.map(e => {
+                const error = e.constraints;
+                const property = e.property;
+                return { property, error };
+            });
+            return res.sendError(err);
+        }
+
+        try {
+            const updateResult: UpdateResult = await repo.createQueryBuilder()
+                .update(User, user)
+                .whereEntity(user)
+                .returning(["id", "username", "email", "name"])
+                .execute();
+
+            if (updateResult.generatedMaps.length > 0) {
+                return res.sendInsertOK({ action: "update user data", data: updateResult.generatedMaps });
+            } else {
+                return res.sendError("user not found");
+            }
+
+        } catch (error) {
+            console.log(error);
+            return res.sendInternalError();
+        }
+
+    };
+
+    // destroy not implemented
+
+    // public destroy = async (req: Request, res: Response) => {
+    //     const id = (req as any).user.id;
+    //     const repo = await getRepository(User);
+
+    //     try {
+    //         const delUser = await repo.createQueryBuilder("user")
+    //             .delete()
+    //             .from(User)
+    //             .whereInIds(id)
+    //             .execute();
+
+    //         if (delUser.affected) {
+    //             res.sendOK({ action: "delete user", data: `user with id: ${id} deleted` });
+    //         } else {
+    //             res.sendError(`user with id: ${id} not found`);
+    //         }
+
+    //     } catch (error) {
+    //         return res.sendInternalError();
+    //     }
+
+    // }
 
 }
 

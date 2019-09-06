@@ -1,3 +1,4 @@
+
 /**
  * import dotenv agar app bisa menggunakan variabel dari file .env
  */
@@ -28,7 +29,7 @@ import errorHandlers from "./middleware/error_handler";
  */
 import services from "./services";
 import { createConnection } from 'typeorm';
-// import { NextFunction } from "connect";
+import response_helper from "./middleware/response_helper";
 
 /**
  * close seluruh app ketika unchaughtException terdeteksi
@@ -50,6 +51,7 @@ process.on("unhandledRejection", e => {
 
 const expressApp = express();                    // instansiasi express.js
 applyMiddleware(commonMiddleware, expressApp);   // apply common middleware
+applyMiddleware(response_helper, expressApp);   // apply common middleware
 applyServices(services, expressApp);             // apply route
 applyMiddleware(errorHandlers, expressApp);      // apply errorHandler
 

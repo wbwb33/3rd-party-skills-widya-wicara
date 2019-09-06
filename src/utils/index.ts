@@ -42,35 +42,27 @@ export class Endpoint {
         this.rootpath = rootpath;
     }
 
-    get(path: string, handler: Handler | Handler[]): Route {
+    private route(method: string, path: string, handler: Handler | Handler[]) {
         return {
-            method: "get",
+            method: method,
             path: this.rootpath + path,
             handler: handler
         }
     }
 
-    post(path: string, handler: Handler | Handler[]): Route {
-        return {
-            method: "post",
-            path: this.rootpath + path,
-            handler: handler
-        }
+    public get(path: string, handler: Handler | Handler[]): Route {
+        return this.route("get", path, handler);
     }
 
-    put(path: string, handler: Handler | Handler[]): Route {
-        return {
-            method: "put",
-            path: this.rootpath + path,
-            handler: handler
-        }
+    public post(path: string, handler: Handler | Handler[]): Route {
+        return this.route("post", path, handler);
     }
 
-    delete(path: string, handler: Handler | Handler[]): Route {
-        return {
-            method: "delete",
-            path: this.rootpath + path,
-            handler: handler
-        }
+    public put(path: string, handler: Handler | Handler[]): Route {
+        return this.route("put", path, handler);
+    }
+
+    public delete(path: string, handler: Handler | Handler[]): Route {
+        return this.route("delete", path, handler);
     }
 }
