@@ -2,7 +2,7 @@ import { Request, Response, NextFunction, Router } from "express";
 
 const handle404Error = (router: Router) => {
     router.use((req: Request, res: Response, next: NextFunction) => {
-        res.status(404).send({ "error": `route ${req.path} not found` });
+        res.status(404).send({ "error": `route ${req.path} with method ${req.method} not found` });
     });
 };
 

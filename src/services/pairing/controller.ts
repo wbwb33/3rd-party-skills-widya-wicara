@@ -27,6 +27,11 @@ class PairingController extends Services {
         const id = (req as any).user.id;
         const repo = await getRepository(Device);
 
+        // TODO: check if the req.body is exist
+        if (!req.body.device_key) {
+            return res.sendError("additional data is required!")
+        }
+
         const deviceExist = await repo.createQueryBuilder('device')
             .where({ device_key: req.body.device_key })
             .getOne();
