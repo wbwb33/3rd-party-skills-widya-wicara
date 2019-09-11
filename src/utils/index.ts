@@ -35,6 +35,18 @@ export const applyServices = (routes: Route[], router: Router) => {
     }
 };
 
+/**
+ * Skills berisi route dan controller 
+ * @param routes 
+ * @param router 
+ */
+export const applySkills = (routes: Route[], router: Router) => {
+    for (const route of routes) {
+        const { method, path, handler } = route;
+        (router as any)[method]("/skills" + path, handler);
+    }
+};
+
 export class Endpoint {
     rootpath: string;
 
