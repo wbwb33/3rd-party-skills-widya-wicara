@@ -9,7 +9,7 @@
     "build": "tsc -p ."
   },
   "keywords": [],
-  "author": "",
+  "author": "dennbagas@gmail.com",
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

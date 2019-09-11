@@ -34,9 +34,9 @@ Server akan mengirim error `400 Bad Request` ketika ada data yang dibutuhkan di 
     ```
 	"status": "error",
     "message": "additional data is required!"
-    ```
-atau
-    ```
+    
+    // atau
+    
     "status": "error",
     "message": {
         detail: "",
