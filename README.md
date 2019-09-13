@@ -1,7 +1,7 @@
 # Widya Wicara Backend API
 
-[Backend Services](#backend-services)
-[Skills](#skills)
+- [Backend Services](#backend-services)
+- [Skills](#skills)
 
 ## Backend Services
 ### Authentication
@@ -12,7 +12,7 @@ Endpoint yang tidak memerlukan token yaitu:
 - Register Route <br /> 
 	POST: https://api.widyawicara.com/user/
 
-Ketika sebuah request tidak melampirkan token maka akan mendapat error 400 Bad Request dengan struktur response seperti berikut:
+Ketika sebuah request tidak melampirkan token maka akan mendapat error `400 Bad Request` dengan struktur response seperti berikut:
 
     "message": "Token is not provided"
 
@@ -46,13 +46,13 @@ Server akan mengirim error `400 Bad Request` ketika ada data yang dibutuhkan di 
         detail: "",
         property: ""
     }
-    ````
+    ```
 
 4. 500 Internal Server Error <br /> 
 Server akan mengirimkan `500 Internal Server Error` ketika ada error yang tidak diketahui dengan struktur seperti berikut:
     ```
     status: "internal server error"
-    ````
+    ```
 
 ### Backend Behaviour
 Setiap request akan meminta token untuk mendapatkan response, token yang di dapat saat login adalah representasi dari User ID, oleh karena itu setiap data yang di request akan berhubungan dengan user tersebut. Contoh ketika akan menambah pairing device, maka hanya perlu memasukkan data speaker, dan akan otomatis ter-pair ke user yang bersangkutan, berlaku juga untuk delete pairing, dan lain-lain.
@@ -62,13 +62,13 @@ Setiap request akan meminta token untuk mendapatkan response, token yang di dapa
 Untuk sestiap skill widya wicara menggunakan endpoint:
     ```
     https://api.widyawicara.com/skills/
-    ````
+    ```
 ### Weather
 Skill weather menggunakan data dari BMKG. Data ini otomatis update setiap hari. Ada beberapa parameter ketika request, yaitu `kota` dan `hari`. Parameter `kota` bersifat mandatory, untuk parameter `hari` ketika tidak di isi maka akan otomatis mendapatkan data hari ini.
 Skill weather menggunakan susunan endpoint sebagai berikut: 
     ```
     https://api.widyawicara.com/skills/weather?kota=yogyakarta&hari=besok
-    ````
+    ```
 Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`.
 - - -
 <br /> 
