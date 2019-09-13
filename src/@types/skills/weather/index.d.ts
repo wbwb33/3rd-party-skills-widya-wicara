@@ -1,3 +1,39 @@
+/**
+ * Fixed weather type for normalized weather data
+ */
+export interface FixedWeather {
+    provinsi: string;
+    kota: string;
+    parameter: FixedWeatherParameter[];
+}
+
+/**
+ * Fixed weather parameter type for normalized weather data
+ */
+export interface FixedWeatherParameter {
+    date: Date;
+    temp_min: string;
+    temp_max: string;
+    wather_day: string;
+    wather_night: string;
+}
+
+/**
+ * Formatted weather data type for process normalized weather data
+ */
+interface FormattedWeatherData {
+    provinsi: string;
+    kota: string;
+    parameter: {
+        date: string | undefined;
+        temp_min: string;
+        temp_max: string;
+        wather_day: string;
+        wather_night: string;
+    }[];
+};
+
+// Below is the type interface for easier data parsing from json converted xml (bmkg data)
 export interface WeatherData {
     data: Data;
 }
