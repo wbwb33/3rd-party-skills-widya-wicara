@@ -12,6 +12,7 @@
   "author": "dennbagas@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.1.0",
     "bcrypt-nodejs": "0.0.3",
     "class-validator": "^0.10.0",
     "compression": "^1.7.4",
@@ -26,6 +27,7 @@
     "xml2js": "^0.4.22"
   },
   "devDependencies": {
+    "@types/async": "^3.0.1",
     "@types/bcrypt-nodejs": "0.0.30",
     "@types/compression": "^1.0.1",
     "@types/cors": "^2.8.6",

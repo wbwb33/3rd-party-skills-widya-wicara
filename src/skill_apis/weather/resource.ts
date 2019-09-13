@@ -14,8 +14,8 @@ class BMKG {
 
         console.log('getting weather data...');
 
-        async.forEachOf(bmkg_xml, (link, key, callback) => {
-            request(link, function (error, response, body) {
+        async.forEachOf(bmkg_xml, (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
+            request(link, function (error: Error, response: request.Response, body: any) {
                 if (!error && response.statusCode == 200) {
                     // parse XML to Json
                     parseString(response.body, function (err: Error, result) {
@@ -31,7 +31,7 @@ class BMKG {
                     });
                 }
             });
-        }, (err) => {
+        }, (err: any) => {
             if (err) {
                 console.log(err);
             } else {
