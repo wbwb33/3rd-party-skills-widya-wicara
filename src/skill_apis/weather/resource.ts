@@ -145,22 +145,22 @@ class BMKG {
                             date: temp_min[0][0].date,
                             temp_min: temp_min[0][0].value,
                             temp_max: temp_max[0][0].value,
-                            wather_day: weather[0][0].siang,
-                            wather_night: weather[0][0].malam,
+                            weather_day: weather[0][0].siang,
+                            weather_night: weather[0][0].malam,
                         },
                         {
                             date: temp_min[0][1].date,
                             temp_min: temp_min[0][1].value,
                             temp_max: temp_max[0][1].value,
-                            wather_day: weather[0][1].siang,
-                            wather_night: weather[0][1].malam,
+                            weather_day: weather[0][1].siang,
+                            weather_night: weather[0][1].malam,
                         },
                         {
                             date: temp_min[0][2].date,
                             temp_min: temp_min[0][2].value,
                             temp_max: temp_max[0][2].value,
-                            wather_day: weather[0][2].siang,
-                            wather_night: weather[0][2].malam,
+                            weather_day: weather[0][2].siang,
+                            weather_night: weather[0][2].malam,
                         },
                     ]
                 };

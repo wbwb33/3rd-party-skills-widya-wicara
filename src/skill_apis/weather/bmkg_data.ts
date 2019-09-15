@@ -22,11 +22,6 @@ export const formattedDatetime = (datetime: string) => {
     return dateTime;
 }
 
-export interface bmkg_xml {
-    prov: string,
-    link: string
-}
-
 export const bmkg_xml = [
     "http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-Aceh.xml",
     "http://data.bmkg.go.id/datamkg/MEWS/DigitalForecast/DigitalForecast-Bali.xml",

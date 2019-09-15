@@ -14,8 +14,8 @@ export interface FixedWeatherParameter {
     date: Date;
     temp_min: string;
     temp_max: string;
-    wather_day: string;
-    wather_night: string;
+    weather_day: string;
+    weather_night: string;
 }
 
 /**
@@ -28,8 +28,8 @@ interface FormattedWeatherData {
         date: string | undefined;
         temp_min: string;
         temp_max: string;
-        wather_day: string;
-        wather_night: string;
+        weather_day: string;
+        weather_night: string;
     }[];
 };
 
