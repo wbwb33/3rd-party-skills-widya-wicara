@@ -7,7 +7,7 @@
     "start": "node dist/app.js",
     "dev": "nodemon src/server.ts",
     "build_win": "rd /s /q dist && tsc -p .",
-    "build_linux": "sudo rm -rf dist && tsc -p ."
+    "build": "sudo rm -rf dist && tsc -p ."
   },
   "keywords": [],
   "author": "dennbagas@gmail.com",

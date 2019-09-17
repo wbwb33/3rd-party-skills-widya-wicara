@@ -163,30 +163,33 @@ class PairingController extends Services {
 
         const deviceExist = await repo.createQueryBuilder('device')
             .where({ device_key: device_key })
+            .andWhere('device.pairedTo is not null')
             .getOne();
 
-        const device = new Device();
-        device.device_key = device_key;
-        device.device_name = (deviceExist as any).device_name;
-        device.device_type = (deviceExist as any).device_type;
-        device.firmware_version = (deviceExist as any).firmware_version;
-        device.device_ip = (deviceExist as any).device_ip;
-        device.pairedTo = null;
-
-        // console.log(device);
-        const errors = await validate(device);
-
-        if (errors.length > 0) {
-            const err = errors.map(e => {
-                const error = e.constraints;
-                const property = e.property;
-                return { property, error };
-            });
-            return res.send(err).status(400);
-        }
-
         if (deviceExist) {
+
             try {
+                const device = new Device();
+                device.device_key = device_key;
+                device.device_name = (deviceExist as any).device_name;
+                device.device_type = (deviceExist as any).device_type;
+                device.firmware_version = (deviceExist as any).firmware_version;
+                device.device_ip = (deviceExist as any).device_ip;
+                device.pairedTo = null;
+
+                const errors = await validate(device);
+
+                // console.log(device);
+
+                if (errors.length > 0) {
+                    const err = errors.map(e => {
+                        const error = e.constraints;
+                        const property = e.property;
+                        return { property, error };
+                    });
+                    return res.send(err).status(400);
+                }
+
                 const updateResult: UpdateResult = await repo.createQueryBuilder("device")
                     .update(Device, device)
                     .where("device_key = :device_key", { device_key: device_key })
@@ -207,7 +210,7 @@ class PairingController extends Services {
             }
 
         } else {
-            return res.sendError({ message: `device with uuid: "${device_key}" not found` });
+            return res.sendError({ message: `device with uuid: "${device_key}" not found or not yet paired` });
 
         }
 
