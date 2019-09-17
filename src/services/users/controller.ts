@@ -124,7 +124,7 @@ class UserController extends Services {
                 .execute();
 
             if (updateResult.generatedMaps.length > 0) {
-                return res.sendInsertOK({ action: "update user data", data: updateResult.generatedMaps });
+                return res.sendInsertOK({ action: "update user data", data: updateResult.generatedMaps[0] });
             } else {
                 return res.sendError("user not found");
             }
