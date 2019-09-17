@@ -33,7 +33,7 @@ Ketika sebuah request tidak melampirkan token atau ada error token maka akan men
 ```
 
 ### Response
-1. 200 OK dan 201 Created
+1. 200 OK dan 201 Created <br />
 Setiap request yang berhasil akan memberikan struktur response seperti berikut:
 ```
 status: "success",
@@ -43,7 +43,7 @@ message: {
 }
 ```
 
-2. 404 Not Found
+2. 404 Not Found <br />
 Route dengan method yang tidak terdefinisi akan memberikan struktur response seperti berikut:
 ```
 "error": "route /pairing/ with method DELETE not found"
@@ -77,7 +77,7 @@ Setiap request akan meminta token untuk mendapatkan response, token yang di dapa
 ## Endpoint Sample Response
 ### User 
 #### Add user/Register User
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -121,7 +121,7 @@ method : "local"
 ]
 ```
 #### Login User:
-Endpoint : `https://api.widyawicara.com/user/login`
+Endpoint : `https://api.widyawicara.com/user/login` <br />
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -157,7 +157,7 @@ password : "password"
 "message": "email not found"
 ```
 #### Get User:
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -178,7 +178,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update User
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -207,7 +207,7 @@ method : "local"
 ```
 ### Device
 #### Add Device
-Endpoint : `https://api.widyawicara.com/device`
+Endpoint : `https://api.widyawicara.com/device` <br />
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -248,7 +248,7 @@ firmware_version: "12"
 ]
 ```
 #### Get Selected Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -278,7 +278,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 "message": "device with uuid: 912512512512348523657 not found"
 ```
 #### Delete Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -299,7 +299,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 ```
 ### Pairing
 #### Add Pairing
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -331,7 +331,7 @@ device_type: "PRIMA"
 "message": "additional data is required!"
 ```
 #### Get Pairing
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -366,7 +366,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update Device Name
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -395,7 +395,7 @@ device_name: "Widya Punya Argo"
 "message": "device_name required"
 ```
 #### Delete Pairing
-Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751`
+Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751` <br />
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
