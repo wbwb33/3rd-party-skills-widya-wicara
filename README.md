@@ -33,7 +33,7 @@ Ketika sebuah request tidak melampirkan token atau ada error token maka akan men
 ```
 
 ### Response
-1. 200 OK dan 201 Created <br />
+1. 200 OK dan 201 Created
 Setiap request yang berhasil akan memberikan struktur response seperti berikut:
 ```
 status: "success",
@@ -43,13 +43,14 @@ message: {
 }
 ```
 
-2. 404 Not Found <br />
+2. 404 Not Found
 Route dengan method yang tidak terdefinisi akan memberikan struktur response seperti berikut:
 ```
 "error": "route /pairing/ with method DELETE not found"
 ```
 
 3. 400 Bad Request <br />
+
 Server akan mengirim error `400 Bad Request` ketika ada data yang dibutuhkan di body tidak terisi atau ketika request tidak bisa dijalankan. Error ini memiliki struktur seperti berikut:
 ```
 "status": "error",
@@ -76,7 +77,7 @@ Setiap request akan meminta token untuk mendapatkan response, token yang di dapa
 ## Endpoint Sample Response
 ### User 
 #### Add user/Register User
-Endpoint : `https://api.widyawicara.com/user` <br />
+Endpoint : `https://api.widyawicara.com/user`
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -120,7 +121,7 @@ method : "local"
 ]
 ```
 #### Login User:
-Endpoint : `https://api.widyawicara.com/user/login` <br />
+Endpoint : `https://api.widyawicara.com/user/login`
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -156,7 +157,7 @@ password : "password"
 "message": "email not found"
 ```
 #### Get User:
-Endpoint : `https://api.widyawicara.com/user` <br />
+Endpoint : `https://api.widyawicara.com/user`
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -177,7 +178,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update User
-Endpoint : `https://api.widyawicara.com/user` <br />
+Endpoint : `https://api.widyawicara.com/user`
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -206,7 +207,7 @@ method : "local"
 ```
 ### Device
 #### Add Device
-Endpoint : `https://api.widyawicara.com/device` <br />
+Endpoint : `https://api.widyawicara.com/device`
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -247,7 +248,7 @@ firmware_version: "12"
 ]
 ```
 #### Get Selected Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -277,7 +278,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 "message": "device with uuid: 912512512512348523657 not found"
 ```
 #### Delete Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -298,7 +299,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 ```
 ### Pairing
 #### Add Pairing
-Endpoint : `https://api.widyawicara.com/pairing` <br />
+Endpoint : `https://api.widyawicara.com/pairing`
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -330,7 +331,7 @@ device_type: "PRIMA"
 "message": "additional data is required!"
 ```
 #### Get Pairing
-Endpoint : `https://api.widyawicara.com/pairing` <br />
+Endpoint : `https://api.widyawicara.com/pairing`
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -365,7 +366,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update Device Name
-Endpoint : `https://api.widyawicara.com/pairing` <br />
+Endpoint : `https://api.widyawicara.com/pairing`
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -394,7 +395,7 @@ device_name: "Widya Punya Argo"
 "message": "device_name required"
 ```
 #### Delete Pairing
-Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751` <br />
+Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751`
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -435,5 +436,6 @@ Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`
 - - -
 
 Widya Wicara Backend Services.
+Postman Doc: https://documenter.getpostman.com/view/5768908/SVfWLRX5?version=latest
 <small>Version: 0.2.</small> 
 <small>doc by: Bagas Alfiandhi N</small>
