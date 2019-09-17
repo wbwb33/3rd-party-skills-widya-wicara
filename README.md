@@ -33,7 +33,7 @@ Ketika sebuah request tidak melampirkan token atau ada error token maka akan men
 ```
 
 ### Response
-1. 200 OK dan 201 Created
+1. 200 OK dan 201 Created <br />
 Setiap request yang berhasil akan memberikan struktur response seperti berikut:
 ```
 status: "success",
@@ -43,29 +43,27 @@ message: {
 }
 ```
 
-2. 404 Not Found
+2. 404 Not Found <br />
 Route dengan method yang tidak terdefinisi akan memberikan struktur response seperti berikut:
 ```
 "error": "route /pairing/ with method DELETE not found"
 ```
 
 3. 400 Bad Request <br />
-
 Server akan mengirim error `400 Bad Request` ketika ada data yang dibutuhkan di body tidak terisi atau ketika request tidak bisa dijalankan. Error ini memiliki struktur seperti berikut:
-```
-"status": "error",
-"message": "additional data is required!"
-
-// atau
-
-"status": "error",
-"message": {
-  detail: "",
-  property: ""
-}
-```
-
-  4. 500 Internal Server Error <br />
+	```
+	"status": "error",
+	"message": "additional data is required!"
+	
+	// atau
+	
+	"status": "error",
+	"message": {
+	  detail: "",
+	  property: ""
+	}
+	```
+4. 500 Internal Server Error <br />
 Server akan mengirimkan `500 Internal Server Error` ketika ada error yang tidak diketahui dengan struktur seperti berikut:
 ```
 status: "internal server error"
@@ -77,7 +75,7 @@ Setiap request akan meminta token untuk mendapatkan response, token yang di dapa
 ## Endpoint Sample Response
 ### User 
 #### Add user/Register User
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -121,7 +119,7 @@ method : "local"
 ]
 ```
 #### Login User:
-Endpoint : `https://api.widyawicara.com/user/login`
+Endpoint : `https://api.widyawicara.com/user/login` <br />
 Method : `POST`
 
 Body (`application/x-www-form-urlencoded`) :  
@@ -157,7 +155,7 @@ password : "password"
 "message": "email not found"
 ```
 #### Get User:
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -178,7 +176,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update User
-Endpoint : `https://api.widyawicara.com/user`
+Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -207,7 +205,7 @@ method : "local"
 ```
 ### Device
 #### Add Device
-Endpoint : `https://api.widyawicara.com/device`
+Endpoint : `https://api.widyawicara.com/device` <br />
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -248,7 +246,7 @@ firmware_version: "12"
 ]
 ```
 #### Get Selected Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -278,7 +276,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 "message": "device with uuid: 912512512512348523657 not found"
 ```
 #### Delete Device
-Endpoint : `https://api.widyawicara.com/device/912512512512348523657`
+Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -299,7 +297,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 ```
 ### Pairing
 #### Add Pairing
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `POST`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -331,7 +329,7 @@ device_type: "PRIMA"
 "message": "additional data is required!"
 ```
 #### Get Pairing
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `GET`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -366,7 +364,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update Device Name
-Endpoint : `https://api.widyawicara.com/pairing`
+Endpoint : `https://api.widyawicara.com/pairing` <br />
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -395,7 +393,7 @@ device_name: "Widya Punya Argo"
 "message": "device_name required"
 ```
 #### Delete Pairing
-Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751`
+Endpoint : `https://api.widyawicara.com/pairing/8051872540056641751` <br />
 Method : `DELETE`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -435,7 +433,7 @@ https://api.widyawicara.com/skills/weather?kota=yogyakarta&hari=besok
 Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`.
 - - -
 
-Widya Wicara Backend Services.
-Postman Doc: https://documenter.getpostman.com/view/5768908/SVfWLRX5?version=latest
-<small>Version: 0.2.</small> 
-<small>doc by: Bagas Alfiandhi N</small>
+Widya Wicara Backend Services. <br />
+Postman Doc: https://documenter.getpostman.com/view/5768908/SVfWLRX5?version=latest <br />
+<small>Version: 0.2.</small>  <br />
+<small>doc by: Bagas Alfiandhi N</small> <br />
