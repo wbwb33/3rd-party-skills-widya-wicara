@@ -210,7 +210,7 @@ class PairingController extends Services {
             }
 
         } else {
-            return res.sendError({ message: `device with uuid: "${device_key}" not found or not yet paired` });
+            return res.sendError(`device with uuid: "${device_key}" not found or not yet paired`);
 
         }
 
