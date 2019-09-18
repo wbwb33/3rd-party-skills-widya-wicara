@@ -45,19 +45,6 @@ export class User {
     token: number;
 
     /**
-     * Kolom method, tipe data varchar(10), digunakan untuk menandai method login. (local/google-oauth)
-     */
-    @IsNotEmpty({ message: "Required" })
-    @Column("varchar", { length: 10 })
-    method: string;
-
-    /**
-     * Kolom googleid, digunakan untuk menyimpan google id ketika login menggunakan google-oauth
-     */
-    @Column("varchar", { length: 32, nullable: true })
-    googleid: string;
-
-    /**
      * Relation declaration
      */
     @OneToMany(type => Device, device => device.pairedTo)

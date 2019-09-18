@@ -7,14 +7,6 @@ import { Services } from "../base_services";
 class UserController extends Services {
 
     /**
-     * return user sesuai dengan ID user
-     */
-    public index = async (req: Request, res: Response) => {
-        const user = await getRepository(User).findOne((req as any).user.id);
-        return res.sendOK({ action: `get user`, data: <object>user });
-    };
-
-    /**
      * Register user 
      */
     public register = async (req: Request, res: Response) => {
@@ -28,8 +20,6 @@ class UserController extends Services {
         user.password = hashPassword;
         user.name = req.body.name;
         user.token = rn;
-        user.method = req.body.method;
-        user.googleid = req.body.googleid;
 
         // console.log(user);
         const errors = await validate(user);
@@ -65,7 +55,7 @@ class UserController extends Services {
             const rows = await repo.createQueryBuilder("user")
                 .where({ email: req.body.email })
                 .addSelect("user.password")
-                .select(["user.password", "user.id"])
+                // .select(["user.password", "user.id"])
                 .getOne();
 
             if (!rows) {
@@ -77,7 +67,15 @@ class UserController extends Services {
             }
 
             const token = await this.generateToken(rows.id);
-            return res.sendOK({ action: "user login", data: { token } });
+            const userdata = {
+                userid: rows.id,
+                username: rows.username,
+                name: rows.name,
+                email: rows.email,
+                token
+            };
+
+            return res.sendOK({ action: "user login", data: userdata });
 
         } catch (error) {
             return res.sendError(error)
@@ -102,8 +100,6 @@ class UserController extends Services {
         user.password = hashPassword || (currentUser as any).password;
         user.name = req.body.name || (currentUser as any).name;
         user.token = (currentUser as any).token;
-        user.method = req.body.method || (currentUser as any).method;
-        user.googleid = req.body.googleid || (currentUser as any).googleid;
 
         const errors = await validate(user);
 
