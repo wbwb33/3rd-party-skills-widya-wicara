@@ -1,10 +1,21 @@
 import { Request, Response } from "express";
 import { Services } from "../base_services";
-import { getRepository, UpdateResult, DeleteResult } from "typeorm";
+import { getRepository, UpdateResult } from "typeorm";
 import { validate } from "class-validator";
 import { Device } from "./entity";
 
 class DeviceController extends Services {
+
+    // this service is exposed just in development
+    public index = async (req: Request, res: Response) => {
+        const device = await getRepository(Device).createQueryBuilder('device')
+            .leftJoin('device.pairedTo', 'user')
+            .addSelect(['user.name'])
+            .getMany();
+
+        return res.sendOK({ action: "get all device", data: device });
+    }
+
     public show = async (req: Request, res: Response) => {
         const device = await getRepository(Device).createQueryBuilder('device')
             .leftJoin('device.pairedTo', 'user')
