@@ -295,6 +295,45 @@ Authentication (`Bearer Token`)  : `token provided from login`
 "status": "error",
 "message": "device with uuid: 912512512512348523657 not found"
 ```
+
+#### Get All Device (Development only)
+Endpoint : `https://api.widyawicara.com/device` <br />
+Method : `GET`
+
+Authentication (`Bearer Token`)  : `token provided from login`
+
+`200 Success` Sample Response :
+```
+"status": "success",
+"message": {
+  "action": "get all device",
+  "data": [
+    {
+      "id": 1,
+      "device_key": "9102269610348523657",
+      "device_ip": "192.168.100.189",
+      "firmware_version": "12",
+      "device_name": "Widya Speaker Ku",
+      "device_type": "WOW",
+      "pairedTo": {
+          "name": "Tiffa Sutopo"
+      }
+    },
+    {
+      "id": 9,
+      "device_key": "14438001231231248164",
+      "device_ip": "192.168.10.195",
+      "firmware_version": "12",
+      "device_name": "Widya Punya Argo",
+      "device_type": "PRIMA",
+      "pairedTo": {
+          "name": "Tiffa Sutopo"
+      }
+    }
+  ]
+}
+```
+
 ### Pairing
 #### Add Pairing
 Endpoint : `https://api.widyawicara.com/pairing` <br />
@@ -435,5 +474,5 @@ Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`
 
 Widya Wicara Backend Services. <br />
 Postman Doc: https://documenter.getpostman.com/view/5768908/SVfWLRX5?version=latest <br />
-<small>Version: 0.2.</small>  <br />
+<small>Version: 0.2.2</small>  <br />
 <small>doc by: Bagas Alfiandhi N</small> <br />
