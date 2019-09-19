@@ -6,8 +6,8 @@ const response_helper = (router: Router) => {
             res.status(200);
             return res.send({
                 status: "success",
-                action: msg.action,
                 message: {
+                    action: msg.action,
                     data: msg.data
                 }
             })
@@ -17,8 +17,8 @@ const response_helper = (router: Router) => {
             res.status(201);
             return res.send({
                 status: "success",
-                action: msg.action,
                 message: {
+                    action: msg.action,
                     data: msg.data
                 }
             })
