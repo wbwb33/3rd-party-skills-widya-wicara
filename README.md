@@ -6,7 +6,7 @@ Backend Service untuk API mobile device dan widya wicara smart speaker.
   - [Authentication](#authentication)
   - [Backend Behaviour](#backend-behaviour)
   - [Response](#response)
-- [Sample Response and Request](#endpoint-sample-request)
+- [Sample Response and Request](#endpoint-sample-response)
   - [User](#user)
     - [Add/Register User](#addregister-user)
     - [Login User](#login-user)
