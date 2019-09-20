@@ -1,6 +1,26 @@
 # Widya Wicara Backend API
+Backend Service untuk API mobile device dan widya wicara smart speaker.
 
+## Table of Contents
 - [Backend Services](#backend-services)
+  - [Authentication](#authentication)
+  - [Backend Behaviour](#backend-behaviour)
+  - [Response](#response)
+- [Sample Response and Request](#endpoint-sample-request)
+  - [User](#user)
+    - [Add/Register User](#addregister-user)
+    - [Login User](#login-user)
+    - [Update User Password](#update-user-password)
+  - [Device](#device)
+    - [Add Device](#add-device)
+    - [Get Selected Device](#get-selected-device)
+    - [Delete Device](#delete-device)
+    - [Get All Device (development only)](#get-all-device-development-only)
+  - [Pairing](#pairing)
+    - [Add Pairing](#add-pairing)
+    - [Get Pairing](#get-pairing)
+    - [Update Device Name](#update-device-name)
+    - [Delete Pairing](#delete-device)
 - [Skills](#skills)
 
 ## Backend Services
@@ -33,7 +53,8 @@ Ketika sebuah request tidak melampirkan token atau ada error token maka akan men
 "message": "jwt expired",
 "expiredAt": "2019-09-13T04:22:59.000Z"
 ```
-
+### Backend Behaviour
+Setiap request akan meminta token untuk mendapatkan response, token yang di dapat saat login adalah representasi dari User ID, oleh karena itu setiap data yang di request akan berhubungan dengan user tersebut. Contoh ketika akan menambah pairing device, maka hanya perlu memasukkan data speaker, dan akan otomatis ter-pair ke user yang bersangkutan, berlaku juga untuk delete pairing, dan lain-lain.
 ### Response
 1. 200 OK dan 201 Created <br />
 Setiap request yang berhasil akan memberikan struktur response seperti berikut:
@@ -71,12 +92,9 @@ Server akan mengirimkan `500 Internal Server Error` ketika ada error yang tidak 
     status: "internal server error"
     ```
 
-### Backend Behaviour
-Setiap request akan meminta token untuk mendapatkan response, token yang di dapat saat login adalah representasi dari User ID, oleh karena itu setiap data yang di request akan berhubungan dengan user tersebut. Contoh ketika akan menambah pairing device, maka hanya perlu memasukkan data speaker, dan akan otomatis ter-pair ke user yang bersangkutan, berlaku juga untuk delete pairing, dan lain-lain.
-
 ## Endpoint Sample Response
 ### User 
-#### Add user/Register User
+#### Add/Register User
 Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `POST`
 
@@ -154,37 +172,6 @@ password : "password"
 
 "status": "error",
 "message": "email not found"
-```
-#### Update User
-Endpoint : `https://api.widyawicara.com/user` <br />
-Method : `PUT`
-
-Authentication (`Bearer Token`)  : `token provided from login`
-
-Body (`application/x-www-form-urlencoded`) optional :  
-```
-username : "admin"
-name : "Administrator"
-email : "widya@gmail.com"
-```
-
-`200 Success` Sample Response :
-```
-"status": "success",
-"message": {
-  "action": "update user data",
-  "data": {
-    "id": 12,
-    "username": "admin",
-    "email": "widya@gmail.co.id",
-    "name": "Administrator"
-  }
-}
-```
-`400 Bad Request` Sample Response :
-```
-"status": "error",
-"message": "user not found"
 ```
 #### Update User
 Endpoint : `https://api.widyawicara.com/user` <br />
