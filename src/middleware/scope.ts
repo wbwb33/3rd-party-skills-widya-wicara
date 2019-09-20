@@ -8,7 +8,6 @@ require('dotenv').config();
 export const Scope = {
 
     development() {
-
         return function (req: Request, res: Response, next: NextFunction) {
 
             if (process.env.NODE_ENV === "development") {
@@ -18,6 +17,6 @@ export const Scope = {
                 return res.sendNotFound(`route ${req.path} with method ${req.method} not found`);
             }
         }
-
     }
+
 }

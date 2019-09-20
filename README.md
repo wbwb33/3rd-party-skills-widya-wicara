@@ -403,7 +403,7 @@ Authentication (`Bearer Token`)  : `token provided from login`
 }
 ```
 #### Update Device Name
-Endpoint : `https://api.widyawicara.com/pairing` <br />
+Endpoint : `https://api.widyawicara.com/pairing/14438001231231248164` <br />
 Method : `PUT`
 
 Authentication (`Bearer Token`)  : `token provided from login`
@@ -426,7 +426,7 @@ device_name: "Widya Punya Argo"
 }
 ```
 
-`400 Bad Request` Sample Response (ketika device_key tidak di isi) :
+`400 Bad Request` Sample Response (ketika device_name tidak di isi) :
 ```
 "status": "error",
 "message": "device_name required"
