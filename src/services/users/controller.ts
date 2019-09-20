@@ -144,7 +144,7 @@ class UserController extends Services {
             return res.sendError('new password can\'t be null');
         };
 
-        if (new_password < 6) {
+        if (new_password.length < 6) {
             return res.sendError('new password must be 6 character or more');
         };
 
