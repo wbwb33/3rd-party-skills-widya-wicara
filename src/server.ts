@@ -7,7 +7,9 @@ require('dotenv').config();
 /**
  * import http
  */
+
 import https from "https";
+import http from "http";
 
 /**
  * import connection dependencies
@@ -24,7 +26,12 @@ const { PORT = 3000 } = process.env;
 /**
  * instantiasi server dengan express
  */
-const server = https.createServer(expressApp);
+let server: http.Server | https.Server;
+if (process.env.NODE_ENV === "development") {
+    server = http.createServer(expressApp);
+} else {
+    server = https.createServer(expressApp);
+}
 
 /**
  * jalankan server sesuai port di .env

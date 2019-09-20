@@ -55,7 +55,6 @@ class UserController extends Services {
             const rows = await repo.createQueryBuilder("user")
                 .where({ email: req.body.email })
                 .addSelect("user.password")
-                // .select(["user.password", "user.id"])
                 .getOne();
 
             if (!rows) {
@@ -88,17 +87,16 @@ class UserController extends Services {
         const repo = await getRepository(User);
         const currentUser = await getRepository(User).createQueryBuilder("user")
             .whereInIds(id)
-            .addSelect(["user.password", "user.token"])
+            .addSelect(["user.token"])
             .getOne();
 
-        const hashPassword = req.body.password != null ? this.hashPassword(req.body.password) : null;
-
         const user = new User();
+
         user.id = parseInt(id);
         user.username = req.body.username || (currentUser as any).username;
         user.email = req.body.email || (currentUser as any).email;
-        user.password = hashPassword || (currentUser as any).password;
         user.name = req.body.name || (currentUser as any).name;
+        user.password = (currentUser as any).password;
         user.token = (currentUser as any).token;
 
         const errors = await validate(user);
@@ -121,6 +119,78 @@ class UserController extends Services {
 
             if (updateResult.generatedMaps.length > 0) {
                 return res.sendInsertOK({ action: "update user data", data: updateResult.generatedMaps[0] });
+            } else {
+                return res.sendError("user not found");
+            }
+
+        } catch (error) {
+            console.log(error);
+            return res.sendInternalError();
+        }
+
+    };
+
+    public updatePassword = async (req: Request, res: Response) => {
+
+        const id = (req as any).user.id;
+        const old_password = req.body.old_password;
+        const new_password = req.body.new_password;
+
+        if (!old_password) {
+            return res.sendError('old password can\'t be null');
+        };
+
+        if (!new_password) {
+            return res.sendError('new password can\'t be null');
+        };
+
+        if (new_password < 6) {
+            return res.sendError('new password must be 6 character or more');
+        };
+
+        const currentUser = await getRepository(User).createQueryBuilder("user")
+            .whereInIds(id)
+            .addSelect(["user.password", "user.token"])
+            .getOne();
+
+        if (!currentUser) {
+            return res.sendError("user not found");
+        }
+
+        if (!this.comparePassword(currentUser.password, old_password)) {
+            return res.sendError("old password not match");
+        }
+
+        try {
+            const hashPassword = this.hashPassword(new_password);
+
+            const user = new User();
+            user.id = parseInt(id);
+            user.username = (currentUser as any).username;
+            user.email = (currentUser as any).email;
+            user.name = (currentUser as any).name;
+            user.password = hashPassword;
+            user.token = (currentUser as any).token;
+
+            const errors = await validate(user);
+
+            if (errors.length > 0) {
+                const err = errors.map(e => {
+                    const error = e.constraints;
+                    const property = e.property;
+                    return { property, error };
+                });
+                return res.sendError(err);
+            }
+
+            const updateResult: UpdateResult = await getRepository(User).createQueryBuilder()
+                .update(User, user)
+                .whereEntity(user)
+                .returning(["id", "username", "email", "name"])
+                .execute();
+
+            if (updateResult.generatedMaps.length > 0) {
+                return res.sendInsertOK({ action: "update user password", data: updateResult.generatedMaps[0] });
             } else {
                 return res.sendError("user not found");
             }
