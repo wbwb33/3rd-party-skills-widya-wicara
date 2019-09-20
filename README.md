@@ -20,7 +20,7 @@ Backend Service untuk API mobile device dan widya wicara smart speaker.
     - [Add Pairing](#add-pairing)
     - [Get Pairing](#get-pairing)
     - [Update Device Name](#update-device-name)
-    - [Delete Pairing](#delete-device)
+    - [Delete Pairing](#delete-pairing)
 - [Skills](#skills)
 
 ## Backend Services
