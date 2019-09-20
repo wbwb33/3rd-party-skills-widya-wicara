@@ -11,10 +11,12 @@ Authentication menggunakan JWT dengan format Authentication **Bearer Token**. Se
 Endpoint yang tidak memerlukan token yaitu:
 
 - Login Route
-POST: https://api.widyawicara.com/user/login
+  
+  POST: https://api.widyawicara.com/user/login
 
 - Register Route
-POST: https://api.widyawicara.com/user/
+
+  POST: https://api.widyawicara.com/user/
 
 Ketika sebuah request tidak melampirkan token atau ada error token maka akan mendapat error `400 Bad Request` dengan struktur response seperti berikut:
 ```
@@ -84,7 +86,6 @@ username : "admin"
 password : "password"
 name : "Administrator"
 email : "widya@gmail.com"
-method : "local"
 ```
 
 `200 Success` Sample Response :
@@ -154,27 +155,6 @@ password : "password"
 "status": "error",
 "message": "email not found"
 ```
-#### Get User:
-Endpoint : `https://api.widyawicara.com/user` <br />
-Method : `GET`
-
-Authentication (`Bearer Token`)  : `token provided from login`
-
-`200 Success` Sample Response :
-```
-"status": "success",
-"message": {
-  "action": "get user",
-  "data": {
-    "id": 12,
-    "username": "admin",
-    "name": "Administrator",
-    "email": "widya@gmail.com",
-    "method": "local",
-    "googleid": null
-  }
-}
-```
 #### Update User
 Endpoint : `https://api.widyawicara.com/user` <br />
 Method : `PUT`
@@ -184,10 +164,8 @@ Authentication (`Bearer Token`)  : `token provided from login`
 Body (`application/x-www-form-urlencoded`) optional :  
 ```
 username : "admin"
-password : "password"
 name : "Administrator"
 email : "widya@gmail.com"
-method : "local"
 ```
 
 `200 Success` Sample Response :
@@ -202,6 +180,77 @@ method : "local"
     "name": "Administrator"
   }
 }
+```
+`400 Bad Request` Sample Response :
+```
+"status": "error",
+"message": "user not found"
+```
+#### Update User
+Endpoint : `https://api.widyawicara.com/user` <br />
+Method : `PUT`
+
+Authentication (`Bearer Token`)  : `token provided from login`
+
+Body (`application/x-www-form-urlencoded`) optional :  
+```
+username : "admin"
+name : "Administrator"
+email : "widya@gmail.com"
+```
+
+`200 Success` Sample Response :
+```
+"status": "success",
+"message": {
+  "action": "update user data",
+  "data": {
+    "id": 12,
+    "username": "admin",
+    "email": "widya@gmail.co.id",
+    "name": "Administrator"
+  }
+}
+```
+`400 Bad Request` Sample Response :
+```
+"status": "error",
+"message": "user not found"
+```
+#### Update User Password
+Endpoint : `https://api.widyawicara.com/user/update-password` <br />
+Method : `PUT`
+
+Authentication (`Bearer Token`)  : `token provided from login`
+
+Body (`application/x-www-form-urlencoded`) :  
+```
+old_password: "test"
+new_password: "testing"
+```
+
+`200 Success` Sample Response :
+```
+"status": "success",
+"message": {
+  "action": "update user password",
+  "data": {
+    "id": 12,
+    "username": "admin",
+    "email": "widya@gmail.co.id",
+    "name": "Administrator"
+  }
+}
+```
+`400 Bad Request` Sample Response :
+```
+"status": "error",
+"message": "old password not match"
+
+// atau
+
+"status": "error",
+"message": "new password not match"
 ```
 ### Device
 #### Add Device
@@ -474,5 +523,5 @@ Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`
 
 Widya Wicara Backend Services. <br />
 Postman Doc: https://documenter.getpostman.com/view/5768908/SVfWLRX5?version=latest <br />
-<small>Version: 0.2.2</small>  <br />
+<small>Version: 0.3.0</small>  <br />
 <small>doc by: Bagas Alfiandhi N</small> <br />
