@@ -20,7 +20,6 @@ class PairingController extends Services {
         } else {
             return res.sendOK({ action: "get paired device", data: pairedDevice });
         }
-
     };
 
     public pair = async (req: Request, res: Response) => {
@@ -43,6 +42,9 @@ class PairingController extends Services {
         device.device_key = req.body.device_key;
         device.device_name = req.body.device_name;
         device.device_type = req.body.device_type;
+        device.gps_long = req.body.gps_long;
+        device.gps_lat = req.body.gps_lat;
+        device.gps_address = req.body.gps_address;
         device.firmware_version = (deviceExist as any).firmware_version;
         device.device_ip = (deviceExist as any).device_ip;
         device.pairedTo = user;
@@ -64,7 +66,7 @@ class PairingController extends Services {
                 const updateResult: UpdateResult = await repo.createQueryBuilder("device")
                     .update(Device, device)
                     .where("device_key = :device_key", { device_key: req.body.device_key })
-                    .returning(["device_key", "device_name", "device_type"])
+                    .returning(["device_key", "device_name", "device_type", "gps_long", "gps_lat", "gps_address"])
                     .execute();
 
                 let name = await getRepository(User).find({ select: ['name'], where: { id: id } })
@@ -87,7 +89,6 @@ class PairingController extends Services {
             return res.sendError({ message: `device with uuid: "${req.body.device_key}" not found` });
 
         }
-
     };
 
     public update_name = async (req: Request, res: Response) => {
@@ -154,8 +155,7 @@ class PairingController extends Services {
             return res.sendError({ message: `device with uuid: "${device_key}" not found` });
 
         }
-
-    }
+    };
 
     public destroy = async (req: Request, res: Response) => {
         const repo = await getRepository(Device);
@@ -213,8 +213,8 @@ class PairingController extends Services {
             return res.sendError(`device with uuid: "${device_key}" not found or not yet paired`);
 
         }
+    };
 
-    }
 }
 
 const pairing = new PairingController();

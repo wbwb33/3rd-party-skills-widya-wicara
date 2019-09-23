@@ -127,7 +127,6 @@ class UserController extends Services {
             console.log(error);
             return res.sendInternalError();
         }
-
     };
 
     public updatePassword = async (req: Request, res: Response) => {
@@ -199,7 +198,18 @@ class UserController extends Services {
             console.log(error);
             return res.sendInternalError();
         }
+    };
 
+    public get_all = async (req: Request, res: Response) => {
+        const pairedDevice = await getRepository(User).createQueryBuilder("user")
+            .leftJoinAndSelect("user.device", "device")
+            .getMany();
+
+        if (!pairedDevice) {
+            return res.sendError("no device paired yet");
+        } else {
+            return res.sendOK({ action: "get all paired device", data: pairedDevice });
+        }
     };
 
     // destroy not implemented

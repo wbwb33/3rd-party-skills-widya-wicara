@@ -55,6 +55,27 @@ export class Device {
     device_type: string;
 
     /**
+     * Column device_type, required, varchar(20).
+     * Used to save the widya device type, either "WOW" or "PRIMA".
+     */
+    @Column("varchar", { length: 100, nullable: true })
+    gps_long: string;
+
+    /**
+     * Column device_type, required, varchar(20).
+     * Used to save the widya device type, either "WOW" or "PRIMA".
+     */
+    @Column("varchar", { length: 100, nullable: true })
+    gps_lat: string;
+
+    /**
+     * Column device_type, required, varchar(20).
+     * Used to save the widya device type, either "WOW" or "PRIMA".
+     */
+    @Column("varchar", { length: 160, nullable: true })
+    gps_address: string;
+
+    /**
      * Column paired_to, required, integer.
      * Used to save user_id. Foreign key User -> id
      * It can be used to check is device has been paired or not
