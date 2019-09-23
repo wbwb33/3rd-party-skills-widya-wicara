@@ -11,8 +11,10 @@ Backend Service untuk API mobile device dan widya wicara smart speaker.
     - [Add/Register User](#addregister-user)
     - [Login User](#login-user)
     - [Update User Password](#update-user-password)
+    - [Get All User Pairing (development only)](#get-all-user-pairing-development-only)
   - [Device](#device)
     - [Add Device](#add-device)
+    - [Update Device IP & SSID (from device)](#update-device-ip-&-ssid-from-device)
     - [Get Selected Device](#get-selected-device)
     - [Delete Device](#delete-device)
     - [Get All Device (development only)](#get-all-device-development-only)
@@ -239,6 +241,64 @@ new_password: "testing"
 "status": "error",
 "message": "new password not match"
 ```
+#### Get All User Pairing (development only)
+Endpoint : `https://api.widyawicara.com/user/all` <br />
+Method : `POST`
+
+Authentication (`Bearer Token`)  : `token provided from login`
+
+`200 Success` Sample Response :
+```
+"status": "success",
+"message": {
+  "action": "get all paired device",
+  "data": [
+    {
+      "id": 19,
+      "username": "testing_user",
+      "name": "Widyawicara Test",
+      "email": "widya@test.com",
+      "device": [
+        {
+          "id": 4,
+          "device_key": "8051872540056641751",
+          "device_ip": "192.168.100.192",
+          "connected_ssid": null,
+          "firmware_version": "12",
+          "device_name": "Widya Punya Admin 2",
+          "device_type": "WOW"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "username": "admin_widya",
+      "name": "Admin Widyawicara",
+      "email": "widya@gmail.com",
+      "device": [
+        {
+          "id": 9,
+          "device_key": "14438001231231248164",
+          "device_ip": "192.168.71.72",
+          "connected_ssid": "WIN_DEPAN",
+          "firmware_version": "12",
+          "device_name": "Widya Punya Admin",
+          "device_type": "PRIMA"
+        },
+        {
+          "id": 12,
+          "device_key": "17709298049821081945",
+          "device_ip": "192.168.1.144",
+          "connected_ssid": null,
+          "firmware_version": "12",
+          "device_name": "sepiker",
+          "device_type": "PRIMA"
+        }
+      ]
+    }
+  ]
+}
+```
 ### Device
 #### Add Device
 Endpoint : `https://api.widyawicara.com/device` <br />
@@ -280,6 +340,38 @@ firmware_version: "12"
     }
   }
 ]
+```
+#### Update Device IP & SSID (from device)
+Endpoint : `https://api.widyawicara.com/device/set` <br />
+Method : `POST`
+
+Authentication (`Bearer Token`)  : `token provided from login`
+
+Body (`application/x-www-form-urlencoded`) optional :  
+```
+device_key: "912512512512348523657"
+device_ip: "192.168.200.189"
+connected_ssid: "WIN_DEPAN"
+```
+
+`200 Success` Sample Response :
+```
+"status": "success",
+"message": {
+  "action": "update conecction device",
+  "data": {
+    "id": 9,
+    "device_key": "14438001231231248164",
+    "device_ip": "192.168.71.72",
+    "connected_ssid": "WIN_DEPAN"
+  }
+}
+```
+
+`400 Bad Request` Sample Response :
+```
+"status": "error",
+"message": "device with uuid: undefined not found"
 ```
 #### Get Selected Device
 Endpoint : `https://api.widyawicara.com/device/912512512512348523657` <br />
