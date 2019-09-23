@@ -22,7 +22,7 @@ export const Auth = {
             return res.status(400).send({ 'message': 'Token is not provided' });
         }
 
-        const token = (bearerToken as any).replace("Bearer ", "");
+        const token = bearerToken.replace("Bearer ", "");
 
         try {
             const decoded = await jwt.verify(<string>token, <string>process.env.SECRET);

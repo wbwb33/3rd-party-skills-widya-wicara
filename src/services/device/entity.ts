@@ -20,18 +20,23 @@ export class Device {
     device_key: string;
 
     /**
-     * Column device_ip, required, varchar(60).
+     * Column device_ip, varchar(60).
      * Used to save the device ip address.
      */
-    @IsNotEmpty({ message: "Required" })
-    @Column("varchar", { length: 60 })
+    @Column("varchar", { length: 60, nullable: true })
     device_ip: string;
+
+    /**
+     * Column connected_ssid, varchar(60).
+     * Used to save the device ip address.
+     */
+    @Column("varchar", { length: 32, nullable: true })
+    connected_ssid: string;
 
     /**
      * Column firmware_version, required, varchar(60).
      * Used to save the device widya speaker firmware version.
      */
-    @IsNotEmpty({ message: "Required" })
     @Column("varchar", { length: 60 })
     firmware_version: string;
 

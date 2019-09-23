@@ -94,6 +94,57 @@ class DeviceController extends Services {
         }
     };
 
+    // TODO: make update connection function
+    // with device_key, device_ip, connected_ssid
+    public update_connection = async (req: Request, res: Response) => {
+        const repo = await getRepository(Device);
+
+        // check berdasarkan device_key apakah sudah terdaftar atau belum
+        const deviceExist = await repo.createQueryBuilder("device")
+            .where({ device_key: req.body.device_key })
+            .select(["device.id", "device.device_key", "device.firmware_version"])
+            .getOne();
+
+        // check if device exist
+        if (!deviceExist) {
+
+            return res.sendError(`device with uuid: ${req.body.device_key} not found`);
+        } else {
+
+            const device = new Device();
+            device.device_key = req.body.device_key;
+            device.device_ip = req.body.device_ip;
+            device.connected_ssid = req.body.connected_ssid;
+            device.firmware_version = deviceExist.firmware_version;
+
+            const errors = await validate(device);
+            // console.log({ errornya_adalah: errors });
+
+            if (errors.length > 0) {
+                const err = errors.map(e => {
+                    const error = e.constraints;
+                    const property = e.property;
+                    return { property, error };
+                });
+                return res.sendError(err);
+            }
+
+            try {
+                const updateResult: UpdateResult = await repo.createQueryBuilder("device")
+                    .update(Device, device)
+                    .where({ device_key: req.body.device_key })
+                    .returning(["id", "device_key", "device_ip", "connected_ssid"])
+                    .execute();
+
+                return res.sendOK({ action: "update conecction device", data: updateResult.raw[0] });
+
+            } catch (error) {
+                console.log(error);
+                return res.sendInternalError();
+            }
+        }
+    };
+
     public destroy = async (req: Request, res: Response) => {
         const device_key = req.params.device_key;
         const repo = await getRepository(Device);
