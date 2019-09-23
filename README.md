@@ -14,7 +14,7 @@ Backend Service untuk API mobile device dan widya wicara smart speaker.
     - [Get All User Pairing (development only)](#get-all-user-pairing-development-only)
   - [Device](#device)
     - [Add Device](#add-device)
-    - [Update Device IP & SSID (from device)](#update-device-ip-&-ssid-from-device)
+    - [Update Device IP & SSID (from device)](#update-device-ip-ssid-from-device)
     - [Get Selected Device](#get-selected-device)
     - [Delete Device](#delete-device)
     - [Get All Device (development only)](#get-all-device-development-only)
