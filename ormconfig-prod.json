@@ -1,0 +1,24 @@
+{
+    "type": "postgres",
+    "host": "widya-speaker.c5kkut6l0k3r.ap-southeast-1.rds.amazonaws.com",
+    "port": 5432,
+    "username": "widya",
+    "password": "cepatkaya123",
+    "database": "dev_db",
+    "synchronize": false,
+    "logging": false,
+    "entities": [
+        "dist/services/**/entity.js"
+    ],
+    "migrations": [
+        "src/migration/**/*.ts"
+    ],
+    "subscribers": [
+        "src/subscriber/**/*.ts"
+    ],
+    "cli": {
+        "entitiesDir": "src/entity",
+        "migrationsDir": "src/migration",
+        "subscribersDir": "src/subscriber"
+    }
+}
