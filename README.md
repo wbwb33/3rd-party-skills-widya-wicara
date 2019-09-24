@@ -345,7 +345,7 @@ firmware_version: "12"
 Endpoint : `https://api.widyawicara.com/device/set` <br />
 Method : `POST`
 
-Authentication (`Bearer Token`)  : `token provided from login`
+Authentication (`Bearer Token`)  : hardcoded `widyasecretkeyfromdevicewicara`
 
 Body (`application/x-www-form-urlencoded`) optional :  
 ```
