@@ -14,7 +14,6 @@ export class Device {
      * Column device_key, required, varchar(60).
      * Used to save device key widya speaker.
      */
-    // TODO: device_key is unique
     @IsNotEmpty({ message: "Required" })
     @Column("varchar", { length: 60, unique: true })
     device_key: string;
@@ -27,56 +26,56 @@ export class Device {
     device_ip: string;
 
     /**
-     * Column connected_ssid, varchar(60).
-     * Used to save the device ip address.
+     * Column connected_ssid, nullable, varchar(40).
+     * Used to save the device connected ssid.
      */
-    @Column("varchar", { length: 32, nullable: true })
+    @Column("varchar", { length: 40, nullable: true })
     connected_ssid: string;
 
     /**
-     * Column firmware_version, required, varchar(60).
+     * Column firmware_version, varchar(60).
      * Used to save the device widya speaker firmware version.
      */
     @Column("varchar", { length: 60 })
     firmware_version: string;
 
     /**
-    * Column device_name, required, varchar(20).
+    * Column device_name, nullable, varchar(20).
     * Used to save the device name, alias to the speaker
     */
     @Column("varchar", { length: 20, nullable: true })
     device_name: string;
 
     /**
-     * Column device_type, required, varchar(20).
+     * Column device_type, nullable, varchar(20).
      * Used to save the widya device type, either "WOW" or "PRIMA".
      */
     @Column("varchar", { length: 20, nullable: true })
     device_type: string;
 
     /**
-     * Column device_type, required, varchar(20).
-     * Used to save the widya device type, either "WOW" or "PRIMA".
+     * Column gps_long, nullable, varchar(100).
+     * Used to save the widya device longitude. Its set by user phone.
      */
     @Column("varchar", { length: 100, nullable: true })
     gps_long: string;
 
     /**
-     * Column device_type, required, varchar(20).
-     * Used to save the widya device type, either "WOW" or "PRIMA".
+     * Column gps_lat, nullable, varchar(100).
+     * Used to save the widya device latitude. Its set by user phone.
      */
     @Column("varchar", { length: 100, nullable: true })
     gps_lat: string;
 
     /**
-     * Column device_type, required, varchar(20).
-     * Used to save the widya device type, either "WOW" or "PRIMA".
+     * Column gps_address, nullable, text.
+     * Used to save the widya device pyshical address. Its set by user phone.
      */
-    @Column("varchar", { length: 160, nullable: true })
+    @Column("text", { nullable: true })
     gps_address: string;
 
     /**
-     * Column paired_to, required, integer.
+     * Column paired_to, nullable, integer.
      * Used to save user_id. Foreign key User -> id
      * It can be used to check is device has been paired or not
      */

@@ -1,3 +1,9 @@
+/**
+ * -------------------------------------------------------------------------------------------
+ * TODO: separasikan service untuk credential user dan profile user
+ * -------------------------------------------------------------------------------------------
+ */
+
 import { Request, Response } from "express";
 import { getRepository, UpdateResult } from "typeorm";
 import { User } from "./entity";
@@ -5,239 +11,292 @@ import { validate } from "class-validator";
 import { Services } from "../base_services";
 
 class UserController extends Services {
+  /**
+   * Register user
+   */
+  public register = async (req: Request, res: Response) => {
+    const rn = this.randomInt();
+    const repo = await getRepository(User);
+    const hashPassword = this.hashPassword(req.body.password);
 
-    /**
-     * Register user 
-     */
-    public register = async (req: Request, res: Response) => {
-        const rn = this.randomInt();
-        const repo = await getRepository(User);
-        const hashPassword = this.hashPassword(req.body.password);
+    const user = new User();
+    user.username = req.body.username;
+    user.email = req.body.email;
+    user.password = hashPassword;
+    user.name = req.body.name;
+    user.token = rn;
 
-        const user = new User();
-        user.username = req.body.username;
-        user.email = req.body.email;
-        user.password = hashPassword;
-        user.name = req.body.name;
-        user.token = rn;
+    // console.log(user);
+    const errors = await validate(user);
 
-        // console.log(user);
-        const errors = await validate(user);
+    if (errors.length > 0) {
+      const err = errors.map(e => {
+        const error = e.constraints;
+        const property = e.property;
+        return { property, error };
+      });
+      return res.sendError(err);
+    }
 
-        if (errors.length > 0) {
-            const err = errors.map(e => {
-                const error = e.constraints;
-                const property = e.property;
-                return { property, error };
-            });
-            return res.sendError(err);
-        }
-
-        await repo.save(user)
-            .then((user) => {
-                const userData = { name: user.name, username: user.username, email: user.email }
-                return res.sendInsertOK({ action: "register user", data: userData });
-            })
-            .catch((errors) => {
-                console.log(errors);
-                return res.sendInsertError(errors);
-            });
-    };
-
-    public login = async (req: Request, res: Response) => {
-        const repo = await getRepository(User);
-
-        if (!req.body.email || !req.body.password) {
-            return res.sendError('some values are missing');
+    await repo
+      .save(user)
+      .then(user => {
+        const userData = {
+          name: user.name,
+          username: user.username,
+          email: user.email
         };
+        return res.sendInsertOK({ action: "register user", data: userData });
+      })
+      .catch(errors => {
+        console.log(errors);
+        return res.sendInsertError(errors);
+      });
+  };
 
-        try {
-            const rows = await repo.createQueryBuilder("user")
-                .where({ email: req.body.email })
-                .addSelect("user.password")
-                .getOne();
+  public login = async (req: Request, res: Response) => {
+    const repo = await getRepository(User);
 
-            if (!rows) {
-                return res.sendError("email not found");
-            }
+    if (!req.body.email || !req.body.password) {
+      return res.sendError("some values are missing");
+    }
 
-            if (!this.comparePassword(rows.password, req.body.password)) {
-                return res.sendError("password not match");
-            }
+    try {
+      const rows = await repo
+        .createQueryBuilder("user")
+        .where({ email: req.body.email })
+        .addSelect("user.password")
+        .getOne();
 
-            const token = await this.generateToken(rows.id);
-            const userdata = {
-                userid: rows.id,
-                username: rows.username,
-                name: rows.name,
-                email: rows.email,
-                token
-            };
+      if (!rows) {
+        return res.sendError("email not found");
+      }
 
-            return res.sendOK({ action: "user login", data: userdata });
+      if (!this.comparePassword(rows.password, req.body.password)) {
+        return res.sendError("password not match");
+      }
 
-        } catch (error) {
-            return res.sendError(error)
-        }
-    };
+      const token = await this.generateToken(rows.id);
+      /**
+       * TODO: add refresh_token
+       * refresh token untuk memperpanjang expiry access_token
+       * random string
+       * pada saat yang sama save ke user table
+       * send ke device
+       */
+      const userdata = {
+        userid: rows.id,
+        username: rows.username,
+        name: rows.name,
+        email: rows.email,
+        token
+      };
 
-    public update = async (req: Request, res: Response) => {
-        const id = (req as any).user.id;
+      return res.sendOK({ action: "user login", data: userdata });
+    } catch (error) {
+      return res.sendError(error);
+    }
+  };
 
-        const repo = await getRepository(User);
-        const currentUser = await getRepository(User).createQueryBuilder("user")
-            .whereInIds(id)
-            .addSelect(["user.token"])
-            .getOne();
+  /**
+   * -------------------------------------------------------------------------------------------
+   * TODO: add refresh token endpoint
+   * verify token from user with the database
+   * create jwt sign lagi dan send to user
+   * -------------------------------------------------------------------------------------------
+   */
 
-        const user = new User();
+  /**
+   * -------------------------------------------------------------------------------------------
+   * TODO: add logout method
+   * revoke access_token dan refesh_token dari db
+   * -------------------------------------------------------------------------------------------
+   */
 
-        user.id = parseInt(id);
-        user.username = req.body.username || (currentUser as any).username;
-        user.email = req.body.email || (currentUser as any).email;
-        user.name = req.body.name || (currentUser as any).name;
-        user.password = (currentUser as any).password;
-        user.token = (currentUser as any).token;
+  /**
+   * -------------------------------------------------------------------------------------------
+   * TODO: add reset password via email
+   * create OTP dan kirim ke email user
+   * OTP expired dalam 12 jam
+   * koordinasi dengan front_end
+   * -------------------------------------------------------------------------------------------
+   */
 
-        const errors = await validate(user);
+  /**
+   * ------------------------------------------------------------------------------------------
+   * TODO: add verifikasi email
+   * create one time link ke endpoint
+   * endpoint akan menambah check is_verivied pada db ke true
+   * ------------------------------------------------------------------------------------------
+   */
 
-        if (errors.length > 0) {
-            const err = errors.map(e => {
-                const error = e.constraints;
-                const property = e.property;
-                return { property, error };
-            });
-            return res.sendError(err);
-        }
+  public update = async (req: Request, res: Response) => {
+    const id = (req as any).user.id;
 
-        try {
-            const updateResult: UpdateResult = await repo.createQueryBuilder()
-                .update(User, user)
-                .whereEntity(user)
-                .returning(["id", "username", "email", "name"])
-                .execute();
+    const repo = await getRepository(User);
+    const currentUser = await getRepository(User)
+      .createQueryBuilder("user")
+      .whereInIds(id)
+      .addSelect(["user.token"])
+      .getOne();
 
-            if (updateResult.generatedMaps.length > 0) {
-                return res.sendInsertOK({ action: "update user data", data: updateResult.generatedMaps[0] });
-            } else {
-                return res.sendError("user not found");
-            }
+    const user = new User();
 
-        } catch (error) {
-            console.log(error);
-            return res.sendInternalError();
-        }
-    };
+    user.id = parseInt(id);
+    user.username = req.body.username || (currentUser as any).username;
+    user.email = req.body.email || (currentUser as any).email;
+    user.name = req.body.name || (currentUser as any).name;
+    user.password = (currentUser as any).password;
+    user.token = (currentUser as any).token;
 
-    public updatePassword = async (req: Request, res: Response) => {
+    const errors = await validate(user);
 
-        const id = (req as any).user.id;
-        const old_password = req.body.old_password;
-        const new_password = req.body.new_password;
+    if (errors.length > 0) {
+      const err = errors.map(e => {
+        const error = e.constraints;
+        const property = e.property;
+        return { property, error };
+      });
+      return res.sendError(err);
+    }
 
-        if (!old_password) {
-            return res.sendError('old password can\'t be null');
-        };
+    try {
+      const updateResult: UpdateResult = await repo
+        .createQueryBuilder()
+        .update(User, user)
+        .whereEntity(user)
+        .returning(["id", "username", "email", "name"])
+        .execute();
 
-        if (!new_password) {
-            return res.sendError('new password can\'t be null');
-        };
+      if (updateResult.generatedMaps.length > 0) {
+        return res.sendInsertOK({
+          action: "update user data",
+          data: updateResult.generatedMaps[0]
+        });
+      } else {
+        return res.sendError("user not found");
+      }
+    } catch (error) {
+      console.log(error);
+      return res.sendInternalError();
+    }
+  };
 
-        if (new_password.length < 6) {
-            return res.sendError('new password must be 6 character or more');
-        };
+  public updatePassword = async (req: Request, res: Response) => {
+    const id = (req as any).user.id;
+    const old_password = req.body.old_password;
+    const new_password = req.body.new_password;
 
-        const currentUser = await getRepository(User).createQueryBuilder("user")
-            .whereInIds(id)
-            .addSelect(["user.password", "user.token"])
-            .getOne();
+    if (!old_password) {
+      return res.sendError("old password can't be null");
+    }
 
-        if (!currentUser) {
-            return res.sendError("user not found");
-        }
+    if (!new_password) {
+      return res.sendError("new password can't be null");
+    }
 
-        if (!this.comparePassword(currentUser.password, old_password)) {
-            return res.sendError("old password not match");
-        }
+    if (new_password.length < 6) {
+      return res.sendError("new password must be 6 character or more");
+    }
 
-        try {
-            const hashPassword = this.hashPassword(new_password);
+    const currentUser = await getRepository(User)
+      .createQueryBuilder("user")
+      .whereInIds(id)
+      .addSelect(["user.password", "user.token"])
+      .getOne();
 
-            const user = new User();
-            user.id = parseInt(id);
-            user.username = (currentUser as any).username;
-            user.email = (currentUser as any).email;
-            user.name = (currentUser as any).name;
-            user.password = hashPassword;
-            user.token = (currentUser as any).token;
+    if (!currentUser) {
+      return res.sendError("user not found");
+    }
 
-            const errors = await validate(user);
+    if (!this.comparePassword(currentUser.password, old_password)) {
+      return res.sendError("old password not match");
+    }
 
-            if (errors.length > 0) {
-                const err = errors.map(e => {
-                    const error = e.constraints;
-                    const property = e.property;
-                    return { property, error };
-                });
-                return res.sendError(err);
-            }
+    try {
+      const hashPassword = this.hashPassword(new_password);
 
-            const updateResult: UpdateResult = await getRepository(User).createQueryBuilder()
-                .update(User, user)
-                .whereEntity(user)
-                .returning(["id", "username", "email", "name"])
-                .execute();
+      const user = new User();
+      user.id = parseInt(id);
+      user.username = (currentUser as any).username;
+      user.email = (currentUser as any).email;
+      user.name = (currentUser as any).name;
+      user.password = hashPassword;
+      user.token = (currentUser as any).token;
 
-            if (updateResult.generatedMaps.length > 0) {
-                return res.sendInsertOK({ action: "update user password", data: updateResult.generatedMaps[0] });
-            } else {
-                return res.sendError("user not found");
-            }
+      const errors = await validate(user);
 
-        } catch (error) {
-            console.log(error);
-            return res.sendInternalError();
-        }
-    };
+      if (errors.length > 0) {
+        const err = errors.map(e => {
+          const error = e.constraints;
+          const property = e.property;
+          return { property, error };
+        });
+        return res.sendError(err);
+      }
 
-    public get_all = async (req: Request, res: Response) => {
-        const pairedDevice = await getRepository(User).createQueryBuilder("user")
-            .leftJoinAndSelect("user.device", "device")
-            .getMany();
+      const updateResult: UpdateResult = await getRepository(User)
+        .createQueryBuilder()
+        .update(User, user)
+        .whereEntity(user)
+        .returning(["id", "username", "email", "name"])
+        .execute();
 
-        if (!pairedDevice) {
-            return res.sendError("no device paired yet");
-        } else {
-            return res.sendOK({ action: "get all paired device", data: pairedDevice });
-        }
-    };
+      if (updateResult.generatedMaps.length > 0) {
+        return res.sendInsertOK({
+          action: "update user password",
+          data: updateResult.generatedMaps[0]
+        });
+      } else {
+        return res.sendError("user not found");
+      }
+    } catch (error) {
+      console.log(error);
+      return res.sendInternalError();
+    }
+  };
 
-    // destroy not implemented
+  public get_all = async (req: Request, res: Response) => {
+    const pairedDevice = await getRepository(User)
+      .createQueryBuilder("user")
+      .leftJoinAndSelect("user.device", "device")
+      .getMany();
 
-    // public destroy = async (req: Request, res: Response) => {
-    //     const id = (req as any).user.id;
-    //     const repo = await getRepository(User);
+    if (!pairedDevice) {
+      return res.sendError("no device paired yet");
+    } else {
+      return res.sendOK({
+        action: "get all paired device",
+        data: pairedDevice
+      });
+    }
+  };
 
-    //     try {
-    //         const delUser = await repo.createQueryBuilder("user")
-    //             .delete()
-    //             .from(User)
-    //             .whereInIds(id)
-    //             .execute();
+  // destroy not implemented
 
-    //         if (delUser.affected) {
-    //             res.sendOK({ action: "delete user", data: `user with id: ${id} deleted` });
-    //         } else {
-    //             res.sendError(`user with id: ${id} not found`);
-    //         }
+  // public destroy = async (req: Request, res: Response) => {
+  //     const id = (req as any).user.id;
+  //     const repo = await getRepository(User);
 
-    //     } catch (error) {
-    //         return res.sendInternalError();
-    //     }
+  //     try {
+  //         const delUser = await repo.createQueryBuilder("user")
+  //             .delete()
+  //             .from(User)
+  //             .whereInIds(id)
+  //             .execute();
 
-    // }
+  //         if (delUser.affected) {
+  //             res.sendOK({ action: "delete user", data: `user with id: ${id} deleted` });
+  //         } else {
+  //             res.sendError(`user with id: ${id} not found`);
+  //         }
 
+  //     } catch (error) {
+  //         return res.sendInternalError();
+  //     }
+
+  // }
 }
 
-const user = new UserController()
+const user = new UserController();
 export default user;
