@@ -6,11 +6,13 @@
   "scripts": {
     "start": "node dist/app.js",
     "dev": "nodemon src/server.ts",
-    "build": "rd /s /q dist && tsc -p .",
-    "build:docker": "rm -rf dist && tsc -p .",
-    "deploy": "sudo git pull && sudo rm -rf dist && tsc -p . && sudo pm2 restart development",
-    "launch": "sudo git pull && sudo rm -rf dist && tsc -p . && sudo pm2 restart production",
-    "test-dev": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register src/test/*.test.ts\""
+    "build:local": "rm -rf dist && tsc -p . && node dist/app.js",
+    "build:dev": "sudo git pull && sudo rm -rf dist && tsc -p . && sudo pm2 restart development",
+    "build:prod": "sudo git pull && sudo rm -rf dist && tsc -p . && sudo pm2 restart production",
+    "test-dev": "nodemon --watch . --ext ts --exec \"mocha -r ts-node/register src/test/*.test.ts\"",
+    "migration:create": "ts-node ./node_modules/typeorm/cli -f ./ormconfig.json \"migration:create\" \"-n\"",
+    "db:migrate": "ts-node ./node_modules/typeorm/cli -f ./ormconfig.json \"migration:run\"",
+    "db:revert": "ts-node ./node_modules/typeorm/cli -f ./ormconfig.json \"migration:revert\""
   },
   "keywords": [],
   "author": "dennbagas@gmail.com",
