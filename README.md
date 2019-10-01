@@ -8,7 +8,7 @@ Backend Service untuk 3rd Party Skills API widya wicara smart speaker.
 ## Skills
 Untuk sestiap skill widya wicara menggunakan endpoint:
 ```
-https://api.widyawicara.com/skills/
+https://skills.widyawicara.com/
 ```
 
 ### Weather
@@ -16,7 +16,7 @@ Skill weather menggunakan data dari BMKG. Data ini otomatis update setiap hari. 
 
 Skill weather menggunakan susunan endpoint sebagai berikut:
 ```
-https://api.widyawicara.com/skills/weather?kota=yogyakarta&hari=besok
+https://skills.widyawicara.com/weather?kota=yogyakarta&hari=besok
 ```
 Untuk parameter hari yang bisa digunakan yaitu: `hari ini`, `besok`, atau `lusa`.
 - - -
