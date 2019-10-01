@@ -1,5 +1,3 @@
-import weatherSkill from "./weather/route";
+import weatherSkill from './weather/route';
 
-export default [
-    ...weatherSkill
-];
+export default [...weatherSkill];
