@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { Request, Response } from 'express';
 import { FixedWeather } from '../../@types/skills/weather';
+import Str from '../../utils/string';
 
 class Weather {
   public index = async (req: Request, res: Response) => {
@@ -8,13 +9,9 @@ class Weather {
 
     let city: string;
     if (rawcity) {
-      city = rawcity
-        .toLowerCase()
-        .split(' ')
-        .map((s: string) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
+      city = Str.capitalizeEachWord(rawcity);
     } else {
-      res.sendError('query kota can\'t be null');
+      res.sendError("query kota can't be null");
     }
 
     const day = req.query.hari;
@@ -65,7 +62,7 @@ class Weather {
     } else {
       res.sendError('provinsi not found or null');
     }
-  }
+  };
 }
 
 const weather = new Weather();

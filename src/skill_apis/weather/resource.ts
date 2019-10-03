@@ -21,15 +21,12 @@ class BMKG {
 
     async.forEachOf(
       bmkg_xml,
-      (
-        link: string,
-        key: string | number,
-        callback: async.ErrorCallback<Error>,
-      ) => {
+      (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
         request(link, (error: Error, response: request.Response, body: any) => {
           if (!error && response.statusCode === 200) {
             // parse XML to Json
             parseString(response.body, (err: Error, result) => {
+              // format the incoming data
               const data: FormattedWeatherData[] = self.formatDataBmkg(result);
 
               if (err) {
@@ -48,20 +45,15 @@ class BMKG {
           // tslint:disable-next-line: no-console
           console.log(err);
         } else {
-          fs.writeFile(
-            'cache/weather.json',
-            JSON.stringify(dataArray),
-            'utf-8',
-            e => {
-              if (e) {
-                // tslint:disable-next-line: no-console
-                console.log(e);
-              } else {
-                // tslint:disable-next-line: no-console
-                console.log('done get weather');
-              }
-            },
-          );
+          fs.writeFile('cache/weather.json', JSON.stringify(dataArray), 'utf-8', e => {
+            if (e) {
+              // tslint:disable-next-line: no-console
+              console.log(e);
+            } else {
+              // tslint:disable-next-line: no-console
+              console.log('done get weather');
+            }
+          });
         }
       },
     );
@@ -70,11 +62,9 @@ class BMKG {
   private formatDataBmkg(json: WeatherData): FormattedWeatherData[] {
     const data = json.data.forecast[0].area
       // filter duplicate data
-      .filter(
-        (element: AreaElement, index: number, inputArray: AreaElement[]) => {
-          return inputArray.indexOf(element) === index;
-        },
-      )
+      .filter((element: AreaElement, index: number, inputArray: AreaElement[]) => {
+        return inputArray.indexOf(element) === index;
+      })
       // filter empty array
       .filter((element: AreaElement) => {
         return element.parameter != null;
@@ -88,9 +78,7 @@ class BMKG {
           })
           .map((params: ParameterElement) => {
             return params.timerange.map((timerange: TimerangeElement) => {
-              const dateTime = timerange.$.day
-                ? formattedDatetime(timerange.$.day)
-                : timerange.$.day;
+              const dateTime = timerange.$.day ? formattedDatetime(timerange.$.day) : timerange.$.day;
               return {
                 date: dateTime,
                 value: timerange.value[0]._,
@@ -105,9 +93,7 @@ class BMKG {
           })
           .map((params: ParameterElement) => {
             return params.timerange.map((timerange: TimerangeElement) => {
-              const dateTime = timerange.$.day
-                ? formattedDatetime(timerange.$.day)
-                : timerange.$.day;
+              const dateTime = timerange.$.day ? formattedDatetime(timerange.$.day) : timerange.$.day;
               return {
                 date: dateTime,
                 value: timerange.value[0]._,
@@ -134,9 +120,7 @@ class BMKG {
                 );
               })
               .map((timerange: TimerangeElement) => {
-                const codeCuaca = translateCodeCuaca(
-                  parseInt(timerange.value[0]._, 10),
-                );
+                const codeCuaca = translateCodeCuaca(parseInt(timerange.value[0]._, 10));
                 const dateTime = formattedDatetime(timerange.$.datetime);
                 return {
                   date: dateTime,

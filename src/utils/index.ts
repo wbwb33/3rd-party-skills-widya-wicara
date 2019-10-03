@@ -32,18 +32,8 @@ export const applySkills = (routes: Route[], router: Router) => {
 };
 
 export class Endpoint {
-  rootpath: string;
-
-  constructor(rootpath: string) {
-    this.rootpath = rootpath;
-  }
-
   private route(method: string, path: string, handler: Handler | Handler[]) {
-    return {
-      method,
-      path: this.rootpath + path,
-      handler,
-    };
+    return { method, path, handler };
   }
 
   public get(path: string, handler: Handler | Handler[]): Route {
