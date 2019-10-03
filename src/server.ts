@@ -20,6 +20,7 @@ import cron from 'node-cron';
  */
 import weather from './skill_apis/weather/resource';
 import expressApp from './app';
+import horoscope from './skill_apis/horoscope/resource';
 
 /**
  * ambil variabel PORT dari .env
@@ -32,13 +33,19 @@ const { PORT = 3000 } = process.env;
 const server = http.createServer(expressApp);
 
 /**
- * get weather and set cron job every at --:--
+ * get weather and set cron job every at 12:00
  */
 weather.get();
-cron.schedule('* 12 * * *', () => {
-  // tslint:disable-next-line: no-console
-  console.log('running a task 9:40');
+cron.schedule('00 12 * * *', () => {
   weather.get();
+});
+
+/**
+ * get horoscope and set cron job every at 00:00
+ */
+horoscope.get();
+cron.schedule('00 00 * * *', () => {
+  horoscope.get();
 });
 
 /**

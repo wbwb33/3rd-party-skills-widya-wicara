@@ -1,7 +1,7 @@
 {
-  "name": "widya-wicara-api",
-  "version": "0.3.0",
-  "description": "Backend Services for Widya Wicara Smart Speaker",
+  "name": "widya-wicara-skills-api",
+  "version": "0.2.0",
+  "description": "Skills Services for Widya Wicara Smart Speaker",
   "main": "server.js",
   "scripts": {
     "start": "node dist/server.js",
@@ -21,6 +21,7 @@
     "express": "^4.17.1",
     "node-cron": "^2.0.3",
     "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "xml2js": "^0.4.22"
   },
   "devDependencies": {
@@ -32,10 +33,26 @@
     "@types/node": "^12.7.8",
     "@types/node-cron": "^2.0.2",
     "@types/request": "^2.48.3",
+    "@types/request-promise": "^4.1.44",
     "@types/xml2js": "^0.4.5",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.1",
     "nodemon": "^1.19.3",
     "ts-node": "^8.4.1",
+    "prettier": "^1.18.2",
     "tslint": "^5.20.0",
     "typescript": "^3.6.3"
+  },
+  "lint-staged": {
+    "src/*.ts": [
+      "prettier --write \"src/*.ts\"",
+      "tslint -p tsconfig.json -c tslint.json",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

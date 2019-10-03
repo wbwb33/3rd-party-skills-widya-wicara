@@ -21,7 +21,7 @@ export interface FixedWeatherParameter {
 /**
  * Formatted weather data type for process normalized weather data
  */
-interface FormattedWeatherData {
+export interface FormattedWeatherData {
   provinsi: string;
   kota: string;
   parameter: {
