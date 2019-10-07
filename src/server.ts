@@ -36,7 +36,7 @@ const server = http.createServer(expressApp);
  * get weather and set cron job every at 12:00
  */
 weather.get();
-cron.schedule('00 12 * * *', () => {
+cron.schedule('0 12 * * *', () => {
   weather.get();
 });
 
@@ -44,7 +44,7 @@ cron.schedule('00 12 * * *', () => {
  * get horoscope and set cron job every at 00:00
  */
 horoscope.get();
-cron.schedule('00 00 * * *', () => {
+cron.schedule('0 1 * * *', () => {
   horoscope.get();
 });
 
