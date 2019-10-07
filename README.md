@@ -27,7 +27,22 @@ http://wb.mon-horoscope-du-jour.com/widyawicara.com/webservicejson.php?tz=Asia/M
 ```
 
 Variabel sign_id adalah representasi dari 12 zodiak dengan nilai 0 - 11. Url ini di looping di server dan di update sehari sekali pada pukul 00.00 dan di save di cache sehingga user tidak perlu mengambil data langsung dari 3rd Party. Data ini otomatis update setiap hari. <br />
-Ada beberapa parameter ketika request, yaitu `sign`, `cat`, dan `hari`. Parameter `sign` bersifat mandatory dan berisi zodiak dengan huruf kecil `(leo, cancer, libra, scorpio, aquarius, pisces, gemini, capricorn, aries, sagitarius, taurus, virgo)`. Untuk parameter `cat` adalah kategori horoscope `(pekerjaan, cinta, suasana hati, keuangan, perkenalan)`, apabila tidak di isi, maka akan memberikan semua parameter. Untuk parameter `hari` yaitu `(besok, lusa)` ketika tidak di isi maka akan otomatis mendapatkan data hari ini.
+Ada beberapa parameter ketika request, yaitu `sign`, `cat`, dan `hari`. Parameter `sign` bersifat mandatory dan berisi zodiak dengan huruf kecil:
+
+- aries
+- scorpio
+- taurus
+- kaprikornus
+- libra
+- pises
+- virgo
+- gemini
+- cancer
+- leo
+- akuarius
+- sagitarius
+
+Untuk parameter `cat` adalah kategori horoscope `(pekerjaan, cinta, suasana hati, keuangan, perkenalan)`, apabila tidak di isi, maka akan memberikan semua parameter. Untuk parameter `hari` yaitu `(besok, lusa)` ketika tidak di isi maka akan otomatis mendapatkan data hari ini.
 
 Skill horoscope menggunakan susunan endpoint sebagai berikut:
 
