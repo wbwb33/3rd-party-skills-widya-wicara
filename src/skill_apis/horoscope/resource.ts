@@ -10,7 +10,7 @@ class HoroscopeData {
     // make an iterator
     const range = {
       from: 0,
-      to: 9,
+      to: 11,
 
       [Symbol.iterator]() {
         return {
@@ -68,7 +68,7 @@ class HoroscopeData {
         }
       },
     );
-  };
+  }
 }
 
 const horoscope = new HoroscopeData();
