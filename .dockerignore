@@ -1,4 +1,10 @@
-cache
-dist
-node_modules
+/cache
+/dist
+/node_modules
+/.git
 npm-debug.log
+.prettierrc
+.gitignore
+nodemon.json
+tslint.json
+README.md
