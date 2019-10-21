@@ -1,4 +1,5 @@
-/cache
+/.metals
+/cache_
 /dist
 /node_modules
 .env
