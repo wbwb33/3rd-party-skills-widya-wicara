@@ -21,6 +21,7 @@ import cron from 'node-cron';
 import weather from './skill_apis/weather/resource';
 import expressApp from './app';
 import horoscope from './skill_apis/horoscope/resource';
+import kuis from './skill_apis/kuis/resource';
 
 /**
  * ambil variabel PORT dari .env
@@ -46,6 +47,14 @@ cron.schedule('0 12 * * *', () => {
 horoscope.get();
 cron.schedule('0 1 * * *', () => {
   horoscope.get();
+});
+
+/**
+ * get kuis for today and save it to db
+ */
+kuis.get();
+cron.schedule('5 0 * * *', () => {
+  kuis.get();
 });
 
 /**
