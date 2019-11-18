@@ -31,7 +31,7 @@ RUN rm .dockerignore
 RUN apk add --no-cache bash
 
 # Expose port 9000
-EXPOSE 9000
+EXPOSE 5000
 
 # run node dist/server.js
 CMD [ "node", "dist/server.js" ]
