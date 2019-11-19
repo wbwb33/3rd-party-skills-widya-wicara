@@ -27,6 +27,9 @@ RUN rm tsconfig.tsbuildinfo
 RUN rm Dockerfile
 RUN rm .dockerignore
 
+# Set ENV
+ENV NODE_ENV=production
+
 # Add bash
 RUN apk add --no-cache bash
 

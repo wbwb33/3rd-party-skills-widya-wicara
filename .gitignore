@@ -4,6 +4,5 @@
 .env
 ormconfig.json
 nodemon.json
-/cache/backup
 /cache/horoscope.json
 /cache/weather.json
