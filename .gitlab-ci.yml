@@ -3,10 +3,7 @@ image: docker:stable
 variables:
   MAJOR_VERSION: 1
   MINOR_VERSION: 0
-  TAGGING: itwin/api-apps
-  POSTGRES_DB: widya-ci-test
-  POSTGRES_USER: postgres
-  POSTGRES_PASSWORD: postgres
+  TAGGING: itwin/api-cache
 
 stages:
   - Install Dependencies

@@ -1,7 +1,6 @@
 /.vscode
 /cache
 /dist
-/node_modules
 /.git
 npm-debug.log
 .prettierrc
