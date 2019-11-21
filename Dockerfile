@@ -7,33 +7,25 @@ WORKDIR /app
 # Copy file to /app directory
 COPY . /app
 
-RUN mkdir /app/cache
-
-# Install app dependencies to compile typescript
-RUN npm install -g typescript
-RUN npm install
+# install dependencies
+# RUN npm ci
 
 # compile typescript
-RUN sh -c tsc -p .
+RUN npm run tsc
 
 # Remove dev dependencies
-RUN npm -g uninstall typescript
 RUN npm prune --production --silent
 
 # Remove unused file/folder
 RUN rm -rf src
 RUN rm tsconfig.json
-RUN rm tsconfig.tsbuildinfo
 RUN rm Dockerfile
 RUN rm .dockerignore
 
-# Set ENV
+# set environtment
 ENV NODE_ENV=production
 
-# Add bash
-RUN apk add --no-cache bash
-
-# Expose port
+# Expose port 5000
 EXPOSE 5000
 
 # run node dist/server.js
