@@ -69,10 +69,10 @@ new cron.CronJob('00 06 00 * * *', () => {
  * jalankan server sesuai port di .env
  */
 
-const job = new cron.CronJob('00 00 02 * * *', async () => {
+const job = new cron.CronJob('00 00 01 * * *', async () => {
   try {
-    // const d = new Date();
-    // console.log('Every 1 minute:', d);
+    const d = new Date();
+    // console.log('Every 5 minutes:', d);
     await jadwalAdzan.index();
   } catch (e) {
     console.log(e);

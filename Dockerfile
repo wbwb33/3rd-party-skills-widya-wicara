@@ -1,5 +1,5 @@
 # Create node image
-FROM node:10.16.3-alpine
+FROM node:12.13.0-alpine
 
 # Create app directory
 WORKDIR /app
@@ -18,7 +18,7 @@ RUN sh -c tsc -p .
 
 # Remove dev dependencies
 RUN npm -g uninstall typescript
-RUN npm prune --production
+RUN npm prune --production --silent
 
 # Remove unused file/folder
 RUN rm -rf src
@@ -33,7 +33,7 @@ ENV NODE_ENV=production
 # Add bash
 RUN apk add --no-cache bash
 
-# Expose port 9000
+# Expose port
 EXPOSE 5000
 
 # run node dist/server.js

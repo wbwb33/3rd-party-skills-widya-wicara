@@ -65,7 +65,7 @@ class AdzanResources {
 
   private getDataDevice = async (): Promise<string[][]> => {
     return new Promise((resolve,reject) => {
-      fs.readFile('cache/data_device.json', (err,data) => {
+      fs.readFile('dependent/data_device.json', (err,data) => {
         if (err) {
           reject(err);
         } else {
@@ -88,7 +88,7 @@ class AdzanResources {
 
   private getJadwalSalat = async (lok: string): Promise<number> => {
     return new Promise((resolve,reject) => {
-      fs.readFile('cache/index_lokasi.json', (err,data) => {
+      fs.readFile('dependent/index_lokasi.json', (err,data) => {
         if (err) {
           reject(err);
         } else {
