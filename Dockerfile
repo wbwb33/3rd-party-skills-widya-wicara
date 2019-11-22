@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy file to /app directory
 COPY . /app
+RUN mkdir /app/cache
 
 # install dependencies
 # RUN npm ci
