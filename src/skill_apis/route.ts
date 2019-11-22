@@ -2,6 +2,7 @@ import Weather from './weather/skill';
 import Horoscope from './horoscope/skill';
 import Matdas from './matdas/skill';
 import Kuis from './kuis/skill';
+import AdzanSkill from './jadwal_salat/skill';
 import EntityCity from './entity_city/skill';
 import { Endpoint } from '../utils';
 
@@ -14,4 +15,5 @@ export default [
   route.get('/cek-city', EntityCity.index),
   route.get('/db-today-quiz', Kuis.index),
   route.get('/get-today-quiz', Kuis.today),
+  route.get('/salat-by-lokasi', AdzanSkill.index),
 ];
