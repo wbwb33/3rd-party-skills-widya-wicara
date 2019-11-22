@@ -50,7 +50,7 @@ class HoroscopeData {
           .catch(err => {
             console.log(err);
           });
-        callback();
+        // callback();
       },
       (err: any) => {
         if (err) {
