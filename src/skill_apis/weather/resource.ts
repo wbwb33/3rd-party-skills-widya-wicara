@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { bmkg_xml, translateCodeCuaca, formattedDatetime } from './bmkg_data';
 import { parseString } from 'xml2js';
-import request from 'request';
+import request from 'request-promise';
 import {
   WeatherData,
   AreaElement,
@@ -20,26 +20,48 @@ class BMKG {
     console.log('getting weather data...');
 
     async.forEachOf(
-      bmkg_xml,
-      (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
-        request(link, (error: Error, response: request.Response, body: any) => {
-          if (!error && response.statusCode === 200) {
+      bmkg_xml,      
+      async (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
+        await request(link)
+          .then((response) => {
+            // console.log(link);
             // parse XML to Json
-            parseString(response.body, (err: Error, result) => {
+            parseString(response, (err: Error, result) => {
               // format the incoming data
               const data: FormattedWeatherData[] = self.formatDataBmkg(result);
 
               if (err) {
-                // tslint:disable-next-line: no-console
                 console.log(err);
               } else {
                 data.forEach(e => dataArray.push(e));
               }
-              callback();
             });
-          }
-        });
+          })
+          .catch(e => {
+            console.log(e);
+          })
       },
+      // (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
+      //   request(link, (error: Error, response: request.Response, body: any) => {
+      //     if (!error && response.statusCode === 200) {
+      //       // parse XML to Json
+      //       console.log(response.body);
+      //       parseString(response.body, (err: Error, result) => {
+      //         // format the incoming data
+      //         console.log(result);
+      //         const data: FormattedWeatherData[] = self.formatDataBmkg(result);
+
+      //         if (err) {
+      //           // tslint:disable-next-line: no-console
+      //           console.log(err);
+      //         } else {
+      //           data.forEach(e => dataArray.push(e));
+      //         }
+      //         callback();
+      //       });
+      //     }
+      //   });
+      // },
       (err: any) => {
         if (err) {
           // tslint:disable-next-line: no-console
