@@ -16,4 +16,5 @@ export default [
   route.get('/db-today-quiz', Kuis.index),
   route.get('/get-today-quiz', Kuis.today),
   route.get('/salat-by-lokasi', AdzanSkill.index),
+  route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb)
 ];

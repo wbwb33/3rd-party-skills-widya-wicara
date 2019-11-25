@@ -1,6 +1,7 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
 import $ from 'cheerio';
+import {TabelOne} from '../../db/models/tabel_one';
 
 class AdzanSkill {
   public index = async (req: Request, res: Response) => {
@@ -36,6 +37,18 @@ class AdzanSkill {
       })
       .catch(error => (error));
   };
+
+  public getJadwalSalatFromDb = async (req: Request, res: Response) => {
+    try {
+      res.send(await TabelOne.findAll({
+        where: {
+          id:60
+        }
+      }));
+    } catch (e) {
+      console.log(e);
+    }
+  }
 }
 
 const adzanSkill = new AdzanSkill();
