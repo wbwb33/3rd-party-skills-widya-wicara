@@ -30,6 +30,7 @@ import jadwalAdzan from './skill_apis/jadwal_salat/resource';
  */
 import { sequelize } from './sequelize';
 import { TabelOne } from './db/models/tabel_one';
+import { kuis_availability } from './db/models/kuis';
 
 /**
  * ambil variabel PORT dari .env
@@ -79,11 +80,20 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   }
 });
 
+import kuis_skill from './skill_apis/kuis/skill';
+
 (async () => {
   try {
-    sequelize.addModels([TabelOne]);
+    sequelize.addModels([TabelOne, kuis_availability]);
     await sequelize.sync({ force: false });
     job.start();
+    // kuis_skill.isDone("haha2").then(res => {
+    //   console.log(res[0].uuid);
+    // });
+    // const a = await kuis_skill.playQuiz();
+    // console.log(a);
+    await kuis_skill.playQuiz();
+    // kuis.updateNewDay();
   } catch (e) {
     console.log(e);
   }
