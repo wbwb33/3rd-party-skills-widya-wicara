@@ -1,0 +1,11 @@
+/.vscode
+/cache
+/dist
+/.git
+npm-debug.log
+.prettierrc
+.sequelizerc
+.gitignore
+nodemon.json
+tslint.json
+README.md
