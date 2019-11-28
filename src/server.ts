@@ -61,7 +61,7 @@ new cron.CronJob('00 04 00 * * *', () => {
 /**
  * get kuis for today and save it to db
  */
-kuis.get();
+// kuis.get();
 new cron.CronJob('00 06 00 * * *', () => {
   kuis.get();
 }).start();
@@ -80,19 +80,20 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   }
 });
 
-import kuis_skill from './skill_apis/kuis/skill';
+// import kuis_skill from './skill_apis/kuis/skill';
 
 (async () => {
   try {
     sequelize.addModels([TabelOne, kuis_availability]);
     await sequelize.sync({ force: false });
+    kuis.get();
     job.start();
     // kuis_skill.isDone("haha2").then(res => {
     //   console.log(res[0].uuid);
     // });
     // const a = await kuis_skill.playQuiz();
     // console.log(a);
-    await kuis_skill.playQuiz();
+    // await kuis_skill.playQuiz();
     // kuis.updateNewDay();
   } catch (e) {
     console.log(e);

@@ -17,8 +17,8 @@ export default [
   route.get('/db-today-quiz', Kuis.index),
   route.get('/get-today-quiz', Kuis.today),
   route.post('/kuis-answered', Kuis.updateScore),
-  route.post('/update-id', Kuis.updateId),
-  route.get('/reset-kuis', KuisData.updateNewDay),
+  route.post('/play-quiz', Kuis.canWePlayQuiz),
+  // route.get('/reset-kuis', KuisData.updateNewDay),
   route.get('/salat-by-lokasi', AdzanSkill.index),
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb)
 ];
