@@ -1,0 +1,60 @@
+image: docker:stable
+
+variables:
+  MAJOR_VERSION: 1
+  MINOR_VERSION: 0
+  TAGGING: itwin/api-cache
+
+stages:
+  - Install Dependencies
+  - Build Image
+  - Push to Docker Hub
+
+api test:
+  stage: Install Dependencies
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+  image: node:12.13.0-alpine
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+
+docker build:
+  stage: Build Image
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+    policy: pull
+  before_script:
+    - cp $ENV .env
+    - echo $CI_PIPELINE_IID
+    - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
+    - echo $TAG
+  script:  
+    - docker build -t $TAG .
+
+docker push:
+  stage: Push to Docker Hub
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+  before_script:
+    - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
+    - echo $TAG
+  script:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+    - docker push $TAG && docker image rm $TAG
