@@ -1,0 +1,152 @@
+const request = require("request");
+const cheerio = require("cheerio");
+const fs = require('fs');
+
+function crawlTitle(endpoint, callback){
+    var list_title = [];
+    let title = "";
+    var list_endpoint = [];
+    request(endpoint,(error, response, body)=>{
+        const $ = cheerio.load(body);
+        let data = $('section > .gr-i > .awr > .entry-title > a').text();
+
+        /**
+         * @var list_endpoint : list untuk menampung endpoint hasil pencarian
+         */
+        $('section').find('> div > div > h2 > a').each(function (index, element) {
+            list_endpoint.push($(element).attr('href'));
+        });
+    
+        /**
+         * replace from 'https://resepkoki.co/bakso-udang-kuah-kaldu/' to be bakso udang kuah kaldu 
+         */
+                /**
+         * @var list_title : list untuk menampung judul article
+         */
+        for(val in list_endpoint){
+            title = list_endpoint[val].replace(/https:\/\/resepkoki.co\//g,'');
+            title = title.replace(/\/|-/g,' ');
+            list_title.push(title);
+        }
+        callback(list_title ,list_endpoint);
+    });
+};
+
+
+/**
+ * crawlArticle --> mencari artikel terkait
+ * @param {*end point dari data yang dicari} endpoint 
+ * @param {*return data yang dicari/crawl} callback 
+ */
+function crawlData(endpoint, callback){
+    request(endpoint, (error,response,body) => {
+        const $ = cheerio.load(body);
+        let data = $('.awr-i').text(); // class content
+        // let plugin = $('blockquote > p').text;
+        
+
+        // bersihkan dengan regex untuk tag2 image dan enter
+        data = data.replace(/\<img(.*?)\/>|\n/g, "");
+
+        // bersihkan dari sisipan post instagram
+        data = data.trim();
+        callback(endpoint, data);
+    });
+};
+
+
+/**
+ * menampilkan data judul menu masakan 
+ * @param {data adalah output dari crawling} data 
+ */
+function logCrawlTitle(data_title, data_endpoint){
+    var obj = {}; // empty object
+    var list = "list";
+    var judul = 'list_judul';
+    var url = 'list_endpoint';
+    var response = 'response';
+    obj[response] = list;
+    obj[judul] = [];
+    obj[url] = [];
+
+    var data_judul = {
+        id:"",
+        judul:""
+    }
+
+
+    var data_url= {
+        id:"",
+        url:""
+    }
+
+
+    for(var i=0; i<data_title.length; i++){
+        let tmp = data_title[i];
+        data_judul.id = i;
+        data_judul.judul = tmp;
+        obj[judul].push(data_judul);
+    }
+
+    for(var i=0; i<data_endpoint.length; i++){
+        let tmp = data_endpoint[i];
+        data_url.id = i;
+        data_url.url = tmp;
+        obj[url].push(data_url);
+    }
+    console.log(obj);
+    json = JSON.stringify(obj); //convert it back to json
+    fs.writeFile ("../output_file/response_list.json", json, function(err) {
+        if (err) throw err;
+        }
+    );
+};
+
+/**
+ * menampilkan article terkait data makanan yang diinginkan
+ * @param {data adalah output dari crawling} data 
+ */
+function logCrawlData(endpoint,data){
+    var obj = {};
+    var header = "data";
+    var response = 'response';
+    var article = 'article';
+    obj[response] = article;
+    obj[header] = header;
+
+    var dataobj = {
+        url:endpoint,
+        article:data
+    }
+
+    obj[header] = (dataobj);
+    console.log(obj);
+    json = JSON.stringify(obj); //convert it back to json
+    fs.writeFile ("../output_file/response_article.json", json, function(err) {
+        if (err) throw err;
+        }
+    );
+};
+
+
+/**
+ * queryTitle : user input --> mencari referensi
+ */
+var queryTitle = "nugget";
+queryTitle = queryTitle.replace(/^\s+|\s+|\s+$|\s+(?=\s)/g, "+"); // ganti spasi, tabs dengan %+
+var endpointTitle = `https://resepkoki.co/?s=${queryTitle}`;
+crawlTitle(endpointTitle, logCrawlTitle);
+
+/**
+ * query: user input --> mencari resep sesuai referensi
+ */
+var query = "resep-pisang-nugget/";
+query = query.replace(/^\s+|\s+|\s+$|\s+(?=\s)/g, "+"); // ganti spasi, tabs dengan %+
+var endpointArticle = `https://resepkoki.co/${query}`;
+crawlData(endpointArticle, logCrawlData);
+
+
+
+
+
+

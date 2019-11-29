@@ -1,0 +1,186 @@
+const request = require("request");
+const cheerio = require("cheerio");
+const fs = require('fs');
+
+
+/**
+ * crawl category
+ * crawl category detail list
+ * crawl search menu
+ * crawl specific article
+ */
+
+
+/**
+ * 
+ * @param {*} endpoint endpoint yang digunakan untuk crawling category
+ * @param {*} callback callback berupa endpoint --> endpoint yang digunakan, list_url --> list endpoint yang diperolah, list_pilihan --> yang disampaikan ke user
+ */
+function category(endpoint, callback){
+    let title = "category";
+    let list_pilihan = [];
+    var list_url = [];
+    request(endpoint,(error, response, body)=>{
+        const $ = cheerio.load(body);
+        
+        // mendapatkan endpoint category resep makanan
+        $('.shortcode-categories-icons').find('> table > tbody > tr > td > div > a').each(function (index, element) {
+            let url = $(element).attr('href');
+            list_url.push(url);
+        });
+
+        // mendapatkan text endpoint category : replace  https://resepkoki.id/category/ayam-daging/ --> ayam-daging/
+        for(val in list_url){
+            let category = list_url[val].replace(/https:\/\/resepkoki.id\/category\//g,'');
+            category = category.replace(/\/|-/g,' ');
+            list_pilihan.push(category);
+        }
+        callback(title, endpoint, list_url, list_pilihan);
+    });
+}
+
+
+/**
+ * sub category detail
+ * @param {*} endpoint endpoint yang digunakan untuk crawling category
+ * @param {*} callback callback berupa endpoint --> endpoint yang digunakan, list_url --> list endpoint yang diperolah, list_pilihan --> yang disampaikan ke user
+ */
+function category_detail(endpoint, callback){
+    let title = "sub-category-detail";
+    let list_pilihan = [];
+    var list_url = [];
+    request(endpoint,(error, response, body)=>{
+        const $ = cheerio.load(body);
+        $('.masonry-grid').find('> div > article > div > div > header > h3 > a').each(function (index, element) {
+            let url = $(element).attr('href');
+            list_url.push(url);
+        });
+        
+        // mendapatkan text endpoint category : replace  https://resepkoki.id/resep/resep-udang-pete-balado/ --> resep udang pete balado
+        for(val in list_url){
+            let category = list_url[val].replace(/https:\/\/resepkoki.id\/resep\//g,'');
+            category = category.replace(/\/|-/g,' ');
+            list_pilihan.push(category);
+        };
+        callback(title, endpoint, list_url, list_pilihan);
+    });
+}
+
+/**
+ * 
+ * @param {*} endpoint  --> url yang akan dicari berdasarkan input user
+ * @param {*} callback  --> callback berupa url, list url dan list category
+ */
+function search(query, endpoint, callback){
+    let title = "search";
+    let list_pilihan = [];
+    var list_url = [];
+    request(endpoint,(error, response, body)=>{
+        const $ = cheerio.load(body);
+        $('.masonry-grid').find('> div > article > div > div > header > h3 > a').each(function (index, element) {
+            let url = $(element).attr('href');
+            list_url.push(url);
+        });
+        
+        // mendapatkan text endpoint category : replace  https://resepkoki.id/resep/resep-udang-pete-balado/ --> resep udang pete balado
+        for(val in list_url){
+            let category = list_url[val].replace(/https:\/\/resepkoki.id\/resep\//g,'');
+            category = category.replace(/\/|-/g,' ');
+            list_pilihan.push(category);
+        };
+        callback(title, endpoint, list_url, list_pilihan);
+    });
+}
+
+/**
+ * spesifik menuju endpoint : https://resepkoki.id/resep/${query}
+ * @param {*} endpoint --> endpoint of crawling
+ * @param {*} callback --> callback return
+ */
+function detail_resep(endpoint, callback){
+    let title = "detail-resep";
+
+    request(endpoint, (error, response, body) => {
+        const $ = cheerio.load(body);
+
+        let list_bahan = [];
+        $('.ingredients-table').find('> tbody > tr > td ').each(function (index, element) {
+            let bahan = $(element).text();
+            bahan = bahan.replace(/\n/g, "");
+            bahan = bahan.replace(/\-/g,"sebanyak");
+            bahan = bahan.replace(/sdm/g,"sendok makan");
+            list_bahan.push(bahan);
+        });
+
+        // remove item kosong dari array 
+        for(var i = list_bahan.length-1; i--;){
+            if(list_bahan[i] === '' || list_bahan[i] === ' ') list_bahan.splice(i,1);
+        }
+
+        let list_langkah = [];
+        $('.recipe-steps-table').find('> tbody > tr > td > div > p').each(function (index, element) {
+            let langkah = $(element).text();
+            langkah = langkah.replace(/\n/g, "");
+            list_langkah.push(langkah);
+        });
+
+        callback(title, endpoint, list_bahan, list_langkah);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * metode pencarian
+ * @param {*} endpoint -> endpoint category
+ * @param {*} category -> output data category 
+ */
+function log_data(title, endpoint, list_url, list_pilihan){
+    console.log('list_pilihan :', list_pilihan);
+    console.log('list_url :', list_url);
+    if(title === 'detail-resep'){
+
+    }
+};
+
+/**
+ * 
+ * @param {*} title  --> category pencarian
+ * @param {*} endpoint --> endpoint pencarian
+ * @param {*} bahan  --> callback list bahan
+ * @param {*} langkah --> callback list langkah
+ */
+function log_resep(title, endpoint, bahan, langkah){
+    console.log("bahan : ",bahan);
+    console.log("langkah : ",langkah);
+}
+
+
+module.exports = {
+    category,
+    category_detail,
+    search,
+    detail_resep,
+    log_data, 
+    log_resep
+}
