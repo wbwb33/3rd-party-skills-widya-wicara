@@ -143,6 +143,8 @@ class Kuis {
         uuid: payload.uuid
       }
     })
+
+    res.send(JSON.parse(`{"status": "success", "skill": "kuis", "message": "saved succesfully"}`));
   }
 }
 
