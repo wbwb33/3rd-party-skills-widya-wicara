@@ -123,12 +123,14 @@ class Kuis {
 
   /** increment score if mark's payload from chatbot's post return true */
   public updateScore = async (req: Request, res: Response) => {
-    const payload = req.body;
+    // const payload = req.body;
+    const payload = req.query ?? req.body;
+    const uuidQ = payload.uuid;
 
     if(payload.mark==1) {
       kuis_availability.increment('score', {
         where: {
-          uuid: payload.uuid
+          uuid: uuidQ
         }
       });
       console.log("true");
