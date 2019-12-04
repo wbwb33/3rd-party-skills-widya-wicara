@@ -49,7 +49,8 @@ class ReminderSkill {
       await reminder.create({uuid: uuidReq ,about_rem: aboutReq, date_rem: dateReq});
       res.send(JSON.parse(`{"status":"success","action":"add-reminder"}`));
     } catch (e) {
-      res.send(JSON.parse(`{"status":"error","action":"add-reminder","data": "${e}"}`));
+      console.log(e);
+      res.send(JSON.parse(`{"status":"error","action":"add-reminder"}`));
     }    
     // console.log(dateReq);
   }
