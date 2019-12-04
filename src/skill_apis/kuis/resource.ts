@@ -7,7 +7,7 @@ class KuisData {
   public get = async () => {
     console.log('getting quizes for today and reset all uuids to not done...');
     const cat = Math.floor(Math.random()*14)+1;
-    console.log(cat);
+    // console.log(cat);
     await this.updateNewDay();
     fs.readFile(`dependent/kuis/${cat}.json`, (err, data) => {
       if (err) {
@@ -15,14 +15,14 @@ class KuisData {
       } else {
         const content = JSON.parse(data.toString());
         const id: number = Math.floor(Math.random()*(content.length-5));
-        console.log(id+5);
+        // console.log(id+5);
         var kuisArr = [];
         for(let i=id;i<(id+5);i++){
-          console.log(i);
+          // console.log(i);
           kuisArr.push(content[i]);
         }
         content.splice(id,5);
-        console.log(kuisArr);
+        // console.log(kuisArr);
 
         fs.writeFile('cache/kuis_today.json', JSON.stringify(kuisArr), (err) => {
           if(err){

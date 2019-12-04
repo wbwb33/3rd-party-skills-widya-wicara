@@ -31,6 +31,7 @@ import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import { sequelize } from './sequelize';
 import { TabelOne } from './db/models/tabel_one';
 import { kuis_availability } from './db/models/kuis';
+import { reminder } from './db/models/reminder';
 
 /**
  * ambil variabel PORT dari .env
@@ -84,7 +85,7 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
 
 (async () => {
   try {
-    sequelize.addModels([TabelOne, kuis_availability]);
+    sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
     kuis.get();
     job.start();
