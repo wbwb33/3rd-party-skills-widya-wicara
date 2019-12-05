@@ -17,11 +17,11 @@ class KuisData {
         const id: number = Math.floor(Math.random()*(content.length-5));
         // console.log(id+5);
         var kuisArr = [];
-        for(let i=id;i<(id+5);i++){
+        for(let i=id;i<(id+10);i++){
           // console.log(i);
           kuisArr.push(content[i]);
         }
-        content.splice(id,5);
+        content.splice(id,10);
         // console.log(kuisArr);
 
         fs.writeFile('cache/kuis_today.json', JSON.stringify(kuisArr), (err) => {

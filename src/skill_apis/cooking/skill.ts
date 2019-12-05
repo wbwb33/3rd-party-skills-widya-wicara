@@ -44,13 +44,17 @@ class CookingSkill {
           }
           else if(i === (list_pilihan.length-1))
           {
-            const obj = `{"pilihan1": ${list_pilihan}}`;
+            // const obj = `{"pilihan1": [${list_pilihan}]}`;
             return await this.logData(title, list_url, list_pilihan);
           }
         }
       });
-    console.log(`output : ${out}`);
-    res.send(JSON.parse(`${out}`));
+    // console.log(`output : ${out}`);
+    if(out) {
+      res.send(JSON.parse(`${out}`));
+    } else {
+      res.send(JSON.parse(`{"status": "error","action": "cooking-not-found","message": "NULL"}`));
+    }
   }
 
   private detailResep = async (url: string) => {
@@ -124,12 +128,12 @@ class CookingSkill {
             langkah = langkah + detail[i] + ". ";
         }
 
-        var obj = `{"status": "success","action": "cooking-detail","data":{"bahan": "${bahan}", "langkah": "${langkah}"}}`
+        var obj = `{"status": "success","action": "cooking-detail","data":{"bahan": "${bahan}", "langkah": "${langkah}"}}`;
         // console.log(JSON.parse(obj));
         return obj;
 
     }else{
-        var obj = `{"pilihan": ${detail}}`
+        var obj = `{"status": "success","action": "cooking-pilihan","data": {"pilihan": ${JSON.stringify(detail)}}}`;
         // console.log(JSON.stringify(obj));
         return obj;
     }
