@@ -6,6 +6,7 @@ import Cooking from './cooking/skill';
 import AdzanSkill from './jadwal_salat/skill';
 import EntityCity from './entity_city/skill';
 import ReminderSkill from './reminder/skill';
+import FaqSkill from './faq/skill';
 import { Endpoint } from '../utils';
 
 const route = new Endpoint();
@@ -26,5 +27,6 @@ export default [
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb),
   route.get('/cooking', Cooking.search),
   route.get('/get-reminder', ReminderSkill.index),
-  route.get('/add-reminder', ReminderSkill.add)
+  route.get('/add-reminder', ReminderSkill.add),
+  route.get('/faq', FaqSkill.index)
 ];

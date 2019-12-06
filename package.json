@@ -28,6 +28,7 @@
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
+    "sentence-similarity": "^1.0.8",
     "sequelize": "^5.21.2",
     "sequelize-typescript": "^1.0.0",
     "xml2js": "^0.4.22"
