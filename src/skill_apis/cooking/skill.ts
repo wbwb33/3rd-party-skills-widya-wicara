@@ -36,7 +36,7 @@ class CookingSkill {
         };
 
         for(let i=0;i<list_pilihan.length;i++){
-          console.log(i);
+          // console.log(i);
           // terdapat resep pada list pencarian 
           if(temp_msg === list_pilihan[i]){
             console.log(`cocok`);

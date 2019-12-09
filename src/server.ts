@@ -24,6 +24,7 @@ import expressApp from './app';
 import horoscope from './skill_apis/horoscope/resource';
 import kuis from './skill_apis/kuis/resource';
 import jadwalAdzan from './skill_apis/jadwal_salat/resource';
+import hargaEmas from './skill_apis/harga_emas/resource';
 
 /**
  * import sequelize connection and the models
@@ -44,7 +45,15 @@ const { PORT = 3000 } = process.env;
 const server = http.createServer(expressApp);
 
 /**
- * get weather and set cron job every at 12:00
+ * get harga emas and set cron job every at 09:00
+ */
+hargaEmas.get();
+new cron.CronJob('00 00 09 * * *', () => {
+  hargaEmas.get();
+}).start();
+
+/**
+ * get weather and set cron job every at 00:02
  */
 weather.get();
 new cron.CronJob('00 02 00 * * *', () => {
@@ -52,7 +61,7 @@ new cron.CronJob('00 02 00 * * *', () => {
 }).start();
 
 /**
- * get horoscope and set cron job every at 00:00
+ * get horoscope and set cron job every at 00:04
  */
 horoscope.get();
 new cron.CronJob('00 04 00 * * *', () => {
@@ -60,7 +69,7 @@ new cron.CronJob('00 04 00 * * *', () => {
 }).start();
 
 /**
- * get kuis for today and save it to db
+ * get kuis for today and save it to db at 00.06
  */
 // kuis.get();
 new cron.CronJob('00 06 00 * * *', () => {
@@ -89,13 +98,6 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
     await sequelize.sync({ force: false });
     kuis.get();
     job.start();
-    // kuis_skill.isDone("haha2").then(res => {
-    //   console.log(res[0].uuid);
-    // });
-    // const a = await kuis_skill.playQuiz();
-    // console.log(a);
-    // await kuis_skill.playQuiz();
-    // kuis.updateNewDay();
   } catch (e) {
     console.log(e);
   }
