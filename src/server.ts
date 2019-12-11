@@ -25,6 +25,7 @@ import horoscope from './skill_apis/horoscope/resource';
 import kuis from './skill_apis/kuis/resource';
 import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
+import hargaPangan from './skill_apis/harga_pangan/resource';
 
 /**
  * import sequelize connection and the models

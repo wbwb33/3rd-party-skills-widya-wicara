@@ -1,9 +1,9 @@
 import { Request, Response } from 'express-serve-static-core';
 import fs from 'fs';
 
-class HargaEmasSkill {
+class HargaPanganSkill {
   public index = async(req:Request, res:Response) => {
-    fs.readFile('cache/harga_emas.json', (err, data) => {
+    fs.readFile('cache/pangan_per_provinsi.json', (err, data) => {
       if (err) {
         res.sendError('data harga emas not found in cache');
       } else {
@@ -13,5 +13,5 @@ class HargaEmasSkill {
   }
 }
 
-const hargaEmasSkill = new HargaEmasSkill();
-export default hargaEmasSkill;
+const hargaPanganSkill = new HargaPanganSkill();
+export default hargaPanganSkill;
