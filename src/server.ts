@@ -97,7 +97,7 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   try {
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    kuis.get();
+    // kuis.get();
     job.start();
   } catch (e) {
     console.log(e);

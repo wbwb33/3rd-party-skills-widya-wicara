@@ -8,7 +8,8 @@ import EntityCity from './entity_city/skill';
 import ReminderSkill from './reminder/skill';
 import FaqSkill from './faq/skill';
 import HargaEmasSkill from './harga_emas/skill';
-import HargaPanganSkill from './harga_pangan/resource';
+import HargaPanganRes from './harga_pangan/resource';
+import HargaPanganSkill from './harga_pangan/skill';
 import { Endpoint } from '../utils';
 
 const route = new Endpoint();
@@ -32,8 +33,9 @@ export default [
   route.get('/add-reminder', ReminderSkill.add),
   route.get('/faq', FaqSkill.index),
   route.get('/harga-emas', HargaEmasSkill.index),
-  route.get('/harga-pangan-search-miss', HargaPanganSkill.searchForMissing),
-  route.get('/harga-pangan', HargaPanganSkill.getAndSaveDataHtml),
-  route.get('/harga-pangan-data', HargaPanganSkill.getDataHargaPanganFromHtml),
-  route.get('/harga-pangan-lokasi', HargaPanganSkill.generateLokasiPangan)
+  route.get('/harga-pangan-search-miss', HargaPanganRes.searchForMissing),
+  route.get('/harga-pangan', HargaPanganRes.getAndSaveDataHtml),
+  route.get('/harga-pangan-data', HargaPanganRes.getDataHargaPanganFromHtml),
+  route.get('/harga-pangan-lokasi', HargaPanganRes.generateLokasiPangan),
+  route.get('/harga-pangan-skill', HargaPanganSkill.index)
 ];
