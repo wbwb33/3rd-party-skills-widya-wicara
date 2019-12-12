@@ -129,11 +129,21 @@ class HargaPangan {
     for(let i=0;i<34;i++){
       const fin:IHargaPanganPerProvinsi = await this.readFile(i);
       console.log(`done get harga pangan from html prov ${(i+1)} of 34`);
+      await this.delHtmlCacheAfterUse(i);
       hargaPanganPerProvinsi.push(fin);
     }
     fs.writeFile('cache/pangan_per_provinsi.json', JSON.stringify(hargaPanganPerProvinsi), err => {
       if(err) console.log('error write data harga pangan per provinsi');
       else console.log('done write data harga pangan per provinsi');
+    })
+  }
+
+  private delHtmlCacheAfterUse = async(int:number) => {
+    fs.unlink(`cache/pangan/prov_${(int+1)}.html`, (err) => {
+      if (err) {
+        console.error(err)
+        return
+      } else console.log("done, deleted");
     })
   }
 }

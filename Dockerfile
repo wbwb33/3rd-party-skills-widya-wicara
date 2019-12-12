@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy file to /app directory
 COPY . /app
 RUN mkdir /app/cache
+RUN mkdir /app/cache/pangan
 
 # install dependencies
 # RUN npm ci
