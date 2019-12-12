@@ -1,24 +1,9 @@
-/**
- * import dotenv agar app bisa menggunakan variabel dari file .env
- */
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-/**
- * import http
- */
-
 import http from 'http';
-
-/**
- * import cron job
- */
-// import cron from 'node-cron';
 import cron from 'cron';
 
-/**
- * import connection dependencies
- */
 import weather from './skill_apis/weather/resource';
 import expressApp from './app';
 import horoscope from './skill_apis/horoscope/resource';
@@ -27,6 +12,7 @@ import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
 import hargaPangan from './skill_apis/harga_pangan/resource';
 
+hargaPangan.get();
 /**
  * import sequelize connection and the models
  */
@@ -97,7 +83,7 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   try {
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    // kuis.get();
+    kuis.get();
     job.start();
   } catch (e) {
     console.log(e);
