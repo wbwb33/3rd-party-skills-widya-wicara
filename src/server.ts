@@ -3,6 +3,7 @@ dotenv.config();
 
 import http from 'http';
 import cron from 'cron';
+import fs from 'fs';
 
 import weather from './skill_apis/weather/resource';
 import expressApp from './app';
@@ -12,7 +13,6 @@ import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
 import hargaPangan from './skill_apis/harga_pangan/resource';
 
-hargaPangan.get();
 /**
  * import sequelize connection and the models
  */
@@ -31,10 +31,28 @@ const { PORT = 3000 } = process.env;
  */
 const server = http.createServer(expressApp);
 
+const notExists = async (path: string): Promise<boolean> => {
+  return new Promise(resolve => {
+    fs.stat(path, (err, stat) => {
+      if (err == null) {
+        resolve(false);
+      } else {
+        resolve(true);
+      }
+    });
+  });
+};
+
+/**
+ * get harga pangan and set cron job every at 23:00
+ */
+new cron.CronJob('00 00 23 * * *', () => {
+  hargaPangan.get();
+}).start();
+
 /**
  * get harga emas and set cron job every at 09:00
  */
-hargaEmas.get();
 new cron.CronJob('00 00 09 * * *', () => {
   hargaEmas.get();
 }).start();
@@ -42,7 +60,6 @@ new cron.CronJob('00 00 09 * * *', () => {
 /**
  * get weather and set cron job every at 00:02
  */
-weather.get();
 new cron.CronJob('00 02 00 * * *', () => {
   weather.get();
 }).start();
@@ -50,7 +67,6 @@ new cron.CronJob('00 02 00 * * *', () => {
 /**
  * get horoscope and set cron job every at 00:04
  */
-horoscope.get();
 new cron.CronJob('00 04 00 * * *', () => {
   horoscope.get();
 }).start();
@@ -58,7 +74,6 @@ new cron.CronJob('00 04 00 * * *', () => {
 /**
  * get kuis for today and save it to db at 00.06
  */
-// kuis.get();
 new cron.CronJob('00 06 00 * * *', () => {
   kuis.get();
 }).start();
@@ -83,7 +98,11 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   try {
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    kuis.get();
+    (await notExists('cache/pangan_per_provinsi.json')) ? hargaPangan.get() : console.log('cache pangan exists');
+    (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
+    (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
+    (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
+    (await notExists('cache/kuis_today.json')) ? kuis.get() : console.log('cache kuis exists');
     job.start();
   } catch (e) {
     console.log(e);

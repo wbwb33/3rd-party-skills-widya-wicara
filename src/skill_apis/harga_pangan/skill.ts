@@ -57,7 +57,8 @@ class HargaPanganSkill {
           const provR = ["Aceh","Sumatera Utara","Sumatera Barat","Riau","Kepulauan Riau","Jambi","Bengkulu","Sumatera Selatan","Kepulauan Bangka Belitung","Lampung","Banten","Jawa Barat","DKI Jakarta","Jawa Tengah","DI Yogyakarta","Jawa Timur","Bali","Nusa Tenggara Barat","Nusa Tenggara Timur","Kalimantan Barat","Kalimantan Selatan","Kalimantan Tengah","Kalimantan Timur","Kalimantan Utara","Gorontalo","Sulawesi Selatan","Sulawesi Tenggara","Sulawesi Tengah","Sulawesi Utara","Sulawesi Barat","Maluku","Maluku Utara","Papua","Papua Barat"];
           var found = 0;
           for(var i=0;i<dataR.length;i++){
-            if(msg.includes(provR[dataR[i].idProv].toLowerCase())||msg.includes(dataR[i].lokasi.toLowerCase())){
+            console.log(provR[dataR[i].idProv-1]);
+            if(msg.includes(provR[(dataR[i].idProv-1)].toLowerCase())||msg.includes(dataR[i].lokasi.toLowerCase())){
               found = 1;
               break;
             }

@@ -11,4 +11,5 @@ export const sequelize = new Sequelize({
   models: [__dirname + '/models'],
   host: process.env.DB_HOST,
   port: +(process.env.DB_PORT as string),
+  logging: false,
 });

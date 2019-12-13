@@ -10,7 +10,7 @@ RUN mkdir /app/cache
 RUN mkdir /app/cache/pangan
 
 # install dependencies
-# RUN npm ci
+RUN npm install pm2 -g
 
 # compile typescript
 RUN npm run tsc
@@ -31,4 +31,5 @@ ENV NODE_ENV=production
 EXPOSE 5000
 
 # run node dist/server.js
-CMD [ "node", "dist/server.js" ]
+# CMD [ "node", "dist/server.js" ]
+CMD [ "pm2-runtime", "dist/server.js" ]
