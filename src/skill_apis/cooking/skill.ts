@@ -16,7 +16,7 @@ class CookingSkill {
     const out = await rp(main_url)
       .then(async(html) => {
         $('.masonry-grid', html).find('> div > article > div > div > header > h3 > a').each((index, element) => {
-          let url = $(element).attr('href');
+          let url = $(element).attr('href')!;
           list_url.push(url);
         });
 

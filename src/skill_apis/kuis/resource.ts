@@ -14,7 +14,7 @@ class KuisData {
         console.log('data dependent kuis not found');
       } else {
         const content = JSON.parse(data.toString());
-        const id: number = Math.floor(Math.random()*(content.length-5));
+        const id: number = Math.floor(Math.random()*(content.length-10));
         // console.log(id+5);
         var kuisArr = [];
         for(let i=id;i<(id+10);i++){

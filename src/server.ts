@@ -12,6 +12,7 @@ import kuis from './skill_apis/kuis/resource';
 import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
 import hargaPangan from './skill_apis/harga_pangan/resource';
+import { IgniteClass } from './skill_apis/tes_ignite/skill';
 
 /**
  * import sequelize connection and the models
@@ -92,18 +93,36 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
   }
 });
 
-// import kuis_skill from './skill_apis/kuis/skill';
+import IgniteClient from 'apache-ignite-client';
+const IgniteClientConfiguration = IgniteClient.IgniteClientConfiguration;
+const onStateChanged = (state: any, reason: any) => {
+  if (state === IgniteClient.STATE.CONNECTED) {
+    console.log('Ignite Client is started');
+  } else if (state === IgniteClient.STATE.CONNECTING) {
+    console.log('Ignite Client is connecting');
+  } else if (state === IgniteClient.STATE.DISCONNECTED) {
+    console.log('Ignite Client is stopped');
+    if (reason) {
+      console.log(reason);
+    }
+  }
+};
 
 (async () => {
   try {
-    sequelize.addModels([TabelOne, kuis_availability, reminder]);
-    await sequelize.sync({ force: false });
-    (await notExists('cache/pangan_per_provinsi.json')) ? hargaPangan.get() : console.log('cache pangan exists');
-    (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
-    (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
-    (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
-    (await notExists('cache/kuis_today.json')) ? kuis.get() : console.log('cache kuis exists');
-    job.start();
+    const igniteClient = new IgniteClient(onStateChanged);
+    await igniteClient.connect(new IgniteClientConfiguration('127.0.0.1:10800'));
+    await IgniteClass.cobaKuis(igniteClient);
+    await IgniteClass.getKuis(igniteClient);
+    // await IgniteClass.deleteKuis();
+    // sequelize.addModels([TabelOne, kuis_availability, reminder]);
+    // await sequelize.sync({ force: false });
+    // (await notExists('cache/pangan_per_provinsi.json')) ? hargaPangan.get() : console.log('cache pangan exists');
+    // (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
+    // (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
+    // (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
+    // (await notExists('cache/kuis_today.json')) ? kuis.get() : console.log('cache kuis exists');
+    // job.start();
   } catch (e) {
     console.log(e);
   }
