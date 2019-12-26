@@ -1,21 +1,10 @@
 import rp from 'request-promise';
 import $ from 'cheerio';
 import fs from 'fs';
-
-interface IHargaPanganPerProvinsi {
-  lastUpdate: string;
-  idProv: number;
-  beras: string;
-  ayam: string;
-  sapi: string;
-  telur: string;
-  bawMerah: string;
-  bawPutih: string;
-  cabMerah: string;
-  cabRawit: string;
-  minyak: string;
-  gula: string;
-}
+import {IHargaPanganPerProvinsi} from './types';
+import {igniteSupport} from '../../ignite_support';
+import { json } from 'sequelize/types';
+import { reject } from 'async';
 
 class HargaPangan {
   public get = async () => {
@@ -31,7 +20,7 @@ class HargaPangan {
     const dMin = `${ddMin}-${mmMin}-${yyyyMin}`;
     const key = (await this.getKey())+"";
     
-    for(let i=0;i<34;i++){
+    for(let i=0;i<0;i++){
       const form = JSON.parse(`{
         "task": "",
         "filter_commodity_ids[]": "0",
@@ -105,8 +94,8 @@ class HargaPangan {
           const minyak = $('#report > tbody > tr > td[title="Minyak Goreng"] > .text-right > strong', data).last().text();
           const gula = $('#report > tbody > tr > td[title="Gula Pasir"] > .text-right > strong', data).last().text();
           const fin = {
+            id:(int+1),
             lastUpdate:lastUpdated,
-            idProv:(int+1),
             beras:beras,
             ayam:ayam,
             sapi:sapi,
@@ -132,6 +121,7 @@ class HargaPangan {
       await this.delHtmlCacheAfterUse(i);
       hargaPanganPerProvinsi.push(fin);
     }
+    await igniteSupport.insertGeneralWithoutClient(hargaPanganPerProvinsi,new IHargaPanganPerProvinsi(),'cacheHargaPangan');
     fs.writeFile('cache/pangan_per_provinsi.json', JSON.stringify(hargaPanganPerProvinsi), err => {
       if(err) console.log('error write data harga pangan per provinsi');
       else console.log('done write data harga pangan per provinsi');
@@ -146,6 +136,28 @@ class HargaPangan {
       } else console.log("done, deleted");
     })
   }
+
+  // public delThisSoon = async() => {
+  //   const data = await this.delThisToo();
+  //   await igniteSupport.insertGeneralWithoutClient(data,new IHargaPanganPerProvinsi(),'cacheHargaPangan');
+  // }
+  
+  // private delThisToo = async(): Promise<IHargaPanganPerProvinsi[]> => {
+  //   return new Promise((resolve,reject) => {
+  //     fs.readFile(`cache/pangan_per_provinsi.json`,'utf-8', (err, raw) => {
+  //       if(err){
+  //         reject(err);
+  //       } else {
+  //         const data:IHargaPanganPerProvinsi[] = JSON.parse(raw);
+  //         resolve(data);
+  //       }
+  //     })
+  //   })
+  // }
+
+  // public delThis = async(igniteClient:any) => {
+  //   await igniteSupport.getCacheByName(igniteClient,'cacheHargaPangan',new IHargaPanganPerProvinsi());
+  // }
 }
 
 const hargaPangan = new HargaPangan();

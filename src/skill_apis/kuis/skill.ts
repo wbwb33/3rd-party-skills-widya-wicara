@@ -1,9 +1,8 @@
 import fs from 'fs';
 import { Request, Response } from 'express';
 import { kuis_availability } from '../../db/models/kuis';
-import Str from '../../utils/string';
-import { CLIENT_RENEG_LIMIT } from 'tls';
-import { reject } from 'async';
+import { igniteSupport } from '../../ignite_support';
+import { IKuis } from './types';
 
 class Kuis {
   /** for debugging purpose only */
@@ -36,35 +35,16 @@ class Kuis {
 
   /** for debugging purpose only */
   public today = async (req: Request, res: Response) => {
-    fs.readFile('cache/kuis_today.json', (err, data) => {
-      if(err){
-        res.sendError('error read for today');
-      } else {
-        const content = JSON.parse(data.toString());
-        res.send(content);
-      }
-    })
-  }
-
-  /** test only, delete soon */
-  public playQuiz = async () => { //req, res. dev uuid
-    const uuid = "haha25";
-    const ini = await this.isDone(uuid).then(async (res)  => {
-      if(!res[0]) {
-        // console.log("not set yet");
-        await this.createNewIdAndPlay(uuid);
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*5));
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-      } else if(res[0].done_today) {
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
-      } else {
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*5));
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-        // return "lets play";
-      }
-    });
-    return ini;
-    
+    const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+    res.send(quizToday);
+    // fs.readFile('cache/kuis_today.json', (err, data) => {
+    //   if(err){
+    //     res.sendError('error read for today');
+    //   } else {
+    //     const content = JSON.parse(data.toString());
+    //     res.send(content);
+    //   }
+    // })
   }
 
   /** main function for Can {uuid} Play Quiz for today? */
@@ -74,12 +54,12 @@ class Kuis {
       if(!thisRes[0]) {
         // console.log("not set yet");
         await this.createNewIdAndPlay(uuid);
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*5));
+        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
         return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
       } else if(thisRes[0].done_today) {
         return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
       } else {
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*5));
+        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
         return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
         // return "lets play";
       }
@@ -89,19 +69,18 @@ class Kuis {
   }
 
   /** this function will get called IF ONLY we get chance to play quiz today (from isDone) */
-  private getTodayQuiz = async (oneToFive: number): Promise<object> => {
+  private getTodayQuiz = async (oneToTen: number): Promise<object> => {
+    const data = await igniteSupport.getCacheByNameWithoutClient('cacheQuiz',new IKuis());
     return new Promise((resolve, reject) => {
-      fs.readFile('cache/kuis_today.json', (err, data) => {
-        if(err){
-          console.log(err);
-          // res.sendError('file of quiz for today is not found');
-        } else {
-          const content = JSON.parse(data.toString());
-          // console.log(content[oneToFive]);
-          resolve(content[oneToFive]);
-          // res.send(content[oneToFive]);
-        }
-      })
+      // fs.readFile('cache/kuis_today.json', (err, data) => {
+      //   if(err){
+      //     console.log(err);
+      //   } else {
+      //     const content = JSON.parse(data.toString());
+      //     resolve(content[oneToTen]);
+      //   }
+      // })
+      resolve(data![oneToTen])
     })
   }
 
