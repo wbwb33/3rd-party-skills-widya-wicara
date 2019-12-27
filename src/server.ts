@@ -101,10 +101,13 @@ const notExists = async (path: string): Promise<boolean> => {
     !(await weather.cacheCheck(igniteClient))
       ? console.log('cache weather not exist')
       : console.log('cache weather already exist');
+    !(await hargaEmas.cacheCheck(igniteClient))
+      ? console.log('cache harga emas not exist')
+      : console.log('cache harga emas already exist');
     await igniteClient.disconnect();
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
+    // (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
     // (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
     (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
     job.start();
