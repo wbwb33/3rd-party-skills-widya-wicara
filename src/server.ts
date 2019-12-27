@@ -92,21 +92,21 @@ const notExists = async (path: string): Promise<boolean> => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
     await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
-    // await igniteClient.connect(new IgniteClientConfiguration('127.0.0.1:10800'));
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
       : console.log('cache kuis already exist');
     !(await hargaPangan.cacheCheck(igniteClient))
       ? console.log('cache pangan not exist')
       : console.log('cache pangan already exist');
+    !(await weather.cacheCheck(igniteClient))
+      ? console.log('cache weather not exist')
+      : console.log('cache weather already exist');
     await igniteClient.disconnect();
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    // (await notExists('cache/pangan_per_provinsi.json')) ? hargaPangan.get() : console.log('cache pangan exists');
     (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
-    (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
+    // (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
     (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
-    // (await notExists('cache/kuis_today.json')) ? kuis.get() : console.log('cache kuis exists');
     job.start();
   } catch (e) {
     console.log(e);

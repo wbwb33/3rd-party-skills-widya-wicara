@@ -112,9 +112,9 @@ class Kuis {
           uuid: uuidQ
         }
       });
-      console.log("true");
+      // console.log("true");
     } else {
-      console.log("false");
+      // console.log("false");
     }
 
     kuis_availability.update({

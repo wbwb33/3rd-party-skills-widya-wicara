@@ -8,77 +8,83 @@ import {
   ParameterElement,
   TimerangeElement,
   FormattedWeatherData,
-} from '../../@types/skills/weather';
+  OneBigStringForWeatherCache,
+} from './types';
 import async from 'async';
+import { igniteSupport } from '../../ignite_support';
 
 class BMKG {
   public get = async () => {
+    console.log('getting weather data...');
+    const a = await this.getDataFromXMLs();
+    await this.saveToIgnite(a);
+  }
+
+  public getDataFromXMLs = async (): Promise<FormattedWeatherData[]> => {
     const self = this;
     const dataArray: FormattedWeatherData[] = [];
+    
+    return new Promise((resolve,reject) => {
+      async.forEachOf(
+        bmkg_xml,      
+        async (link: string) => {
+          await request(link)
+            .then((response) => {
+              // console.log(link);
+              // parse XML to Json
+              parseString(response, (err: Error, result) => {
+                // format the incoming data
+                const data: FormattedWeatherData[] = self.formatDataBmkg(result);
 
-    // tslint:disable-next-line: no-console
-    console.log('getting weather data...');
-
-    async.forEachOf(
-      bmkg_xml,      
-      async (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
-        await request(link)
-          .then((response) => {
-            // console.log(link);
-            // parse XML to Json
-            parseString(response, (err: Error, result) => {
-              // format the incoming data
-              const data: FormattedWeatherData[] = self.formatDataBmkg(result);
-
-              if (err) {
-                console.log(err);
-              } else {
-                data.forEach(e => dataArray.push(e));
-              }
-            });
-          })
-          .catch(e => {
-            console.log(e);
-          })
-      },
-      // (link: string, key: string | number, callback: async.ErrorCallback<Error>) => {
-      //   request(link, (error: Error, response: request.Response, body: any) => {
-      //     if (!error && response.statusCode === 200) {
-      //       // parse XML to Json
-      //       console.log(response.body);
-      //       parseString(response.body, (err: Error, result) => {
-      //         // format the incoming data
-      //         console.log(result);
-      //         const data: FormattedWeatherData[] = self.formatDataBmkg(result);
-
-      //         if (err) {
-      //           // tslint:disable-next-line: no-console
-      //           console.log(err);
-      //         } else {
-      //           data.forEach(e => dataArray.push(e));
-      //         }
-      //         callback();
-      //       });
-      //     }
-      //   });
-      // },
-      (err: any) => {
-        if (err) {
-          // tslint:disable-next-line: no-console
-          console.log(err);
-        } else {
-          fs.writeFile('cache/weather.json', JSON.stringify(dataArray), 'utf-8', e => {
-            if (e) {
-              // tslint:disable-next-line: no-console
+                if (err) {
+                  console.log(err);
+                } else {
+                  data.forEach(e => dataArray.push(e));
+                }
+              });
+            })
+            .catch(e => {
               console.log(e);
+            })
+        },
+        (err: any) => {
+            if (err) {
+              console.log(err);
+              reject(err);
             } else {
-              // tslint:disable-next-line: no-console
-              console.log('done get weather');
+              resolve(dataArray);
+              // await this.saveToIgnite(dataArray);
+              // fs.writeFile('cache/weather.json', JSON.stringify(dataArray), 'utf-8', e => {
+              //   if (e) {
+              //     console.log(e);
+              //   } else {
+              //     console.log('done get weather');
+              //   }
+              // });
             }
-          });
-        }
-      },
-    );
+        },
+      );
+    })
+  }
+
+  /** save to ignite */
+  private saveToIgnite = async(data:FormattedWeatherData[]) => {
+    try {
+      // console.log(data.length);
+      const oneDataWeather = JSON.parse(`[{"id":1}]`);
+      oneDataWeather[0].str = JSON.stringify(data);
+      // console.log(oneDataWeather);
+      await igniteSupport.insertGeneralWithoutClient(oneDataWeather,new OneBigStringForWeatherCache(),'cacheWeather');
+    }
+    catch (err) {
+      console.log(err.message+' at resource weather');
+    }
+  }
+
+  /** cek if cache exist */
+  public cacheCheck = async(ignite:any) => {
+    const a = await igniteSupport.getCacheByName(ignite,'cacheWeather',new OneBigStringForWeatherCache());
+    return a?true:false;
   }
 
   private formatDataBmkg(json: WeatherData): FormattedWeatherData[] {

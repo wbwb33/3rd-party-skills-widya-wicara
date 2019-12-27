@@ -1,15 +1,11 @@
-/**
- * Fixed weather type for normalized weather data
- */
+/** Fixed weather type for normalized weather data */
 export interface FixedWeather {
   provinsi: string;
   kota: string;
   parameter: FixedWeatherParameter[];
 }
 
-/**
- * Fixed weather parameter type for normalized weather data
- */
+/** Fixed weather parameter type for normalized weather data */
 export interface FixedWeatherParameter {
   date: Date;
   temp_min: string;
@@ -18,9 +14,7 @@ export interface FixedWeatherParameter {
   weather_night: string;
 }
 
-/**
- * Formatted weather data type for process normalized weather data
- */
+/** Formatted weather data type for process normalized weather data */
 export interface FormattedWeatherData {
   provinsi: string;
   kota: string;
@@ -33,7 +27,42 @@ export interface FormattedWeatherData {
   }[];
 }
 
-// Below is the type interface for easier data parsing from json converted xml (bmkg data)
+export class Param {
+  date: string | undefined;
+  temp_min: string;
+  temp_max: string;
+  weather_day: string;
+  weather_night: string;
+  constructor() {
+    this.date = '';
+    this.temp_max = '';
+    this.temp_min = '';
+    this.weather_day = '';
+    this.weather_night = '';
+  }
+}
+
+export class FormattedWeatherData {
+  constructor() {
+    this.provinsi = '';
+    this.kota = '';
+    this.parameter = new Array(3);
+    for(let i=0;i<this.parameter.length;i++){
+      this.parameter[i] = new Param();
+    }
+  }
+}
+
+export class OneBigStringForWeatherCache {
+  id: number;
+  str: string;
+  constructor(){
+    this.id = 0;
+    this.str = '';
+  }
+}
+
+/** Below is the type interface for easier data parsing from json converted xml (bmkg data) */
 export interface WeatherData {
   data: Data;
 }
