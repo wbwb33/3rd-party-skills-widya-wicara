@@ -3,8 +3,6 @@ import $ from 'cheerio';
 import fs from 'fs';
 import {IHargaPanganPerProvinsi} from './types';
 import {igniteSupport} from '../../ignite_support';
-import { json } from 'sequelize/types';
-import { reject } from 'async';
 
 class HargaPangan {
   public get = async () => {
@@ -20,7 +18,7 @@ class HargaPangan {
     const dMin = `${ddMin}-${mmMin}-${yyyyMin}`;
     const key = (await this.getKey())+"";
     
-    for(let i=0;i<0;i++){
+    for(let i=0;i<34;i++){
       const form = JSON.parse(`{
         "task": "",
         "filter_commodity_ids[]": "0",
@@ -48,7 +46,11 @@ class HargaPangan {
         .then(data => {
           fs.writeFile(`cache/pangan/prov_${(i+1)}.html`, data, 'utf-8', err => {
             if(err) console.log('error write html harga pangan per provinsi');
-            else console.log(`done save html harga pangan prov ${(i+1)} of 34`);
+            else {
+              if(i%5==0||i==33){
+                console.log(`done save html harga pangan prov ${(i+1)} of 34`);
+              }
+            }
           })
         })
         .catch(error => console.log(error))
@@ -117,7 +119,9 @@ class HargaPangan {
     let hargaPanganPerProvinsi:IHargaPanganPerProvinsi[] = [];
     for(let i=0;i<34;i++){
       const fin:IHargaPanganPerProvinsi = await this.readFile(i);
-      console.log(`done get harga pangan from html prov ${(i+1)} of 34`);
+      if(i%5==0||i==33){
+        console.log(`done get harga pangan from html prov ${(i+1)} of 34`);
+      }
       await this.delHtmlCacheAfterUse(i);
       hargaPanganPerProvinsi.push(fin);
     }
@@ -132,9 +136,13 @@ class HargaPangan {
     fs.unlink(`cache/pangan/prov_${(int+1)}.html`, (err) => {
       if (err) {
         console.error(err)
-        return
-      } else console.log("done, deleted");
+      }
     })
+  }
+
+  public cacheCheck = async(ignite:any) => {
+    const a = await igniteSupport.getCacheByName(ignite,'cacheHargaPangan',new IHargaPanganPerProvinsi());
+    return a?true:false;
   }
 
   // public delThisSoon = async() => {

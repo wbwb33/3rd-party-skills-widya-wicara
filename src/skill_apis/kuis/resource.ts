@@ -4,6 +4,18 @@ import { IKuisOnly, IKuis } from './types';
 import { igniteSupport } from '../../ignite_support';
 
 class KuisData {
+  /** delete TEN used quiz from dependent */
+  private delUsedQuiz = async (cat:number, content:IKuisOnly[]) => {
+    fs.writeFile(`dependent/kuis/${cat}.json`, JSON.stringify(content), (err) => {
+      if(err){
+        console.log('cannot write new dependent data kuis');
+      } else {
+        console.log("done write new dependent data with deleted used quizes");
+      }
+    });
+  }
+
+  /** function for get TEN today quiz from dependent */
   private getTodayQuiz = async (): Promise<IKuis[]> => {
     return new Promise((resolve, reject) => {
       console.log('getting quizes for today and reset all uuids to not done...');
@@ -27,6 +39,7 @@ class KuisData {
             }
             kuisArr.push(tmp);
           }
+          this.delUsedQuiz(cat,content.splice(id,10));
           resolve(kuisArr);
         }
       });
@@ -34,11 +47,11 @@ class KuisData {
   }
 
   /** main function for NEW DAY, get kuis from dependent, save to cache */
-  public get = async (start: boolean) => {
+  public get = async (executeByDev: boolean) => {
     const data = await this.getTodayQuiz();
     // console.log(data);
     await this.saveToIgnite(data);
-    !start??await this.updateNewDay();
+    !executeByDev??await this.updateNewDay();
     // fs.readFile(`dependent/kuis/${cat}.json`, (err, data) => {
     //   if (err) {
     //     console.log('data dependent kuis not found');
@@ -63,20 +76,20 @@ class KuisData {
     //     // content.splice(id,10);
     //     // console.log(kuisArr);
         
-    //     // fs.writeFile('cache/kuis_today.json', JSON.stringify(kuisArr), (err) => {
-    //     //   if(err){
-    //     //     console.log('cannot write data kuis today, maybe folder not yet created');
-    //     //   } else {
-    //     //     console.log("done write quizes for today in cache");
-    //     //   }
-    //     // });
-    //     // fs.writeFile(`dependent/kuis/${cat}.json`, JSON.stringify(content), (err) => {
-    //     //   if(err){
-    //     //     console.log('cannot write new dependent data kuis');
-    //     //   } else {
-    //     //     console.log("done write new dependent data with deleted used quizes");
-    //     //   }
-    //     // });
+        // fs.writeFile('cache/kuis_today.json', JSON.stringify(kuisArr), (err) => {
+        //   if(err){
+        //     console.log('cannot write data kuis today, maybe folder not yet created');
+        //   } else {
+        //     console.log("done write quizes for today in cache");
+        //   }
+        // });
+        // fs.writeFile(`dependent/kuis/${cat}.json`, JSON.stringify(content), (err) => {
+        //   if(err){
+        //     console.log('cannot write new dependent data kuis');
+        //   } else {
+        //     console.log("done write new dependent data with deleted used quizes");
+        //   }
+        // });
     //   }
     // });
   }

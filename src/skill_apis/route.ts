@@ -2,7 +2,6 @@ import Weather from './weather/skill';
 import Horoscope from './horoscope/skill';
 import Matdas from './matdas/skill';
 import Kuis from './kuis/skill';
-// import KuisRes from './kuis/resource';
 import Cooking from './cooking/skill';
 import AdzanSkill from './jadwal_salat/skill';
 import EntityCity from './entity_city/skill';
@@ -11,7 +10,6 @@ import FaqSkill from './faq/skill';
 import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import {IgniteClass} from './tes_ignite/skill';
-import { igniteSupport } from '../ignite_support';
 import { Endpoint } from '../utils';
 
 const route = new Endpoint();
@@ -27,7 +25,6 @@ export default [
   route.post('/kuis-answered', Kuis.updateScore),
   route.get('/play-quiz', Kuis.canWePlayQuiz),
   route.post('/play-quiz', Kuis.canWePlayQuiz),
-  // route.get('/reset-kuis', KuisData.updateNewDay),
   route.get('/salat-by-lokasi', AdzanSkill.index),
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb),
   route.get('/cooking', Cooking.search),
@@ -35,8 +32,6 @@ export default [
   route.get('/add-reminder', ReminderSkill.add),
   route.get('/faq', FaqSkill.index),
   route.get('/harga-emas', HargaEmasSkill.index),
-  // route.get('/harga-pangan', HargaPanganRes.get),
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/tes-ignite',IgniteClass.getRandomQuiz),
-  // route.get('/get-cache', igniteSupport.getCacheByName)
 ];
