@@ -14,6 +14,7 @@ class HargaPanganSkill {
         res.send(JSON.parse(JSON.stringify(dataHarga)));
       }
       else {
+        console.log(`error in harga pangan, trying to get ${indexReq}`);
         res.send(JSON.parse(`{"error":"invalid index location"}`));
       }
       // const dataLokasi = await this.findIndexLocation(req.query.msg);

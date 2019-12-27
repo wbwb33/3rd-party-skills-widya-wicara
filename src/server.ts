@@ -23,8 +23,8 @@ const { PORT = 3000 } = process.env;
 /** instantiasi server dengan express */
 const server = http.createServer(expressApp);
 
-/** get harga pangan and set cron job every at 23:00 */
-new cron.CronJob('00 00 11 * * *', () => {
+/** get harga pangan and set cron job every at 12:00 */
+new cron.CronJob('00 00 12 * * *', () => {
   hargaPangan.get();
 }).start();
 
