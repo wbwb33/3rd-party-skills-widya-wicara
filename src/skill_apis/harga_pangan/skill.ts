@@ -9,8 +9,13 @@ class HargaPanganSkill {
     if(!(req.query.msg)) res.send(JSON.parse(`{"error":"no input msg"}`));
     else {
       const indexReq = +req.query.msg; /** accepted index 1-34 */
-      const dataHarga = await this.readCacheFile((indexReq-1));
-      res.send(JSON.parse(JSON.stringify(dataHarga)));
+      if(indexReq>=1&&indexReq<=34){
+        const dataHarga = await this.readCacheFile((indexReq-1));
+        res.send(JSON.parse(JSON.stringify(dataHarga)));
+      }
+      else {
+        res.send(JSON.parse(`{"error":"invalid index location"}`));
+      }
       // const dataLokasi = await this.findIndexLocation(req.query.msg);
       // if(dataLokasi.status=="error") res.send(JSON.parse(`{"error":"${dataLokasi.message}"}`));
       // else {
