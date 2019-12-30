@@ -30,9 +30,11 @@ class HargaPanganSkill {
   }
 
   private readCacheFile = async (index:number): Promise<IHargaPanganPerProvinsi> => {
-    const data = await igniteSupport.getCacheByNameWithoutClient('cacheHargaPangan',new IHargaPanganPerProvinsi());
+    // const data = await igniteSupport.getCacheByNameWithoutClient('cacheHargaPangan',new IHargaPanganPerProvinsi());
+    const data = await igniteSupport.getCacheByIdWithoutClient('cacheHargaPangan',index,new IHargaPanganPerProvinsi());
+    
     return new Promise((resolve,reject) => {
-      resolve(data![index]);
+      if(data) resolve(data);
       // fs.readFile(`cache/pangan_per_provinsi.json`, (err, data) => {
       //   if (err) {
       //     reject(err);
@@ -40,6 +42,7 @@ class HargaPanganSkill {
       //     resolve(JSON.parse(data.toString())[index]);
       //   }
       // })
+      else reject("cache not found or index is wrong");
     })
   }
 

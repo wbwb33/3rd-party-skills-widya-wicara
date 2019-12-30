@@ -1,5 +1,4 @@
 import IgniteClient from 'apache-ignite-client';
-import { Request, Response } from 'express';
 
 const ObjectType = IgniteClient.ObjectType;
 const ComplexObjectType = IgniteClient.ComplexObjectType;
@@ -52,14 +51,15 @@ class main {
       var tmp = [];
       for(let i=0;i<length;i++){
         const data = await cache.get((i+1));
-        const datum = await data.toObject(complexObjectType)
-        // console.log(datum);
+        const datum = await data.toObject(complexObjectType);
         tmp.push(datum);
       }
-      return tmp;
     }
     catch (err) {
       console.log(`cache does not exist [${cacheName}]`);
+    }
+    finally {
+      return tmp;
     }
   }
 
@@ -74,17 +74,54 @@ class main {
       var tmp = [];
       for(let i=0;i<length;i++){
         const data = await cache.get((i+1));
-        const datum = await data.toObject(complexObjectType)
-        // console.log(datum);
+        const datum = await data.toObject(complexObjectType);
         tmp.push(datum);
       }
-      return tmp;
     }
     catch (err) {
       console.log(`cache does not exist [${cacheName}]`);
     }
     finally {
       await this.disconnectClient(igniteClient);
+      return tmp;
+    }
+  }
+
+  public getCacheByIdWithoutClient = async(cacheName:string, id: number, dataInit:any) => {
+    const igniteClient = await this.connectClient();
+    try {
+      const cache = igniteClient.getCache(cacheName).
+        setKeyType(ObjectType.PRIMITIVE_TYPE.INTEGER);
+      const complexObjectType = new ComplexObjectType(dataInit).
+        setFieldType('id', ObjectType.PRIMITIVE_TYPE.INTEGER);
+      const data = await cache.get((id+1));
+      var datum = await data.toObject(complexObjectType);
+    }
+    catch (err) {
+      console.log(`cache does not exist [${cacheName}]`);
+    }
+    finally {
+      await this.disconnectClient(igniteClient);
+      return datum;
+    }
+  }
+
+  public insertGeneral = async(igniteClient:any, dataArray:any, dataInit:any, cacheName: string) => {
+    try {
+      const cache = await igniteClient.getOrCreateCache(cacheName);
+      const kuisComplexObjectType = new ComplexObjectType(dataInit).
+          setFieldType('id', ObjectType.PRIMITIVE_TYPE.INTEGER); 
+      cache.setKeyType(ObjectType.PRIMITIVE_TYPE.INTEGER).
+          setValueType(kuisComplexObjectType);
+      for(let i=0;i<dataArray.length;i++){
+        await cache.put((i+1), dataArray[i]);
+      }
+    }
+    catch (err) {
+      console.log(err.message);
+    }
+    finally {
+      console.log(`succesfully writing cache: ${cacheName}`);
     }
   }
 
@@ -99,7 +136,25 @@ class main {
       for(let i=0;i<dataArray.length;i++){
         await cache.put((i+1), dataArray[i]);
       }
+    }
+    catch (err) {
+      console.log(err.message);
+    }
+    finally {
       console.log(`succesfully writing cache: ${cacheName}`);
+      await this.disconnectClient(igniteClient);
+    }
+  }
+
+  public insertGeneralByIdWithoutClient = async(dataMain:any, dataInit:any, cacheName: string, id: number) => {
+    const igniteClient = await this.connectClient();
+    try {
+      const cache = await igniteClient.getOrCreateCache(cacheName);
+      const dataComplexObjectType = new ComplexObjectType(dataInit).
+          setFieldType('id', ObjectType.PRIMITIVE_TYPE.INTEGER); 
+      cache.setKeyType(ObjectType.PRIMITIVE_TYPE.INTEGER).
+          setValueType(dataComplexObjectType);
+      await cache.put((id), dataMain);
     }
     catch (err) {
       console.log(err.message);
@@ -108,28 +163,6 @@ class main {
       await this.disconnectClient(igniteClient);
     }
   }
-
-
-  public insertGeneral = async(ignite:any, dataArray:any, dataInit:any, cacheName: string) => {
-    // const igniteClient = await this.connectClient();
-    const igniteClient = ignite;
-    try {
-      const cache = await igniteClient.getOrCreateCache(cacheName);
-      const kuisComplexObjectType = new ComplexObjectType(dataInit).
-          setFieldType('id', ObjectType.PRIMITIVE_TYPE.INTEGER); 
-      cache.setKeyType(ObjectType.PRIMITIVE_TYPE.INTEGER).
-          setValueType(kuisComplexObjectType);
-      for(let i=0;i<dataArray.length;i++){
-        await cache.put((i+1), dataArray[i]);
-      }
-      console.log(`succesfully writing cache: ${cacheName}`);
-    }
-    catch (err) {
-      console.log(err.message);
-    }
-  }
-
-  
 }
 
 export const igniteSupport = new main();
