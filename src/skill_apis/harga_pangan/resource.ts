@@ -45,12 +45,17 @@ class HargaPangan {
 
     let hargaPanganPerProvinsi:IHargaPanganPerProvinsi[] = [];
 
+    const task = 
+
     async.forEachOf(
       range,
       async(id:any) => {
-        if(id>=30) await new Promise(r => setTimeout(r, 60000));
-        else if(id>=20) await new Promise(r => setTimeout(r, 40000));
-        else if(id>=10) await new Promise(r => setTimeout(r, 20000));
+        if(id>=30) await new Promise(r => setTimeout(r, 120000));
+        else if(id>=25) await new Promise(r => setTimeout(r, 100000));
+        else if(id>=20) await new Promise(r => setTimeout(r, 80000));
+        else if(id>=15) await new Promise(r => setTimeout(r, 60000));
+        else if(id>=10) await new Promise(r => setTimeout(r, 40000));
+        else if(id>=5) await new Promise(r => setTimeout(r, 20000));
         const form = JSON.parse(`{
           "task": "",
           "filter_commodity_ids[]": "0",
@@ -105,7 +110,10 @@ class HargaPangan {
             hargaPanganPerProvinsi.push(fin);
             return fin;
           })
-          .catch(error => console.log(error));
+          .catch(error => {
+            console.log("error getting data from link");
+            
+          });
 
           await igniteSupport.insertGeneralByIdWithoutClient(fin,new IHargaPanganPerProvinsi(),"cacheHargaPangan",(id+1));
       },
@@ -192,7 +200,7 @@ class HargaPangan {
         //   }
         // })
       })
-      .catch(error => (console.log(error)));
+      .catch(error => console.log("error getting key"));
   };
 
   private readFile = async (int: number): Promise<IHargaPanganPerProvinsi> => {

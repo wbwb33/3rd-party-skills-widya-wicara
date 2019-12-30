@@ -28,11 +28,6 @@ new cron.CronJob('00 00 11 * * *', () => {
   hargaPangan.get();
 }).start();
 
-/** get harga pangan 2 and set cron job every at 17:00 */
-new cron.CronJob('00 00 17 * * *', () => {
-  hargaPangan.get();
-}).start();
-
 /** get harga emas and set cron job every at 09:00 */
 new cron.CronJob('00 00 09 * * *', () => {
   hargaEmas.get();
@@ -96,7 +91,8 @@ const notExists = async (path: string): Promise<boolean> => {
 (async () => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
-    await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
+    await igniteClient.connect(new IgniteClientConfiguration('ignite.ignite:10800'));
+    // await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
       : console.log('cache kuis already exist');
