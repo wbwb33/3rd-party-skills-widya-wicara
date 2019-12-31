@@ -60,6 +60,7 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
 
 /** ignite support */
 import IgniteClient from 'apache-ignite-client';
+import { igniteSupport } from './ignite_support';
 const IgniteClientConfiguration = IgniteClient.IgniteClientConfiguration;
 const onStateChanged = (state: any, reason: any) => {
   if (state === IgniteClient.STATE.CONNECTED) {
@@ -105,6 +106,9 @@ const notExists = async (path: string): Promise<boolean> => {
     !(await hargaEmas.cacheCheck(igniteClient))
       ? console.log('cache harga emas not exist')
       : console.log('cache harga emas already exist');
+    !(await horoscope.cacheCheck(igniteClient))
+      ? console.log('cache harga pangan not exist')
+      : console.log('cache harga pangan already exist');
     await igniteClient.disconnect();
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });

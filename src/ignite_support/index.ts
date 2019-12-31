@@ -95,7 +95,7 @@ class main {
         setKeyType(ObjectType.PRIMITIVE_TYPE.INTEGER);
       const complexObjectType = new ComplexObjectType(dataInit).
         setFieldType('id', ObjectType.PRIMITIVE_TYPE.INTEGER);
-      const data = await cache.get((id+1));
+      const data = await cache.get((id));
       var datum = await data.toObject(complexObjectType);
     }
     catch (err) {
