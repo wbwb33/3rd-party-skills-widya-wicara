@@ -30,7 +30,7 @@ class CookingSkill {
           list_pilihan.push(category.trim());
           // console.log(category.trim());
           // cukup 5 pilihan untuk user
-          if(i == 4){
+          if(i == 9){
             break;
           }
         };
@@ -39,7 +39,7 @@ class CookingSkill {
           // console.log(i);
           // terdapat resep pada list pencarian 
           if(temp_msg === list_pilihan[i]){
-            console.log(`cocok`);
+            // console.log(`cocok`);
             return await this.detailResep(list_url[i]);
           }
           else if(i === (list_pilihan.length-1))
@@ -133,8 +133,16 @@ class CookingSkill {
         return obj;
 
     }else{
-        var obj = `{"status": "success","action": "cooking-pilihan","data": {"pilihan": ${JSON.stringify(detail)}}}`;
-        // console.log(JSON.stringify(obj));
+        let pilihan = "";
+        let pilihan2 = "";
+        for(let i=0;i<detail.length;i++){
+          if(i<5){
+            pilihan = pilihan + (i+1) + " " + detail[i] + ", ";
+          } else {
+            pilihan2 = pilihan2 + (i+1) + " " + detail[i] + ", ";
+          }
+        }
+        var obj = `{"status": "success","action": "cooking-pilihan","data": {"pilihan": ${JSON.stringify(detail)}, "pesan": ${JSON.stringify(pilihan)}, "pesan2": ${JSON.stringify(pilihan2)}}}`;
         return obj;
     }
   }

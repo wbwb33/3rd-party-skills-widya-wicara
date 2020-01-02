@@ -20,6 +20,9 @@ import { reminder } from './db/models/reminder';
 /** ambil variabel PORT dari .env */
 const { PORT = 3000 } = process.env;
 
+/** ambil variabel BASE_IGNITE dari .env */
+const { BASE_IGNITE } = process.env;
+
 /** instantiasi server dengan express */
 const server = http.createServer(expressApp);
 
@@ -92,7 +95,8 @@ const notExists = async (path: string): Promise<boolean> => {
 (async () => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
-    await igniteClient.connect(new IgniteClientConfiguration('ignite.ignite:10800'));
+    await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
+    // await igniteClient.connect(new IgniteClientConfiguration('ignite.ignite:10800'));
     // await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
@@ -107,14 +111,14 @@ const notExists = async (path: string): Promise<boolean> => {
       ? console.log('cache harga emas not exist')
       : console.log('cache harga emas already exist');
     !(await horoscope.cacheCheck(igniteClient))
-      ? console.log('cache harga pangan not exist')
-      : console.log('cache harga pangan already exist');
+      ? console.log('cache horoscope not exist')
+      : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
     // (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
     // (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
-    (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
+    // (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
     job.start();
   } catch (e) {
     console.log(e);
