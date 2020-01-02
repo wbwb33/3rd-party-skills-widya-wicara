@@ -95,9 +95,9 @@ const notExists = async (path: string): Promise<boolean> => {
 (async () => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
-    await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
     // await igniteClient.connect(new IgniteClientConfiguration('ignite.ignite:10800'));
     // await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
+    await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
       : console.log('cache kuis already exist');

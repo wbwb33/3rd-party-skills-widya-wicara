@@ -56,7 +56,7 @@ class HoroscopeData {
           .catch(err => {
             console.log(err);
           });
-        console.log(task);
+        // console.log(task);
         await igniteSupport.insertGeneralByIdWithoutClient(task, new OneBigStringForHoroscopeCache(), 'cacheHoroscope', (id+1));
         // callback();
       },
