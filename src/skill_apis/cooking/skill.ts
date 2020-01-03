@@ -4,6 +4,7 @@ import $ from 'cheerio';
 
 class CookingSkill {
   public search = async (req: Request, res: Response) => {
+    const hrstart = process.hrtime();
     const msg = req.query.msg;
     const temp_msg = msg.replace(/resep/g, "").trim();
     
@@ -50,10 +51,11 @@ class CookingSkill {
         }
       });
     // console.log(`output : ${out}`);
+    const hrend = process.hrtime(hrstart);
     if(out) {
-      res.send(JSON.parse(`${out}`));
+      res.send(JSON.parse(`${out},"in":"${hrend[0]}s ${hrend[1]/1000000}ms"}`));
     } else {
-      res.send(JSON.parse(`{"status": "error","action": "cooking-not-found","message": "NULL"}`));
+      res.send(JSON.parse(`{"status": "error","action": "cooking-not-found","message": "NULL","in":"${hrend[0]}s ${hrend[1]/1000000}ms"}`));
     }
   }
 
@@ -128,7 +130,7 @@ class CookingSkill {
             langkah = langkah + detail[i] + ". ";
         }
 
-        var obj = `{"status": "success","action": "cooking-detail","data":{"bahan": "${bahan}", "langkah": "${langkah}"}}`;
+        var obj = `{"status": "success","action": "cooking-detail","data":{"bahan": "${bahan}", "langkah": "${langkah}"}`;
         // console.log(JSON.parse(obj));
         return obj;
 
@@ -142,7 +144,7 @@ class CookingSkill {
             pilihan2 = pilihan2 + (i+1) + " " + detail[i] + ", ";
           }
         }
-        var obj = `{"status": "success","action": "cooking-pilihan","data": {"pilihan": ${JSON.stringify(detail)}, "pesan": ${JSON.stringify(pilihan)}, "pesan2": ${JSON.stringify(pilihan2)}}}`;
+        var obj = `{"status": "success","action": "cooking-pilihan","data": {"pilihan": ${JSON.stringify(detail)}, "pesan": ${JSON.stringify(pilihan)}, "pesan2": ${JSON.stringify(pilihan2)}}`;
         return obj;
     }
   }
