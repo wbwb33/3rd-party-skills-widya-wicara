@@ -36,4 +36,6 @@ export default [
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
   route.get('/tes-ignite',IgniteClass.getRandomQuiz),
+
+  route.get('/cooking-tes',Cooking.testing)
 ];

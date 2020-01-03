@@ -1,8 +1,38 @@
 import { Request, Response } from 'express';
 import rp from 'request-promise';
 import $ from 'cheerio';
+import fs from 'fs';
 
 class CookingSkill {
+  public testing = async (req: Request, res: Response) => {
+    const hrstart = process.hrtime();
+    const msg = req.query.msg;
+    const resep = ["tumis kangkung", "ikan balado pedas", "tekwan", "chicken wings", "ketupat sayur", "sop buntut", "tahu gejrot", "perkedel daging", "tahu goreng kriuk", "kering tempe", "keripik bayam", "telur ceplok balado", "semur jengkol pedas", "tahu krispi", "empal daging", "kering kentang", "bakwan jagung", "kulit dimsum", "tahu tempe bacem", "iga bakar", "sambal goreng hati", "tahu isi sayuran", "pepes bandeng presto", "bebek goreng kremes", "capcay goreng jamur", "nasi kuning", "nasi uduk", "kunyit asam", "jamu beras kencur", "es cincau", "cumi hitam", "ayam kecap", "sop ayam.", "sop ikan", "ikan bakar berkuah", "nasi goreng", "mie dokdok", "brokoli krispi saus pedas", "oseng kangkung", "sambal terasi", "sambal teri", "sambal ijo", "terong balado", "tumis buncis", "udang pedas manis", "spaghetti saus pedas", "rawon", "sayur asem", "bakso sapi", "gurame bakar", "kepiting saus padang", "steak", "topokki", "makaroni  schotel", "burger", "donat kentang", "kue bolu", "nastar", "putri salju", "kue kastengel", "brownies kukus", "bakpau", "bala-bala", "tempe mendoan krispi", "nacho cheese", "martabak telur mini", "jamur crispy", "sup krim jagung", "siomay isi", "onion ring", "tahu isi", "lumpia ayam", "chicken fingers", "calamari", "gado-gado", "karedok", "pie buah", "pisang goreng", "puding cokelat", "penkeik apel", "pai susu", "kelepon ketan", "kue lapis", "putu ayu", "pancake apel", "klepon ketan meletus", "butter cookies", "mata kebo", "es krim alpukat susu", "lava cake", "mochi ", "es buah", "es oyen segar", "cemplon singkong", "kue cucur gula merah empuk", "bola-bola timus ubi", "kue samir", "kue cupcake", "cheese cake", "pisang nugget", "banana muffin", "lapis singkong pelangi", "serabi telur", "kue cubit", "brownies panggang cokelat", "cake carrot aroma khas klasik", "macaroon oreo", "nasi goreng", "rendang", "oseng cumi asin", "cumi pedas isi telur tahu", "cumi asin mercon", "cumi goreng tepung", "donat isi", "salad buah", "cilok", "ayam geprek", "pancake", "ketoprak", "spageti", "opor ayam kuning", "ayam goreng mentega", "ayam goreng kremes", "ayam goreng lengkuas", "ayam goreng kecap", "ayam goreng tepung", "telur dadar", "telur gulung", "sayur asem", "daging sapi lada hitam", "semur daging", "boba", "grinti late", "teh madu", "thai ti", "kopi susu", "donat", "opor ayam"];
+
+    for(var i=0;i<resep.length;i++){
+      if(msg.includes(resep[i])){
+        break;
+      }
+    }
+
+    if(i==138) {
+      const hrend = process.hrtime(hrstart);
+      res.send(JSON.parse(`{"status":"error","message":"resep-not-found","in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
+    }
+    else {
+      fs.readFile(`src/skill_apis/cooking/step.json`, (err, data) => {
+        const parsed = JSON.parse(data.toString());
+        const bahan = parsed.bahan[i];
+        const cara = parsed.cara[i];
+        const hrend = process.hrtime(hrstart);
+        res.send(JSON.parse(`{"status":"success","bahan":"${bahan}","cara":"${cara}","in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
+      });
+    }
+
+    // res.send(JSON.parse(`{"i":"${i}","in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
+  }
+
+
   public search = async (req: Request, res: Response) => {
     const hrstart = process.hrtime();
     const msg = req.query.msg;
