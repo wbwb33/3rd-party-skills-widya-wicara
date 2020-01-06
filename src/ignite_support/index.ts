@@ -25,9 +25,6 @@ class main {
     try {
       const igniteClient = new IgniteClient();
       await igniteClient.connect(new IgniteClientConfiguration(igniteBase));
-      // await igniteClient.connect(new IgniteClientConfiguration('149.129.235.17:31639'));
-      // await igniteClient.connect(new IgniteClientConfiguration('127.0.0.1:10800'));
-      // await igniteClient.connect(new IgniteClientConfiguration('ignite.ignite:10800'));
       return igniteClient;
     }
     catch(err) {

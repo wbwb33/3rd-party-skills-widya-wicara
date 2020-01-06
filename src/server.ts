@@ -78,23 +78,11 @@ const onStateChanged = (state: any, reason: any) => {
   }
 };
 
-/** check if a cache exist (from it's path) */
-const notExists = async (path: string): Promise<boolean> => {
-  return new Promise(resolve => {
-    fs.stat(path, (err, stat) => {
-      if (err == null) {
-        resolve(false);
-      } else {
-        resolve(true);
-      }
-    });
-  });
-};
-
 /** functions that get executed only at FIRST TIME */
 (async () => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
+
     await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
@@ -112,11 +100,10 @@ const notExists = async (path: string): Promise<boolean> => {
       ? console.log('cache horoscope not exist')
       : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
+
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-    // (await notExists('cache/harga_emas.json')) ? hargaEmas.get() : console.log('cache emas exists');
-    // (await notExists('cache/weather.json')) ? weather.get() : console.log('cache weather exists');
-    // (await notExists('cache/horoscope.json')) ? horoscope.get() : console.log('cache horoscope exists');
+
     job.start();
   } catch (e) {
     console.log(e);

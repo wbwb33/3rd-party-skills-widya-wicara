@@ -10,7 +10,6 @@ import FaqSkill from './faq/skill';
 import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import currencySkill from './currency/skill';
-import {IgniteClass} from './tes_ignite/skill';
 import { Endpoint } from '../utils';
 
 const route = new Endpoint();
@@ -35,7 +34,6 @@ export default [
   route.get('/harga-emas', HargaEmasSkill.index),
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
-  route.get('/tes-ignite',IgniteClass.getRandomQuiz),
 
   route.get('/cooking-tes',Cooking.testing)
 ];

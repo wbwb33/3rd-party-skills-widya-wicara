@@ -6,8 +6,8 @@ import {IHargaPanganPerProvinsi} from './types';
 import {igniteSupport} from '../../ignite_support';
 
 class HargaPangan {
-  public get = async () => {
-    var hrstart = process.hrtime();
+  public get = async () => {   
+    const hrstart = process.hrtime();
     const d = new Date();
     const dd = String(d.getDate()).padStart(2, '0');
     const mm = String(d.getMonth() + 1).padStart(2, '0');
@@ -18,12 +18,26 @@ class HargaPangan {
     const mmMin = String(d.getMonth() + 1).padStart(2, '0');
     const yyyyMin = d.getFullYear();
     const dMin = `${ddMin}-${mmMin}-${yyyyMin}`;
-    const key = (await this.getKey())+"";
-    
-    // make an iterator
+
+    let errorIds: number[] = [];
+    let i = 0;
+    do {
+      if(i>0) await new Promise(r => setTimeout(r,660000));
+      const key = (await this.getKey())+"";
+      errorIds = errorIds.length?await this.crawlerEachProvince(key, dMin, dMax, errorIds):await this.crawlerEachProvince(key, dMin, dMax);
+      i++;
+    } while (errorIds.length>0)
+
+    const hrend = process.hrtime(hrstart);
+    console.log(`succesfully executed in ${hrend[0]}s ${hrend[1]}ms `);
+  }
+
+  private crawlerEachProvince = async (key: string, dMin: string, dMax: string, id?: number[]) => {
+    let errorIds: number[] = [];
+
     const range = {
       from: 0,
-      to: 33,
+      to: id?id.length:33,
 
       [Symbol.iterator]() {
         return {
@@ -33,7 +47,7 @@ class HargaPangan {
             if (this.current <= this.last) {
               return {
                 done: false,
-                value: this.current++,
+                value: id?id[this.current++]:this.current++,
               };
             } else {
               return { done: true };
@@ -43,16 +57,11 @@ class HargaPangan {
       },
     };
 
-    let hargaPanganPerProvinsi:IHargaPanganPerProvinsi[] = [];
-
-    // const task = 
-
-    async.forEachOf(
+    await new Promise((resolve) => async.forEachOf(
       range,
       async(id:any) => {
-        if(id>=30) await new Promise(r => setTimeout(r, 180000));
-        else if(id>=20) await new Promise(r => setTimeout(r, 120000));
-        else if(id>=10) await new Promise(r => setTimeout(r, 60000));
+        await new Promise(r => setTimeout(r,id*5000));
+
         const form = JSON.parse(`{
           "task": "",
           "filter_commodity_ids[]": "0",
@@ -76,8 +85,8 @@ class HargaPangan {
           }
         };
         
-        const fin = await rp(options)
-          .then(data => {
+        await rp(options)
+          .then(async (data) => {
             const indexLastUpdated = $('#report > tbody > tr > td[title=Beras] > .text-right > strong', data).length;
             const lastUpdated = $('#report > thead > tr > th', data).eq(indexLastUpdated+1).text().replace(/\//g,"-");
             const beras = $('#report > tbody > tr > td[title=Beras] > .text-right > strong', data).last().text();
@@ -104,31 +113,24 @@ class HargaPangan {
               minyak:minyak,
               gula:gula
             };
-            hargaPanganPerProvinsi.push(fin);
-            return fin;
+            await igniteSupport.insertGeneralByIdWithoutClient(fin,new IHargaPanganPerProvinsi(),"cacheHargaPangan",(id+1));
+            // return fin;
           })
           .catch(error => {
-            console.log("error getting data from link");
-            
-          });
-
-          await igniteSupport.insertGeneralByIdWithoutClient(fin,new IHargaPanganPerProvinsi(),"cacheHargaPangan",(id+1));
+            errorIds.push(id);
+            console.log(`error getting data from link with id: ${id}`);
+          })
       },
-      (err: any) => {
-        if (err) console.log(err);
-        else {
-          const hrend = process.hrtime(hrstart);
-          console.log(`succesfully writing cache: cacheHargaPangan, in ${hrend[0]}s ${hrend[1]}ms `);
-          // fs.writeFile('cache/pangan_per_provinsi.json', JSON.stringify(hargaPanganPerProvinsi), err => {
-          //   if(err) console.log('error write data harga pangan per provinsi tes');
-          //   else console.log('done write data harga pangan per provinsi tes');
-          // })
-        }
+      () => {
+        if(errorIds.length>0) resolve(errorIds);
+        else console.log(`succesfully writing all ids in cache: cacheHargaPangan`);
       }
-    )
+    ));
+    return errorIds;
   }
 
   public get2 = async () => {
+    const hrstart = process.hrtime();
     const d = new Date();
     const dd = String(d.getDate()).padStart(2, '0');
     const mm = String(d.getMonth() + 1).padStart(2, '0');
@@ -178,6 +180,9 @@ class HargaPangan {
         })
         .catch(error => console.log(error))
     }
+
+    const hrend = process.hrtime(hrstart);
+    
     this.getDataHargaPanganFromHtml();
   }
 
@@ -188,17 +193,9 @@ class HargaPangan {
         const keyForm = $('#adminForm > input', html);
         console.log(keyForm[8].attribs.name);
         return keyForm[8].attribs.name;
-        
-        // fs.writeFile('cache/harga_emas.json', JSON.stringify(finalResult), (err) => {
-        //   if(err){
-        //     console.log('cannot write data harga emas today');
-        //   } else {
-        //     console.log("done harga emas");
-        //   }
-        // })
       })
       .catch(error => console.log("error getting key"));
-  };
+  }
 
   private readFile = async (int: number): Promise<IHargaPanganPerProvinsi> => {
     return new Promise((resolve, reject) => {
@@ -238,14 +235,14 @@ class HargaPangan {
     })
   }
 
-  private getDataHargaPanganFromHtml = async() => {
+  public getDataHargaPanganFromHtml = async() => {
     let hargaPanganPerProvinsi:IHargaPanganPerProvinsi[] = [];
     for(let i=0;i<34;i++){
       const fin:IHargaPanganPerProvinsi = await this.readFile(i);
       if(i%5==0||i==33){
         console.log(`done get harga pangan from html prov ${(i+1)} of 34`);
       }
-      await this.delHtmlCacheAfterUse(i);
+      // await this.delHtmlCacheAfterUse(i);
       hargaPanganPerProvinsi.push(fin);
     }
     // await igniteSupport.insertGeneralWithoutClient(hargaPanganPerProvinsi,new IHargaPanganPerProvinsi(),'cacheHargaPangan');
