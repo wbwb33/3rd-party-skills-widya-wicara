@@ -22,7 +22,10 @@ class HargaPangan {
     let errorIds: number[] = [];
     let i = 0;
     do {
-      if(i>0) await new Promise(r => setTimeout(r,660000));
+      if(i>0) {
+        console.log(`hargaPangan: got some error in ids: ${errorIds}, trying again in 11 minutes`);
+        await new Promise(r => setTimeout(r,660000));
+      }
       const key = (await this.getKey())+"";
       errorIds = errorIds.length?await this.crawlerEachProvince(key, dMin, dMax, errorIds):await this.crawlerEachProvince(key, dMin, dMax);
       i++;

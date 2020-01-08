@@ -27,7 +27,7 @@ export default [
   route.post('/play-quiz', Kuis.canWePlayQuiz),
   route.get('/salat-by-lokasi', AdzanSkill.index),
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb),
-  route.get('/cooking', Cooking.search),
+  route.get('/cooking', Cooking.getSavedRecipes),
   route.get('/get-reminder', ReminderSkill.index),
   route.get('/add-reminder', ReminderSkill.add),
   route.get('/faq', FaqSkill.index),
@@ -35,5 +35,5 @@ export default [
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
 
-  route.get('/cooking-tes',Cooking.testing)
+  // route.get('/cooking-tes',Cooking.getSavedRecipes)
 ];

@@ -160,6 +160,7 @@ class main {
       console.log(err.message);
     }
     finally {
+      console.log(`succesfully writing cache: ${cacheName}, at id: ${id}`);
       await this.disconnectClient(igniteClient);
     }
   }

@@ -10,7 +10,7 @@ class HargaPanganSkill {
     else {
       const indexReq = +req.query.msg; /** accepted index 1-34 */
       if(indexReq>=1&&indexReq<=34){
-        const dataHarga = await this.readCacheFile((indexReq-1));
+        const dataHarga = await this.readCacheFile((indexReq));
         res.send(JSON.parse(JSON.stringify(dataHarga)));
       }
       else {

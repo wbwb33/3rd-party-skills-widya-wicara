@@ -2,7 +2,6 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import http from 'http';
 import cron from 'cron';
-import fs from 'fs';
 import weather from './skill_apis/weather/resource';
 import expressApp from './app';
 import horoscope from './skill_apis/horoscope/resource';
@@ -63,7 +62,6 @@ const job = new cron.CronJob('00 00 01 * * *', async () => {
 
 /** ignite support */
 import IgniteClient from 'apache-ignite-client';
-import { igniteSupport } from './ignite_support';
 const IgniteClientConfiguration = IgniteClient.IgniteClientConfiguration;
 const onStateChanged = (state: any, reason: any) => {
   if (state === IgniteClient.STATE.CONNECTED) {
