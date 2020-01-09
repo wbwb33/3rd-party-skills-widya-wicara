@@ -26,7 +26,7 @@ class CookingSkill {
         const bahan = parsed.bahan[i];
         const cara = parsed.cara[i];
         const hrend = process.hrtime(hrstart);
-        res.send(JSON.parse(`{"status":"success","bahan":"${bahan}","cara":"${cara}","in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
+        res.send(JSON.parse(`{"status":"success","data":{"bahan":"${bahan}","langkah":"${cara}"},"in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
       });
     }
   }
