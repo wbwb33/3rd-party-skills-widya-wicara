@@ -21,7 +21,7 @@ class CookingSkill {
       // res.send(JSON.parse(`{"status":"error","message":"resep-not-found","in":"${hrend[0]}s ${hrend[1]/1000000}"}`));
     }
     else {
-      fs.readFile(`src/skill_apis/cooking/step.json`, (err, data) => {
+      fs.readFile(`dependent/cooking_step.json`, (err, data) => {
         const parsed = JSON.parse(data.toString());
         const bahan = parsed.bahan[i];
         const cara = parsed.cara[i];
