@@ -6,7 +6,6 @@ import Cooking from './cooking/skill';
 import AdzanSkill from './jadwal_salat/skill';
 import EntityCity from './entity_city/skill';
 import ReminderSkill from './reminder/skill';
-import FaqSkill from './faq/skill';
 import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import currencySkill from './currency/skill';
@@ -30,7 +29,6 @@ export default [
   route.get('/cooking', Cooking.getSavedRecipes),
   route.get('/get-reminder', ReminderSkill.index),
   route.get('/add-reminder', ReminderSkill.add),
-  route.get('/faq', FaqSkill.index),
   route.get('/harga-emas', HargaEmasSkill.index),
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
