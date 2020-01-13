@@ -1,7 +1,4 @@
-// import fs from 'fs';
 import { Request, Response } from 'express-serve-static-core';
-// import { HoroscopeType, Content, Section } from '../../@types/skills/horoscope_type';
-// import Str from '../../utils/string';
 
 function madas(pesan: string){
   let arrMsg = pesan.split(' ');
@@ -10,23 +7,23 @@ function madas(pesan: string){
 
   function mapStrToInt(str: string){
     switch(str){
-        case "satu": return 1;
-        case "dua": return 2;
-        case "tiga": return 3;
-        case "empat": return 4;
-        case "lima": return 5;
-        case "enam": return 6;
-        case "tujuh": return 7;
-        case "delapan": return 8;
-        case "sembilan": return 9;
-        case "sepuluh": return 10;
-        case "sebelas": return 11;
-        case "seratus": return 100;
-        case "seribu": case "ribu": return 1000;
-        case "sejuta": case "juta": return 1000000;
-        case "semiliar": case "miliar": return 1000000000;
-        case "setriliun": case "triliun": return 1000000000000;
-        default: return str;
+      case "satu": return 1;
+      case "dua": return 2;
+      case "tiga": return 3;
+      case "empat": return 4;
+      case "lima": return 5;
+      case "enam": return 6;
+      case "tujuh": return 7;
+      case "delapan": return 8;
+      case "sembilan": return 9;
+      case "sepuluh": return 10;
+      case "sebelas": return 11;
+      case "seratus": return 100;
+      case "seribu": case "ribu": return 1000;
+      case "sejuta": case "juta": return 1000000;
+      case "semiliar": case "miliar": return 1000000000;
+      case "setriliun": case "triliun": return 1000000000000;
+      default: return str;
     }
   }
 
@@ -145,7 +142,6 @@ function madas(pesan: string){
   }
 
   let j = 0;
-  let n = arrHasilPreprosesOpr.length;
   let step = 0;
 
   //index opr guide: 1=sum, 2=sub, 3=mul, 4=div
@@ -199,9 +195,6 @@ function madas(pesan: string){
   } else {
     return -1;
   }
-
-  // return arrHasilPreprosesInt[0];
-  
 }
 
 class Matdas {
@@ -224,7 +217,6 @@ class Matdas {
           hasil: madas(raw_int),
         })
       }
-      
     }
   };
 }

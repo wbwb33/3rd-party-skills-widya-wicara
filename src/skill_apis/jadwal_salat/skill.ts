@@ -9,8 +9,8 @@ class AdzanSkill {
     const index = req.query.index;
 
     // var final_array: FinalDataGetJadwalSalat[] = [];
-
-    const url = `http://jadwalsholat.pkpu.or.id/?id=${index + 1}`;
+    // console.log(index);
+    const url = `http://jadwalsholat.pkpu.or.id/?id=${index}`;
     await rp(url)
       .then(html => {
         const d = new Date();
@@ -18,6 +18,8 @@ class AdzanSkill {
         const mm = String(d.getMonth() + 1).padStart(2, '0');
         const yyyy = d.getFullYear();
 
+        // const tes = $('.table_highlight > td', html).toString();
+        // console.log(tes);
         const subuhJam = $('.table_highlight > td', html)[1].children[0].data;
         const dzuhurJam = $('.table_highlight > td', html)[2].children[0].data;
         const asharJam = $('.table_highlight > td', html)[3].children[0].data;
