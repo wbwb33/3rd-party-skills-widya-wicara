@@ -102,7 +102,7 @@ class NewsApi {
       //curl
       out = "curl";
       const a = (req.query.full)?await this.getDataFromUrl(url,true):await this.getDataFromUrl(url);
-      const b = JSON.parse(`{"action":"news-api","data":${JSON.stringify(a)}}`);
+      const b = JSON.parse(`{"action":"news-api.${about}","data":${JSON.stringify(a)}}`);
       (req.query.full)?res.send(a):res.sendOK(b);
     }
 
