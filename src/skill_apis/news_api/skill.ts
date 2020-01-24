@@ -128,7 +128,7 @@ class NewsApi {
               source: tmp[i].source.name,
               author: tmp[i].author||"anonim",
               title: tmp[i].title,
-              content: tmp[i].content
+              content: tmp[i].content.replace(/\r?\n?\"|\r?\n|\r/g, " ")
             })
             j++;
           }
