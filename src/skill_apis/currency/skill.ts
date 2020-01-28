@@ -27,21 +27,23 @@ class CurrencySkill {
         break;
       }
     }
-
     ar[2]=arr[2];
 
-    if(ar.length==3){
-      // console.log(`${ar}`);
-    } else {
+    if(!ar[1]) {
       ar[1] = "IDR";
-      // console.log(`${ar}`);
+      arStrMataUang[1] = "Rupiah";
     }
 
+    // if(ar.length==3){
+    // } else {
+    //   ar[1] = "IDR";
+    // }
+
     const final = await this.getDataFromLink(ar[0],ar[1],ar[2]);
-    // console.log(final);
+    const round = Number(Math.round(+(final+'e2'))+'e-2');
 
     const hrend = process.hrtime(hrstart);
-    // console.log(`succesfull,in ${hrend[0]}s ${hrend[1]/1000000}ms `);
+    
     res.send(JSON.parse(`{
       "status": "success",
       "action": "currency-found",
@@ -53,7 +55,7 @@ class CurrencySkill {
         },"to": {
           "currency":"${ar[1]}",
           "string":"${arStrMataUang[1]}",
-          "value":"${final}"
+          "value":"${round}"
         }
       },
       "in": "${hrend[0]}s ${hrend[1]/1000000}ms"
@@ -83,6 +85,7 @@ class CurrencySkill {
       var str2 = tmpArr.slice(2,(tmpArr.length)).join(' ');
     }
 
+    // str: possible first currency, str2: possible second currency, num (default is 1): value to convert
     return [str,str2,num];
   }
 
@@ -95,7 +98,7 @@ class CurrencySkill {
         const tmp = JSON.parse(data);
         return tmp[cur2];
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(`error in currency's skill: ${err.message}`))
     
     return result;
   }
