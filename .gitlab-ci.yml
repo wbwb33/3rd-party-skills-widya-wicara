@@ -5,6 +5,7 @@ variables:
   MINOR_VERSION: 0
   TAGGING: itwin/api-cache
   TAGGING_PROD: ww-prod/api-cache
+  DOCKER_REPO: registry-intl.ap-southeast-5.aliyuncs.com
 
 stages:
   - Install Dependencies
@@ -75,7 +76,7 @@ docker build prod:
   before_script:
     - cp $ENV .env
     - echo 1
-    - export TAG=$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
     - echo $TAG
   script:  
     - docker build -t $TAG .
@@ -88,8 +89,8 @@ docker push prod:
     variables:
       - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
   before_script:
-    - export TAG=$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
     - echo $TAG
   script:
-    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin registry-intl.ap-southeast-5.aliyuncs.com
+    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
