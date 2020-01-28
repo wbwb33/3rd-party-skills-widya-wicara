@@ -1,3 +1,4 @@
+import { Endpoint } from '../utils';
 import Weather from './weather/skill';
 import Horoscope from './horoscope/skill';
 import Matdas from './matdas/skill';
@@ -9,7 +10,7 @@ import ReminderSkill from './reminder/skill';
 import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import currencySkill from './currency/skill';
-import { Endpoint } from '../utils';
+import { newsApi } from './news_api/skill';
 
 const route = new Endpoint();
 
@@ -32,6 +33,5 @@ export default [
   route.get('/harga-emas', HargaEmasSkill.index),
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
-
-  // route.get('/cooking-tes',Cooking.getSavedRecipes)
+  route.get('/news-api',newsApi.main),
 ];

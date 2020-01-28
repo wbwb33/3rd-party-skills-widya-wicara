@@ -4,8 +4,14 @@ import { Request, Response } from 'express-serve-static-core';
 
 class EntityCity {
   public index = async (req: Request, res: Response) => {
-    const kotar = Object.values(kota);
     const q = req.query.msg.toLowerCase();
+    const kota = await this.cekPesan(q);
+    res.send(JSON.parse(kota));
+  }
+
+  public cekPesan = async (msg:string) => {
+    const kotar = Object.values(kota);
+    const q = msg;
     var found:string = "";
 
     const cek = kotar.every((val) => {
@@ -28,15 +34,12 @@ class EntityCity {
         return !q.includes(found);
       });
   
-      if(cek2){
-        res.send(JSON.parse(`{"type": "error", "data": "null"}`));
-      } else {
-        res.send(JSON.parse(`{"type": "success", "data": {"loc": "${found}", "type": "kab"}}`));  
-      }
+      return (cek2)
+        ?`{"type": "error", "data": "null"}`
+        :`{"type": "success", "data": {"loc": "${found}", "type": "kab"}}`;
     } else {
-      res.send(JSON.parse(`{"type": "success", "data": {"loc": "${found}", "type": "kota"}}`));
+      return `{"type": "success", "data": {"loc": "${found}", "type": "kota"}}`;
     }
-
   }
 }
 
