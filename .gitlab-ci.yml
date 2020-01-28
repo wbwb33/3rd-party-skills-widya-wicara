@@ -8,8 +8,8 @@ variables:
 
 stages:
   - Install Dependencies
-  - Build Image Dev || Prod
-  - Push to Docker Hub Dev || PROD
+  - Build Image
+  - Push to Docker Hub
 
 api test:
   stage: Install Dependencies
@@ -27,7 +27,7 @@ api test:
     - npm ci
 
 docker build dev:
-  stage: Build Image Dev
+  stage: Build Image
   only:
     refs:
       - development
@@ -47,7 +47,7 @@ docker build dev:
     - docker build -t $TAG .
 
 docker push dev:
-  stage: Push to Docker Hub Dev
+  stage: Push to Docker Hub
   only:
     refs:
       - development
@@ -61,7 +61,7 @@ docker push dev:
     - docker push $TAG && docker image rm $TAG
 
 docker build prod:
-  stage: Build Image Prod
+  stage: Build Image
   only:
     refs:
       - development
@@ -81,7 +81,7 @@ docker build prod:
     - docker build -t $TAG .
 
 docker push prod:
-  stage: Push to Docker Hub Prod
+  stage: Push to Docker Hub
   only:
     refs:
       - development
