@@ -4,11 +4,12 @@ variables:
   MAJOR_VERSION: 1
   MINOR_VERSION: 0
   TAGGING: itwin/api-cache
+  TAGGING_PROD: ww-prod/api-cache
 
 stages:
   - Install Dependencies
-  - Build Image
-  - Push to Docker Hub
+  - Build Image Dev || Prod
+  - Push to Docker Hub Dev || PROD
 
 api test:
   stage: Install Dependencies
@@ -25,13 +26,13 @@ api test:
   script:
     - npm ci
 
-docker build:
-  stage: Build Image
+docker build dev:
+  stage: Build Image Dev
   only:
     refs:
       - development
     variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
@@ -45,16 +46,50 @@ docker build:
   script:  
     - docker build -t $TAG .
 
-docker push:
-  stage: Push to Docker Hub
+docker push dev:
+  stage: Push to Docker Hub Dev
   only:
     refs:
       - development
     variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
   before_script:
     - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
     - echo $TAG
   script:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+    - docker push $TAG && docker image rm $TAG
+
+docker build prod:
+  stage: Build Image Prod
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+    policy: pull
+  before_script:
+    - cp $ENV .env
+    - echo 1
+    - export TAG=$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+    - echo $TAG
+  script:  
+    - docker build -t $TAG .
+
+docker push prod:
+  stage: Push to Docker Hub Prod
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
+  before_script:
+    - export TAG=$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+    - echo $TAG
+  script:
+    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin registry-intl.ap-southeast-5.aliyuncs.com
     - docker push $TAG && docker image rm $TAG
