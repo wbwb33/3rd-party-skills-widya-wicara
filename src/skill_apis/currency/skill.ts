@@ -15,11 +15,11 @@ class CurrencySkill {
     let arStrMataUang: string[] = [];
 
     for(let i=0;i<arrMataUang.length;i++){
-      if(arr[0].includes(arrMataUang[i].toLowerCase())){
+      if(!ar[0] && arr[0].includes(arrMataUang[i].toLowerCase())){
         ar[0] = arrKode[i];
         arStrMataUang[0] = arrMataUang[i];
       }
-      if(arr[1].includes(arrMataUang[i].toLowerCase())){
+      if(!ar[1] && arr[1].includes(arrMataUang[i].toLowerCase())){
         ar[1] = arrKode[i];
         arStrMataUang[1] = arrMataUang[i];
       }
@@ -33,11 +33,6 @@ class CurrencySkill {
       ar[1] = "IDR";
       arStrMataUang[1] = "Rupiah";
     }
-
-    // if(ar.length==3){
-    // } else {
-    //   ar[1] = "IDR";
-    // }
 
     const final = await this.getDataFromLink(ar[0],ar[1],ar[2]);
     const round = Number(Math.round(+(final+'e2'))+'e-2');
@@ -85,6 +80,7 @@ class CurrencySkill {
       var str2 = tmpArr.slice(2,(tmpArr.length)).join(' ');
     }
 
+    console.log([str,str2,num]);
     // str: possible first currency, str2: possible second currency, num (default is 1): value to convert
     return [str,str2,num];
   }

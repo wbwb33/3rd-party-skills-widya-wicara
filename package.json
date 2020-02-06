@@ -1,6 +1,6 @@
 {
   "name": "widya-wicara-skills-api",
-  "version": "0.2.0",
+  "version": "1.1.1",
   "description": "Skills Services for Widya Wicara Smart Speaker",
   "main": "server.js",
   "scripts": {
