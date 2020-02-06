@@ -45,7 +45,7 @@ docker build dev:
   before_script:
     # - cp $ENV .env
     # - echo $CI_PIPELINE_IID
-    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_DEV-dev
+    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_DEV
     - echo $TAG
   script:  
     - docker build -t $TAG .
