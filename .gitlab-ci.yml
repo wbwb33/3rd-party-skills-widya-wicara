@@ -2,17 +2,20 @@ image: docker:stable
 
 variables:
   MAJOR_VERSION: 1
-  MINOR_VERSION: 0
+  MINOR_VERSION: 1
+  PATCH_VERSION_DEV: 0
+  PATCH_VERSION_PROD: 0
   TAGGING: itwin/api-cache
+  TAGGING_DEV: ww-dev/api-cache
   TAGGING_PROD: ww-prod/api-cache
   DOCKER_REPO: registry-intl.ap-southeast-5.aliyuncs.com
 
 stages:
   - Install Dependencies
-  - Build Image
-  - Push to Docker Hub
+  - Build Image and Push
+  # - Push to Docker Hub
 
-api test:
+install dependencies:
   stage: Install Dependencies
   only:
     refs:
@@ -28,7 +31,7 @@ api test:
     - npm ci
 
 docker build dev:
-  stage: Build Image
+  stage: Build Image and Push
   only:
     refs:
       - development
@@ -40,29 +43,31 @@ docker build dev:
       - node_modules/
     policy: pull
   before_script:
-    - cp $ENV .env
-    - echo $CI_PIPELINE_IID
-    - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
+    # - cp $ENV .env
+    # - echo $CI_PIPELINE_IID
+    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_DEV-dev
     - echo $TAG
   script:  
     - docker build -t $TAG .
-
-docker push dev:
-  stage: Push to Docker Hub
-  only:
-    refs:
-      - development
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
-  before_script:
-    - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
-    - echo $TAG
-  script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
 
+# docker push dev:
+#   stage: Push to Docker Hub
+#   only:
+#     refs:
+#       - development
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
+#   before_script:
+#     - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
+#     - echo $TAG
+#   script:
+#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
+#     - docker push $TAG && docker image rm $TAG
+
 docker build prod:
-  stage: Build Image
+  stage: Build Image and Push
   only:
     refs:
       - development
@@ -76,21 +81,21 @@ docker build prod:
   before_script:
     - cp $ENV .env
     - echo 1
-    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
     - echo $TAG
   script:  
     - docker build -t $TAG .
 
-docker push prod:
-  stage: Push to Docker Hub
-  only:
-    refs:
-      - development
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
-  before_script:
-    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
-    - echo $TAG
-  script:
-    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-    - docker push $TAG && docker image rm $TAG
+# docker push prod:
+#   stage: Push to Docker Hub
+#   only:
+#     refs:
+#       - development
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
+#   before_script:
+#     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
+#     - echo $TAG
+#   script:
+#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
+#     - docker push $TAG && docker image rm $TAG
