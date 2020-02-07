@@ -3,7 +3,7 @@ image: docker:stable
 variables:
   MAJOR_VERSION: 1
   MINOR_VERSION: 1
-  PATCH_VERSION_DEV: 0
+  PATCH_VERSION_DEV: 1
   PATCH_VERSION_PROD: 0
   TAGGING: itwin/api-cache
   TAGGING_DEV: ww-dev/api-cache
@@ -79,8 +79,7 @@ docker build prod:
       - node_modules/
     policy: pull
   before_script:
-    - cp $ENV .env
-    - echo 1
+    # - cp $ENV .env
     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
     - echo $TAG
   script:  
