@@ -25,6 +25,7 @@ versioner:
       - master
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
+  image: dennbagas/semver-tool:1.0.0
   script:
     - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
     - INITIATE_URL="$URL_VERSIONER/get"
