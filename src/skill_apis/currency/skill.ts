@@ -79,8 +79,7 @@ class CurrencySkill {
     } else {
       var str2 = tmpArr.slice(2,(tmpArr.length)).join(' ');
     }
-
-    console.log([str,str2,num]);
+    
     // str: possible first currency, str2: possible second currency, num (default is 1): value to convert
     return [str,str2,num];
   }

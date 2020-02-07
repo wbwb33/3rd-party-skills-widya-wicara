@@ -1,34 +1,65 @@
 image: docker:stable 
 
 variables:
-  MAJOR_VERSION: 1
-  MINOR_VERSION: 1
-  PATCH_VERSION_DEV: 1
+  # MAJOR_VERSION: 1
+  # MINOR_VERSION: 1
+  PATCH_VERSION_DEV: 2
   PATCH_VERSION_PROD: 0
-  TAGGING: itwin/api-cache
+  # TAGGING: itwin/api-cache
   TAGGING_DEV: ww-dev/api-cache
   TAGGING_PROD: ww-prod/api-cache
   DOCKER_REPO: registry-intl.ap-southeast-5.aliyuncs.com
 
 stages:
+  - Versioner
   - Install Dependencies
   - Build Image and Push
+  - Update Version
   # - Push to Docker Hub
+
+versioner:
+  stage: Versioner
+  only:
+    refs:
+      - development
+      - master
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /update-/
+  script:
+    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
+    - INITIATE_URL="$URL_VERSIONER/get"
+    - GET_ALL=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL")
+    - MAJOR_VERSION=$(echo '$GET_ALL' | jq '.data[0].major')
+    - MINOR_VERSION=$(echo '$GET_ALL' | jq '.data[0].minor')
+    - PATCH_VERSION=$(echo '$GET_ALL' | jq '.data[0].patch')
+    - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
+    - echo "before, $SEM_VERSION"
+    - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then PATCH_VERSION=PATCH_VERSION+1; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then MINOR_VERSION=MINOR_VERSION+1; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then MAJOR_VERSION=MAJOR_VERSION+1; fi
+    # - SEM_VERSION="$(echo '$GET_ALL' | jq '.data[0].major').$(echo '$GET_ALL' | jq '.data[0].minor').$(echo '$GET_ALL' | jq '.data[0].patch')"
+    - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
+    - echo "after, $SEM_VERSION"
+    - echo $SEM_VERSION > version
+    - echo $ENV_LEVEL > env_level
+  artifacts:
+    paths:
+      - version
 
 install dependencies:
   stage: Install Dependencies
   only:
     refs:
       - development
+      - master
     variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker/
+      - $CI_COMMIT_MESSAGE =~ /build-/
   image: node:12.13.0-alpine
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
       - node_modules/
   script:
-    - npm ci
+    # - npm ci
+    - echo "ci"
 
 docker build dev:
   stage: Build Image and Push
@@ -36,65 +67,57 @@ docker build dev:
     refs:
       - development
     variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
+      - $CI_COMMIT_MESSAGE =~ /build-/
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
       - node_modules/
     policy: pull
   before_script:
-    # - cp $ENV .env
-    # - echo $CI_PIPELINE_IID
-    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_DEV
+    - VERSION=$(cat ./version)
+    - echo $VERSION
+    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$VERSION
+  script:  
+    - echo $TAG
+    # - docker build -t $TAG .
+    # - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
+    # - docker push $TAG && docker image rm $TAG
+
+docker build prod:
+  stage: Build Image and Push
+  only:
+    refs:
+      - master
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /build-/
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+    policy: pull
+  before_script:
+    - VERSION=$(cat ./version)
+    - echo $VERSION
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
     - echo $TAG
   script:  
     - docker build -t $TAG .
     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
 
-# docker push dev:
-#   stage: Push to Docker Hub
-#   only:
-#     refs:
-#       - development
-#     variables:
-#       - $CI_COMMIT_MESSAGE =~ /push-to-docker-dev/
-#   before_script:
-#     - export TAG=$TAGGING:$MAJOR_VERSION.$MINOR_VERSION.$CI_PIPELINE_IID-dev
-#     - echo $TAG
-#   script:
-#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-#     - docker push $TAG && docker image rm $TAG
-
-docker build prod:
-  stage: Build Image and Push
+update version:
+  stage: Update Version
   only:
     refs:
       - development
+      - master
     variables:
-      - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
-  cache: 
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-    paths:
-      - node_modules/
-    policy: pull
+      - $CI_COMMIT_MESSAGE =~ /update-/
   before_script:
-    # - cp $ENV .env
-    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
-    - echo $TAG
-  script:  
-    - docker build -t $TAG .
-
-# docker push prod:
-#   stage: Push to Docker Hub
-#   only:
-#     refs:
-#       - development
-#     variables:
-#       - $CI_COMMIT_MESSAGE =~ /push-to-docker-prod/
-#   before_script:
-#     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.1
-#     - echo $TAG
-#   script:
-#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-#     - docker push $TAG && docker image rm $TAG
+    - VERSION=$(cat ./version)
+    - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
+    - ENV_LEVEL=$(cat ./env_level)
+  script:
+    - INITIATE_URL="$URL_VERSIONER/update"
+    - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL" -H "spec:$VER_LEVEL")
+    - echo $UPDATE_VERSION
