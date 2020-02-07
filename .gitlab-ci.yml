@@ -30,9 +30,9 @@ versioner:
     - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
     - INITIATE_URL="$URL_VERSIONER/get"
     - GET_ALL=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL")
-    - MAJOR_VERSION=$(echo '$GET_ALL' | jq '.data[0].major')
-    - MINOR_VERSION=$(echo '$GET_ALL' | jq '.data[0].minor')
-    - PATCH_VERSION=$(echo '$GET_ALL' | jq '.data[0].patch')
+    - MAJOR_VERSION=$(echo "$GET_ALL" | jq '.data[0].major')
+    - MINOR_VERSION=$(echo "$GET_ALL" | jq '.data[0].minor')
+    - PATCH_VERSION=$(echo "$GET_ALL" | jq '.data[0].patch')
     - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
     - echo "before, $SEM_VERSION"
     - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then PATCH_VERSION=PATCH_VERSION+1; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then MINOR_VERSION=MINOR_VERSION+1; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then MAJOR_VERSION=MAJOR_VERSION+1; fi
