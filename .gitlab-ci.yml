@@ -117,6 +117,7 @@ update version:
       - master
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
+  image: dennbagas/semver-tool:1.0.0
   before_script:
     - ENV_LEVEL=$(cat ./env_level)
     - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
