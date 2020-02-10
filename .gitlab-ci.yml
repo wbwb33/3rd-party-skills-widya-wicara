@@ -41,11 +41,12 @@ versioner:
     - echo "after, $SEM_VERSION"
     - echo $SEM_VERSION > version
     - echo $SEM_VERSION
-    - echo $ENV_LEVEL > envlevel
+    - echo $ENV_LEVEL > env_level
     - echo $ENV_LEVEL
   artifacts:
     paths:
       - version
+      - env_level
 
 install dependencies:
   stage: Install Dependencies
@@ -100,9 +101,7 @@ docker build prod:
     policy: pull
   before_script:
     - VERSION=$(cat ./version)
-    - ENV_LEVEL=$(cat ./envlevel)
     - echo $VERSION
-    - echo $ENV_LEVEL
     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
     - echo $TAG
   script:  
@@ -119,8 +118,7 @@ update version:
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
   before_script:
-    # - VERSION=$(cat ./version)
-    - ENV_LEVEL=$(cat ./envlevel)
+    - ENV_LEVEL=$(cat ./env_level)
     - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
   script:
     - INITIATE_URL="$URL_VERSIONER/update"
