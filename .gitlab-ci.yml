@@ -121,7 +121,7 @@ update version:
   before_script:
     - ENV_LEVEL=$(cat ./env_level)
     - echo $CI_COMMIT_MESSAGE
-    - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
+    - if [[ $CI_COMMIT_MESSAGE =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ $CI_COMMIT_MESSAGE =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ $CI_COMMIT_MESSAGE =~ /update-major/ ]]; then VER_LEVEL="major"; fi
     - echo $VER_LEVEL
   script:
     - INITIATE_URL="$URL_VERSIONER/update"
