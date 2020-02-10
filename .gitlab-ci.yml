@@ -40,7 +40,9 @@ versioner:
     - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
     - echo "after, $SEM_VERSION"
     - echo $SEM_VERSION > version
+    - echo $SEM_VERSION
     - echo $ENV_LEVEL > env_level
+    - echo $ENV_LEVEL
   artifacts:
     paths:
       - version
@@ -116,8 +118,8 @@ update version:
       - $CI_COMMIT_MESSAGE =~ /update-/
   before_script:
     - VERSION=$(cat ./version)
-    - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
     - ENV_LEVEL=$(cat ./env_level)
+    - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
   script:
     - INITIATE_URL="$URL_VERSIONER/update"
     - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL" -H "spec:$VER_LEVEL")
