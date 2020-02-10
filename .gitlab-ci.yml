@@ -120,7 +120,9 @@ update version:
   image: dennbagas/semver-tool:1.0.0
   before_script:
     - ENV_LEVEL=$(cat ./env_level)
+    - echo $CI_COMMIT_MESSAGE
     - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
+    - echo $VER_LEVEL
   script:
     - INITIATE_URL="$URL_VERSIONER/update"
     - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL" -H "spec:$VER_LEVEL")
