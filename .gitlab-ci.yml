@@ -102,6 +102,7 @@ docker build prod:
     - VERSION=$(cat ./version)
     - ENV_LEVEL=$(cat ./envlevel)
     - echo $VERSION
+    - echo $ENV_LEVEL
     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
     - echo $TAG
   script:  
@@ -118,7 +119,7 @@ update version:
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
   before_script:
-    - VERSION=$(cat ./version)
+    # - VERSION=$(cat ./version)
     - ENV_LEVEL=$(cat ./envlevel)
     - if [[ "$CI_COMMIT_MESSAGE" =~ /update-patch/ ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-minor/ ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ /update-major/ ]]; then VER_LEVEL="major"; fi
   script:
