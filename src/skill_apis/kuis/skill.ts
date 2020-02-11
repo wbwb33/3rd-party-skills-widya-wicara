@@ -118,8 +118,7 @@ class Kuis {
     }
 
     kuis_availability.update({
-      // done_today: true
-      done_today: false //DEV ONLY
+      done_today: true
     }, {
       where: {
         uuid: payload.uuid
