@@ -26,7 +26,7 @@ versioner:
       - $CI_COMMIT_MESSAGE =~ /update-/
   image: dennbagas/semver-tool:1.0.0
   script:
-    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
+    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="prod"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
     - INITIATE_URL="$URL_VERSIONER/get"
     - GET_ALL=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL")
     - MAJOR_VERSION=$(echo "$GET_ALL" | jq '.data[0].major')
@@ -77,9 +77,9 @@ docker build dev:
   before_script:
     - VERSION=$(cat ./version)
     - echo $VERSION
-    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$VERSION
-  script:  
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$VERSION
     - echo $TAG
+  script:  
     - docker build -t $TAG .
     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
@@ -99,7 +99,7 @@ docker build prod:
   before_script:
     - VERSION=$(cat ./version)
     - echo $VERSION
-    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION_PROD
+    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$VERSION
     - echo $TAG
   script:  
     - docker build -t $TAG .
