@@ -5,7 +5,6 @@ variables:
   # MINOR_VERSION: 1
   # PATCH_VERSION_DEV: 2
   # PATCH_VERSION_PROD: 0
-  # TAGGING: itwin/api-cache
   TAGGING_DEV: ww-dev/api-cache
   TAGGING_PROD: ww-prod/api-cache
   DOCKER_REPO: registry-intl.ap-southeast-5.aliyuncs.com
