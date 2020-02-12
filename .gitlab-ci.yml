@@ -80,7 +80,7 @@ docker build dev:
     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
 
-docker build prod:
+docker build prod2:
   stage: Build Image and Push
   only:
     refs:
