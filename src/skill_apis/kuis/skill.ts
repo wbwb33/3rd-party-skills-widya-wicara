@@ -56,12 +56,13 @@ class Kuis {
         await this.createNewIdAndPlay(uuid);
         const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
         return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-      } else if(thisRes[0].done_today) {
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
-      } else {
+      } 
+      // else if(thisRes[0].done_today) {
+      //   return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
+      // } 
+      else {
         const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
         return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-        // return "lets play";
       }
     });
     // return ini;
