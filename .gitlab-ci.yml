@@ -93,7 +93,7 @@ docker build prod:
       - node_modules/
     policy: pull
   before_script:
-    - VERSION=$(cat ./version)
+    - VERSION=$(cat ./version) 
     - echo $VERSION
     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$VERSION
     - echo $TAG
