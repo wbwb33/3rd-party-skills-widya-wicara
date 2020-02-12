@@ -49,23 +49,24 @@ class Kuis {
 
   /** main function for Can {uuid} Play Quiz for today? */
   public canWePlayQuiz = async (req: Request, res: Response) => {
-    const uuid = req.body.uuid;
-    const ini = await this.isDone(uuid).then(async (thisRes)  => {
-      if(!thisRes[0]) {
-        // console.log("not set yet");
-        await this.createNewIdAndPlay(uuid);
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-      } 
-      // else if(thisRes[0].done_today) {
-      //   return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
-      // } 
-      else {
-        const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-        return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-      }
-    });
+    // const uuid = req.body.uuid;
+    // const ini = await this.isDone(uuid).then(async (thisRes)  => {
+    //   if(!thisRes[0]) {
+    //     await this.createNewIdAndPlay(uuid);
+    //     const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+    //   } 
+    //   else if(thisRes[0].done_today) {
+    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
+    //   } 
+    //   else {
+    //     const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+    //   }
+    // });
     // return ini;
+    const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+    const ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
     res.send(ini);
   }
 
@@ -119,8 +120,8 @@ class Kuis {
     }
 
     kuis_availability.update({
-      // done_today: true
-      done_today: false
+      done_today: true
+      // done_today: false
     }, {
       where: {
         uuid: payload.uuid

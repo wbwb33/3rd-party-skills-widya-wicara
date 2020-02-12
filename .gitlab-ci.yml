@@ -1,10 +1,6 @@
 image: docker:stable 
 
 variables:
-  # MAJOR_VERSION: 1
-  # MINOR_VERSION: 1
-  # PATCH_VERSION_DEV: 2
-  # PATCH_VERSION_PROD: 0
   TAGGING_DEV: ww-dev/api-cache
   TAGGING_PROD: ww-prod/api-cache
   DOCKER_REPO: registry-intl.ap-southeast-5.aliyuncs.com
@@ -25,7 +21,8 @@ versioner:
       - $CI_COMMIT_MESSAGE =~ /update-/
   image: dennbagas/semver-tool:1.0.0
   script:
-    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="prod"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
+    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
+    - if [[ "$CI_COMMIT_MESSAGE" =~ (prod-) ]]; then ENV_LEVEL="prod"; fi
     - INITIATE_URL="$URL_VERSIONER/get"
     - GET_ALL=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL")
     - MAJOR_VERSION=$(echo "$GET_ALL" | jq '.data[0].major')
@@ -52,7 +49,7 @@ install dependencies:
       - development
       - master
     variables:
-      - $CI_COMMIT_MESSAGE =~ /build-/
+      - $CI_COMMIT_MESSAGE =~ /update-/
   image: node:12.13.0-alpine
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
@@ -68,6 +65,28 @@ docker build dev:
       - development
     variables:
       - $CI_COMMIT_MESSAGE =~ /build-/
+  cache: 
+    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
+    paths:
+      - node_modules/
+    policy: pull
+  before_script:
+    - VERSION=$(cat ./version)
+    - echo $VERSION
+    - export TAG=$DOCKER_REPO/$TAGGING_DEV:$VERSION
+    - echo $TAG
+  script:  
+    - docker build -t $TAG .
+    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
+    - docker push $TAG && docker image rm $TAG
+
+docker build prod:
+  stage: Build Image and Push
+  only:
+    refs:
+      - development
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /prod-/
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
