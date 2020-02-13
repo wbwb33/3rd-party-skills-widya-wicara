@@ -16,13 +16,13 @@ versioner:
   only:
     refs:
       - development
-      - master
+      - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
   image: dennbagas/semver-tool:1.0.0
   script:
-    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "master" ]]; then ENV_LEVEL="prod"; fi
-    - if [[ "$CI_COMMIT_MESSAGE" =~ (prod-) ]]; then ENV_LEVEL="prod"; fi
+    - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "release" ]]; then ENV_LEVEL="prod"; fi
+    # - if [[ "$CI_COMMIT_MESSAGE" =~ (prod-) ]]; then ENV_LEVEL="prod"; fi
     - INITIATE_URL="$URL_VERSIONER/get"
     - GET_ALL=$(curl --request POST "$INITIATE_URL" -H "auth:$AUTH_VERSIONER" -H "env:$ENV_LEVEL")
     - MAJOR_VERSION=$(echo "$GET_ALL" | jq '.data[0].major')
@@ -47,7 +47,7 @@ install dependencies:
   only:
     refs:
       - development
-      - master
+      - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
   image: node:12.13.0-alpine
@@ -80,33 +80,11 @@ docker build dev:
     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
     - docker push $TAG && docker image rm $TAG
 
-docker build prod2:
-  stage: Build Image and Push
-  only:
-    refs:
-      - development
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /prod-/
-  cache: 
-    key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-    paths:
-      - node_modules/
-    policy: pull
-  before_script:
-    - VERSION=$(cat ./version) 
-    - echo $VERSION
-    - export TAG=$DOCKER_REPO/$TAGGING_PROD:$VERSION
-    - echo $TAG
-  script:  
-    - docker build -t $TAG .
-    - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-    - docker push $TAG && docker image rm $TAG
-
 docker build prod:
   stage: Build Image and Push
   only:
     refs:
-      - master
+      - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /build-/
   cache: 
@@ -129,7 +107,7 @@ update version:
   only:
     refs:
       - development
-      - master
+      - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
   image: dennbagas/semver-tool:1.0.0

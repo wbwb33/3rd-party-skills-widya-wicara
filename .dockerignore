@@ -6,6 +6,8 @@ npm-debug.log
 .prettierrc
 .sequelizerc
 .gitignore
+.version
+.env_level
 nodemon.json
 tslint.json
 README.md
