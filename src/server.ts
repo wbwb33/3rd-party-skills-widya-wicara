@@ -101,7 +101,7 @@ const onStateChanged = (state: any, reason: any) => {
 
     sequelize.addModels([TabelOne, kuis_availability, reminder]);
     await sequelize.sync({ force: false });
-
+    console.log(process.env.DB_DATABASE);
     job.start();
   } catch (e) {
     console.log(e);
