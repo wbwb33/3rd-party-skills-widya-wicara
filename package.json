@@ -6,13 +6,14 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
+    "tsnd": "node_modules/.bin/ts-node-dev --respawn src/server.ts",
     "tsc": "node_modules/typescript/bin/tsc \"-p\" \".\"",
     "build:local": "rm -rf dist && tsc -p . && node dist/server.js",
     "build:prod": "sudo git pull && sudo rm -rf dist && tsc -p .",
     "build:docker": "rm -rf dist && tsc -p ."
   },
   "keywords": [],
-  "author": "dennbagas@gmail.com",
+  "author": "wibisana@widyawicara.com",
   "license": "ISC",
   "dependencies": {
     "apache-ignite-client": "^1.0.0",
@@ -52,6 +53,7 @@
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
+    "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^5.20.1",
     "typescript": "^3.7.3"
   },
