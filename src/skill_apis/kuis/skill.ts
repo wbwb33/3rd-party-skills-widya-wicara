@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { Request, Response } from 'express';
-import { kuis_availability } from '../../db/models/kuis';
+import { kuis_score } from '../../db/models/kuis';
 import { igniteSupport } from '../../ignite_support';
 import { IKuis } from './types';
 
@@ -89,7 +89,7 @@ class Kuis {
   /** this function only check availability of today's quiz for inputted uuid */
   private isDone = async (device_uuid: string): Promise<any> => {
     return new Promise((resolve, reject) => {
-      resolve(kuis_availability.findAll({
+      resolve(kuis_score.findAll({
         where: {
           uuid: device_uuid
         },
@@ -99,7 +99,7 @@ class Kuis {
 
   /** this function will create IF ONLY there are no {uuid} detected in db  */
   private createNewIdAndPlay = async (device_uuid: string) => {
-    await kuis_availability.create({uuid: device_uuid ,score: 0, done_today: false});
+    await kuis_score.create({uuid: device_uuid ,score: 0, done_today: false});
   }
 
   /** increment score if mark's payload from chatbot's post return true */
@@ -109,7 +109,7 @@ class Kuis {
     const uuidQ = payload.uuid;
 
     if(payload.mark==1) {
-      kuis_availability.increment('score', {
+      kuis_score.increment('score', {
         where: {
           uuid: uuidQ
         }
@@ -119,7 +119,7 @@ class Kuis {
       // console.log("false");
     }
 
-    kuis_availability.update({
+    kuis_score.update({
       done_today: true
       // done_today: false
     }, {

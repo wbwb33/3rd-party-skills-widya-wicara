@@ -1,9 +1,9 @@
 import {Table, Column, Model, Unique} from "sequelize-typescript";
 
 @Table
-export class kuis_availability extends Model<kuis_availability> {
+export class kuis_score extends Model<kuis_score> {
   
-  @Unique
+  // @Unique
   @Column
   uuid!: string;
 

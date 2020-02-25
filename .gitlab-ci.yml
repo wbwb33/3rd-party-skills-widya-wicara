@@ -116,5 +116,5 @@ update version:
     - echo $VER_LEVEL
   script:
     - INITIATE_URL="$URL_VERSIONER/ver/update"
-    - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -d "env=$ENV_LEVEL&spec=$VER_LEVEL")
+    - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -H "token:$AUTH_VERSIONER" -d "env=$ENV_LEVEL&spec=$VER_LEVEL")
     - echo $UPDATE_VERSION
