@@ -13,7 +13,7 @@ import hargaPangan from './skill_apis/harga_pangan/resource';
 /** import sequelize connection and the models */
 import { sequelize } from './sequelize';
 import { TabelOne } from './db/models/tabel_one';
-import { kuis_availability } from './db/models/kuis';
+import { kuis_score } from './db/models/kuis';
 import { reminder } from './db/models/reminder';
 
 /** ambil variabel PORT dari .env */
@@ -51,14 +51,14 @@ new cron.CronJob('00 06 00 * * *', () => {
 }).start();
 
 /** get jadwal adzan for today at 01.00 */
-const job = new cron.CronJob('00 00 01 * * *', async () => {
-  try {
-    const d = new Date();
-    await jadwalAdzan.index();
-  } catch (e) {
-    console.log(e);
-  }
-});
+// new cron.CronJob('00 00 01 * * *', async () => {
+//   try {
+//     const d = new Date();
+//     await jadwalAdzan.index();
+//   } catch (e) {
+//     console.log(e);
+//   }
+// });
 
 /** ignite support */
 import IgniteClient from 'apache-ignite-client';
@@ -99,10 +99,9 @@ const onStateChanged = (state: any, reason: any) => {
       : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
 
-    sequelize.addModels([TabelOne, kuis_availability, reminder]);
+    sequelize.addModels([kuis_score]);
     await sequelize.sync({ force: false });
     console.log(process.env.DB_DATABASE);
-    job.start();
   } catch (e) {
     console.log(e);
   }

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { kuis_availability } from '../../db/models/kuis';
+import { kuis_score } from '../../db/models/kuis';
 import { IKuisOnly, IKuis } from './types';
 import { igniteSupport } from '../../ignite_support';
 
@@ -60,7 +60,7 @@ class KuisData {
 
   /** this function will update all done_today to false, will ONLY GET CALLED AT NEW DAY */
   private updateNewDay = async () => {
-    kuis_availability.update({
+    kuis_score.update({
       done_today: false
     }, {
       where: {
