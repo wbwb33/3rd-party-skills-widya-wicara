@@ -1,7 +1,7 @@
 import {Table, Column, Model} from "sequelize-typescript";
 
 @Table
-export class TabelOne extends Model<TabelOne> {
+export class JadwalAdzan extends Model<JadwalAdzan> {
     @Column
     uuid!: string;
 

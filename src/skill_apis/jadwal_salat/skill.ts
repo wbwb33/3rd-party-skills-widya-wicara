@@ -1,9 +1,8 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
 import $ from 'cheerio';
-import {TabelOne} from '../../db/models/tabel_one';
+import {JadwalAdzan} from '../../db/models/jadwal_adzan';
 import CekCity from '../entity_city/skill';
-import { resolve } from 'dns';
 
 class AdzanSkill {
   public index = async (req: Request, res: Response) => {
@@ -65,7 +64,7 @@ class AdzanSkill {
 
   public getJadwalSalatFromDb = async (req: Request, res: Response) => {
     try {
-      res.send(await TabelOne.findAll({
+      res.send(await JadwalAdzan.findAll({
         where: {
           id:60
         }
