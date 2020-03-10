@@ -2,7 +2,7 @@ import rp from 'request-promise';
 import $ from 'cheerio';
 import fs from 'fs';
 import async from 'async';
-import {TabelOne} from '../../db/models/tabel_one';
+import {JadwalAdzan} from '../../db/models/jadwal_adzan';
 import {DataDevice, DataJadwalSalat, FinalData} from '../../@types/skills/jadwal_salat_type';
 
 class AdzanResources {
@@ -56,7 +56,7 @@ class AdzanResources {
                 isya: value[5]
               }
             });
-            return TabelOne.create(final_array[0]);
+            return JadwalAdzan.create(final_array[0]);
           }
         }
       )

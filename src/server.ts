@@ -12,7 +12,7 @@ import hargaPangan from './skill_apis/harga_pangan/resource';
 
 /** import sequelize connection and the models */
 import { sequelize } from './sequelize';
-import { TabelOne } from './db/models/tabel_one';
+import { JadwalAdzan } from './db/models/jadwal_adzan';
 import { kuis_score } from './db/models/kuis';
 import { reminder } from './db/models/reminder';
 
