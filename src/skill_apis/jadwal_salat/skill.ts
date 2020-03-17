@@ -27,13 +27,13 @@ class AdzanSkill {
     let index = listLokasi.length;
     for(let i=0;i<listLokasi.length;i++){
       if(city.includes(listLokasi[i].toLowerCase())){
-        index = i;
+        index = i+1;
         break;
       }
     }
 
     if(index<listLokasi.length){
-      const dataFromUrl = await this.getDataJadwalFromUrl(index, listLokasi[index]);
+      const dataFromUrl = await this.getDataJadwalFromUrl(index, listLokasi[index-1]);
       return dataFromUrl;
     } else {
       return '"status": "error","action": "city-not-found","message": "NULL"';
