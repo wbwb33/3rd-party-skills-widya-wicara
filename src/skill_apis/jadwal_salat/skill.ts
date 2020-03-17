@@ -52,7 +52,7 @@ class AdzanSkill {
           const maghribJam = $('.table_highlight > td', html)[4].children[0].data;
           const isyaJam = $('.table_highlight > td', html)[5].children[0].data;
 
-          resolve(`"lokasi": "${lok}","gmt": ${gmt},"subuh": "${subuhJam}","dzuhur": "${dzuhurJam}","ashar": "${asharJam}","maghrib": "${maghribJam}","isya": "${isyaJam}"`);
+          resolve(`"lokasi": "${lok}","gmt": ${gmt?gmt:7},"subuh": "${subuhJam}","dzuhur": "${dzuhurJam}","ashar": "${asharJam}","maghrib": "${maghribJam}","isya": "${isyaJam}"`);
         })
         .catch(error => console.log(error));
     });
