@@ -5,7 +5,7 @@ import { NewsApiType, DataOutput } from './types';
 class NewsApi {
   public main = async(req:Request, res:Response) => {
     const msg = req.query.msg;
-    const apiKey = "4aa0bdab5b114a4fbcb39deaea7583b8";
+    const apiKey = "fe5b467d45584b77838b6e0d4dedd46d";
 
     let pre = msg.includes("dong")?msg.split("dong")[0]:msg;
 
