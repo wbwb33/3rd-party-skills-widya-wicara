@@ -103,7 +103,7 @@ class NewsApi {
       out = "curl";
       const a = (req.query.full)?await this.getDataFromUrl(url,true):await this.getDataFromUrl(url);
       const b = JSON.parse(`{"action":"news-api.${about}","data":${JSON.stringify(a)}}`);
-      (req.query.full)?res.send(a):res.sendOK(b);
+      (req.query.full)?res.send(a):(JSON.stringify(a)=="[]")?res.sendError("Request News API error (ECONNRESET)"):res.sendOK(b);
     }
 
     // console.log(`out: ${out}, about: ${about}, url: ${url}`);
@@ -128,7 +128,7 @@ class NewsApi {
               source: tmp[i].source.name,
               author: tmp[i].author||"anonim",
               title: tmp[i].title,
-              content: tmp[i].content.replace(/\r?\n?\"|\r?\n|\r/g, " ")
+              content: tmp[i].content.replace(/\r?\n?\"|\r?\n|\r/g, " ").replace(/ *\([^)]*\)*/g, "").replace(/ *\[[^\]]*]/g, "").replace(/\'\"/g, "").replace(/ *\&[^\;]*\;/g,"")
             })
             j++;
           }
