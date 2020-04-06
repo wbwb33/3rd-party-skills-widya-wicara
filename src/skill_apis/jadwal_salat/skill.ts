@@ -66,7 +66,7 @@ class AdzanSkill {
           const isyaJam = $('.table_highlight > td', html)[8].children[0].data;
 
           const ifEndOfMonth = $('.table_highlight', html)[0].next.next.attribs.class;
-          if(ifEndOfMonth=="table_light") {
+          if(ifEndOfMonth=="table_block_title") {
             await rp(`${url}&m=5`)
               .then(htmlNext => {
                 const imsakJamBesok = $('.table_light > td', htmlNext)[1].children[0].data;
