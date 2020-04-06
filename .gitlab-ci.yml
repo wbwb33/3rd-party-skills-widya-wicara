@@ -19,7 +19,7 @@ versioner:
       - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
-  image: dennbagas/semver-tool:1.0.0
+  image: dennbagas/win-semver
   script:
     - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "release" ]]; then ENV_LEVEL="prod"; fi
     - echo $ENV_LEVEL
@@ -108,7 +108,7 @@ update version:
       - release
     variables:
       - $CI_COMMIT_MESSAGE =~ /update-/
-  image: dennbagas/semver-tool:1.0.0
+  image: dennbagas/win-semver
   before_script:
     - ENV_LEVEL=$(cat ./env_level)
     - echo $CI_COMMIT_MESSAGE
