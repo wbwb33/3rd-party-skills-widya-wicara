@@ -60,7 +60,7 @@ class AdzanSkill {
           const gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
           const imsakJam = $('.table_highlight > td', html)[1].children[0].data;
           const subuhJam = $('.table_highlight > td', html)[2].children[0].data;
-          const dzuhurJam = $('.table_highlight > td', html)[3].children[0].data;
+          const dzuhurJam = $('.table_highlight > td', html)[5].children[0].data;
           const asharJam = $('.table_highlight > td', html)[6].children[0].data;
           const maghribJam = $('.table_highlight > td', html)[7].children[0].data;
           const isyaJam = $('.table_highlight > td', html)[8].children[0].data;
@@ -71,7 +71,7 @@ class AdzanSkill {
               .then(htmlNext => {
                 const imsakJamBesok = $('.table_light > td', htmlNext)[1].children[0].data;
                 const subuhJamBesok = $('.table_light > td', htmlNext)[2].children[0].data;
-                const dzuhurJamBesok = $('.table_light > td', htmlNext)[3].children[0].data;
+                const dzuhurJamBesok = $('.table_light > td', htmlNext)[5].children[0].data;
                 const asharJamBesok = $('.table_light > td', htmlNext)[6].children[0].data;
                 const maghribJamBesok = $('.table_light > td', htmlNext)[7].children[0].data;
                 const isyaJamBesok = $('.table_light > td', htmlNext)[8].children[0].data;
@@ -83,7 +83,7 @@ class AdzanSkill {
           } else {
             const imsakJamBesok = $('.table_highlight', html)[0].next.next.children[1].children[0].data;
             const subuhJamBesok = $('.table_highlight', html)[0].next.next.children[2].children[0].data;
-            const dzuhurJamBesok = $('.table_highlight', html)[0].next.next.children[3].children[0].data;
+            const dzuhurJamBesok = $('.table_highlight', html)[0].next.next.children[5].children[0].data;
             const asharJamBesok = $('.table_highlight', html)[0].next.next.children[6].children[0].data;
             const maghribJamBesok = $('.table_highlight', html)[0].next.next.children[7].children[0].data;
             const isyaJamBesok = $('.table_highlight', html)[0].next.next.children[8].children[0].data;
