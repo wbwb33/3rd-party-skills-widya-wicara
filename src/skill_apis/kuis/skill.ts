@@ -48,14 +48,14 @@ class Kuis {
         if(!thisRes[0]) {
           await this.createNewIdAndPlay(uuid);
           const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "yes", "data": ${JSON.stringify(quizToday)}}`);
         } 
         else if(thisRes[0].done_today) {
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
         } 
         else {
           const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
         }
       });
       /** end */
@@ -64,7 +64,7 @@ class Kuis {
     else {
       /** uncomment for unlimited attempt */
       const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-      var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+      var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
       /** end */
     }
 
