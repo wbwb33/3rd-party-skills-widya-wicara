@@ -1,5 +1,3 @@
-# image: docker:stable 
-
 variables:
   TAGGING_DEV: ww-dev/api-cache
   TAGGING_PROD: ww-prod/api-cache
@@ -22,6 +20,8 @@ versioner:
     variables:
       # - $CI_COMMIT_MESSAGE =~ /update-/
       - $CI_COMMIT_MESSAGE =~ /[build]/
+  tags:
+    - bastion-runner
   script:
     # - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "release" ]]; then ENV_LEVEL="prod"; fi
     # - echo $ENV_LEVEL
@@ -57,6 +57,8 @@ install dependencies:
       - release
     # variables:
     #   - $CI_COMMIT_MESSAGE =~ /update-/
+  tags:
+    - bastion-runner
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:

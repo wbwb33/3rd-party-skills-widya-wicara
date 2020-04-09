@@ -1,70 +1,37 @@
 import fs from 'fs';
 import { Request, Response } from 'express';
-import { kuis_score } from '../../db/models/kuis';
+import { kuis_score_ramadan } from '../../db/models/kuis_ramadhan';
 import { igniteSupport } from '../../ignite_support';
 import { IKuis } from './types';
 
 class Kuis {
-  /** for debugging purpose only */
-  public index = async (req: Request, res: Response) => {
-    fs.readFile('dependent/data_kuis.json', (err, data) => {
-      if (err) {
-        res.sendError('data kuis not found');
-      } else {
-        const content = JSON.parse(data.toString());
-        const id = Math.floor(Math.random()*content.length);
-        res.send(content[id]);
-        content.splice(id,1);
-        fs.writeFile('cache/kuis_today.json', JSON.stringify(content[id]), (err) => {
-          if(err){
-            res.sendError('cannot write data kuis today');
-          } else {
-            console.log("done for today");
-          }
-        })
-        fs.writeFile('dependent/data_kuis.json', JSON.stringify(content), (err) => {
-          if(err){
-            res.sendError('cannot write new data kuis');
-          } else {
-            console.log("done new data");
-          }
-        })
-      }
-    });
-  };
-
-  /** for debugging purpose only */
-  public today = async (req: Request, res: Response) => {
-    const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-    res.send(quizToday);
-  }
 
   /** main function for Can {uuid} Play Quiz for today? */
   public canWePlayQuiz = async (req: Request, res: Response) => {
     if(req.query.unlimited!="unlimited") {
-      /** uncomment for limited attempt */
+      /** for limited attempt */
       const uuid = req.body.uuid;
       var ini = await this.isDone(uuid).then(async (thisRes)  => {
         if(!thisRes[0]) {
           await this.createNewIdAndPlay(uuid);
           const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+          return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
         } 
         else if(thisRes[0].done_today) {
-          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
+          return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "no"}`);
         } 
         else {
           const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+          return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
         }
       });
       /** end */
     }
 
     else {
-      /** uncomment for unlimited attempt */
+      /** for unlimited attempt */
       const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-      var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+      var ini = JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
       /** end */
     }
 
@@ -73,7 +40,7 @@ class Kuis {
 
   /** this function will get called IF ONLY we get chance to play quiz today (from isDone) */
   private getTodayQuiz = async (oneToTen: number): Promise<object> => {
-    const data = await igniteSupport.getCacheByNameWithoutClient('cacheQuiz',new IKuis());
+    const data = await igniteSupport.getCacheByNameWithoutClient('cacheQuizRamadan',new IKuis());
     return new Promise((resolve, reject) => {
       resolve(data![oneToTen])
     })
@@ -82,7 +49,7 @@ class Kuis {
   /** this function only check availability of today's quiz for inputted uuid */
   private isDone = async (device_uuid: string): Promise<any> => {
     return new Promise((resolve, reject) => {
-      resolve(kuis_score.findAll({
+      resolve(kuis_score_ramadan.findAll({
         where: {
           uuid: device_uuid
         },
@@ -92,17 +59,16 @@ class Kuis {
 
   /** this function will create IF ONLY there are no {uuid} detected in db  */
   private createNewIdAndPlay = async (device_uuid: string) => {
-    await kuis_score.create({uuid: device_uuid ,score: 0, done_today: false});
+    await kuis_score_ramadan.create({uuid: device_uuid ,score: 0, done_today: false});
   }
 
   /** increment score if mark's payload from chatbot's post return true */
   public updateScore = async (req: Request, res: Response) => {
-    // const payload = req.body;
     const payload = req.query ?? req.body;
     const uuidQ = payload.uuid;
 
     if(payload.mark==1) {
-      kuis_score.increment('score', {
+      kuis_score_ramadan.increment('score', {
         where: {
           uuid: uuidQ
         }
@@ -112,7 +78,7 @@ class Kuis {
       // console.log("false");
     }
 
-    kuis_score.update({
+    kuis_score_ramadan.update({
       done_today: true
     }, {
       where: {
@@ -120,7 +86,7 @@ class Kuis {
       }
     })
 
-    res.send(JSON.parse(`{"status": "success", "skill": "kuis", "message": "saved succesfully"}`));
+    res.send(JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "message": "saved succesfully"}`));
   }
 }
 

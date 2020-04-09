@@ -14,6 +14,7 @@ import hargaPangan from './skill_apis/harga_pangan/resource';
 import { sequelize } from './sequelize';
 import { JadwalAdzan } from './db/models/jadwal_adzan';
 import { kuis_score } from './db/models/kuis';
+import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
 import { reminder } from './db/models/reminder';
 
 /** ambil variabel PORT dari .env */
@@ -47,7 +48,20 @@ new cron.CronJob('00 04 00 * * *', () => {
 
 /** get kuis for today and save it to db at 00.06 */
 new cron.CronJob('00 06 00 * * *', () => {
-  kuis.get(false);
+  kuis.get();
+}).start();
+
+/** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
+const dateRamadan = new Date();
+dateRamadan.setUTCFullYear(2020, 3, 9);
+dateRamadan.setUTCHours(17);
+dateRamadan.setUTCMinutes(0);
+dateRamadan.setUTCSeconds(0);
+new cron.CronJob(dateRamadan, () => {
+  // new cron.CronJob('00 08 00 * * *', () => {
+  new cron.CronJob('00 08 */2 * * *', () => {
+    kuis.getQuizRamadan();
+  }).start();
 }).start();
 
 /** get jadwal adzan for today at 01.00 */
@@ -82,6 +96,9 @@ const onStateChanged = (state: any, reason: any) => {
     const igniteClient = new IgniteClient(onStateChanged);
 
     await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
+    !(await kuis.cacheCheckRamadan(igniteClient))
+      ? console.log('cache kuis ramadan not exist')
+      : console.log('cache kuis ramadan already exist');
     !(await kuis.cacheCheck(igniteClient))
       ? console.log('cache kuis not exist')
       : console.log('cache kuis already exist');
@@ -99,7 +116,7 @@ const onStateChanged = (state: any, reason: any) => {
       : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
 
-    sequelize.addModels([kuis_score]);
+    sequelize.addModels([kuis_score, kuis_score_ramadan]);
     await sequelize.sync({ force: false });
     console.log(process.env.DB_DATABASE);
   } catch (e) {
