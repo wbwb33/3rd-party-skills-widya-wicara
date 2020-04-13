@@ -58,12 +58,13 @@ class HargaEmas {
       const url = `https://harga-emas.org/`;
       await rp(url)
         .then(html => {
-          const mainTable = $('.col-md-8 > .in_table > tbody > tr', html);
-          const g10 = mainTable[14].children;
-          const g5 = mainTable[15].children;
-          const g1 = mainTable[18].children;
-          const sell = mainTable[20].children;
-
+          const mainTable = $('.col-md-12 > .in_table > tbody > tr', html);
+          
+          const g10 = mainTable[19].children;
+          const g5 = mainTable[20].children;
+          const g1 = mainTable[23].children;
+          const sell = mainTable[25].children;
+          
           const batangAntamG10 = g10[3].children[0].data?.split(" ")[0];
           const gramAntamG10 = g10[5].children[0].data?.split(" ")[0];
           const batangGadaiG10 = g10[7].children[0].data;

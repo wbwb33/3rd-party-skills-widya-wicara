@@ -53,7 +53,7 @@ new cron.CronJob('00 06 00 * * *', () => {
 
 /** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
 const dateRamadan = new Date();
-dateRamadan.setUTCFullYear(2020, 3, 9);
+dateRamadan.setUTCFullYear(2021, 3, 9);
 dateRamadan.setUTCHours(17);
 dateRamadan.setUTCMinutes(0);
 dateRamadan.setUTCSeconds(0);
