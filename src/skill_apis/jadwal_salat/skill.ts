@@ -46,7 +46,7 @@ class AdzanSkill {
     }
 
     if(imsakOrBuka){
-      const dataFromUrl = await this.getImsakRamadan(index, listLokasi[index-1], imsakOrBuka);
+      const dataFromUrl = await this.getImsakOrBukaRamadan(index, listLokasi[index-1], imsakOrBuka);
       return dataFromUrl;
     }
     
@@ -62,20 +62,10 @@ class AdzanSkill {
 
   private getDataJadwalFromUrl = async (index: number, lok: string): Promise<string>=> {
     return new Promise( async (resolve) => {
-      // const url = `http://jadwalsholat.pkpu.or.id/?id=${index}`;
       const url = `https://www.jadwalsholat.org/adzan/monthly.php?id=${index}`;
 
       await rp(url)
         .then(async (html) => {
-          // const gmt = $('.table_title > td[align=center] > small', html)[0].children[2].data?.replace(/[^0-9]/g,"");
-          // const subuhJam = $('.table_highlight > td', html)[1].children[0].data;
-          // const dzuhurJam = $('.table_highlight > td', html)[2].children[0].data;
-          // const asharJam = $('.table_highlight > td', html)[3].children[0].data;
-          // const maghribJam = $('.table_highlight > td', html)[4].children[0].data;
-          // const isyaJam = $('.table_highlight > td', html)[5].children[0].data;
-
-          // resolve(`"lokasi": "${lok}","gmt": ${gmt?gmt:7},"imsak": "${imsakJam}","subuh": "${subuhJam}","dzuhur": "${dzuhurJam}","ashar": "${asharJam}","maghrib": "${maghribJam}","isya": "${isyaJam}"`);
-
           const gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
           const imsakJam = $('.table_highlight > td', html)[1].children[0].data;
           const subuhJam = $('.table_highlight > td', html)[2].children[0].data;
@@ -127,7 +117,7 @@ class AdzanSkill {
     }
   }
 
-  private getImsakRamadan = async (index: number, lok: string, imsakOrBuka: string): Promise<string> => {
+  private getImsakOrBukaRamadan = async (index: number, lok: string, imsakOrBuka: string): Promise<string> => {
     return new Promise( async (resolve) => {
       const url = `https://www.jadwalsholat.org/adzan/monthly.php?id=${index}`;
       var arrayImsak: (string)[] = [];
@@ -138,9 +128,10 @@ class AdzanSkill {
 
       await rp(url)
         .then(async (html) => {
+          let gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
+
           for(let i=0;i<7;i++){
             let tmp = $('tbody > tr', html)[i+27].children[switcher].children[0].data!;
-            let gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
             
             d.setUTCFullYear(2020, 3, i+24);
             d.setUTCHours(+tmp.split(':')[0]-+gmt);
@@ -156,9 +147,10 @@ class AdzanSkill {
       
       await rp(url+'&m=5')
         .then(async (html) => {
+          let gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
+
           for(let i=0;i<23;i++){
             let tmp = $('tbody > tr', html)[i+5].children[switcher].children[0].data!;
-            let gmt = $('.table_title > td[align=center] > h1', html).text().replace(/[^0-9]/g,"");
             
             d.setUTCFullYear(2020, 4, i+1);
             d.setUTCHours(+tmp.split(':')[0]-+gmt);
