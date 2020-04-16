@@ -187,11 +187,11 @@ class AdzanSkill {
 
     await rp(options)
       .then(function (body) {
-        res.send(JSON.parse(`"status": "success","action": "input jadwal imsak one month","message": "${body}"`));
+        res.send(JSON.parse(`{"status": "success","action": "input jadwal imsak one month","message": "${body}"}`));
       })
       .catch(function (err) {
         console.log(err);
-        res.send(JSON.parse(`"status": "error","action": "input jadwal imsak one month","message": "${err.message}"`));  
+        res.send(JSON.parse(`{"status": "error","action": "input jadwal imsak one month","message": "${err.message}"}`));  
       });
 
   }
