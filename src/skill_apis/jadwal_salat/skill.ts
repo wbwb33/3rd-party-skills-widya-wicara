@@ -167,6 +167,34 @@ class AdzanSkill {
       resolve(`"lokasi": "${lok}", "data": ${JSON.stringify(arrayImsak)}`);
     })
   }
+
+  /** this function will send JADWAL IMSAK or BUKA one FULL MONTH to Apps by uuid  */
+  public insertOneFullMonth = async (req: Request, res: Response) => {
+    const id = req.query.uuid;
+    const uuid = id.split('-')[1];
+
+    var options = {
+      method: 'GET',
+      uri: 'http://api-apps-dev:9099/function/reminder',
+      form: {
+        label:'pengingat untuk berbuka from api',
+        ringtone:'default.mp3',
+        datetime:'2020-04-12 17:00:00',
+        device_uuid:uuid,
+        alert_token:`${id}-maghrib2020-04-12T10:00:00+0000`
+      }
+    };
+
+    await rp(options)
+      .then(function (body) {
+        res.send(JSON.parse(`"status": "success","action": "input jadwal imsak one month","message": "${body}"`));
+      })
+      .catch(function (err) {
+        console.log(err);
+        res.send(JSON.parse(`"status": "error","action": "input jadwal imsak one month","message": "${err.message}"`));  
+      });
+
+  }
 }
 
 const adzanSkill = new AdzanSkill();

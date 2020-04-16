@@ -26,6 +26,7 @@ export default [
   route.get('/play-quiz', Kuis.canWePlayQuiz),
   route.get('/salat-by-lokasi', AdzanSkill.index),
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb),
+  route.get('/insert-to-apps', AdzanSkill.insertOneFullMonth),
   route.get('/cooking', Cooking.getSavedRecipes),
   route.get('/get-reminder', ReminderSkill.index),
   route.get('/add-reminder', ReminderSkill.add),
