@@ -184,10 +184,13 @@ class AdzanSkill {
 
   /** this is the main function of above function */
   private insertOneFullMonthMain = async (id:string, city:string, imsakOrBuka:string, gmt:number) => {
-    const uuid = id.split('-')[1];
-
+    
     const final = await this.findIndexByCity(city, imsakOrBuka);
+    
     const dataWaktuSebulan = JSON.parse(`{${final}}`)["data"];
+    const dataLabel = imsakOrBuka=="imsak"?'pengingat untuk waktu imsyak':'pengingat untuk berbuka puasa';
+    const dataUuid = id.split('-')[1];
+    const dataAlertToken = imsakOrBuka=="imsak"?'-imsak':'-maghrib';
 
     for(let i=0;i<dataWaktuSebulan.length;i++) {
       let tmpDateForApps = moment(dataWaktuSebulan[i]).add(gmt, "hours").utc().format('YYYY-MM-DD HH:mm:ss');
@@ -196,11 +199,11 @@ class AdzanSkill {
         method: 'GET',
         uri: 'http://api-apps-dev:9099/function/reminder',
         form: {
-          label:'pengingat untuk berbuka from api',
+          label:dataLabel,
           ringtone:'default.mp3',
           datetime:`${tmpDateForApps}`,
-          device_uuid:uuid,
-          alert_token:`${id}-maghrib${dataWaktuSebulan[i]}`
+          device_uuid:dataUuid,
+          alert_token:`${id}${dataAlertToken}${dataWaktuSebulan[i]}`
         }
       };
 
