@@ -3,6 +3,7 @@ import rp from 'request-promise';
 import $ from 'cheerio';
 import {JadwalAdzan} from '../../db/models/jadwal_adzan';
 import CekCity from '../entity_city/skill';
+import moment from 'moment';
 
 class AdzanSkill {
   public index = async (req: Request, res: Response) => {
@@ -171,30 +172,48 @@ class AdzanSkill {
   /** this function will send JADWAL IMSAK or BUKA one FULL MONTH to Apps by uuid  */
   public insertOneFullMonth = async (req: Request, res: Response) => {
     const id = req.query.uuid;
+    const city = req.query.city;
+    const imsakOrBuka = req.query.imsak?"imsak":"buka";
+    const gmt = req.query.gmt;
+
+    this.insertOneFullMonthMain(id,city,imsakOrBuka,gmt);
+
+    res.send(JSON.parse(`{ "status": "success", "action":"Add 1 month reminder of ${imsakOrBuka} to Apps", "message": "see logs"}`));
+
+  }
+
+  /** this is the main function of above function */
+  private insertOneFullMonthMain = async (id:string, city:string, imsakOrBuka:string, gmt:number) => {
     const uuid = id.split('-')[1];
 
-    var options = {
-      method: 'GET',
-      uri: 'http://api-apps-dev:9099/function/reminder',
-      form: {
-        label:'pengingat untuk berbuka from api',
-        ringtone:'default.mp3',
-        datetime:'2020-04-12 17:00:00',
-        device_uuid:uuid,
-        alert_token:`${id}-maghrib2020-04-12T10:00:00+0000`
-      }
-    };
+    const final = await this.findIndexByCity(city, imsakOrBuka);
+    const dataWaktuSebulan = JSON.parse(`{${final}}`)["data"];
 
-    await rp(options)
-      .then(function (body) {
-        console.log(body);
-        res.send(JSON.parse(`{"status": "success","action": "input jadwal imsak one month","message": "see logs"}`));
-      })
-      .catch(function (err) {
-        console.log(err);
-        res.send(JSON.parse(`{"status": "error","action": "input jadwal imsak one month","message": "${err.message}"}`));  
-      });
+    for(let i=0;i<dataWaktuSebulan.length;i++) {
+      let tmpDateForApps = moment(dataWaktuSebulan[i]).add(gmt, "hours").utc().format('YYYY-MM-DD HH:mm:ss');
 
+      var options = {
+        method: 'GET',
+        uri: 'http://api-apps-dev:9099/function/reminder',
+        form: {
+          label:'pengingat untuk berbuka from api',
+          ringtone:'default.mp3',
+          datetime:`${tmpDateForApps}`,
+          device_uuid:uuid,
+          alert_token:`${id}-maghrib${dataWaktuSebulan[i]}`
+        }
+      };
+
+      await rp(options)
+        .then(function (body) {
+          // success
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    }
+
+    console.log(`succesfully added 1 month of ${imsakOrBuka} to Apps with id: ${id}`);
   }
 }
 
