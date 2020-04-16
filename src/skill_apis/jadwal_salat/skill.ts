@@ -187,7 +187,8 @@ class AdzanSkill {
 
     await rp(options)
       .then(function (body) {
-        res.send(JSON.parse(`{"status": "success","action": "input jadwal imsak one month","message": "${body}"}`));
+        console.log(body);
+        res.send(JSON.parse(`{"status": "success","action": "input jadwal imsak one month","message": "see logs"}`));
       })
       .catch(function (err) {
         console.log(err);
