@@ -133,8 +133,8 @@ server.listen(PORT, () =>
 import HeartPing from 'heart-ping';
 const myHeartPing = new HeartPing();
 myHeartPing.start(
-  'http://api-apps-dev:9099', // or using https, e.g.: 'https://www.google.com'
-  80,
+  'api-apps-dev', // or using https, e.g.: 'https://www.google.com'
+  9099,
   time => {
     console.log(`api-apps-dev:9099`);
     myHeartPing.stop();
