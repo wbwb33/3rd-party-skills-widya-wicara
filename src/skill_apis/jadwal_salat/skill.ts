@@ -192,12 +192,22 @@ class AdzanSkill {
     const dataUuid = id.split('-')[1];
     const dataAlertToken = imsakOrBuka=="imsak"?'-imsak':'-maghrib';
 
+    const dataUrl = await rp('http://api-apps-dev:9099')
+      .then(function (body) {
+        return 'http://api-apps-dev:9099'
+      })
+      .catch(function (err) {
+        return 'http://api-apps:9099'
+      });
+
+    console.log(dataUrl);
+
     for(let i=0;i<dataWaktuSebulan.length;i++) {
       let tmpDateForApps = moment(dataWaktuSebulan[i]).add(gmt, "hours").utc().format('YYYY-MM-DD HH:mm:ss');
 
       var options = {
         method: 'GET',
-        uri: 'http://api-apps-dev:9099/function/reminder',
+        uri: `${dataUrl}/function/reminder`,
         form: {
           label:dataLabel,
           ringtone:'default.mp3',
