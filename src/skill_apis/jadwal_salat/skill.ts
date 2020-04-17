@@ -4,6 +4,8 @@ import $ from 'cheerio';
 import {JadwalAdzan} from '../../db/models/jadwal_adzan';
 import CekCity from '../entity_city/skill';
 import moment from 'moment';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 class AdzanSkill {
   public index = async (req: Request, res: Response) => {
@@ -192,20 +194,14 @@ class AdzanSkill {
     const dataUuid = id.split('-')[1];
     const dataAlertToken = imsakOrBuka=="imsak"?'-imsak':'-maghrib';
 
-    const dataUrl = await rp('http://api-apps-dev:9099')
-      .then(function (body) {
-        return 'http://api-apps-dev:9099'
-      })
-      .catch(function (err) {
-        return 'http://api-apps:9099'
-      });
+    const { BASE_BACKEND } = process.env;
 
     for(let i=0;i<dataWaktuSebulan.length;i++) {
       let tmpDateForApps = moment(dataWaktuSebulan[i]).add(gmt, "hours").utc().format('YYYY-MM-DD HH:mm:ss');
 
       var options = {
         method: 'GET',
-        uri: `${dataUrl}/function/reminder`,
+        uri: `${BASE_BACKEND}/function/reminder`,
         form: {
           label:dataLabel,
           ringtone:'default.mp3',

@@ -130,17 +130,5 @@ server.listen(PORT, () =>
   console.log(`Server is running http://localhost:${PORT}...`),
 );
 
-import HeartPing from 'heart-ping';
-const myHeartPing = new HeartPing();
-myHeartPing.start(
-  'api-apps-dev', // or using https, e.g.: 'https://www.google.com'
-  9099,
-  time => {
-    console.log(`api-apps-dev:9099`);
-    myHeartPing.stop();
-  },
-  () => {
-    console.log('api-apps:9099');
-    myHeartPing.stop();
-  },
-);
+const { BASE_BACKEND } = process.env;
+console.log(BASE_BACKEND);
