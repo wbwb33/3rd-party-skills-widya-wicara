@@ -37,36 +37,37 @@ class Kuis {
   public today = async (req: Request, res: Response) => {
     const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
     res.send(quizToday);
-    // fs.readFile('cache/kuis_today.json', (err, data) => {
-    //   if(err){
-    //     res.sendError('error read for today');
-    //   } else {
-    //     const content = JSON.parse(data.toString());
-    //     res.send(content);
-    //   }
-    // })
   }
 
   /** main function for Can {uuid} Play Quiz for today? */
   public canWePlayQuiz = async (req: Request, res: Response) => {
-    // const uuid = req.body.uuid;
-    // const ini = await this.isDone(uuid).then(async (thisRes)  => {
-    //   if(!thisRes[0]) {
-    //     await this.createNewIdAndPlay(uuid);
-    //     const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-    //   } 
-    //   else if(thisRes[0].done_today) {
-    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
-    //   } 
-    //   else {
-    //     const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-    //     return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
-    //   }
-    // });
-    // return ini;
-    const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
-    const ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "data": ${JSON.stringify(quizToday)}}`);
+    if(req.query.unlimited!="unlimited") {
+      /** uncomment for limited attempt */
+      const uuid = req.body.uuid;
+      var ini = await this.isDone(uuid).then(async (thisRes)  => {
+        if(!thisRes[0]) {
+          await this.createNewIdAndPlay(uuid);
+          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "yes", "data": ${JSON.stringify(quizToday)}}`);
+        } 
+        else if(thisRes[0].done_today) {
+          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
+        } 
+        else {
+          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
+        }
+      });
+      /** end */
+    }
+
+    else {
+      /** uncomment for unlimited attempt */
+      const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+      var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
+      /** end */
+    }
+
     res.send(ini);
   }
 
@@ -74,14 +75,6 @@ class Kuis {
   private getTodayQuiz = async (oneToTen: number): Promise<object> => {
     const data = await igniteSupport.getCacheByNameWithoutClient('cacheQuiz',new IKuis());
     return new Promise((resolve, reject) => {
-      // fs.readFile('cache/kuis_today.json', (err, data) => {
-      //   if(err){
-      //     console.log(err);
-      //   } else {
-      //     const content = JSON.parse(data.toString());
-      //     resolve(content[oneToTen]);
-      //   }
-      // })
       resolve(data![oneToTen])
     })
   }
@@ -121,7 +114,6 @@ class Kuis {
 
     kuis_score.update({
       done_today: true
-      // done_today: false
     }, {
       where: {
         uuid: payload.uuid

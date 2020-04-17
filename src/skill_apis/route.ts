@@ -11,6 +11,7 @@ import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import currencySkill from './currency/skill';
 import { newsApi } from './news_api/skill';
+import KuisRamadhan from './kuis/skill.ramadan';
 
 const route = new Endpoint();
 
@@ -22,11 +23,10 @@ export default [
   route.get('/db-today-quiz', Kuis.index),
   route.get('/get-today-quiz', Kuis.today),
   route.get('/kuis-answered', Kuis.updateScore),
-  route.post('/kuis-answered', Kuis.updateScore),
   route.get('/play-quiz', Kuis.canWePlayQuiz),
-  route.post('/play-quiz', Kuis.canWePlayQuiz),
   route.get('/salat-by-lokasi', AdzanSkill.index),
   route.get('/salat-get-db', AdzanSkill.getJadwalSalatFromDb),
+  route.get('/salat-insert-to-apps', AdzanSkill.insertOneFullMonth),
   route.get('/cooking', Cooking.getSavedRecipes),
   route.get('/get-reminder', ReminderSkill.index),
   route.get('/add-reminder', ReminderSkill.add),
@@ -34,4 +34,8 @@ export default [
   route.get('/harga-pangan-skill', HargaPanganSkill.getHargaPanganFromCache),
   route.get('/currency',currencySkill.get),
   route.get('/news-api',newsApi.main),
+  route.get('/play-quiz-ramadhan', KuisRamadhan.canWePlayQuiz),
+  route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
+  // route.post('/kuis-answered', Kuis.updateScore),
+  // route.post('/play-quiz', Kuis.canWePlayQuiz)
 ];

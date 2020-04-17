@@ -39,6 +39,8 @@ class NewsApi {
       } else about="top";
     }
 
+    if(!about) about="top";
+
     if(about=="top") url=`https://newsapi.org/v2/top-headlines?country=id&apiKey=${apiKey}`;
     else if(about=="tanggal"){
       const d = new Date();
