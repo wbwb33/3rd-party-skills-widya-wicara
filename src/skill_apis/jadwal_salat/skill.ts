@@ -200,8 +200,6 @@ class AdzanSkill {
         return 'http://api-apps:9099'
       });
 
-    console.log(dataUrl);
-
     for(let i=0;i<dataWaktuSebulan.length;i++) {
       let tmpDateForApps = moment(dataWaktuSebulan[i]).add(gmt, "hours").utc().format('YYYY-MM-DD HH:mm:ss');
 
