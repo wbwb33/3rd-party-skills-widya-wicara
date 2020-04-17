@@ -116,9 +116,9 @@ const onStateChanged = (state: any, reason: any) => {
       : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
 
+    console.log(process.env.DB_DATABASE);
     sequelize.addModels([kuis_score, kuis_score_ramadan]);
     await sequelize.sync({ force: false });
-    console.log(process.env.DB_DATABASE);
   } catch (e) {
     console.log(e);
   }
@@ -129,6 +129,3 @@ server.listen(PORT, () =>
   // tslint:disable-next-line: no-console
   console.log(`Server is running http://localhost:${PORT}...`),
 );
-
-const { BASE_BACKEND } = process.env;
-console.log(BASE_BACKEND);
