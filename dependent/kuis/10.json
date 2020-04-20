@@ -1,27 +1,26 @@
-[{"pertanyaan": "Bagian tata surya manakah yang memiliki orbit paling lonjong?","benar": "Asteroid","benar2": "C","choice": "A. Komet .. B. Planet .. C. Asteroid"},
-{"pertanyaan": "Planet manakah yang memiliki cincin sebagai salah satu ciri khasnya?","benar": "Saturnus","benar2": "A","choice": "A. Jupiter .. B. Saturnus .. C. Mars"},
-{"pertanyaan": "Planet manakah yang memiliki satelit yang dinamakan dengan Ariel?","benar": "Uranus","benar2": "B","choice": "A. Venus .. B. Uranus .. C. Saturnus"},
-{"pertanyaan": "Dari beberapa pilihan yang akan disebutkan, Manakah yang merupakan bagian dari satelit milik Uranus?","benar": "Oberon","benar2": "A","choice": "A. Oberon .. B. Europa .. C. Callisto"},
-{"pertanyaan": "Disebut apakah waktu yang diperlukan bumi untuk berputar pada porosnya?","benar": "Rotasi","benar2": "B","choice": "A. Evolusi .. B. Revolusi .. C. Rotasi"},
-{"pertanyaan": "Disebut fenomena apakah yang menjelaskan posisi matahari, bumi dan bulan berada pada satu garis lurus dengan posisi bumi yang berada diantara matahari dan bulan?","benar": "Gerhana Bulan","benar2": "A","choice": "A. Gerhana Matahari .. B. Gerhana Bulan .. C. Gerhana Total"},
-{"pertanyaan": "Planet manakah yang terkenal dengan warnanya yang kemerah-merahan?","benar": "Mars","benar2": "B","choice": "A. Venus .. B. Mars .. C. Pluto"},
-{"pertanyaan": "Disebut fenomena apakah yang menjelaskan posisi matahari, bumi, dan bulan berada pada satu garis lurus dengan bulan yang terletak diantara Matahari dan Bumi?","benar": "Gerhana Matahari","benar2": "B","choice": "A. Gerhana Matahari .. B. Gerhana Bulan .. C. Gerhana Total"},
-{"pertanyaan": "Disebut apakah jalur lintasan yang dilalui oleh objek ruang angkasa, satelit, dan wahana antariksa?","benar": "Orbit","benar2": "A","choice": "A. Ruang Waktu .. B. Gravitasi .. C. Orbit"},
-{"pertanyaan": "Planet manakah yang memiliki julukan bintang kejora?","benar": "Venus","benar2": "A","choice": "A. Venus .. B. Jupiter .. C. Saturnus"},
-{"pertanyaan": "Berapa waktu yang diperlukan bumi untuk mengelilingi matahari?","benar": "365 hari","benar2": "B","choice": "A. 367 hari .. B. 365 hari .. C. 120 hari"},
-{"pertanyaan": "Disebut apakah benda langit yang bergerak cepat di angkasa?","benar": "Meteor","benar2": "A","choice": "A. Meteorit .. B. Meteor .. C. Bulan"},
-{"pertanyaan": "Disebut apakah bagian meteor yang tidak habis terbakar dan jatuh ke Bumi?","benar": "Meteorit","benar2": "A","choice": "A. Bintang jatuh .. B. Titanium .. C. Meteorit"},
-{"pertanyaan": "Disebut apakah cahaya terang yang ditimbulkan oleh terbakarnya meteor?","benar": "Bintang Jatuh","benar2": "A","choice": "A. Bintang jatuh .. B. Titanium .. C. Meteorit"},
-{"pertanyaan": "Planet apakah yang terbesar di tata surya?","benar": "Jupiter","benar2": "B","choice": "A. Saturnus .. B. Jupiter .. C. Uranus"},
-{"pertanyaan": "Disebut apakah satelit yang terbuat tanpa bantuan manusia dan dapat bergerak sendiri?","benar": "Satelit Alami","benar2": "C","choice": "A. Satelit Komunikasi .. B. Satelit Buatan .. C. Satelit Alami"},
-{"pertanyaan": "Disebut apakah satelit yang dibuat oleh manusia dan semua gerakannya telah diatur oleh manusia?","benar": "Satelit buatan","benar2": "C","choice": "A. Satelit alami .. B. Sateit Komunikasi .. C. Satelit Buatan"},
-{"pertanyaan": "Apa nama satelit alami bumi?","benar": "Bulan","benar2": "A","choice": "A. Bulan .. B. Palapa .. C. Glonass"},
-{"pertanyaan": "Disebut apakah lapisan matahari yang biasanya dapat terlihat sehari-hari?","benar": "Lapisan Fotosfera","benar2": "A","choice": "A. Fotosfera .. B. Kromosfera .. C. Korona"},
-{"pertanyaan": "Disebut apakah lapisan matahari yang biasanya terlihat saat terjadi gerhana matahari?","benar": "Lapisan Kromosfera","benar2": "B","choice": "A. Fotosfera .. B. Kromosfera .. C. Korona"},
-{"pertanyaan": "Disebut apakah lapisan matahari yang terlihat pada saat terjadi gerhana matahari berupa lingkaran putih yang mengelilingi matahari?","benar": "Lapisan Korona","benar2": "C","choice": "A. Fotosfera .. B. Kromosfera .. C. Korona"},
-{"pertanyaan": "Disebut apakah gerakan planet-planet mengelilingi matahari?","benar": "Revolusi","benar2": "B","choice": "A. Rotasi .. B. Revolusi .. C. Evolusi"},
-{"pertanyaan": "Disebut apakah waktu yang dibutuhkan sebuah planet untuk melakukan satu revolusi","benar": "periode revolusi","benar2": "C","choice": "A. Periode rotasi .. B. Periode evolusi .. C. Periode revolusi"},
-{"pertanyaan": "Disebut apakah gerakan planet yang berputar pada sumbu porosnya?","benar": "Rotasi","benar2": "C","choice": "A. Revolusi .. B. Evolusi .. C. Rotasi"},
-{"pertanyaan": "Disebut apakah waktu yang dibutuhkan sebuah planet untuk melakukan satu kali rotasi?","benar": "periode rotasi","benar2": "B","choice": "A. Periode Revolusi .. B. Periode Evolusi .. C. periode rotasi"},
-{"pertanyaan": "Apa nama planet yang paling dekat dengan matahari?","benar": "Merkurius","benar2": "A","choice": "A. Merkurius .. B. Bumi  .. C. Mars"}
-]
+[{"pertanyaan":"Bagian tata surya manakah yang memiliki orbit paling lonjong?","benar":"Asteroid","benar2":"tiga","choice":"satu, Komet, dua, Planet, tiga, Asteroid"},{
+"pertanyaan":"Planet manakah yang memiliki cincin sebagai salah satu ciri khasnya?","benar":"Saturnus","benar2":"satu","choice":"satu, Jupiter, dua, Saturnus, tiga, Mars ."},{
+"pertanyaan":"Planet manakah yang memiliki satelit yang dinamakan dengan Ariel?","benar":"Uranus","benar2":"dua","choice":"satu, Vhe nus, dua, Uranus, tiga, Saturnus"},{
+"pertanyaan":"Dari beberapa pilihan yang akan disebutkan, Manakah yang merupakan bagian dari satelit milik Uranus?","benar":"Oberon","benar2":"satu","choice":"satu, Oberon, dua, Yuropa, tiga, Kallisto"},{
+"pertanyaan":"Disebut apakah waktu yang diperlukan bumi untuk berputar pada porosnya?","benar":"Rotasi","benar2":"dua","choice":"satu, Evolusi, dua, Revolusi, tiga, Rotasi"},{
+"pertanyaan":"Disebut fenomena apakah yang menjelaskan posisi matahari, bumi dan bulan berada pada satu garis lurus dengan posisi bumi yang berada diantara matahari dan bulan?","benar":"Gerhana Bulan","benar2":"satu","choice":"satu, Gerhana Matahari, dua, Gerhana Bulan, tiga, Gerhana Total"},{
+"pertanyaan":"Planet manakah yang terkenal dengan warnanya yang kemerah-merahan?","benar":"Mars","benar2":"dua","choice":"satu, Vhe nus, dua, Mars, tiga, Pluto"},{
+"pertanyaan":"Disebut fenomena apakah yang menjelaskan posisi matahari, bumi, dan bulan berada pada satu garis lurus dengan bulan yang terletak diantara Matahari dan Bumi?","benar":"Gerhana Matahari","benar2":"dua","choice":"satu, Gerhana Matahari, dua, Gerhana Bulan, tiga, Gerhana Total"},{
+"pertanyaan":"Disebut apakah jalur lintasan yang dilalui oleh objek ruang angkasa, satelit , dan wahana antariksa?","benar":"Orbit","benar2":"satu","choice":"satu, Ru wang Waktu , dua, Gravitasi, tiga, Orbit"},{
+"pertanyaan":"Planet manakah yang memiliki julukan bintang kejora?","benar":"Venus","benar2":"satu","choice":"satu, Vhenus, dua, Jupiter, tiga, Saturnus"},{
+"pertanyaan":"Berapa waktu yang diperlukan bumi untuk mengeli lingi matahari?","benar":"365 hari","benar2":"dua","choice":"satu, 367 hari, dua, 365 hari, tiga, 120 hari"},{
+"pertanyaan":"Disebut apakah benda langit yang bergerak cepat di angkasa?","benar":"Meteor","benar2":"satu","choice":"satu, Meteorit, dua, Meteor, tiga, Bulan"},{
+"pertanyaan":"Disebut apakah bagian meteor yang tidak habis terbakar dan jatuh ke Bumi?","benar":"Meteorit","benar2":"satu","choice":"satu, Bintang jatuh, dua, Titanium, tiga, Meteorit"},{
+"pertanyaan":"Disebut apakah cahaya terang yang ditimbulkan oleh terbakarnya meteor?","benar":"Bintang Jatuh","benar2":"satu","choice":"satu, Bintang jatuh, dua, Titanium, tiga, Meteorit"},{
+"pertanyaan":"Planet apakah yang terbesar di tata surya?","benar":"Jupiter","benar2":"dua","choice":"satu, Saturnus, dua, Jupiter, tiga, Uranus"},{
+"pertanyaan":"Disebut apakah satelit yang terbuat tanpa bantuan manusia dan dapat bergerak sendiri?","benar":"Satelit Alami","benar2":"tiga","choice":"satu, Satelit Komunikasi, dua, Satelit Buatan, tiga, Satelit Alami"},{
+"pertanyaan":"Disebut apakah satelit yang dibuat oleh manusia dan semua gerakannya telah diatur oleh manusia?","benar":"Satelit buatan","benar2":"tiga","choice":"satu, Satelit Komunikasi, dua, Satelit Buatan, tiga, Satelit Alami"},{
+"pertanyaan":"Apa nama satelit alami bumi?","benar":"Bulan","benar2":"satu","choice":"satu, Bulan, dua, Palapa, tiga, Glonass"},{
+"pertanyaan":"Disebut apakah lapisan matahari yang biasanya dapat terlihat sehari-hari?","benar":"Lapisan Fotosfera","benar2":"satu","choice":"satu, Fotosfera, dua, Kromosfera, tiga, Korona"},{
+"pertanyaan":"Disebut apakah lapisan matahari yang biasanya terlihat saat terjadi gerhana matahari?","benar":"Lapisan Kromosfera","benar2":"dua","choice":"satu, Fotosfera, dua, Kromosfera, tiga, Korona"},{
+"pertanyaan":"Disebut apakah lapisan matahari yang terlihat pada saat terjadi gerhana matahari berupa lingkaran putih yang mengeli lingi matahari?","benar":"Lapisan Korona","benar2":"tiga","choice":"satu, Fotosfera, dua, Kromosfera, tiga, Korona"},{
+"pertanyaan":"Disebut apakah gerakan planet-planet mengeli lingi matahari?","benar":"Revolusi","benar2":"dua","choice":"satu, Rotasi, dua, Revolusi, tiga, Evolusi"},{
+"pertanyaan":"Disebut apakah waktu yang dibutuhkan sebuah planet untuk melakukan satu revolusi","benar":"periode revolusi","benar2":"tiga","choice":"satu, Periode rotasi, dua, Periode evolusi, tiga, Periode revolusi"},{
+"pertanyaan":"Disebut apakah gerakan planet yang berputar pada sumbu porosnya?","benar":"Rotasi","benar2":"tiga","choice":"satu, Revolusi, dua, Evolusi, tiga, Rotasi"},{
+"pertanyaan":"Disebut apakah waktu yang dibutuhkan sebuah planet untuk melakukan satu kali rotasi?","benar":"periode rotasi","benar2":"dua","choice":"satu, Periode Revolusi, dua, Periode Evolusi, tiga, periode rotasi"},{
+"pertanyaan":"Apa nama planet yang paling dekat dengan matahari?","benar":"Merkurius","benar2":"satu","choice":"satu, Merkurius, dua, Bumi , tiga, Mars ."}]

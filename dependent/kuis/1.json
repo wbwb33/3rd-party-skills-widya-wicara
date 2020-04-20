@@ -1,35 +1,36 @@
-[{"pertanyaan": "Dimana letak Ibukota provinsi Aceh?","benar": "Banda Aceh","benar2": "C","choice": "A. Meulaboh .. B. Aceh Jaya .. C. Banda Aceh"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sumatra Utara?","benar": "Medan","benar2": "A","choice": "A. Medan .. B. Tebing Tinggi .. C. Pangkalpinang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sumatra Barat?","benar": "Padang","benar2": "B","choice": "A. Bandar Lampung .. B. Padang .. C. Palembang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Riau?","benar": "Pekanbaru","benar2": "A","choice": "A. Pekanbaru .. B. Palembang .. C. Jambi"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Jambi?","benar": "Jambi","benar2": "A","choice": "A. Jambi .. B. Kerinci .. C. Tanjungpinang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sumatra Selatan?","benar": "Palembang","benar2": "C","choice": "A. Lahat .. B. Martapura .. C. Palembang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Bengkulu?","benar": "Bengkulu","benar2": "B","choice": "A. Pangkalpinang .. B. Bengkulu .. C. Bintuhan"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Lampung?","benar": "Bandar Lampung","benar2": "C","choice": "A. Lampung Barat .. B. Lampung Tmur .. C. Bandar Lampung"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kepulauan Bangka Belitung?","benar": "Pangkal Pinang","benar2": "B","choice": "A. Tanjung Pandang .. B. Pangkal Pinang .. C. Tanjung Pinang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kepulauan Riau?","benar": "Tanjung Pinang","benar2": "A","choice": "A. Tanjung Pinang .. B. Pangkal Pinang .. C. Batam"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Jakarta?","benar": "Jakarta","benar2": "A","choice": "A. Jakarta .. B. Jakarta Pusat .. C. Jakarta Selatan"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Jawa Barat?","benar": "Bandung","benar2": "C","choice": "A. Bogor .. B. Banten .. C. Bandung"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Jawa Tengah?","benar": "Semarang","benar2": "B","choice": "A. Solo .. B. Semarang .. C. Yogyakarta"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Yogyakarta?","benar": "Yogyakarta","benar2": "B","choice": "A. Sleman .. B. Yogyakarta .. C. Depok"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Jawa Timur?","benar": "Surabaya","benar2": "B","choice": "A. Madiun .. B. Surabaya .. C. Malang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Banten?","benar": "Serang","benar2": "A","choice": "A. Serang .. B. Tangerang  .. C. Pandeglang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Bali?","benar": "Denpasar","benar2": "A","choice": "A. Denpasar .. B. Gianyar .. C. Tabanan"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Nusa Tenggara Barat?","benar": "Mataram","benar2": "C","choice": "A. Lombok Tengah .. B. Sumbawa .. C. Mataram"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Nusa Tenggara Timur?","benar": "Kupang","benar2": "B","choice": "A. Alor .. B. Kupang .. C. Ende"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kalimantan Barat?","benar": "Pontianak","benar2": "B","choice": "A. Ketapang .. B. Potianak .. C. Mempawah"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kalimantan Tengah?","benar": "Palangka Raya","benar2": "C","choice": "A. Kapuas .. B. Samarinda .. C. Palangka Raya"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kalimantan Selatan?","benar": "Banjarmasin","benar2": "A","choice": "A. Banjarmasin .. B. Samarinda .. C. Pontianak"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kalimantan Timur?","benar": "Samarinda","benar2": "B","choice": "A. Pontianak .. B. Samarinda .. C. Palangka Raya"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Kalimantan Utara?","benar": "Tanjung Selor","benar2": "B","choice": "A. Mataram .. B. Tanjung Selor .. C. Mamuju"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sulawesi Utara?","benar": "Manado","benar2": "A","choice": "A. Manado .. B. Kupang .. C. Palu"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sulawesi Tengah?","benar": "Palu","benar2": "B","choice": "A. Manado .. B. Palu .. C. Kupang"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sulawesi Selatan?","benar": "Makassar","benar2": "B","choice": "A. Bantaeng .. B. Makassar .. C. Bulukumba"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sulawesi Tenggara?","benar": "Kendari","benar2": "C","choice": "A. Konawe .. B. Buton .. C. Kendari"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Gorontalo?","benar": "Gorontalo","benar2": "C","choice": "A. Kendari .. B. Gorontalo Utara .. C. Gorontalo"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Sulawesi Barat?","benar": "Mamuju","benar2": "C","choice": "A. Mamasa .. B. Polewali Mandar .. C. Mamuju"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Maluku?","benar": "Ambon","benar2": "B","choice": "A. Mamuju .. B. Ambon .. C. Sofifi"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Maluku Utara?","benar": "Sofifi","benar2": "B","choice": "A. Mamuju .. B. Sofifi .. C. Ambon"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Papua?","benar": "Jayapura","benar2": "B","choice": "A. Manokwari .. B. Jayapura .. C. Jayawijaya"},
-{"pertanyaan": "Dimana letak Ibukota provinsi Papua Barat?","benar": "Manokwari","benar2": "A","choice": "A. Manokwari .. B. Intan Jaya .. C. Jayapura"}
-]
+[
+  {
+"pertanyaan":"Dimana letak Ibukota provinsi Aceh?","benar":"Banda Aceh","benar2":"dua","choice":"satu, Meulaboh, dua, Banda Aceh, tiga, Aceh Jaya"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sumatra Utara?","benar":"Medan","benar2":"satu","choice":"satu, Medan, dua, Tebing Tinggi, tiga, Pangkalpinang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sumatra Barat?","benar":"Padang","benar2":"dua","choice":"satu, Bandar Lampung, dua, Pa dang, tiga, Palembang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Riau?","benar":"Pekanbaru","benar2":"satu","choice":"satu, Pekan baru, dua, Palembang, tiga, Jambi"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Jambi?","benar":"Jambi","benar2":"satu","choice":"satu, Jambi, dua, Kerinci, tiga, Tanjungpinang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sumatra Selatan?","benar":"Palembang","benar2":"tiga","choice":"satu, Lahat, dua, Martapura, tiga, Palembang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Bengkulu?","benar":"Bengkulu","benar2":"dua","choice":"satu, Pangkalpinang, dua, Bengkulu, tiga, Bintuhan"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Lampung?","benar":"Bandar Lampung","benar2":"tiga","choice":"satu, Lampung Barat, dua, Lampung Timur, tiga, Bandar Lampung"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kepulauan Bangka Belitung?","benar":"Pangkal Pinang","benar2":"dua","choice":"satu, Tanjung Pandang, dua, Pangkal Pinang, tiga, Tanjung Pinang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kepulauan Riau?","benar":"Tanjung Pinang","benar2":"satu","choice":"satu, Tanjung Pinang, dua, Pangkal Pinang, tiga, Batam"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Jakarta?","benar":"Jakarta","benar2":"satu","choice":"satu, Jakarta, dua, Jakarta Pusat, tiga, Jakarta Selatan"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Jawa Barat?","benar":"Bandung","benar2":"tiga","choice":"satu, Bogor, dua, Banjar, tiga, Bandung"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Jawa Tengah?","benar":"Semarang","benar2":"dua","choice":"satu, Kediri, dua, Semarang, tiga, Yogyakarta"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Yogyakarta?","benar":"Yogyakarta","benar2":"dua","choice":"satu, Sleman, dua, Yogyakarta, tiga, Depok"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Jawa Timur?","benar":"Surabaya","benar2":"dua","choice":"satu, Madiun, dua, Surabaya, tiga, Malang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Banten?","benar":"Serang","benar2":"satu","choice":"satu, Serang, dua, Tangerang, tiga, Pandeglang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Bali?","benar":"Denpasar","benar2":"satu","choice":"satu, Denpasar, dua, Gianyar, tiga, Ta banan"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Nusa Tenggara Barat?","benar":"Mataram","benar2":"tiga","choice":"satu, Lombok Tengah, dua, Sumbawa, tiga, Mataram"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Nusa Tenggara Timur?","benar":"Kupang","benar2":"dua","choice":"satu, Alor, dua, Ku pang, tiga, Halma hera"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kalimantan Barat?","benar":"Pontianak","benar2":"dua","choice":"satu, Ketapang, dua, Potianak, tiga, Mempawah"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kalimantan Tengah?","benar":"Palangka Raya","benar2":"tiga","choice":"satu, Kapuas, dua, Samarinda, tiga, Palangka Raya"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kalimantan Selatan?","benar":"Banjarmasin","benar2":"satu","choice":"satu, Banjarmasin, dua, Samarinda, tiga, Pontianak"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kalimantan Timur?","benar":"Samarinda","benar2":"dua","choice":"satu, Pontianak, dua, Samarinda, tiga, Palangka Raya"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Kalimantan Utara?","benar":"Tanjung Selor","benar2":"dua","choice":"satu, Mataram, dua, Tanjung Selor, tiga, Mamuju"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sulawesi Utara?","benar":"Manado","benar2":"satu","choice":"satu, Ma nado, dua, Ku pang, tiga, Palu"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sulawesi Tengah?","benar":"Palu","benar2":"dua","choice":"satu, Ma nado, dua, Palu, tiga, Ku pang"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sulawesi Selatan?","benar":"Makassar","benar2":"dua","choice":"satu, Bantaeng, dua, Makassar, tiga, Bulukumba"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sulawesi Tenggara?","benar":"Kendari","benar2":"tiga","choice":"satu, Konawe, dua, Buton, tiga, Kendari"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Gorontalo?","benar":"Gorontalo","benar2":"tiga","choice":"satu, Kendari, dua, Gorontalo Utara, tiga, Gorontalo"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Sulawesi Barat?","benar":"Mamuju","benar2":"tiga","choice":"satu, Mama sa, dua, Polewali Mandar, tiga, Mamuju"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Maluku?","benar":"Ambon","benar2":"dua","choice":"satu, Mamuju, dua, Ambon, tiga, Sofifi"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Maluku Utara?","benar":"Sofifi","benar2":"dua","choice":"satu, Mamuju, dua, Sofifi, tiga, Ambon"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Papua?","benar":"Jayapura","benar2":"dua","choice":"satu, Manokwari, dua, Jayapura, tiga, Jayawijaya"},{
+"pertanyaan":"Dimana letak Ibukota provinsi Papua Barat?","benar":"Manokwari","benar2":"satu","choice":"satu, Manokwari, dua, in tan jaya, tiga, Jayapura"}]

@@ -1,27 +1,26 @@
-[{"pertanyaan": "Pada tanggal 1 Januari diperingati sebagai hari apakah?","benar": "Tahun Baru Masehi","benar2": "A","choice": "A. Tahun Baru Masehi .. B. Tahun Baru Islam .. C. Tahun Baru China"},
-{"pertanyaan": "Hari Pers Nasional diperingati pada tanggal?","benar": "9 Februari","benar2": "B","choice": "A. 6 Februari .. B. 9 Februari .. C. 12 Februari"},
-{"pertanyaan": "Hari Valentine jatuh pada tanggal berapa?","benar": "14 Februari","benar2": "C","choice": "A. 12 Februari .. B. 13 Februari .. C. 14 Februari"},
-{"pertanyaan": "Pada tanggal 21 April 2019 diperingati sebagai hari?","benar": "Hari Kartini","benar2": "C","choice": "A. Hari Kebangkitan Indonesia .. B. Hari Pahlawan Indonesia .. C. Hari Kartini"},
-{"pertanyaan": "Hari Bumi Internasional diperingati pada tanggal?","benar": "22-Apr","benar2": "B","choice": "A. 21 April .. B. 22 April .. C. 23 April"},
-{"pertanyaan": "Kapankah Hari Buku Sedunia?","benar": "23-Apr","benar2": "C","choice": "A. 21 April .. B. 22 April .. C. 23 April"},
-{"pertanyaan": "Pada tanggal 1 Mei diperingati sebagai hari?","benar": "Hari Buruh Sedunia","benar2": "A","choice": "A. Hari Buruh Internasional .. B. Hari Pendidikan Nasional .. C. Hari Kebangkitan Nasional"},
-{"pertanyaan": "Pada tanggal 2 Mei diperingati sebagai hari?","benar": "Hari Pendidikan Nasional","benar2": "B","choice": "A. Hari Buruh Internasional .. B. Hari Pendidikan Nasional .. C. Hari Kebangkitan Nasional"},
-{"pertanyaan": "Pada tanggal 20 Mei diperingati sebagai hari?","benar": "Hari Kebangkitan Nasional","benar2": "C","choice": "A. Hari Buruh Internasional .. B. Hari Pendidikan Nasional .. C. Hari Kebangkitan Nasional"},
-{"pertanyaan": "Hari Lahir Pancasila diperingati pada tanggal?","benar": "1 Juni","benar2": "B","choice": "A. 21 Juni .. B. 1 Juni  .. C. 10 Juni"},
-{"pertanyaan": "Hari Anti Narkoba Sedunia diperingati pada tanggal?","benar": "26 Juni","benar2": "A","choice": "A. 26 Juni .. B. 22 Juni .. C. 24 Juni"},
-{"pertanyaan": "Hari Koperasi Indonesia diperingati pada tanggal?","benar": "12 Juli","benar2": "B","choice": "A. 10 Juli  .. B. 12 Juli  .. C. 21 Juli"},
-{"pertanyaan": "Pada tanggal 23 Juli 2019 diperingati sebagai hari?","benar": "Hari Anak Nasional","benar2": "C","choice": "A. Hari Bhayangkara .. B. Hari Bank Indonesia .. C. Hari Anak Nasional"},
-{"pertanyaan": "Kapankah diperingatinya Hari Kemerdekaan Indonesia?","benar": "17 Agustus","benar2": "A","choice": "A. 17 Agustus .. B. 19 Agustus .. C. 20 Agustus"},
-{"pertanyaan": "Hari Pramuka diperingati pada tanggal","benar": "14 Agustus","benar2": "A","choice": "A. 14 Agustus .. B. 15 Agustus .. C. 16 Agustus"},
-{"pertanyaan": "Hari Batik diperingati pada tanggal?","benar": "2 Oktober","benar2": "C","choice": "A. 4 Oktober .. B. 3 Oktober .. C. 2 Oktober"},
-{"pertanyaan": "Hari Kesaktian Pancasila diperingati pada tanggal?","benar": "1 Oktober","benar2": "B","choice": "A. 1 Juni .. B. 1 Oktober .. C. 1 Agustus"},
-{"pertanyaan": "Hari Dokter Indonesia diperingati pada tanggal","benar": "24 Oktober","benar2": "A","choice": "A. 24 Oktober .. B. 25 Oktober .. C. 26 Oktober"},
-{"pertanyaan": "Pada tanggal 28 Oktober diperingati sebagai hari?","benar": "Hari Sumpah Pemuda","benar2": "B","choice": "A. Hari Kebangkitan Nasional .. B. Hari Sumpah Pemuda .. C. Hari Kemerdekaan"},
-{"pertanyaan": "Hari Pahlawan diperingati pada tanggal?","benar": "10-Nov","benar2": "C","choice": "A. 8 November .. B. 9 November .. C. 10 November"},
-{"pertanyaan": "Hari Anak Internasional diperingati pada tanggal?","benar": "20-Nov","benar2": "B","choice": "A. 19 November .. B. 20 November .. C. 21 November"},
-{"pertanyaan": "Hari Guru diperingati pada tanggal?","benar": "25-Nov","benar2": "A","choice": "A. 25 November .. B. 26 November .. C. 27 November"},
-{"pertanyaan": "Pada tanggal 1 Desember diperingati sebagai hari?","benar": "Hari AIDS Sedunia","benar2": "A","choice": "A. Hari AIDS Sedunia .. B. Hari Pahlawan .. C. Hari Kemerdekaan"},
-{"pertanyaan": "Hari Ibu diperingati pada tanggal berapa?","benar": "22 Desember","benar2": "B","choice": "A. 21 Desember .. B. 22 Desember .. C. 23 Desember"},
-{"pertanyaan": "Hari Gizi Nasional diperingati pada tanggal berapa?","benar": "25 Januari","benar2": "C","choice": "A. 13 Januari .. B. 13 Februari .. C. 25 Januari"},
-{"pertanyaan": "Hari Belanja Online Nasional jatuh pada?","benar": "12 Desember","benar2": "B","choice": "A. 11 Desember  .. B. 12 Desember  .. C. 13 Desember"}
-]
+[{"pertanyaan":"Pada tanggal 1 Januari diperingati sebagai hari apa?","benar":"Tahun Baru Masehi","benar2":"satu","choice":"satu, Tahun Baru Masehi, dua, Tahun Baru Islam, tiga, Tahun Baru China"},{
+"pertanyaan":"Pada tanggal berapa hari Pers Nasional diperingati?","benar":"9 Februari","benar2":"dua","choice":"satu, 6 Februari, dua, 9 Februari, tiga, 12 Februari"},{
+"pertanyaan":"Hari Valentain jatuh pada tanggal berapa?","benar":"14 Februari","benar2":"tiga","choice":"satu, 12 Februari, dua, 13 Februari, tiga, 14 Februari"},{
+"pertanyaan":"Pada tanggal 21 April diperingati sebagai hari apa?","benar":"Hari Kartini","benar2":"tiga","choice":"satu, Hari Kebangkitan Indonesia, dua, Hari Pahlawan Indonesia, tiga, Hari Kartini"},{
+"pertanyaan":"Hari Bumi Internasional diperingati pada tanggal berapa?","benar":"22 April","benar2":"dua","choice":"satu, 21 April, dua, 22 April, tiga, 23 April"},{
+"pertanyaan":"Kapankah Hari Buku Sedunia?","benar":"23 April","benar2":"tiga","choice":"satu, 21 April, dua, 22 April, tiga, 23 April"},{
+"pertanyaan":"Pada tanggal 1 Mei diperingati sebagai hari apakah?","benar":"Hari Buruh Sedunia","benar2":"satu","choice":"satu, Hari Buruh Internasional, dua, Hari Pendidikan Nasional, tiga, Hari Kebangkitan Nasional"},{
+"pertanyaan":"Pada tanggal 2 Mei diperingati sebagai hari apakah?","benar":"Hari Pendidikan Nasional","benar2":"dua","choice":"satu, Hari Buruh Internasional, dua, Hari Pendidikan Nasional, tiga, Hari Kebangkitan Nasional"},{
+"pertanyaan":"Pada tanggal 20 Mei diperingati sebagai hari apakah?","benar":"Hari Kebangkitan Nasional","benar2":"tiga","choice":"satu, Hari Buruh Internasional, dua, Hari Pendidikan Nasional, tiga, Hari Kebangkitan Nasional"},{
+"pertanyaan":"Hari Lahir Pancasila diperingati pada tanggal berapa?","benar":"1 Juni","benar2":"dua","choice":"satu, 21 Juni, dua, 1 Juni , tiga, 10 Juni"},{
+"pertanyaan":"Hari Anti Narkoba Sedunia diperingati pada tanggal berapa?","benar":"26 Juni ","benar2":"satu","choice":"satu, 26 Juni, dua, 22 Juni, tiga, 24 Juni"},{
+"pertanyaan":"Hari Koperasi Indonesia diperingati pada tanggal berapa?","benar":"12 Juli","benar2":"dua","choice":"satu, 10 Juli , dua, 12 Juli , tiga, 21 Juli"},{
+"pertanyaan":"Pada tanggal 23 Juli 2019 diperingati sebagai hari berapa?","benar":"Hari Anak Nasional","benar2":"tiga","choice":"satu, Hari Bayangkara, dua, Hari Bang Indonesia, tiga, Hari Anak Nasional"},{
+"pertanyaan":"Kapankah diperingatinya Hari Kemerdekaan Indonesia?","benar":"17 Agustus ","benar2":"satu","choice":"satu, 17 Agustus, dua, 19 Agustus, tiga, 20 Agustus"},{
+"pertanyaan":"Hari Pramuka diperingati pada tanggal berapakah?","benar":"14 Agustus","benar2":"satu","choice":"satu, 14 Agustus, dua, 15 Agustus, tiga, 16 Agustus"},{
+"pertanyaan":"Hari Batik diperingati pada tanggal berapa?","benar":"2 Oktober","benar2":"tiga","choice":"satu, 4 Oktober, dua, 3 Oktober, tiga, 2 Oktober"},{
+"pertanyaan":"Hari Kesaktian Pancasila diperingati pada tanggal berapa?","benar":"1 Oktober","benar2":"dua","choice":"satu, 1 Juni, dua, 1 Oktober, tiga, 1 Agustus"},{
+"pertanyaan":"Hari Dokter Indonesia diperingati pada tanggal berapakah?","benar":"24 Oktober","benar2":"satu","choice":"satu, 24 Oktober, dua, 25 Oktober, tiga, 26 Okto ber"},{
+"pertanyaan":"Pada tanggal 28 Oktober diperingati sebagai hari apakah?","benar":"Hari Sumpah Pemuda","benar2":"dua","choice":"satu, Hari Kebangkitan Nasional, dua, Hari Sumpah Pemuda, tiga, Hari Kemerdekaan"},{
+"pertanyaan":"Hari Pahlawan diperingati pada tanggal berapakah?","benar":"10 November","benar2":"tiga","choice":"satu, 8 November, dua, 9 November, tiga, 10 November"},{
+"pertanyaan":"Hari Anak Internasional diperingati pada tanggal berapakah?","benar":"20 November","benar2":"dua","choice":"satu, 19 November, dua, 20 November, tiga, 21 November"},{
+"pertanyaan":"Hari Guru diperingati pada tanggal berapa?","benar":"25 November","benar2":"satu","choice":"satu, 25 November, dua, 26 November, tiga, 27 November"},{
+"pertanyaan":"Pada tanggal 1 Desember diperingati sebagai hari apa?","benar":"Hari AIDS Sedunia","benar2":"satu","choice":"satu, Hari AIDS Sedunia, dua, Hari Pahlawan, tiga, Hari Kemerdekaan"},{
+"pertanyaan":"Hari Ibu diperingati pada tanggal berapa?","benar":"22 Desember","benar2":"dua","choice":"satu, 21 Desember, dua, 22 Desember, tiga, 23 Desember"},{
+"pertanyaan":"Hari Gizi Nasional diperingati pada tanggal berapa?","benar":"25 Januari","benar2":"tiga","choice":"satu, 13 Januari, dua, 13 Februari, tiga, 25 Januari"},{
+"pertanyaan":"Hari Belanja Online Nasional jatuh pada?","benar":"12 Desember","benar2":"dua","choice":"satu, 11 Desember, dua, 12 Desember, tiga, 13 Desember"}]

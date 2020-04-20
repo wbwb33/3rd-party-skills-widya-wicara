@@ -1,106 +1,105 @@
-[{"pertanyaan": "Apa danau terbesar di Indonesia?","benar": "Danau Toba","benar2": "A","choice": "A. Danau Toba .. B. Danau Tiga Warna .. C. Danau Singkarak"},
-{"pertanyaan": "Danau toba ada di provinsi mana?","benar": "Sumatra Utara","benar2": "C","choice": "A. Papua .. B. Nagroe Aceh Darussalam .. C. Sumatra Utara"},
-{"pertanyaan": "Danau Airhitam ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "C","choice": "A. Papua .. B. Nagroe Aceh Darussalam .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Acueloot ada di provinsi mana?","benar": "Nagroe Aceh Darussalam.","benar2": "B","choice": "A. Papua .. B. Nagroe Aceh Darussalam .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Anggil Giji ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Nagroe Aceh Darussalam .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Anggi Gita ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Nagroe Aceh Darussalam .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Bambenan ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Tengah .. C. Kalimantan Selatan"},
-{"pertanyaan": "Danau Bangkau ada di provinsi mana?","benar": "Kalimantan Selatan","benar2": "C","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Tengah .. C. Kalimantan Selatan"},
-{"pertanyaan": "Danau Batu Jai ada di provinsi mana?","benar": "Nusa Tenggara Barat","benar2": "A","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Tengah .. C. Kalimantan Selatan"},
-{"pertanyaan": "Danau Batu ada di provinsi mana?","benar": "Bali","benar2": "B","choice": "A. Kalimantan Barat .. B. Bali .. C. Papua"},
-{"pertanyaan": "Danau Bekuan ada di provinsi mana?","benar": "Kalimantan Barat","benar2": "A","choice": "A. Kalimantan Barat .. B. Bali .. C. Papua"},
-{"pertanyaan": "Danau Belida ada di provinsi mana?","benar": "Kalimantan Barat","benar2": "A","choice": "A. Kalimantan Barat .. B. Bali .. C. Papua"},
-{"pertanyaan": "Danau Biru ada di provinsi mana?","benar": "Papua","benar2": "C","choice": "A. Kalimantan Barat .. B. Bali .. C. Papua"},
-{"pertanyaan": "Danau Bitin ada di provinsi mana?","benar": "Kalimantan Selatan","benar2": "B","choice": "A. Bali .. B. Kalimantan Selatan .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Bratan ada di provinsi mana?","benar": "Bali","benar2": "A","choice": "A. Bali .. B. Kalimantan Selatan .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Buyan ada di provinsi mana?","benar": "Bali","benar2": "A","choice": "A. Bali .. B. Kalimantan Selatan .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Cembulu ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "C","choice": "A. Bali .. B. Kalimantan Selatan .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Danau ada di provinsi mana?","benar": "Sulawesi Utara","benar2": "C","choice": "A. Sumatra Barat .. B. Bengkulu .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Dendam ada di provinsi mana?","benar": "Bengkulu","benar2": "B","choice": "A. Sumatra Barat .. B. Bengkulu .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Di Atas ada di provinsi mana?","benar": "Sumatra Barat","benar2": "A","choice": "A. Sumatra Barat .. B. Bengkulu .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Di Bawah ada di provinsi mana?","benar": "Sumatra Barat","benar2": "A","choice": "A. Sumatra Barat .. B. Bengkulu .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Danacampat ada di provinsi mana?","benar": "Jambi","benar2": "B","choice": "A. Kalimantan Tengah .. B. Jambi .. C. Bengkulu"},
-{"pertanyaan": "Danau Emas ada di provinsi mana?","benar": "Bengkulu","benar2": "C","choice": "A. Kalimantan Tengah .. B. Jambi .. C. Bengkulu"},
-{"pertanyaan": "Danau Ganting ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "A","choice": "A. Kalimantan Tengah .. B. Kalimantan Selatan .. C. Bengkulu"},
-{"pertanyaan": "Danau Gatel ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "A","choice": "A. Kalimantan Tengah .. B. Jambi .. C. Bengkulu"},
-{"pertanyaan": "Danau Jembawan ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "A","choice": "A. Sumatra Selatan .. B. Kalimantan Timur .. C. Lampung"},
-{"pertanyaan": "Danau Jempang ada di provinsi mana?","benar": "Kalimantan Timur.","benar2": "B","choice": "A. Sumatra Selatan .. B. Kalimantan Timur .. C. Lampung"},
-{"pertanyaan": "Danau Jepara ada di provinsi mana?","benar": "Lampung","benar2": "C","choice": "A. Sumatra Selatan .. B. Kalimantan Timur .. C. Lampung"},
-{"pertanyaan": "Danau Kalimutu ada di provinsi mana?","benar": "Nusa Tenggara Timur","benar2": "C","choice": "A. Jawa Timur .. B. Kalimantan Tengah .. C. Nusa Tenggara Timur"},
-{"pertanyaan": "Danau Kawah Ijen ada di provinsi mana?","benar": "Jawa Timur","benar2": "A","choice": "A. Jawa Timur .. B. Kalimantan Tengah .. C. Nusa Tenggara Timur"},
-{"pertanyaan": "Danau Kawah Kelud ada di provinsi mana?","benar": "Jawa Timur","benar2": "A","choice": "A. Jawa Timur .. B. Kalimantan Tengah .. C. Nusa Tenggara Timur"},
-{"pertanyaan": "Danau Kenamful ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Jawa Timur .. B. Kalimantan Tengah .. C. Nusa Tenggara Timur"},
-{"pertanyaan": "Danau Kerinci ada di provinsi mana?","benar": "Sumatra Barat","benar2": "C","choice": "A. Sulawesi Utara .. B. Nangroe Aceh Darussalam .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Laut Realoih ada di provinsi mana?","benar": "Nangroe Aceh Darussalam.","benar2": "B","choice": "A. Sulawesi Utara .. B. Nangroe Aceh Darussalam .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tawar ada di provinsi mana?","benar": "Nangroe Aceh Darussalam","benar2": "B","choice": "A. Sulawesi Utara .. B. Nangroe Aceh Darussalam .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Limboto ada di provinsi mana?","benar": "Sulawesi Utara","benar2": "A","choice": "A. Sulawesi Utara .. B. Nangroe Aceh Darussalam .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Limut ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Sulawesi Tengah .. B. Kalimantan Tengah .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Lindu ada di provinsi mana?","benar": "Sulawesii Tengah","benar2": "A","choice": "A. Sulawesi Tengah .. B. Kalimantan Tengah .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Linouw ada di provinsi mana?","benar": "Sulawesi Utara","benar2": "C","choice": "A. Sulawesi Tengah .. B. Kalimantan Tengah .. C. Sulawesi Utara"},
-{"pertanyaan": "Danau Lubuk Deling ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "A","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Mahalona ada di provinsi mana?","benar": "Sulawesi Selatan","benar2": "B","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Maninjau ada di provinsi mana?","benar": "Sumatra Barat","benar2": "C","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Matana ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "A","choice": "A. Sumatra Selatan .. B. Kalimantan Tengah .. C. Kalimantan Timur"},
-{"pertanyaan": "Danau Matur ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Sumatra Selatan .. B. Kalimantan Tengah .. C. Kalimantan Timur"},
-{"pertanyaan": "Danau Malintang ada di provinsi mana?","benar": "Kalimantan Timur","benar2": "C","choice": "A. Sumatra Selatan .. B. Kalimantan Tengah .. C. Kalimantan Timur"},
-{"pertanyaan": "Danau Mepara ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "C","choice": "A. Jawa Timur .. B. Sulawesi Utara .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Moat ada di provinsi mana?","benar": "Sulawesi Utara","benar2": "B","choice": "A. Jawa Timur .. B. Sulawesi Utara .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Pacai ada di provinsi mana?","benar": "Jawa Timur","benar2": "A","choice": "A. Jawa Timur .. B. Sulawesi Utara .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Pangkalan ada di provinsi mana?","benar": "Jawa Barat","benar2": "A","choice": "A. Jawa Barat .. B. Papua .. C. Sulawesi Tengah"},
-{"pertanyaan": "Danau Paninai ada di provinsi mana?","benar": "Papua","benar2": "B","choice": "A. Jawa Barat .. B. Papua .. C. Sulawesi Tengah"},
-{"pertanyaan": "Danau Poso ada di provinsi mana?","benar": "Sulawesi Tengah.","benar2": "C","choice": "A. Jawa Barat .. B. Papua .. C. Sulawesi Tengah"},
-{"pertanyaan": "Danau Ranau ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "C","choice": "A. Jawa Timur .. B. Jawa Barat .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Rawa Dano ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Jawa Timur .. B. Jawa Barat .. C. Sumatra Selatan"},
-{"pertanyaan": "Danau Rawa Kelindingan ada di provinsi mana?","benar": "JawaTimur","benar2": "A","choice": "A. Jawa Timur .. B. Jawa Barat .. C. Sumatera Selatan"},
-{"pertanyaan": "Danau Rawa Pening ada di provinsi mana?","benar": "Jawa Tengah","benar2": "C","choice": "A. Papua .. B. Kalimantan Tengah .. C. Jawa Tengah"},
-{"pertanyaan": "Danau Raya ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Papua .. B. Kalimantan Tengah .. C. Jawa Tengah"},
-{"pertanyaan": "Danau Rombebai ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Kalimantan Tengah .. C. Jawa Tengah"},
-{"pertanyaan": "Danau Segara Anak ada di provinsi mana?","benar": "Nusa Tenggara Barat","benar2": "A","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Timur .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Semayang ada di provinsi mana?","benar": "Kalimantan Timur","benar2": "B","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Timur .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Sembuluh ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "C","choice": "A. Nusa Tenggara Barat .. B. Kalimantan Timur .. C. Kalimantan Tengah"},
-{"pertanyaan": "Danau Sentani ada di provinsi mana?","benar": "Papua","benar2": "C","choice": "A. Jambi .. B. Sulawesi Selatan .. C. Papua"},
-{"pertanyaan": "Danau Sindereng ada di provinsi mana?","benar": "Sulawesi Selatan","benar2": "B","choice": "A. Jambi .. B. Sulawesi Selatan .. C. Papua"},
-{"pertanyaan": "Danau Sipin ada di provinsi mana?","benar": "Jambi","benar2": "A","choice": "A. Jambi .. B. Sulawesi Selatan .. C. Papua"},
-{"pertanyaan": "Danau Singkarak ada di provinsi mana?","benar": "Sumatra Barat","benar2": "C","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Situ Bagendit ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Situ Cilenca ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Situ Langkung ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Situ Lengkong ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Situ Panunjang ada di provinsi mana?","benar": "Jawa Barat","benar2": "B","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tage ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Jawa Barat .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tamabara ada di provinsi mana?","benar": "Nusa Tenggara Barat","benar2": "A","choice": "A. Nusa Tenggara Barat .. B. Bali .. C. Kalimantan Barat"},
-{"pertanyaan": "Danau Tambiling ada di provinsi mana?","benar": "Bali","benar2": "B","choice": "A. Nusa Tenggara Barat .. B. Bali .. C. Kalimantan Barat"},
-{"pertanyaan": "Danau Tang ada di provinsi mana?","benar": "Kalimantan Barat","benar2": "C","choice": "A. Nusa Tenggara Barat .. B. Bali .. C. Kalimantan Barat"},
-{"pertanyaan": "Telaga Menjer ada di provinsi mana?","benar": "Jawa Tengah","benar2": "A","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Situ Patenggang ada di provinsi mana?","benar": "Jawa Barat","benar2": "C","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Telaga Sarangan ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Danau Teloko ada di provinsi mana?","benar": "Sumatra Selatan","benar2": "A","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tempe ada di provinsi mana?","benar": "Sulawesi Selatan","benar2": "B","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tarusan ada di provinsi mana?","benar": "Sumatra Barat","benar2": "C","choice": "A. Sumatra Selatan .. B. Sulawesi Selatan .. C. Sumatra Barat"},
-{"pertanyaan": "Danau Tes ada di provinsi mana?","benar": "Bengkulu","benar2": "C","choice": "A. Papua .. B. Kalimantan Tengah .. C. Bengkulu"},
-{"pertanyaan": "Danau Tete ada di provinsi mana?","benar": "Kalimantan Tengah","benar2": "B","choice": "A. Papua .. B. Kalimantan Tengah .. C. Bengkulu"},
-{"pertanyaan": "Danau Ti Bi ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Kalimantan Tengah .. C. Bengkulu"},
-{"pertanyaan": "Danau Toba ada di provinsi mana?","benar": "Sumatra Utara","benar2": "A","choice": "A. Sumatra Utara .. B. Sulawesi Utara .. C. Papua"},
-{"pertanyaan": "Danau Tondano ada di provinsi mana?","benar": "Sulawesi Utara","benar2": "B","choice": "A. Sumatra Utara .. B. Sulawesi Utara .. C. Papua"},
-{"pertanyaan": "Danau Tonjidat ada di provinsi mana?","benar": "Papua","benar2": "C","choice": "A. Sumatra Utara .. B. Sulawesi Utara .. C. Papua"},
-{"pertanyaan": "Danau Towutu ada di provinsi mana?","benar": "Sulawesi Selatan","benar2": "C","choice": "A. Jawa Barat .. B. Jawa Tengah .. C. Sulawesi Selatan"},
-{"pertanyaan": "Waduk Cacaban ada di provinsi mana?","benar": "Jawa Tengah","benar2": "B","choice": "A. Jawa Barat .. B. Jawa Tengah .. C. Sulawesi Selatan"},
-{"pertanyaan": "Waduk Cengklik ada di provinsi mana?","benar": "Jawa Tengah","benar2": "B","choice": "A. Jawa Barat .. B. Jawa Tengah .. C. Sulawesi Selatan"},
-{"pertanyaan": "Waduk Cirata ada di provinsi mana?","benar": "Jawa Barat","benar2": "A","choice": "A. Jawa Barat .. B. Jawa Tengah .. C. Sulawesi Selatan"},
-{"pertanyaan": "Waduk Darma ada di provinsi mana?","benar": "Jawa Barat","benar2": "A","choice": "A. Jawa Barat .. B. Jawa Tengah .. C. Sulawesi Selatan"},
-{"pertanyaan": "Waduk Gajah Mungkur ada di provinsi mana?","benar": "Jawa Tengah","benar2": "A","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Gondang ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Jatiluhur ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Klampis ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Melahayu ada di provinsi mana?","benar": "Jawa Tengah","benar2": "A","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Ngebel ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Riam Kanan ada di provinsi mana?","benar": "Kalimantan Selatan","benar2": "C","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Kalimantan Selatan"},
-{"pertanyaan": "Waduk Saguling ada di provinsi mana?","benar": "Jawa Barat","benar2": "C","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Waduk Selorejo ada di provinsi mana?","benar": "Jawa Timur","benar2": "B","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Waduk Sempor ada di provinsi mana?","benar": "Jawa Tengah","benar2": "A","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Waduk Wadas Lintang ada di provinsi mana?","benar": "Jawa Tengah","benar2": "A","choice": "A. Jawa Tengah .. B. Jawa Timur .. C. Jawa Barat"},
-{"pertanyaan": "Waduk Widas ada di provinsi mana?","benar": "Jawa Timur","benar2": "C","choice": "A. Papua .. B. Lampung .. C. Jawa Timur"},
-{"pertanyaan": "Waduk Way Rarem ada di provinsi mana?","benar": "Lampung","benar2": "B","choice": "A. Papua .. B. Lampung .. C. Jawa Timur"},
-{"pertanyaan": "Danau Yamur ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Lampung .. C. Jawa Timur"},
-{"pertanyaan": "Danau Yawasi ada di provinsi mana?","benar": "Papua","benar2": "A","choice": "A. Papua .. B. Lampung .. C. Jawa Timur"}
-]
+[{"pertanyaan":" Apa danau terbesar di Indonesia?","benar":"Danau Toba","benar2":"satu","choice":"satu, Danau Toba, dua, Danau Tiga Warna, tiga, Danau Singkarak"},{
+"pertanyaan":" Danau toba ada di provinsi mana?","benar":"Sumatra Utara","benar2":"tiga","choice":"satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"},{
+"pertanyaan":" Danau Airhitam ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"tiga","choice":"satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Selatan"},{
+"pertanyaan":"Danau Akuelot ada di provinsi mana?","benar":"Nanggroe Aceh Darussalam.","benar2":"dua","choice":"satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"},{
+"pertanyaan":" Danau Anggil Giji ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"},{
+"pertanyaan":" Danau Anggi Gita ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Selatan"},{
+"pertanyaan":" Danau Bambenan ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Tengah, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Danau Bangkau ada di provinsi mana?","benar":"Kalimantan Selatan","benar2":"tiga","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Tengah, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Danau Batu Jai ada di provinsi mana?","benar":"Nusa Tenggara Barat","benar2":"satu","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Tengah, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Danau Batu ada di provinsi mana?","benar":"Bali","benar2":"dua","choice":"satu, Kalimantan Barat, dua, Bali, tiga, Papua"},{
+"pertanyaan":" Danau Bekuan ada di provinsi mana?","benar":"Kalimantan Barat","benar2":"satu","choice":"satu, Kalimantan Barat, dua, Bali, tiga, Papua"},{
+"pertanyaan":" Danau Belida ada di provinsi mana?","benar":"Kalimantan Barat","benar2":"satu","choice":"satu, Kalimantan Barat, dua, Bali, tiga, Papua"},{
+"pertanyaan":" Danau Biru ada di provinsi mana?","benar":"Papua","benar2":"tiga","choice":"satu, Kalimantan Barat, dua, Bali, tiga, Papua"},{
+"pertanyaan":" Danau Bitin ada di provinsi mana?","benar":"Kalimantan Selatan","benar2":"dua","choice":"satu, Bali, dua, Kalimantan Selatan, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Bratan ada di provinsi mana?","benar":"Bali","benar2":"satu","choice":"satu, Bali, dua, Kalimantan Selatan, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Buyan ada di provinsi mana?","benar":"Bali","benar2":"satu","choice":"satu, Bali, dua, Kalimantan Selatan, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Cembulu ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"tiga","choice":"satu, Bali, dua, Kalimantan Selatan, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Danau ada di provinsi mana?","benar":"Sulawesi Utara","benar2":"tiga","choice":"satu, Sumatra Barat, dua, Bengkulu, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Dendam ada di provinsi mana?","benar":"Bengkulu","benar2":"dua","choice":"satu, Sumatra Barat, dua, Bengkulu, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Di Atas ada di provinsi mana?","benar":"Sumatra Barat","benar2":"satu","choice":"satu, Sumatra Barat, dua, Bengkulu, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Di Bawah ada di provinsi mana?","benar":"Sumatra Barat","benar2":"satu","choice":"satu, Sumatra Barat, dua, Bengkulu, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Danacampat ada di provinsi mana?","benar":"Jambi","benar2":"dua","choice":"satu, Kalimantan Tengah, dua, Jambi, tiga, Bengkulu"},{
+"pertanyaan":" Danau Emas ada di provinsi mana?","benar":"Bengkulu","benar2":"tiga","choice":"satu, Kalimantan Tengah, dua, Jambi, tiga, Bengkulu"},{
+"pertanyaan":" Danau Ganting ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"satu","choice":"satu, Kalimantan Tengah, dua, Kalimantan Selatan, tiga, Bengkulu"},{
+"pertanyaan":" Danau Gatel ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"satu","choice":"satu, Kalimantan Tengah, dua, Jambi, tiga, Bengkulu"},{
+"pertanyaan":" Danau Jembawan ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"satu","choice":"satu, Sumatra Selatan, dua, Kalimantan Timur, tiga, Lampung"},{
+"pertanyaan":" Danau Jempang ada di provinsi mana?","benar":"Kalimantan Timur.","benar2":"dua","choice":"satu, Sumatra Selatan, dua, Kalimantan Timur, tiga, Lampung"},{
+"pertanyaan":" Danau Jepara ada di provinsi mana?","benar":"Lampung","benar2":"tiga","choice":"satu, Sumatra Selatan, dua, Kalimantan Timur, tiga, Lampung"},{
+"pertanyaan":" Danau Kalimutu ada di provinsi mana?","benar":"Nusa Tenggara Timur","benar2":"tiga","choice":"satu, Jawa Timur, dua, Kalimantan Tengah, tiga, Nusa Teng gara Timur"},{
+"pertanyaan":" Danau Kawah Ijen ada di provinsi mana?","benar":"Jawa Timur","benar2":"satu","choice":"satu, Jawa Timur, dua, Kalimantan Tengah, tiga, Nusa Teng gara Timur"},{
+"pertanyaan":" Danau Kawah Kelud ada di provinsi mana?","benar":"Jawa Timur","benar2":"satu","choice":"satu, Jawa Timur, dua, Kalimantan Tengah, tiga, Nusa Teng gara Timur"},{
+"pertanyaan":" Danau Kenamful ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Jawa Timur, dua, Kalimantan Tengah, tiga, Nusa Teng gara Timur"},{
+"pertanyaan":" Danau Kerinci ada di provinsi mana?","benar":"Sumatra Barat","benar2":"tiga","choice":"satu, Sulawesi Utara, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Laut Realoih ada di provinsi mana?","benar":"Nanggroe Aceh Darussalam.","benar2":"dua","choice":"satu, Sulawesi Utara, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tawar ada di provinsi mana?","benar":"Nanggroe Aceh Darussalam","benar2":"dua","choice":"satu, Sulawesi Utara, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Limboto ada di provinsi mana?","benar":"Sulawesi Utara","benar2":"satu","choice":"satu, Sulawesi Utara, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Limut ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Sulawesi Tengah, dua, Kalimantan Tengah, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Lindu ada di provinsi mana?","benar":"Sulawesii Tengah","benar2":"satu","choice":"satu, Sulawesi Tengah, dua, Kalimantan Tengah, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Linouw ada di provinsi mana?","benar":"Sulawesi Utara","benar2":"tiga","choice":"satu, Sulawesi Tengah, dua, Kalimantan Tengah, tiga, Sulawesi Utara"},{
+"pertanyaan":" Danau Lubuk Deling ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"satu","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Mahalona ada di provinsi mana?","benar":"Sulawesi Selatan","benar2":"dua","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Maninjau ada di provinsi mana?","benar":"Sumatra Barat","benar2":"tiga","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Matana ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"satu","choice":"satu, Sumatra Selatan, dua, Kalimantan Tengah, tiga, Kalimantan Timur"},{
+"pertanyaan":" Danau Matur ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Sumatra Selatan, dua, Kalimantan Tengah, tiga, Kalimantan Timur"},{
+"pertanyaan":" Danau Malintang ada di provinsi mana?","benar":"Kalimantan Timur","benar2":"tiga","choice":"satu, Sumatra Selatan, dua, Kalimantan Tengah, tiga, Kalimantan Timur"},{
+"pertanyaan":" Danau Mepara ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"tiga","choice":"satu, Jawa Timur, dua, Sulawesi Utara, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Moat ada di provinsi mana?","benar":"Sulawesi Utara","benar2":"dua","choice":"satu, Jawa Timur, dua, Sulawesi Utara, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Pacai ada di provinsi mana?","benar":"Jawa Timur","benar2":"satu","choice":"satu, Jawa Timur, dua, Sulawesi Utara, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Pangkalan ada di provinsi mana?","benar":"Jawa Barat","benar2":"satu","choice":"satu, Jawa Barat, dua, Papua, tiga, Sulawesi Tengah"},{
+"pertanyaan":" Danau Paninai ada di provinsi mana?","benar":"Papua","benar2":"dua","choice":"satu, Jawa Barat, dua, Papua, tiga, Sulawesi Tengah"},{
+"pertanyaan":" Danau Poso ada di provinsi mana?","benar":"Sulawesi Tengah.","benar2":"tiga","choice":"satu, Jawa Barat, dua, Papua, tiga, Sulawesi Tengah"},{
+"pertanyaan":" Danau Ranau ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"tiga","choice":"satu, Jawa Timur, dua, Jawa Barat, tiga, Sumatra Selatan"},{
+"pertanyaan":" Danau Rawa Dano ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Jawa Timur, dua, Jawa Barat, tiga, Sumatra Selatan"},{
+"pertanyaan":" Danau Rawa Kelindingan ada di provinsi mana?","benar":"JawaTimur","benar2":"satu","choice":"satu, Jawa Timur, dua, Jawa Barat, tiga, Sumatra Selatan"},{
+"pertanyaan":" Danau Rawa Pening ada di provinsi mana?","benar":"Jawa Tengah","benar2":"tiga","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Jawa Tengah"},{
+"pertanyaan":" Danau Raya ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Jawa Tengah"},{
+"pertanyaan":" Danau Rombebai ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Jawa Tengah"},{
+"pertanyaan":" Danau Segara Anak ada di provinsi mana?","benar":"Nusa Tenggara Barat","benar2":"satu","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Timur, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Semayang ada di provinsi mana?","benar":"Kalimantan Timur","benar2":"dua","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Timur, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Sembuluh ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"tiga","choice":"satu, Nusa Teng gara Barat, dua, Kalimantan Timur, tiga, Kalimantan Tengah"},{
+"pertanyaan":" Danau Sentani ada di provinsi mana?","benar":"Papua","benar2":"tiga","choice":"satu, Jambi, dua, Sulawesi Selatan, tiga, Papua"},{
+"pertanyaan":" Danau Sindereng ada di provinsi mana?","benar":"Sulawesi Selatan","benar2":"dua","choice":"satu, Jambi, dua, Sulawesi Selatan, tiga, Papua"},{
+"pertanyaan":" Danau Sipin ada di provinsi mana?","benar":"Jambi","benar2":"satu","choice":"satu, Jambi, dua, Sulawesi Selatan, tiga, Papua"},{
+"pertanyaan":" Danau Singkarak ada di provinsi mana?","benar":"Sumatra Barat","benar2":"tiga","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Situ Bagendit ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Situ Cilenca ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Situ Langkung ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Situ Lengkong ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Situ Panunjang ada di provinsi mana?","benar":"Jawa Barat","benar2":"dua","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tage ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Jawa Barat, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tamabara ada di provinsi mana?","benar":"Nusa Tenggara Barat","benar2":"satu","choice":"satu, Nusa Teng gara Barat, dua, Bali, tiga, Kalimantan Barat"},{
+"pertanyaan":" Danau Tambiling ada di provinsi mana?","benar":"Bali","benar2":"dua","choice":"satu, Nusa Teng gara Barat, dua, Bali, tiga, Kalimantan Barat"},{
+"pertanyaan":" Danau Tang ada di provinsi mana?","benar":"Kalimantan Barat","benar2":"tiga","choice":"satu, Nusa Teng gara Barat, dua, Bali, tiga, Kalimantan Barat"},{
+"pertanyaan":" Telaga Menjer ada di provinsi mana?","benar":"Jawa Tengah","benar2":"satu","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Situ Patenggang ada di provinsi mana?","benar":"Jawa Barat","benar2":"tiga","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Telaga Sarangan ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Danau Teloko ada di provinsi mana?","benar":"Sumatra Selatan","benar2":"satu","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tempeh ada di provinsi mana?","benar":"Sulawesi Selatan","benar2":"dua","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tarusan ada di provinsi mana?","benar":"Sumatra Barat","benar2":"tiga","choice":"satu, Sumatra Selatan, dua, Sulawesi Selatan, tiga, Sumatra Barat"},{
+"pertanyaan":" Danau Tes ada di provinsi mana?","benar":"Bengkulu","benar2":"tiga","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Bengkulu"},{
+"pertanyaan":" Danau Tete ada di provinsi mana?","benar":"Kalimantan Tengah","benar2":"dua","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Bengkulu"},{
+"pertanyaan":" Danau Ti Bi ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Kalimantan Tengah, tiga, Bengkulu"},{
+"pertanyaan":" Danau Toba ada di provinsi mana?","benar":"Sumatra Utara","benar2":"satu","choice":"satu, Sumatra Utara, dua, Sulawesi Utara, tiga, Papua"},{
+"pertanyaan":" Danau Tondano ada di provinsi mana?","benar":"Sulawesi Utara","benar2":"dua","choice":"satu, Sumatra Utara, dua, Sulawesi Utara, tiga, Papua"},{
+"pertanyaan":" Danau Tonjidat ada di provinsi mana?","benar":"Papua","benar2":"tiga","choice":"satu, Sumatra Utara, dua, Sulawesi Utara, tiga, Papua"},{
+"pertanyaan":" Danau Towutu ada di provinsi mana?","benar":"Sulawesi Selatan","benar2":"tiga","choice":"satu, Jawa Barat, dua, Jawa Tengah, tiga, Sulawesi Selatan"},{
+"pertanyaan":" Waduk Cacaban ada di provinsi mana?","benar":"Jawa Tengah","benar2":"dua","choice":"satu, Jawa Barat, dua, Jawa Tengah, tiga, Sulawesi Selatan"},{
+"pertanyaan":" Waduk Cengklik ada di provinsi mana?","benar":"Jawa Tengah","benar2":"dua","choice":"satu, Jawa Barat, dua, Jawa Tengah, tiga, Sulawesi Selatan"},{
+"pertanyaan":" Waduk Cirata ada di provinsi mana?","benar":"Jawa Barat","benar2":"satu","choice":"satu, Jawa Barat, dua, Jawa Tengah, tiga, Sulawesi Selatan"},{
+"pertanyaan":" Waduk Darma ada di provinsi mana?","benar":"Jawa Barat","benar2":"satu","choice":"satu, Jawa Barat, dua, Jawa Tengah, tiga, Sulawesi Selatan"},{
+"pertanyaan":" Waduk Gajah Mungkur ada di provinsi mana?","benar":"Jawa Tengah","benar2":"satu","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Gondang ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Jatiluhur ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Klampis ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Melahayu ada di provinsi mana?","benar":"Jawa Tengah","benar2":"satu","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":"Waduk Nge bel ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Riam Kanan ada di provinsi mana?","benar":"Kalimantan Selatan","benar2":"tiga","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Kalimantan Selatan"},{
+"pertanyaan":" Waduk Saguling ada di provinsi mana?","benar":"Jawa Barat","benar2":"tiga","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Waduk Selorejo ada di provinsi mana?","benar":"Jawa Timur","benar2":"dua","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Waduk Sempor ada di provinsi mana?","benar":"Jawa Tengah","benar2":"satu","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Waduk Wadas Lintang ada di provinsi mana?","benar":"Jawa Tengah","benar2":"satu","choice":"satu, Jawa Tengah, dua, Jawa Timur, tiga, Jawa Barat"},{
+"pertanyaan":" Waduk Widas ada di provinsi mana?","benar":"Jawa Timur","benar2":"tiga","choice":"satu, Papua, dua, Lampung, tiga, Jawa Timur"},{
+"pertanyaan":" Waduk Way Rarem ada di provinsi mana?","benar":"Lampung","benar2":"dua","choice":"satu, Papua, dua, Lampung, tiga, Jawa Timur"},{
+"pertanyaan":" Danau Yamur ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Lampung, tiga, Jawa Timur"},{
+"pertanyaan":" Danau Yawasi ada di provinsi mana?","benar":"Papua","benar2":"satu","choice":"satu, Papua, dua, Lampung, tiga, Jawa Timur"}]
