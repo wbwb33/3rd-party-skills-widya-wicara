@@ -92,26 +92,26 @@ const onStateChanged = (state: any, reason: any) => {
   try {
     const igniteClient = new IgniteClient(onStateChanged);
 
-    // await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
-    // !(await kuis.cacheCheckRamadan(igniteClient))
-    //   ? console.log('cache kuis ramadan not exist')
-    //   : console.log('cache kuis ramadan already exist');
-    // !(await kuis.cacheCheck(igniteClient))
-    //   ? console.log('cache kuis not exist')
-    //   : console.log('cache kuis already exist');
-    // !(await hargaPangan.cacheCheck(igniteClient))
-    //   ? console.log('cache pangan not exist')
-    //   : console.log('cache pangan already exist');
-    // !(await weather.cacheCheck(igniteClient))
-    //   ? console.log('cache weather not exist')
-    //   : console.log('cache weather already exist');
-    // !(await hargaEmas.cacheCheck(igniteClient))
-    //   ? console.log('cache harga emas not exist')
-    //   : console.log('cache harga emas already exist');
-    // !(await horoscope.cacheCheck(igniteClient))
-    //   ? console.log('cache horoscope not exist')
-    //   : console.log('cache horoscope already exist');
-    // await igniteClient.disconnect();
+    await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
+    !(await kuis.cacheCheckRamadan(igniteClient))
+      ? console.log('cache kuis ramadan not exist')
+      : console.log('cache kuis ramadan already exist');
+    !(await kuis.cacheCheck(igniteClient))
+      ? console.log('cache kuis not exist')
+      : console.log('cache kuis already exist');
+    !(await hargaPangan.cacheCheck(igniteClient))
+      ? console.log('cache pangan not exist')
+      : console.log('cache pangan already exist');
+    !(await weather.cacheCheck(igniteClient))
+      ? console.log('cache weather not exist')
+      : console.log('cache weather already exist');
+    !(await hargaEmas.cacheCheck(igniteClient))
+      ? console.log('cache harga emas not exist')
+      : console.log('cache harga emas already exist');
+    !(await horoscope.cacheCheck(igniteClient))
+      ? console.log('cache horoscope not exist')
+      : console.log('cache horoscope already exist');
+    await igniteClient.disconnect();
 
     console.log(process.env.DB_DATABASE);
     sequelize.addModels([kuis_score, kuis_score_ramadan]);
