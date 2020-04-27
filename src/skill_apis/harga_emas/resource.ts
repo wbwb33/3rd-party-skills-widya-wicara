@@ -15,7 +15,7 @@ class HargaEmas {
       const url = `https://harga-emas.org/`;
       await rp(url)
         .then(html => {
-          const mainTable = $('.col-md-12 > .in_table > tbody > tr', html);
+          const mainTable = $('.in_table > tbody > tr', html);
           
           const g10 = mainTable[19].children;
           const g5 = mainTable[20].children;

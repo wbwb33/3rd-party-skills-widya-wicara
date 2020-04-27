@@ -135,7 +135,6 @@ class KuisData {
   /** main function for NEW DAY, get kuis from dependent, save to cache */
   public getQuizRamadan = async () => {
     const data = await this.getTodayQuizRamadan();
-    console.log("quiz ramadan test");
     await this.saveToIgniteRamadan(data);
     await this.updateNewDayRamadan();
   }
