@@ -205,7 +205,7 @@ class AdzanSkill {
 
       var options = {
         method: 'GET',
-        uri: `${BASE_BACKEND}/function/reminder`,
+        uri: `http://${BASE_BACKEND}/function/reminder`,
         form: {
           label:dataLabel,
           ringtone:'default.mp3',
