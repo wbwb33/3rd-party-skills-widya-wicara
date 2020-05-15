@@ -12,7 +12,7 @@
     "choice": "satu, Muharom, dua, Syawal, tiga, Ra madan"
   },
   {
-    "pertanyaan": "Dalam rukun islam, puasa masuk pada urutan keberapa?",
+    "pertanyaan": "Dalam rukun islam, salat masuk pada urutan keberapa?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Pertama, dua, Kedua, tiga, Ketiga"
@@ -36,9 +36,9 @@
     "choice": "satu, Sebelum matahari terbenam, dua, Sebelum terbit fajar, tiga, Setelah salat subuh"
   },
   {
-    "pertanyaan": "Seseorang boleh meninggalkan puasa karena ia tidak kuat lagi berbpuasa disebabkan lanjut usia, wajib membayar apa sebagai gantinya?",
-    "benar": "tiga",
-    "benar2": "3",
+    "pertanyaan": "Seseorang boleh meninggalkan puasa karena ia tidak kuat lagi berpuasa disebabkan lanjut usia, wajib membayar apa sebagai gantinya?",
+    "benar": "satu",
+    "benar2": "1",
     "choice": "satu, fidyah, dua, Zakat, tiga, Dam"
   },
   {
@@ -60,7 +60,7 @@
     "choice": "satu, Musafir, dua, Ibu hamil, tiga, Orang gemuk"
   },
   {
-    "pertanyaan": "Jenis makanan seperti apakah yang paling dianjurkan saat berpuasa?",
+    "pertanyaan": "Jenis makanan seperti apakah yang paling dianjurkan saat berbuka puasa?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Manis, dua, Asin, tiga, Gurih"
@@ -72,7 +72,7 @@
     "choice": "satu, Ashar, dua, Idul Fitri, tiga, Magh rib"
   },
   {
-    "pertanyaan": "Puasa bermakna?",
+    "pertanyaan": "Apa makna puasa?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu, Makan Sepuasnya, dua, Melanggar Perintah, tiga, Menahan diri dari yang membatalkan"
@@ -81,7 +81,7 @@
     "pertanyaan": "Apa saja yang menjadi sunah saat menjalankan ibadah puasa?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Berbuka dengan Rutob, dua, Menunda berbuka, tiga, Beakal dan Baligh"
+    "choice": "satu. Berbuka dengan Rutob, dua, Menunda berbuka, tiga, Berakal dan Baligh"
   },
   {
     "pertanyaan": "Berapa jumlah ro ka at shalat tarawih?",
@@ -90,25 +90,25 @@
     "choice": "satu, 4/16, dua, 2/28, tiga, sebelas per dua puluh tiga"
   },
   {
-    "pertanyaan": "Shalat tarawih ditutup dengan shalat?",
+    "pertanyaan": "Shalat tarawih ditutup dengan shalat apa?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Witir, dua, Tahajud, tiga, Dhuha"
   },
   {
-    "pertanyaan": "Shalat malam yang dilakukan saat rama dhan?",
+    "pertanyaan": "Shalat malam yang dilakukan saat rama dhan disebut salat apa?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Tahajud, dua, Tarawih, tiga, Ied"
   },
   {
     "pertanyaan": "Berapa liter jumlah beras yang wajib di zakatkan?",
-    "benar": "dua",
-    "benar2": "2",
+    "benar": "satu",
+    "benar2": "1",
     "choice": "satu, 2,5 liter, dua, 3,5 liter, tiga, 4,0 liter"
   },
   {
-    "pertanyaan": "Puasa Bulan Ramadan merupakan rukun iman ke berapa?",
+    "pertanyaan": "Melakukan ibadah puasa dibulan ramadhan mencerminkan perilaku rukun islam keberpa? ",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu. 1, dua, 2, tiga, 3"
@@ -276,37 +276,37 @@
     "choice": "satu, Unta, dua, Sapi, tiga, Kambing"
   },
   {
-    "pertanyaan": "Siapakah Ayah dari Nabi Ishaq?",
+    "pertanyaan": "Siapakah Ayah dari Nabi Is hakk?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Nabi Ayub, dua, nabi Ibrahim, tiga, Nabi Yakub"
   },
   {
-    "pertanyaan": "Siapakah Ibu dari Nabi Ishaq?",
+    "pertanyaan": "Siapakah Ibu dari Nabi Is hakk?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu, Maryam, dua, Rifqa, tiga, Sarah "
   },
   {
-    "pertanyaan": "Siapakah keturunan Nabi Ishaq yang juga menjadi Nabi?",
+    "pertanyaan": "Siapakah keturunan Nabi Is hakk yang juga menjadi Nabi?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Nabi Yaqub, dua, Nabi Harun, tiga, Nabi Zakaria "
   },
   {
-    "pertanyaan": "Siapa nama istri Nabi Ishaq?",
+    "pertanyaan": "Siapa nama istri Nabi Is hakk?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Rifqa, dua, Asiyah, tiga, Khadijah"
   },
   {
-    "pertanyaan": "Usia berapakah Ibu Nabi Ishaq ketika mengandung?",
+    "pertanyaan": "Usia berapakah Ibu Nabi Is hakk ketika mengandung?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, 80 tahun, dua, 90 tahun, tiga, 100 tahun"
   },
   {
-    "pertanyaan": "Siapakah yang mengabarkan kepada Nabi Ibrahim bahwa Nabi Ishaq akan mempunyai Anak dari Sarah?",
+    "pertanyaan": "Siapakah yang mengabarkan kepada Nabi Ibrahim bahwa Nabi Is hakk akan mempunyai Anak dari Sarah?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Malaikat utusan Awloh, dua, Sarah, tiga, Pedagang dari Kaum Bani Israil"
@@ -498,7 +498,7 @@
     "choice": "satu, Mekah, dua, Mesir, tiga, Baitul Maqdis"
   },
   {
-    "pertanyaan": "Kitab Apakah yang diturunkan kepada Nabi Sulaiman?",
+    "pertanyaan": "Kitab Apakah yang diturunkan kepada Nabi Daud?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Kitab Taurat, dua, Kitab Zabur, tiga, Kitab Injil"
@@ -693,7 +693,7 @@
     "pertanyaan": "Siapakah nama sahabat nabi yang bergelar Duta Islam Pertama?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu, Musyab bin Umeir, dua, Khalid bin Walid, tiga, Zubair bin Awam"
+    "choice": "satu, Musyab bin Umair, dua, Khalid bin Walid, tiga, Zubair bin Awam"
   },
   {
     "pertanyaan": "Siapakah nama sahabat nabi yang bergelar Pedang Awloh yang terhunus?",
@@ -702,7 +702,7 @@
     "choice": "satu, Musyab bin Umeir, dua, Khalid bin Walid, tiga, Zubair bin Awam"
   },
   {
-    "pertanyaan": "Siapakah sahabat nabi yang mendapat julukan Hiwarir Rosul?",
+    "pertanyaan": "Siapakah sahabat nabi Muhammad yang mendapat julukan Hawari?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu, Musyab bin Umeir, dua, Khalid bin Walid, tiga, Zubair bin Awam"
@@ -714,15 +714,9 @@
     "choice": "satu, Kaum Hud, dua, Kaum Bani Israil, tiga, Kaum Hawariyyin"
   },
   {
-    "pertanyaan": "Sahabat nabi manakah yang dijadikan anak angkat dan ditulis namanya dalam Al Quran?",
+    "pertanyaan": "Siapakah sahabat Nabi Muhammad yang juga dijadikan anak angkat oleh beliau?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu, Zait bin Haritsah, dua, Mu ats bin Jabal, tiga, Zubair bin Awam"
-  },
-  {
-    "pertanyaan": "Sahabat Nabi yang manakah yang mendapat julukan Abu Abdurahman?",
-    "benar": "dua",
-    "benar2": "2",
     "choice": "satu, Zait bin Haritsah, dua, Mu ats bin Jabal, tiga, Zubair bin Awam"
   },
   {
@@ -756,7 +750,7 @@
     "choice": "satu, Ali bin Abi Thalib, dua, Usman bin Affan, tiga, Abu Bakar Assidiq"
   },
   {
-    "pertanyaan": "Ada berapa jumlah kitab-kitab Awloh",
+    "pertanyaan": "Ada berapa jumlah kitab-kitab yang diturunkan oleh Awloh",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, empat, dua, tiga, tiga, satu"
@@ -774,22 +768,16 @@
     "choice": "satu, Kitab Taurot, dua, Kitab Zabur, tiga, Kitab Injil"
   },
   {
-    "pertanyaan": "Kapankah Kitab Injil diberikan pada Nabi Isa?",
-    "benar": "tiga",
-    "benar2": "3",
-    "choice": "satu, Sekitar 3 Masehi, dua, Sekitar 2 Masehi, tiga, Sekitar 1 Masehi"
-  },
-  {
     "pertanyaan": "Nabi manakah yang menerima Kitab Al Quran?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Nabi Musa, dua, Nabi Muhammad, tiga, Nabi Isa"
   },
   {
-    "pertanyaan": "Dimanakah Nabi Isa menerima Kitab Injil?",
+    "pertanyaan": "bahasa apa yang pertama kali digunakan dalam kitab injil?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu, Madinah, dua, Yerussalem, tiga, Makkah"
+    "choice": "satu, Bahasa Qibti, dua, Bahasa Suryani, tiga, Bahasa Ibrani"
   },
   {
     "pertanyaan": "Bahasa apakah yang digunakan dalam Kitab Taurot yang diturunkan ke Nabi Musa?",
@@ -1002,7 +990,7 @@
     "choice": "satu, ke 4, dua, ke 5, tiga, ke 6"
   },
   {
-    "pertanyaan": "Siapakah yang mengetahui datangnya hari kiamat itu?",
+    "pertanyaan": "Siapakah yang mengetahui datangnya hari kiamat?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Allah, dua, Malaikat, tiga, Nabi Muhammad"
@@ -1032,15 +1020,15 @@
     "choice": "satu, Hari penimbangan amal manusia, dua, hari kepastian berakhirnya alam semesta, tiga, hari pembalasan setiap amal"
   },
   {
-    "pertanyaan": "Tanggal dan tahun berapa Isro’ mi'roj terjadi?",
+    "pertanyaan": "Tanggal  berapa Isro’ mi'roj terjadi?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu. 26 Rajab 621 M, dua. 27 Rajab 621 M, tiga. 28 Rajab 621 M"
+    "choice": "satu. 27 Muharam, dua. 27 Rajab, tiga. 27 Safar"
   },
   {
     "pertanyaan": "Tanggal berapakah al qur'an diturunkan?",
-    "benar": "dua",
-    "benar2": "2",
+    "benar": "satu",
+    "benar2": "1",
     "choice": "satu. 17 Ramadan, dua. 18 Ramadan, tiga. 19 Ramadan"
   },
   {
@@ -1056,7 +1044,7 @@
     "choice": "satu. Isro’ Mi’roj, dua. Perang Thaif, tiga. Perang Gajah"
   },
   {
-    "pertanyaan": "Kaum Quraisy menuduh Nabi sebagai apa?",
+    "pertanyaan": "Kaum Quraisy menuduh Nabi Muhammad sebagai apa?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu. Pembohong, dua. Pemfitnah, tiga. Pembunuh"
@@ -1068,19 +1056,19 @@
     "choice": "satu. 1, dua. 2, tiga. 3"
   },
   {
-    "pertanyaan": "Apa arti Isro’ secara bahasa?",
+    "pertanyaan": "Pada kalimat isro' mi'roj, apa arti Isro’ secara bahasa?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu. Dihidupkan, dua. Dijalankan, tiga. Dimatikan"
   },
   {
-    "pertanyaan": "Apa arti Mi’roj secara bahasa?",
+    "pertanyaan": "Pada kalimat isro' mi'roj, apa arti Mi’roj secara bahasa?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu. Dinaikkan, dua. Diturunkan, tiga. Dipindahkan"
   },
   {
-    "pertanyaan": "Nabi Muham mad menerima perintah apa setelah bertemu dengan Allah?",
+    "pertanyaan": "Perintah apa yang diterima Nabi Muham mad setelah bertemu dengan Allah?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu.  Puasa, dua. Solat, tiga. Haji"
@@ -1098,7 +1086,7 @@
     "choice": "satu, Mengamalkannya, dua, Mengajarkannya, tiga, Menulisnya"
   },
   {
-    "pertanyaan": "Berikut ini yang merupakan salah satu manfaat dari membaca Al Quran adalah",
+    "pertanyaan": "Manakah yang merupakan salah satu manfaat dari membaca Al Quran?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu, Perut menjadi kenyang, dua, Anak menjadi taat, tiga, Hati menjadi tenang"
@@ -1119,13 +1107,13 @@
     "pertanyaan": "Apakah hukumnya salat tarawih?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu, sunah muakad, dua, Sunah, tiga, Fardu Kifayah"
+    "choice": "satu, sunah muakad, dua, Goiru Muakad, tiga, Fardu Kifayah"
   },
   {
     "pertanyaan": "Siapakah orang yang mengaku-aku sebagai seorang nabi pada masa-masa akhir hidup nabi Muhammad?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu, Abu Jahal, dua, Musailamah, tiga, Amar bin Ash"
+    "choice": "satu, Abu Jahal, dua, Al Aswad Al Ansi, tiga, Amar bin Ash"
   },
   {
     "pertanyaan": "Abu Lahab mempunyai sifat seperti apa terhadap Nabi Muhammad?",
@@ -1146,7 +1134,7 @@
     "choice": "satu, Mahmudah, dua, Mazmumah, tiga, Maimunah"
   },
   {
-    "pertanyaan": "Disebut apakah taubat yang sebenar-benar taubat?",
+    "pertanyaan": "Disebut apakah taubat yang sebenar-benarnya taubat?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Taubat Nasuha, dua, Taubat Nazilah, tiga, Taubat Qobliyah"
@@ -1158,7 +1146,7 @@
     "choice": "satu, Riya, dua, Zuhud, tiga, Tabah"
   },
   {
-    "pertanyaan": "Apa yang dimaksud dengan khouf?",
+    "pertanyaan": "Kita sebagai manusia sudah seharusnya menerapkan khouf. Apa yang dimaksud dengan khouf?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Takut kepada Allah, dua, Mengharapkan ridho Allah, tiga, Cinta pada Allah"
@@ -1383,19 +1371,13 @@
     "pertanyaan": "Bagaimana cara beriman kepada malaikat?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu, dengan meyakini dalam hati dan menyatakan secara lisan, dua, dengan meyakini dalam hati dan mena ati perintahnya, tiga, dengan meyakini bahwa malaikat itu ada"
-  },
-  {
-    "pertanyaan": "Berikut ini salah satu hikmah beriman kepada malaikat adalah",
-    "benar": "dua",
-    "benar2": "2",
-    "choice": "satu, Rrajin Belajar, dua, Bberibadah terus menerus, tiga, Senang Membantu"
+    "choice": "satu, dengan meyakini dalam hati dan menyatakan secara lisan, dua, dengan menyembahnya, tiga, dengan mencintainya"
   },
   {
     "pertanyaan": "Berikut ini merupakan ciri-ciri dari malaikat adalah",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu, memiliki sifat-sifat tuhan, dua, Diciptakan dari cahaya, tiga, Dapat berkembang biak"
+    "choice": "satu, memiliki sifat-sifat tuhan, dua, Diciptakan dari cahaya, tiga, Dapat memiliki keturunan"
   },
   {
     "pertanyaan": "Berikut ini yang bukan merupakan sifat malaikat adalah",
@@ -1425,7 +1407,7 @@
     "pertanyaan": "Iman kepada malaikat termasuk rukun iman keberapa?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu, satu, dua, dua, tiga, tiga"
+    "choice": "satu, rukun iman pertama, dua, rukun iman kedua, tiga, rukun iman ketiga"
   },
   {
     "pertanyaan": "Surat Fatir ayat satu, menjelaskan bahwa malaikat itu berbentuk seperti apa?",
@@ -1437,7 +1419,7 @@
     "pertanyaan": "Apa imbalan bagi orang yang bersyukur atas nikmat Allah?",
     "benar": "tiga",
     "benar2": "3",
-    "choice": "satu, Kasih sayang Allah, dua, Anugerah Allah, tiga, Tambahan nikmat dari Allah"
+    "choice": "satu, mendapat tambahan ujian dari Allah, dua, Mendapat adzab dari Allah, tiga, mendapat tambahan nikmat dari Allah"
   },
   {
     "pertanyaan": "Apa yang dimaksud dengan mahkluk goib?",
@@ -1455,7 +1437,7 @@
     "pertanyaan": "Malaikat yang bertugas menyampaikan wahyu adalah malaikat yang bernama?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu, Jjibril, dua, Mika il, tiga, Izro il"
+    "choice": "satu, jibril, dua, Mika il, tiga, Izro il"
   },
   {
     "pertanyaan": "Malaikat yang bertugas untuk mencabut nyawa manusia adalah?",
@@ -1680,70 +1662,58 @@
     "choice": "satu. Berpamitan pada keluarga, dua. Tergesa-gesa dan cepat berangkat, tiga. Menyiapkan bekal yang akan dibawa"
   },
   {
-    "pertanyaan": "Hal apa saja  yang harus diperhatikan seorang tamu ketika berbicara?",
+    "pertanyaan": "Bagaimana adab seorang tamu ketika berbicara?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu. Memandang tajam kepada orang yang diajak bicara, dua. Menggunakan Hand phone baik untuk sms maupun telpon, tiga. Hand phone dimatikan agar tidak mengganggu"
   },
   {
-    "pertanyaan": "Hal-hal yang harus diperhatikan ketika menerima tamu adalah sebagai berikut, kecuali",
+    "pertanyaan": "Adab ketika menerima tamu adalah sebagai berikut, kecuali",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Menjawab salam, dua. Membhedakan tempat duduk tamu, tiga. Boleh menolak tamu dengan ramah"
+    "choice": "satu. Bermuka masam, dua. Menjamu, tiga. Berwajah berseri seri"
   },
   {
     "pertanyaan": "Membelanjakan harta secara berlebihan, merupakan pengertian dari",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Thab zir, dua. Membuang-buang Harta, tiga. Isrof"
+    "choice": "satu. Thab zir, dua. Namimah, tiga. Fitnah"
   },
   {
-    "pertanyaan": "Siapakah orang yang berbuat tabzir, yang kemudian oleh Allah dilaknat dengan ditenggelamkan seluruh harta bendanya ke dalam tanah?",
+    "pertanyaan": "Siapakah orang kufur nikmat yang Awloh azab dengan ditenggelamkan ke bumi bersama dengan seluruh hartanya?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu. Abu Lahab, dua. Qorun, tiga. Namrud"
   },
   {
-    "pertanyaan": "Disebut apakah dalam agama, menggunjing itu?",
+    "pertanyaan": "Dalam Islam, apa istilah lain untuk menggunjing?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Ghibah, dua. Sunah Qouliyah, tiga. Kikir"
-  },
-  {
-    "pertanyaan": "Seorang ayah yang menasehati anaknya kemudian namanya disebutkan dalam Al Qur'an sesuai dengan nama surat yang tertera didalam Al Qur'an adalah...",
-    "benar": "satu",
-    "benar2": "1",
-    "choice": "satu. Muhammad, dua. An Naml, tiga. Al Maidah"
+    "choice": "satu. Ghibah, dua. Ta barruj, tiga. Kikir"
   },
   {
     "pertanyaan": "Pada surat Lukman ayat 12 dinyatakan bahwa barang siapa yang bersyukur kepada Allah maka diibaratkan dia bersyukur kepada?",
-    "benar": "tiga",
-    "benar2": "3",
+    "benar": "dua",
+    "benar2": "2",
     "choice": "satu. Orang lain, dua. Dirinya sendiri, tiga. Orang disekitarnya"
   },
   {
-    "pertanyaan": "Menurut Imam Malik, yang dimaksud dengan jaizah sehari semalam adalah",
+    "pertanyaan": "Apa yang dimaksud dengan jaizah dalam memuliakan tamu?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Memuliakan dan menjamu tamu dengan hidangan istimewa di hari pertama. dua. Memuliakan dan menjamu tamu dengan hidangan istimewa di hari kedua, tiga. Memuliakan dan menjamu tamu dengan hidangan istimewa selama satu minggu"
+    "choice": "satu. Menjamu tamu dengan hidangan istimewa di hari pertama. dua. Menjamu tamu dengan hidangan istimewa di hari kedua, tiga. Menjamu tamu dengan hidangan istimewa selama satu minggu"
   },
   {
-    "pertanyaan": "Manakah yang merupakan contoh dari orang yang berbuat israf dan tabzir dalam berpakaian?",
+    "pertanyaan": "Apa yang dimaksud dengan ta barruj dalam berdandan dan berpakaian?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu. Memakai baju muslimah sederhana yang penting menutup aurat, dua. Memakai baju ketat dan membuka bagian tertentu, tiga. Memakai daster digunakan waktu tidur"
+    "choice": "satu. Sederhana, dua. Berlebih-lebihan, tiga. Sesuai ajaran islam"
   },
   {
     "pertanyaan": "Surat Al Kafirun berisi rekomendasi untuk apa?",
     "benar": "tiga",
     "benar2": "3",
-    "choice": "satu. Iman kepada Allah, dua. Kesalehan, tiga. Mentolelir"
-  },
-  {
-    "pertanyaan": "Jika ada pertemuan tab'i gila dalam sebuah kalimat, dibaca",
-    "benar": "tiga",
-    "benar2": "3",
-    "choice": "satu. Far'i gila, dua. Badal gila, tiga. Gila adalah tugas Muttasil"
+    "choice": "satu. Bulan Ramadan, dua. Perbuatan syirik, tiga. Toleransi beragama"
   },
   {
     "pertanyaan": "Apa arti dari Ashabul Kahfi dalam Surat Al Kahf?",
@@ -1758,10 +1728,22 @@
     "choice": "satu. Sebuah Bencana, dua. Kiamat Kubro, tiga. Kiamat Su gro"
   },
   {
-    "pertanyaan": "Setelah sangka kala pertama dibunyikan sebagai awal dari Penghakiman Terakhir. Disebut Yaumul apakah tiupan sangka kala kedua?",
+    "pertanyaan": "Apa nama lain dari hari pembalasan?",
+    "benar": "dua",
+    "benar2": "2",
+    "choice": "satu. Yaumul Mizan, dua. Yaumul Jaza', tiga. Yaumul Hisab"
+  },
+  {
+    "pertanyaan": "Apa nama lain dari hari penimbangan amal?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Bha ats, dua. Jaza', tiga. Menghitung"
+    "choice": "satu. Yaumul Mizan, dua. Yaumul Jaza', tiga. Yaumul Hisab"
+  },
+  {
+    "pertanyaan": "Apa nama lain dari hari penghitungan amal?",
+    "benar": "tiga",
+    "benar2": "3",
+    "choice": "satu. Yaumul Mizan, dua. Yaumul Jaza', tiga. Yaumul Hisab"
   },
   {
     "pertanyaan": "Apa salah satu tanda kiamat kubro?",
@@ -1773,10 +1755,10 @@
     "pertanyaan": "Sebelum hari kebangkitan, di alam manakah orang-orang yang telah mati menunggu?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu. Kehidupan setelah kematian, dua. Barzakh, tiga. Mahsyar"
+    "choice": "satu. Dunia, dua. Barzah, tiga. Mahsyar"
   },
   {
-    "pertanyaan": "Akhir dunia adalah karena fakta bahwa alam memperoleh teori bahan bakar hidrogen, yang didasarkan pada pertimbangan ilmiah yang dikemukaka?",
+    "pertanyaan": "Siapa tokoh yang mengemukakan bahwa hari kiamat terjadi ketika alam kehabisan bahan bakar hidrogen?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu. Abu Hanifah, dua. Achmad Baiquni, tiga. Tuan Jemes Jeinz"
@@ -1785,46 +1767,52 @@
     "pertanyaan": "Allah memerintahkan para hamba-Nya yang setia untuk bersikap adil. Ini terkandung dalam Al Qur'an?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu. Al Baqarah 2 ayat 115, dua. A Nisa 4 ayat 135, tiga. A Nisa 4 ayat 225"
+    "choice": "satu. Al Baqoroh ayat 115, dua. An Nisa ayat 135, tiga. An Nisa ayat 225"
   },
   {
     "pertanyaan": "Salah satu contoh orang yang memiliki sifat baik akan selalu",
     "benar": "tiga",
     "benar2": "3",
-    "choice": "satu. Hanya, dua. Sedih, tiga. Sabar"
+    "choice": "satu. Marah, dua. Sedih, tiga. Sabar"
   },
   {
-    "pertanyaan": "Sikap yang menyenangkan terhadap takdir sejati adalah sebagai berikut, kecuali",
+    "pertanyaan": "Sikap yang tepat dalam menyikapi takdir adalah sebagai berikut, kecuali",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu. Kecewa ketika bis nis gagal, dua. Syukur selalu, tiga. Sabar dalam memenuhi kewajiban"
   },
   {
-    "pertanyaan": "Tindakan yang membawa manfaat bagi diri mereka sendiri, bagi keluarga dan bagi semua umat manusia disebut tindakan apa?",
+    "pertanyaan": "Apa yang dimaksud dengan ridho?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Tindakan Ilahi, dua. Bijaksana, tiga. Terima kasih"
+    "choice": "satu. Menerima dan rela, dua. Iri hati, tiga. Menyombongkan diri"
   },
   {
-    "pertanyaan": "Rido adalah properti yang akan...",
+    "pertanyaan": "Disebut apakah orang yang hari ini sama dengan hari kemarin?",
+    "benar": "dua",
+    "benar2": "2",
+    "choice": "satu. Beruntung, dua. Merugi, tiga. Terlaknat"
+  },
+  {
+    "pertanyaan": "Disebut apakah orang yang hari ini lebih baik dari hari kemarin?",
     "benar": "satu",
     "benar2": "1",
-    "choice": "satu. Gembirakan seseorang untuk membuat kemajuan, dua. Dapatkan pikiran, tiga. Orang lain iri"
+    "choice": "satu. Beruntung, dua. Merugi, tiga. Terlaknat"
   },
   {
-    "pertanyaan": "Orang yang usahanya menurut tradisi kenabian lebih buruk dari kemarin adalah di antara mereka yang apa?",
+    "pertanyaan": "Disebut apakah orang yang hari ini lebih buruk dari hari kemarin?",
+    "benar": "tiga",
+    "benar2": "3",
+    "choice": "satu. Beruntung, dua. Merugi, tiga. Terlaknat"
+  },
+  {
+    "pertanyaan": "Yang termasuk enam hak bagi seorang muslim atas muslim lainnya adalah?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu. Menderita, dua. Sedih, tiga. Se tabil"
+    "choice": "satu. Berhutang, dua. Datang jika diundang, tiga. Membawakan oleh-oleh"
   },
   {
-    "pertanyaan": "Termasuk contoh apa dari mengunjungi dan berdoa untuk saudaranya yang sakit?",
-    "benar": "dua",
-    "benar2": "2",
-    "choice": "satu. Hanya, dua. Tindakan Ilahi, tiga. Rido"
-  },
-  {
-    "pertanyaan": "Julukan Abu Basyar atau Bapak Umat Manusia diberikan oleh Awloh pada Nabi yang Manakah?",
+    "pertanyaan": "Julukan Abu Basyar atau Bapak Umat Manusia diberikan oleh Awloh pada Nabi siapa?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu, Nabi Ibrahim, dua, Nabi Ayub, tiga, Nabi Adam"
@@ -1849,8 +1837,8 @@
   },
   {
     "pertanyaan": "Siapakah Nabi yang memiliki julukan sebagai Khatibul Anbiya?",
-    "benar": "dua",
-    "benar2": "2",
+    "benar": "tiga",
+    "benar2": "3",
     "choice": "satu, Nabi Ayub, dua, Nabi Syuaib, tiga, Nabi Muhammad"
   },
   {
@@ -1920,7 +1908,7 @@
     "choice": "satu, Kemampuan menafsirkan mimpi, dua, Kemampuan membelah lautan, tiga, kemampuan berbicara dengan hewan "
   },
   {
-    "pertanyaan": "Kategoriapakah yang diberikan oleh Awloh pada Nabi Yusuf atas usahanya untuk tidak melakukan dosa atau menghindari dosa, bahkan untuk sekedar berniat atau berkhayal mengenai hal yang haram?",
+    "pertanyaan": "Kategoriapakah yang diberikan oleh Awloh pada Nabi Yusuf atas usahanya untuk menghindari dosa, bahkan untuk sekedar berniat mengenai hal yang haram?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu, Al Amin, dua, Muhsinin, tiga, Muhliyat"
@@ -1944,7 +1932,7 @@
     "choice": "satu, Hiasan, dua, Penyempurna, tiga, Petunjuk "
   },
   {
-    "pertanyaan": " Allah berfirman dalam  surah al-baqarah ayat 2, bahwa al-quran merupakan petunjuk bagi siapa?",
+    "pertanyaan": "Allah berfirman dalam  surah al-baqarah ayat 2, bahwa al-quran merupakan petunjuk bagi siapa?",
     "benar": "dua",
     "benar2": "2",
     "choice": "satu. Mukhlisin, dua, Muttaqin, tiga, Muslimin "
@@ -2001,7 +1989,7 @@
     "pertanyaan": "Apa hukum menggunakan hadis sebagai landasan hukum?",
     "benar": "dua",
     "benar2": "2",
-    "choice": "satu, Mubah, dua, Wajib, tiga, Makruh "
+    "choice": "satu, Haram, dua, Wajib, tiga, Makruh "
   },
   {
     "pertanyaan": "Apa sebutan bagi orang yang meriwayatkan hadis?",
@@ -2046,7 +2034,7 @@
     "choice": "satu, Atsar, dua, hadis, tiga, Kabar"
   },
   {
-    "pertanyaan": " Menurut bahasa, ijjtihad artinya apa?",
+    "pertanyaan": "Menurut bahasa, ijjtihad artinya apa?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Bersungguh-sungguh, dua, Bersepakat, tiga, Bersatu"
@@ -2056,12 +2044,6 @@
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu,  Al-anbiya ayat 9, dua, al-anbiya ayat 8, tiga, Al-anbiya ayat 7 "
-  },
-  {
-    "pertanyaan": "Hadis yang diriwayatkan oleh ibnu hanbal termasuk dalam surat apa?",
-    "benar": "dua",
-    "benar2": "2",
-    "choice": "satu,  Al-anbiya' ayat 9, dua, al-anbiya' ayat 8, tiga, Al-anbiya' ayat 7 "
   },
   {
     "pertanyaan": "Contoh perbuatan far’u yaitu",
@@ -2124,13 +2106,13 @@
     "choice": "satu, 13 tahun, dua, 12 tahun, tiga, 10 tahun"
   },
   {
-    "pertanyaan": "Masyarakat Mekkah pada waktu ditu sedang dilanda berbagai krisis, krisis apa yang paling menonjol?",
+    "pertanyaan": "Masyarakat Mekkah pada waktu itu sedang dilanda berbagai krisis, krisis apa yang paling menonjol?",
     "benar": "satu",
     "benar2": "1",
     "choice": "satu, Moral, dua, Budaya, tiga, Moneter "
   },
   {
-    "pertanyaan": "Berikut ini orang-orang yang pertama menyambut ajakan Rasulullah, kecuali",
+    "pertanyaan": "Berikut ini orang-orang yang pertama menyambut ajakan Rasulullah untuk memeluk islam, kecuali",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu,  Khadijah binti khuwaid, dua, Ali bin abi thalib, tiga, Umar bin khotob "
@@ -2172,7 +2154,7 @@
     "choice": "satu, Uzlah, dua,  Muraqbah, tiga, Muamalah "
   },
   {
-    "pertanyaan": "Kata zhan artinya adalah ",
+    "pertanyaan": "Apa arti kata zhan dalam kata suudzhan?",
     "benar": "tiga",
     "benar2": "3",
     "choice": "satu,  Baik, dua, Niat, tiga, Prasangka "

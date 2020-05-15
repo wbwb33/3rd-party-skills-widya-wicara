@@ -1,196 +1,195 @@
-[{"pertanyaan": "Apa mata uang dari Afrika Selatan?","benar": "Rand Afrika Selatan ; Rand","benar2": "A","choice": "A. Rand .. B. Dinar .. C. Kwanza"},
-{"pertanyaan": "Apa mata uang dari Aljazair?","benar": "Dinar Aljazair ; Dinar","benar2": "B","choice": "A. Rand .. B. Dinar .. C. Dirham"},
-{"pertanyaan": "Apa mata uang dari Angola?","benar": "Kwanza","benar2": "C","choice": "A. Franc .. B. Pula .. C. Kwanza"},
-{"pertanyaan": "Apa mata uang dari Benin?","benar": "Franc CFA","benar2": "B","choice": "A. Pula .. B. Franc CFA .. C. Kwanza"},
-{"pertanyaan": "Apa mata uang dari Bostwana?","benar": "Pula","benar2": "A","choice": "A. Pula .. B. Franc .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Burkina Faso?","benar": "Franc CFA","benar2": "B","choice": "A. Nakfa .. B. Franc CFA .. C. Birr"},
-{"pertanyaan": "Apa mata uang dari Burundi?","benar": "Burundi Franc","benar2": "C","choice": "A. Dolar .. B. Lilangeni .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Chad?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Chad .. C. Cedi"},
-{"pertanyaan": "Apa mata uang dari Eritrea?","benar": "Nakfa","benar2": "B","choice": "A. Rabat .. B. Nakfa .. C. Loti"},
-{"pertanyaan": "Apa mata uang dari Eswatini?","benar": "Lilangeni","benar2": "C","choice": "A. Yuan .. B. Dalasi .. C. Lilangeni"},
-{"pertanyaan": "Apa mata uang dari Etiopia?","benar": "Birr","benar2": "B","choice": "A. Dobra .. B. Birr .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Gabon?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Oyuguiya .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Gambia?","benar": "Dalasi","benar2": "B","choice": "A. Naira .. B. Dalasi .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Ghana?","benar": "Ghanaian cedi ; Cedi","benar2": "A","choice": "A. Cedi .. B. Pula .. C. Nakfa"},
-{"pertanyaan": "Apa mata uang dari Guinea?","benar": "Guinean franc ; Franc","benar2": "B","choice": "A. Metica .. B. Franc .. C. Naira"},
-{"pertanyaan": "Apa mata uang dari Guinea-Bissau?","benar": "Franc CFA","benar2": "C","choice": "A. Rupee .. B. Pound .. C. Franc CFA"},
-{"pertanyaan": "Apa Mata uang dari Guinea Katulistiwa?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Metical .. C. Loti"},
-{"pertanyaan": "Apa mata uang dari Jibouti?","benar": "Djiboutian Franc ; Franc","benar2": "C","choice": "A. Dram .. B. Manat .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Kamerun?","benar": "Franc CFA","benar2": "C","choice": "A. Leone .. B. Escudo .. C. Franc CFA"},
-{"pertanyaan": "Apa mata uang dari Kenya?","benar": "Kenyan shiling ; Shilling","benar2": "B","choice": "A. Afgani .. B. Shilling .. C. Kwacha"},
-{"pertanyaan": "Apa mata uang dari Lesotho?","benar": "Loti","benar2": "B","choice": "A. Dinar .. B. Loti .. C. Ariary"},
-{"pertanyaan": "Apa mata uang dari Liberia?","benar": "Liberian dollar ; Dolar","benar2": "C","choice": "A. Pound .. B. Kwacha .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Libia?","benar": "Libyan dinar ; Dinar","benar2": "C","choice": "A. Naira .. B. Metical .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Madagaskar?","benar": "Malagasy ariary ; ariary","benar2": "A","choice": "A. Ariary .. B. Birr .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Malawi?","benar": "Malawian kwacha ; kwacha","benar2": "A","choice": "A. Kwacha .. B. Dobra .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Mali?","benar": "Franc CFA","benar2": "B","choice": "A. Rabat .. B. Franc CFA .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Maroko?","benar": "Rabat","benar2": "C","choice": "A. Dirham .. B. Dinar .. C. Rabat"},
-{"pertanyaan": "Apa mata uang dari Mauritania?","benar": "Mauritanian oyuguiya ; oyuguiya","benar2": "A","choice": "A. Oyuguiya .. B. Shilling .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Mauritius?","benar": "Mauritian rupee ; rupee","benar2": "A","choice": "A. Rupee .. B. Dinar .. C. Dirham"},
-{"pertanyaan": "Apa mata uang dari Mesir?","benar": "Egyptian Pound ; Pound","benar2": "C","choice": "A. Rupee .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Mozambik?","benar": "Mozambican metical ; metical","benar2": "B","choice": "A. Rabat .. B. Metical .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Namibia?","benar": "Namibian dollar ; dolar","benar2": "C","choice": "A. Birr .. B. Lilangeni .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Niger?","benar": "Franc CFA","benar2": "B","choice": "A. Tegucigalpa .. B. Franc CFA .. C. Naira"},
-{"pertanyaan": "Apa mata uang dari Nigeria?","benar": "Nigerian naira ; naira","benar2": "C","choice": "A. Peso .. B. Sol .. C. Naira"},
-{"pertanyaan": "Apa mata uang dari Pantai Gading?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Dolar .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Republik Afrika Tengah?","benar": "Franc CFA","benar2": "B","choice": "A. Naira .. B. Franc CFA .. C. Dobra"},
-{"pertanyaan": "Apa mata uang dari Republik Demokratis Kongo?","benar": "Congolese franc ; franc","benar2": "B","choice": "A. Manat .. B. Franc .. C. Taka"},
-{"pertanyaan": "Apa mata uang dari Republik Kongo?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Leone .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Rwanda?","benar": "Rwanda Franc ; Franc","benar2": "C","choice": "A. Rupee .. B. Dobra .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Sao Tome dan Principle?","benar": "Dobra","benar2": "B","choice": "A. Afgani .. B. Dobra .. C. Kwacha"},
-{"pertanyaan": "Apa mata uang dari Senegal?","benar": "Franc CFA","benar2": "A","choice": "A. Franc CFA .. B. Riel .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Seychelles?","benar": "Seychellois rupee ; rupee","benar2": "B","choice": "A. Dinar .. B. Rupee .. C. Dirham"},
-{"pertanyaan": "Apa mata uang dari Sierra Leone?","benar": "Leone","benar2": "C","choice": "A. Ringgit .. B. Tugrik .. C. Leone"},
-{"pertanyaan": "Apa mata uang dari Somalia?","benar": "Somali shilling ; shilling","benar2": "B","choice": "A. Manat .. B. Shilling .. C. Lira"},
-{"pertanyaan": "Apa mata uang dari Sudan?","benar": "Pound Sudan ; pound","benar2": "A","choice": "A. Pound .. B. Shilling .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Sudan Selatan?","benar": "Pound Sudan ; pound","benar2": "A","choice": "A. Pound .. B. Euro .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Tanjung Verde?","benar": "Escudo","benar2": "B","choice": "A. Rial .. B. Escudo .. C. Riel"},
-{"pertanyaan": "Apa mata uang dari Tanzania?","benar": "Tanzanian shilling ; shilling","benar2": "C","choice": "A. Won .. B. Tenge .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Togo?","benar": "Franc CFA","benar2": "B","choice": "A. Dong .. B. Franc CFA .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Tunisia?","benar": "Tunisan Dinar ; Dinar","benar2": "B","choice": "A. Ringgit .. B. Dinar .. C. Tugrik"},
-{"pertanyaan": "Apa mata uang dari Uganda?","benar": "Ugandan shilling ; shilling","benar2": "A","choice": "A. Shilling .. B. Kyat .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Zambia?","benar": "Zambian kwacha ; kwacha","benar2": "C","choice": "A. Dram .. B. Tugrik .. C. Kwacha"},
-{"pertanyaan": "Apa mata uang dari Zimbabwe?","benar": "Zimbabwean dollar ; dolar","benar2": "B","choice": "A. Pound .. B. Dolar .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Afghanistan?","benar": "Afgani Afghanistan ; Afgani","benar2": "A","choice": "A. Afgani .. B. Kwacha .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Arab Saudi?","benar": "Riyal Saudi ; Rial","benar2": "B","choice": "A. Dinar .. B. Rial .. C. Dirham"},
-{"pertanyaan": "Apa mata uang dari Armenia?","benar": "Dram","benar2": "A","choice": "A. Dram .. B. Rial .. C. Dinar"},
-{"pertanyaan": "Apa mata uang resmi dari Azerbaijan?","benar": "Manat Azerbaijan ; Manat","benar2": "B","choice": "A. Dram .. B. Manat .. C. Taka"},
-{"pertanyaan": "Apa mata uang dari Bahrain?","benar": "Dinar Bahrain ; Dinar","benar2": "C","choice": "A. Dirham .. B. Rial .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Bangladesh?","benar": "Taka Bangladesh ; Taka","benar2": "C","choice": "A. Dram .. B. Manat .. C. Taka"},
-{"pertanyaan": "Apa mata uang dari Bhutan?","benar": "Ngultrum","benar2": "B","choice": "A. Tenge .. B. Ngultrum .. C. Escudo"},
-{"pertanyaan": "Apa mata uang dari Brunei Darussalam?","benar": "Dolar Brunei ; Dolar","benar2": "A","choice": "A. Dolar .. B. Pound .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Filipina?","benar": "Peso Filipina ; Peso","benar2": "B","choice": "A. Lari .. B. Peso .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Georgia?","benar": "Lari","benar2": "A","choice": "A. Lari .. B. Dram .. C. Tenge"},
-{"pertanyaan": "Apa mata uang dari India?","benar": "Rupee India ; Rupee","benar2": "B","choice": "A. Rupiah .. B. Rupee .. C. Ringgit"},
-{"pertanyaan": "Apa mata uang Indonesia?","benar": "Rupiah","benar2": "A","choice": "A. Rupiah .. B. Ringgit .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Irak?","benar": "Dinar Irak ; Dinar","benar2": "C","choice": "A. Dirham .. B. Dong .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Iran?","benar": "Rial Iran ; Rial","benar2": "B","choice": "A. Ringgit .. B. Rial .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Jepang?","benar": "Yen Jepang ; Yen","benar2": "C","choice": "A. Yuan .. B. Won .. C. Yen"},
-{"pertanyaan": "Apa mata uang dari Kamboja?","benar": "Riel Kamboja ; Riel","benar2": "A","choice": "A. Riel .. B. Rupee .. C. Rial"},
-{"pertanyaan": "Apa mata uang dari Kazakhstan?","benar": "Tenge Kazakhstan ; Tenge","benar2": "B","choice": "A. Riel .. B. Tenge .. C. Rial"},
-{"pertanyaan": "Apa mata uang dari Korea Selatan?","benar": "Won","benar2": "C","choice": "A. Yuan .. B. Yen .. C. Won"},
-{"pertanyaan": "Apa mata uang dari Korea Utara?","benar": "Won Korea Utara ; Won","benar2": "A","choice": "A. Won .. B. Yen .. C. Yuan"},
-{"pertanyaan": "Apa mata uang dari Kuwait?","benar": "Dinar Kuwait ; Dinar","benar2": "B","choice": "A. Dirham .. B. Dinar .. C. Denar"},
-{"pertanyaan": "Apa mata uang dari Kirgizstan?","benar": "Som Kirgizstan ; Som","benar2": "C","choice": "A. Ringgit .. B. Kip .. C. Som"},
-{"pertanyaan": "Apa mata uang dari Laos?","benar": "Kip Laos ; Kip","benar2": "B","choice": "A. Pound .. B. Kip .. C. Rufiyaa"},
-{"pertanyaan": "Apa mata uang dari Lebanon?","benar": "Pound Libanon ; Pound","benar2": "B","choice": "A. Dolar .. B. Pound .. C. Shili"},
-{"pertanyaan": "Apa mata uang dari Maladewa?","benar": "Rufiyaa Maladewa ; Rufiyaa","benar2": "A","choice": "A. Rufiyaa .. B. Ringgit .. C. Rial"},
-{"pertanyaan": "Apa mata uang dari Malaysia?","benar": "Ringgit Malaysia ; Ringgit","benar2": "C","choice": "A. Dolar .. B. Rupiah .. C. Ringgit"},
-{"pertanyaan": "Apa mata uang dari Mongolia?","benar": "Tugrik Mongolia ; Tugrik","benar2": "B","choice": "A. Afgani .. B. Tugrik .. C. Dram"},
-{"pertanyaan": "Apa mata uang dari Myanmar?","benar": "Kyat Burma ; Kyat","benar2": "B","choice": "A. Rial .. B. Kyat .. C. Dong"},
-{"pertanyaan": "Apa mata uang dari Nepal?","benar": "Rupee Nepal ; Rupee","benar2": "A","choice": "A. Rupee .. B. Kyat .. C. Rial"},
-{"pertanyaan": "Apa mata uang dari Oman?","benar": "Rial Oman ; Rial","benar2": "A","choice": "A. Rial .. B. Rupee .. C. Kyat"},
-{"pertanyaan": "Apa mata uang dari Pakistan?","benar": "Rupee Pakistan ; rupee","benar2": "A","choice": "A. Rupee .. B. Kyat .. C. Rial"},
-{"pertanyaan": "Apa mata uang dari Qatar?","benar": "Riyal Qatar ; Rial","benar2": "B","choice": "A. Kyat .. B. Rial .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Rusia?","benar": "Rubel Rusia ; Rubel","benar2": "C","choice": "A. Ringgit .. B. Rupee .. C. Rubel"},
-{"pertanyaan": "Apa mata uang Singapura?","benar": "Dolar Singapura ; Dolar","benar2": "C","choice": "A. Rupee .. B. Ringgit .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Siprus?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Sri Lanka?","benar": "Rupee Sri Lanka ; Rupee","benar2": "C","choice": "A. Rubel .. B. Rupiah .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Suriah?","benar": "Pound Suriah ; Pound","benar2": "B","choice": "A. Somoni .. B. Pound .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Tajikistan?","benar": "Somoni","benar2": "A","choice": "A. Somoni .. B. Tugrik .. C. Kyat"},
-{"pertanyaan": "Apa mata uang dari Thailand?","benar": "Baht Thailand ; Baht","benar2": "C","choice": "A. Somoni .. B. Rupee .. C. Baht"},
-{"pertanyaan": "Apa mata uang dari Timor- Leste?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "B","choice": "A. Lira .. B. Dolar .. C. Yuan"},
-{"pertanyaan": "Apa mata uang dari Tiongkok?","benar": "Renminbi Yuan","benar2": "A","choice": "A. Yuan .. B. Yen .. C. Won"},
-{"pertanyaan": "Apa mata uang dari Turki?","benar": "Lira Turki ; Lira","benar2": "B","choice": "A. Baht .. B. Lira .. C. Kip"},
-{"pertanyaan": "Apa mata uang dari Turkmenistan?","benar": "Manat Turkmenistan ; Manat","benar2": "C","choice": "A. Riel .. B. Dinar .. C. Manat"},
-{"pertanyaan": "Apa mata uang dari Uni Emirat Arab?","benar": "Dirham Uni Emirat Arab ; Dirham","benar2": "B","choice": "A. Danar .. B. Dirham .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Uzbekistan?","benar": "Som Uzbekistan ; Som","benar2": "A","choice": "A. Som .. B. Dong .. C. Lek"},
-{"pertanyaan": "Apa mata uang dari Vietnam?","benar": "Dong Vietnam ; Dong","benar2": "A","choice": "A. Dong .. B. Lek .. C. Som"},
-{"pertanyaan": "Apa mata uang dari Yaman?","benar": "Riyal Yaman ; Rial","benar2": "B","choice": "A. Dong .. B. Rial .. C. Rupee"},
-{"pertanyaan": "Apa mata uang dari Yordania?","benar": "Dinar Yordania ; Dinar","benar2": "C","choice": "A. Dirham .. B. Rupee .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Albania?","benar": "Lek Albania ; Lek","benar2": "A","choice": "A. Lek .. B. Lak .. C. Dong"},
-{"pertanyaan": "Apa mata uang dari Andorra?","benar": "Euro","benar2": "C","choice": "A. Pound .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Austria?","benar": "Euro","benar2": "B","choice": "A. Pound .. B. Euro .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Belanda?","benar": "Euro","benar2": "C","choice": "A. Pound .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Belarus?","benar": "Rubel Belarus ; Rubel","benar2": "B","choice": "A. Euro .. B. Rubel .. C. Rupiah"},
-{"pertanyaan": "Apa mata uang dari Belgia?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Shilling .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Bosnia?","benar": "Mark Bosnia dan Herzegovina ; Mark","benar2": "A","choice": "A. Mark Bosnia Herzegovina .. B. Lev .. C. Kuna"},
-{"pertanyaan": "Apa mata uang dari Bulgaria?","benar": "Lev Bulgaria ; Lev","benar2": "C","choice": "A. Kuna .. B. Koruna .. C. Lev"},
-{"pertanyaan": "Apa mata uang dari Kroasia?","benar": "Kuna Kroasia ; Kuna","benar2": "B","choice": "A. Koruna .. B. Kuna .. C. Kip"},
-{"pertanyaan": "Apa mata uang dari Ceko?","benar": "Koruna Ceko ; Koruna","benar2": "B","choice": "A. Kuna .. B. Koruna .. C. Kip"},
-{"pertanyaan": "Apa mata uang dari Denmark?","benar": "Krona Denmark ; Krona","benar2": "B","choice": "A. Kuna .. B. Krona .. C. Koruna"},
-{"pertanyaan": "Apa mata uang dari Estonia?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Estonia?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Finlandia?","benar": "Euro","benar2": "C","choice": "A. Pound .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Prancis?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Jerman?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Yunani?","benar": "Euro","benar2": "C","choice": "A. Pound .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Hongaria?","benar": "Forint","benar2": "A","choice": "A. Forint .. B. Krona .. C. Kina"},
-{"pertanyaan": "Apa mata uang dari Islandia?","benar": "Krona Islandia","benar2": "B","choice": "A. Lek .. B. Krona  .. C. Dong"},
-{"pertanyaan": "Apa mata uang dari Irlandia?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Italia?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Pound .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Latvia?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Liechtenstein?","benar": "Franc Swiss ; Franc","benar2": "B","choice": "A. Pound .. B. Franc .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Lithuania?","benar": "Euro","benar2": "C","choice": "A. Peso .. B. Pound .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Luksemburg?","benar": "Euro","benar2": "C","choice": "A. Pound .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Makedonia utara?","benar": "Denar Makedonia ; Denar","benar2": "C","choice": "A. Dinar .. B. Dirham .. C. Denar"},
-{"pertanyaan": "Apa mata uang dari Malta?","benar": "Euro","benar2": "B","choice": "A. Shilling .. B. Euro .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Moldova?","benar": "Leu Moldova ; Leu","benar2": "B","choice": "A. Lek .. B. Leu .. C. dong"},
-{"pertanyaan": "Apa mata uang dari Monako?","benar": "Euro","benar2": "B","choice": "A. Shilling .. B. Euro .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Montenegro?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Pound .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Norwegia?","benar": "Krona Norwegia ; Krona","benar2": "C","choice": "A. Koruna .. B. Kip .. C. Krona"},
-{"pertanyaan": "Apa mata uang dari Polandia?","benar": "Zloty","benar2": "B","choice": "A. Dong .. B. Zloty .. C. Som"},
-{"pertanyaan": "Apa mata uang dari Portugal?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Pond .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Rumania?","benar": "Leu Rumania ; Leu","benar2": "C","choice": "A. Lek .. B. Dong .. C. Leu"},
-{"pertanyaan": "Apa mata uang dari San Marino?","benar": "Euro","benar2": "B","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Serbia?","benar": "Dinar Serbia","benar2": "A","choice": "A. Dinar  .. B. Dirham .. C. Daner"},
-{"pertanyaan": "Apa mata uang dari Slovakia?","benar": "Euro","benar2": "B","choice": "A. Rupee .. B. Euro .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Slovenia?","benar": "Euro","benar2": "C","choice": "A. Shilling .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Spanyol?","benar": "Euro","benar2": "B","choice": "A. Pound .. B. Euro .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Swedia?","benar": "Krona Swedia ; Krona","benar2": "A","choice": "A. Krona .. B. Koruna .. C. Kip"},
-{"pertanyaan": "Apa mata uang dari Swiss?","benar": "Franc Swiss ; Franc","benar2": "A","choice": "A. Franc .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Ukraina?","benar": "Hryvnia","benar2": "B","choice": "A. Krona .. B. Hryvnia .. C. Som"},
-{"pertanyaan": "Apa mata uang dari Inggris?","benar": "Poundsterling","benar2": "C","choice": "A. Dolar .. B. Euro .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Vatikan?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Amerika Serikat?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "C","choice": "A. Dolar .. B. Pound .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Antigua dan Barbuda?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "B","choice": "A. Peso .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Bahama?","benar": "Dolar bahama ; Dolar","benar2": "C","choice": "A. Pound .. B. Shilling .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Barbados?","benar": "Dolar Barbados ; Dolar","benar2": "B","choice": "A. Forint .. B. Dolar .. C. Krona"},
-{"pertanyaan": "Apa mata uang dari Belize?","benar": "Dolar Belize ; Dolar","benar2": "A","choice": "A. Dolar .. B. Manat .. C. Lira"},
-{"pertanyaan": "Apa mata uang dari Dominika?","benar": "Dolar Karibia Timur ; Dolar","benar2": "A","choice": "A. Dolar .. B. Denar .. C. Dinar"},
-{"pertanyaan": "Apa mata uang dari Republik Dominika?","benar": "Peso Dominika ; Peso","benar2": "C","choice": "A. Yuan .. B. Kina .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari El Salvador?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "B","choice": "A. Forint .. B. Dolar .. C. Krona"},
-{"pertanyaan": "Apa mata uang dari Grenada?","benar": "Dolar Karibia Timur ; Dolar","benar2": "B","choice": "A. Dirham .. B. Dolar .. C. Denar"},
-{"pertanyaan": "Apa mata uang dari Guatemala?","benar": "Guetzal Guatemala ; Guetzal","benar2": "B","choice": "A. Pound .. B. Guetzal .. C. Shilling"},
-{"pertanyaan": "Apa mata uang dari Haiti?","benar": "Gourde Haiti ; Gourde","benar2": "A","choice": "A. Gourde .. B. Lev .. C. Zloty"},
-{"pertanyaan": "Apa mata uang dari Honduras?","benar": "Lempira Honduras ; Lempira","benar2": "A","choice": "A. Lempira .. B. Peso .. C. Gourde"},
-{"pertanyaan": "Apa mata uang dari Jamaika?","benar": "Dolar Jamaika ; Dolar","benar2": "C","choice": "A. Kina .. B. Krona .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Kanada?","benar": "Dolar Kanada ; Dolar","benar2": "B","choice": "A. Leu .. B. Dolar .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Kosta Rika?","benar": "Col�n Kosta Rika ; Colon","benar2": "B","choice": "A. Baht .. B. Colon .. C. Lira"},
-{"pertanyaan": "Apa mata uang dari Kuba?","benar": "Peso Kuba ; Peso","benar2": "C","choice": "A. Krona .. B. Franc .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Meksiko?","benar": "Peso Meksiko ; Peso","benar2": "A","choice": "A. Peso .. B. Lempira .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Nikaragua?","benar": "C�rdoba Nikaragua ; Cordoba","benar2": "B","choice": "A. Colon .. B. Cordoba .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Panama?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "A","choice": "A. Dolar .. B. Pound .. C. Som"},
-{"pertanyaan": "Apa mata uang dari Saint Kitts dan Nevis?","benar": "Dolar Karibia Timur ; Dolar","benar2": "B","choice": "A. Kina .. B. Dolar .. C. Kuna"},
-{"pertanyaan": "Apa mata uang dari Saint Lucia?","benar": "Dolar karibia timur ; Dolar","benar2": "C","choice": "A. Mark .. B. Rubel .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Saint Vincent and Grenadines?","benar": "Dolar Karibia Timur ; Dolar","benar2": "A","choice": "A. Dolar .. B. Escudo .. C. Metical"},
-{"pertanyaan": "Apa mata uang dari Trinidad and Tobago?","benar": "Dolar Trinidad and Tobago ; Dolar","benar2": "B","choice": "A. Leu .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Argentina?","benar": "Peso Argentina ; Peso","benar2": "C","choice": "A. Euro .. B. Dinar .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Bolivia?","benar": "Boliviano","benar2": "B","choice": "A. Kuna .. B. Boliviano .. C. Mark"},
-{"pertanyaan": "Apa mata uang dari Brasil?","benar": "Real","benar2": "B","choice": "A. Dinar .. B. Real .. C. Lek"},
-{"pertanyaan": "Apa mata uang dari Chili?","benar": "Peso Chili ; Peso","benar2": "A","choice": "A. Peso .. B. Som .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Ekuador?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "C","choice": "A. Real .. B. Shilling .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Kepulauan Falkland?","benar": "Pound Kepulauan Falkland ; Pound","benar2": "B","choice": "A. Peso .. B. Pound .. C. Franc"},
-{"pertanyaan": "Apa mata uang dari Guyana?","benar": "Dolar Guyana ; Dolar","benar2": "B","choice": "A. Kina .. B. Dolar .. C. Krona"},
-{"pertanyaan": "Apa mata uang dari Guyana Prancis?","benar": "Euro","benar2": "A","choice": "A. Euro .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Kolombia?","benar": "Peso Kolombia ; Peso","benar2": "A","choice": "A. Peso .. B. Lempira .. C. Gourde"},
-{"pertanyaan": "Apa mata uang dari Paraguay?","benar": "Guarani Paraguay ; Guarani","benar2": "A","choice": "A. Guarani .. B. Peso .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Peru?","benar": "Nuevo Sol ; Sol","benar2": "B","choice": "A. Leu .. B. Sol .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Suriname?","benar": "Dolar Suriname ; Dolar","benar2": "C","choice": "A. Real .. B. Peso .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Uruguay?","benar": "Peso Uruguay ; Peso","benar2": "C","choice": "A. Sol .. B. Guarani .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Venezuela?","benar": "Bolivar","benar2": "B","choice": "A. Guaravani .. B. Bolivar .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Australia?","benar": "Dolar Australia ; Dolar","benar2": "C","choice": "A. Pound .. B. Shiling .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Fiji?","benar": "Dolar Fiji ; Dolar","benar2": "B","choice": "A. Yuan .. B. Dolar .. C. Yen"},
-{"pertanyaan": "Apa mata uang dari Kiribati?","benar": "Dolar Australia ; Dolar Kiribati","benar2": "A","choice": "A. Dolar .. B. Euro .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Kepulauan Marshall?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "C","choice": "A. Euro .. B. Pound .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Federasi Mikronesia?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "B","choice": "A. Peso .. B. Dolar .. C. Sol"},
-{"pertanyaan": "Apa mata uang dari Nauru?","benar": "Dolar Australia ; Dolar","benar2": "A","choice": "A. Dolar .. B. Cordoba .. C. Gourde"},
-{"pertanyaan": "Apa mata uang dari Selandia Baru?","benar": "Dolar Selandia Baru ; Dolar","benar2": "B","choice": "A. Franc .. B. Dolar .. C. Pound"},
-{"pertanyaan": "Apa mata uang dari Palau?","benar": "Dolar Amerika Serikat ; Dolar","benar2": "C","choice": "A. Real .. B. Peso .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Papua Nugini?","benar": "Kina Papua Nugini ; Kina","benar2": "B","choice": "A. Gourde .. B. Kina .. C. Lempira"},
-{"pertanyaan": "Apa mata uang dari Samoa?","benar": "Tala Samoa ; Tala","benar2": "A","choice": "A. Tala .. B. Cordoba .. C. Peso"},
-{"pertanyaan": "Apa mata uang dari Kepulauan Solomon?","benar": "Dolar Kepulauan Solomon ; Dolar","benar2": "A","choice": "A. Dolar .. B. Guarani .. C. Euro"},
-{"pertanyaan": "Apa mata uang dari Tonga?","benar": "Pa'anga Tonga ; Pa'anga","benar2": "B","choice": "A. Kina .. B. Pa'anga .. C. Tala"},
-{"pertanyaan": "Apa mata uang dari Tuvalu?","benar": "Dolar Tuvalu ; Dollar Australia","benar2": "C","choice": "A. Boliviano .. B. Kina .. C. Dolar"},
-{"pertanyaan": "Apa mata uang dari Vanuattu?","benar": "Vatu Vanuatu ; Vatu","benar2": "A","choice": "A. Vatu .. B. Kina .. C. Pa'anga"}
-]
+[{"pertanyaan":"Apa mata uang dari Afrika Selatan?","benar":"Rand","benar2":"satu","choice":"satu, Rand, dua, Dinar, tiga, Kwanza"},{
+"pertanyaan":"Apa mata uang dari Alja zair?","benar":"Dinar","benar2":"dua","choice":"satu, Rand, dua, Dinar, tiga, Dirham"},{
+"pertanyaan":"Apa mata uang dari Angola?","benar":"Kwanza","benar2":"tiga","choice":"satu, Freng, dua, Pula, tiga, Kwanza"},{
+"pertanyaan":"Apa mata uang dari Benin?","benar":"Freng","benar2":"dua","choice":"satu, Pula, dua, Freng, tiga, Kwanza"},{
+"pertanyaan":"Apa mata uang dari Bostwana?","benar":"Pula","benar2":"satu","choice":"satu, Pula, dua, Freng, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Burkina Faso?","benar":"Freng","benar2":"dua","choice":"satu, Nakfa, dua, Freng, tiga, Birr"},{
+"pertanyaan":"Apa mata uang dari Burundi?","benar":"Freng","benar2":"tiga","choice":"satu, Freng, dua, Lilangeni, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Chad?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Chad, tiga, Seydi"},{
+"pertanyaan":"Apa mata uang dari Eritrea?","benar":"Nakfa","benar2":"dua","choice":"satu, Rabat, dua, Nakfa, tiga, Loti"},{
+"pertanyaan":"Apa mata uang dari Eswatini?","benar":"Lilangeni","benar2":"tiga","choice":"satu, Yuan, dua, Dalasi, tiga, Lilangeni"},{
+"pertanyaan":"Apa mata uang dari Etiopia?","benar":"Birr","benar2":"dua","choice":"satu, Dobra, dua, Birr, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Gabon?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Uguiya, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Gambia?","benar":"Dalasi","benar2":"dua","choice":"satu, Naira, dua, Dalasi, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Ghana?","benar":"Cedi","benar2":"satu","choice":"satu, Seydi, dua, Pula, tiga, Nakfa"},{
+"pertanyaan":"Apa mata uang dari Gineya?","benar":"Freng","benar2":"dua","choice":"satu, Metika, dua, Freng, tiga, Naira"},{
+"pertanyaan":"Apa mata uang dari Gineya Bissau?","benar":"Freng","benar2":"tiga","choice":"satu, Freng, dua, Pound, tiga, Ru peh"},{
+"pertanyaan":"Apa Mata uang dari Gineya Katulistiwa?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Metikal, tiga, Loti"},{
+"pertanyaan":"Apa mata uang dari Jibouti?","benar":"Freng","benar2":"tiga","choice":"satu, Dram, dua, Manat, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Kamerun?","benar":"Freng","benar2":"tiga","choice":"satu, Leone, dua, Eskudo, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Kenya?","benar":"Shilling","benar2":"dua","choice":"satu, Afgani, dua, Shilling, tiga, Kwaca"},{
+"pertanyaan":"Apa nama mata uang dari Lesotho?","benar":"Loti","benar2":"dua","choice":"satu, Dinar, dua, Loti, tiga, Ariary"},{
+"pertanyaan":"Apa mata uang dari Liberia?","benar":"Dolar","benar2":"tiga","choice":"satu, Pound, dua, Kwaca, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Libia?","benar":"Dinar","benar2":"tiga","choice":"satu, Naira, dua, Metikal, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Madagaskar?","benar":"ariary","benar2":"satu","choice":"satu, Ariary, dua, Birr, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Malawi?","benar":"kwacha","benar2":"satu","choice":"satu, Kwaca, dua, Dobra, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Mali?","benar":"Freng","benar2":"dua","choice":"satu, Rabat, dua, Freng, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Maroko?","benar":"Rabat","benar2":"tiga","choice":"satu, Dirham, dua, Dinar, tiga, Rabat"},{
+"pertanyaan":"Apa mata uang dari Mauritania?","benar":"Uguiya","benar2":"satu","choice":"satu, Uguya, dua, Shilling, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Mauritius?","benar":"rupee","benar2":"satu","choice":"satu, Ru peh, dua, Dinar, tiga, Dirham"},{
+"pertanyaan":"Apa mata uang dari Mesir?","benar":"Pound","benar2":"tiga","choice":"satu, Ru peh, dua, Euro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Mozambik?","benar":"metical","benar2":"dua","choice":"satu, Rabat, dua, Metikal, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Namibia?","benar":"dolar","benar2":"tiga","choice":"satu, Birr, dua, Lilangeni, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Niger?","benar":"Freng","benar2":"dua","choice":"satu, Tegucigalpa, dua, Freng, tiga, Naira"},{
+"pertanyaan":"Apa mata uang dari Nigeria?","benar":"naira","benar2":"tiga","choice":"satu, Phe so, dua, Sol, tiga, Naira"},{
+"pertanyaan":"Apa mata uang dari Pantai Gading?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Dolar, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Republik Afrika Tengah?","benar":"Freng","benar2":"dua","choice":"satu, Naira, dua, Freng, tiga, Dobra"},{
+"pertanyaan":"Apa mata uang dari Republik Demokratis Kongo?","benar":"Freng","benar2":"dua","choice":"satu, Manat, dua, Freng, tiga, Taka"},{
+"pertanyaan":"Apa mata uang dari Republik Kongo?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Leone, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Rwanda?","benar":"Freng","benar2":"tiga","choice":"satu, Ru peh, dua, Dobra, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Sao Tome dan Prinsipel?","benar":"Dobra","benar2":"dua","choice":"satu, Afgani, dua, Dobra, tiga, Kwaca"},{
+"pertanyaan":"Apa mata uang dari Senegal?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Riel, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Seysels?","benar":"rupee","benar2":"dua","choice":"satu, Dinar, dua, Ru peh, tiga, Dirham"},{
+"pertanyaan":"Apa mata uang dari Sierra Leone?","benar":"Leone","benar2":"tiga","choice":"satu, Ringgit, dua, Tu grik, tiga, Leone"},{
+"pertanyaan":"Apa mata uang dari Somalia?","benar":"shilling","benar2":"dua","choice":"satu, Manat, dua, Shilling, tiga, Lira"},{
+"pertanyaan":"Apa mata uang dari Sudan?","benar":"pound","benar2":"satu","choice":"satu, Pound, dua, Shilling, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Sudan Selatan?","benar":"pound","benar2":"satu","choice":"satu, Pound, dua, Yuro, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Tanjung Ver de?","benar":"Escudo","benar2":"dua","choice":"satu, Rial, dua, Eskudo, tiga, Riel"},{
+"pertanyaan":"Apa mata uang dari Tanzania?","benar":"shilling","benar2":"tiga","choice":"satu, Won, dua, Tu grik, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Togo?","benar":"Freng","benar2":"dua","choice":"satu, Dong, dua, Freng, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Tunisia?","benar":"Dinar","benar2":"dua","choice":"satu, Ringgit, dua, Dinar, tiga, Tu grik"},{
+"pertanyaan":"Apa mata uang dari Uganda?","benar":"shilling","benar2":"satu","choice":"satu, Shilling, dua, Kyat, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Zambia?","benar":"kwacha","benar2":"tiga","choice":"satu, Dram, dua, Tu grik, tiga, Kwaca"},{
+"pertanyaan":"Apa mata uang dari Zimbabwe?","benar":"dolar","benar2":"dua","choice":"satu, Pound,dua, Dolar, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Afghanistan?","benar":"Afgani","benar2":"satu","choice":"satu, Afgani, dua, Kwaca, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Arab Saudi?","benar":"Rial","benar2":"dua","choice":"satu, Dinar, dua, Rial, tiga, Dirham"},{
+"pertanyaan":"Apa mata uang dari Armenia?","benar":"Dram","benar2":"satu","choice":"satu, Dram, dua, Rial, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang resmi dari Azerbaijan?","benar":"Manat","benar2":"dua","choice":"satu, Dram, dua, Manat, tiga, Taka"},{
+"pertanyaan":"Apa mata uang dari Bahrain?","benar":"Dinar","benar2":"tiga","choice":"satu, Dirham, dua, Rial, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Bangladesh?","benar":"Taka","benar2":"tiga","choice":"satu, Dram, dua, Manat, tiga, Taka"},{
+"pertanyaan":"Apa mata uang dari Bhutan?","benar":"Ngultrum","benar2":"dua","choice":"satu, Teng ge, dua, eNgul trum, tiga, Eskudo"},{
+"pertanyaan":"Apa mata uang dari Brunei Darussalam?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Pound, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Filipina?","benar":"Peso","benar2":"dua","choice":"satu, Lari, dua, Ppeso, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Jorjia?","benar":"Lari","benar2":"satu","choice":"satu, Lari, dua, Dram, tiga, Teng ge"},{
+"pertanyaan":"Apa mata uang dari India?","benar":"Rupee","benar2":"dua","choice":"satu, Ru piyah, dua, Ru peh, tiga, Ringgit"},{
+"pertanyaan":"Apa nama mata uang Indonesia?","benar":"Rupiah","benar2":"satu","choice":"satu, Ru piyah, dua, Ringgit, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Irak?","benar":"Dinar","benar2":"tiga","choice":"satu, Dirham, dua, Dong, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Iran?","benar":"Rial","benar2":"dua","choice":"satu, Ringgit, dua, Rial, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Jepang?","benar":"Yen","benar2":"tiga","choice":"satu, Yuan, dua, Won, tiga, Yen"},{
+"pertanyaan":"Apa mata uang dari Kamboja?","benar":"riel","benar2":"satu","choice":"satu, Riel, dua, Ru peh, tiga, Rial"},{
+"pertanyaan":"Apa mata uang dari Ka zakstan?","benar":"tengge","benar2":"dua","choice":"satu, Riel, dua, Teng ge, tiga, Rial "},{
+"pertanyaan":"Apa mata uang dari Korea Selatan?","benar":"Won","benar2":"tiga","choice":"satu, Yuan, dua, Yen, tiga, Won"},{
+"pertanyaan":"Apa mata uang dari Korea Utara?","benar":"Won","benar2":"satu","choice":"satu, Won, dua, Yen, tiga, Yuan"},{
+"pertanyaan":"Apa mata uang dari Kuwait?","benar":"Dinar","benar2":"dua","choice":"satu, Dirham, dua, Dinar, tiga, Denar"},{
+"pertanyaan":"Apa mata uang dari Kirgizstan?","benar":"Som","benar2":"tiga","choice":"satu, Ringgit, dua, Kip, tiga, Som"},{
+"pertanyaan":"Apa mata uang dari Laos?","benar":"Kip","benar2":"dua","choice":"satu, Pound, dua, Kip, tiga, Ru fi ya"},{
+"pertanyaan":"Apa nama mata uang dari Lebanon?","benar":"Pound","benar2":"dua","choice":"satu, Dolar, dua, Pound, tiga, Shili"},{
+"pertanyaan":"Apa mata uang dari Maladewa?","benar":"Rufiyaa","benar2":"satu","choice":"satu, Ru fi ya, dua, Ringgit, tiga, Rial"},{
+"pertanyaan":"Apa mata uang dari Malaysia?","benar":"Ringgit","benar2":"tiga","choice":"satu, Dolar, dua, Ru pi yah, tiga, Ringgit"},{
+"pertanyaan":"Apa mata uang dari Mongolia?","benar":"Tugrik","benar2":"dua","choice":"satu, Afgani, dua, Tu grik, tiga, Dram"},{
+"pertanyaan":"Apa mata uang dari Myanmar?","benar":"Kyat","benar2":"dua","choice":"satu, Rial, dua, Kyat, tiga, Dong"},{
+"pertanyaan":"Apa mata uang dari Nepal?","benar":"Rupee","benar2":"satu","choice":"satu, Ru peh, dua, Kyat, tiga, Rial"},{
+"pertanyaan":"Apa mata uang dari Oman?","benar":"Rial","benar2":"satu","choice":"satu, Rial, dua, Ru peh, tiga, Kyat"},{
+"pertanyaan":"Apa mata uang dari Pakistan?","benar":"Rupee","benar2":"satu","choice":"satu, Ru peh, dua, Kyat, tiga, Rial"},{
+"pertanyaan":"Apa mata uang dari Qatar?","benar":"Rial","benar2":"dua","choice":"satu, Kyat, dua, Rial, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Rusia?","benar":"Rubel","benar2":"tiga","choice":"satu, Ringgit, dua, Ru peh, tiga, Rubel"},{
+"pertanyaan":"Apa mata uang Singapura?","benar":"Dolar","benar2":"tiga","choice":"satu, Ru peh, dua, Ringgit, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Siprus?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Sri Lanka?","benar":"Rupee","benar2":"tiga","choice":"satu, Rubel, dua, Ru pi yah, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Suriah?","benar":"Pound","benar2":"dua","choice":"satu, Somoni, dua, Pound, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Tajikistan?","benar":"Somoni","benar2":"satu","choice":"satu, Somoni, dua, Tu grik, tiga, Kyat"},{
+"pertanyaan":"Apa mata uang dari Thailand?","benar":"Baht","benar2":"tiga","choice":"satu, Somoni, dua, Ru peh, tiga, Baht"},{
+"pertanyaan":"Apa mata uang dari Timor- Leste?","benar":"Dolar","benar2":"dua","choice":"satu, Lira, dua, Dolar, tiga, Yuan"},{
+"pertanyaan":"Apa mata uang dari Tiongkok?","benar":"Renminbi Yuan","benar2":"satu","choice":"satu, Yuan, dua, Yen, tiga, Won"},{
+"pertanyaan":"Apa mata uang dari Turki?","benar":"Lira","benar2":"dua","choice":"satu, Kip, dua, Lira, tiga, Bat"},{
+"pertanyaan":"Apa nama mata uang dari Turkmenistan?","benar":"Manat","benar2":"tiga","choice":"satu, Riel, dua, Dinar, tiga, Manat"},{
+"pertanyaan":"Apa mata uang dari Uni Emirat Arab?","benar":"Dirham","benar2":"dua","choice":"satu, Danar, dua, Dirham, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Uzbekistan?","benar":"Som","benar2":"satu","choice":"satu, Som, dua, Dong, tiga, Lek"},{
+"pertanyaan":"Apa mata uang dari Vietnam?","benar":"Dong","benar2":"satu","choice":"satu, Dong, dua, Lek, tiga, Som"},{
+"pertanyaan":"Apa mata uang dari Yaman?","benar":"Rial","benar2":"dua","choice":"satu, Dong, dua, Rial, tiga, Ru peh"},{
+"pertanyaan":"Apa mata uang dari Yordania?","benar":"Dinar","benar2":"tiga","choice":"satu, Dirham, dua, Ru peh, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Albania?","benar":"Lek","benar2":"satu","choice":"satu, Lek, dua, Lak, tiga, Dong"},{
+"pertanyaan":"Apa mata uang dari Andorra?","benar":"Euro","benar2":"tiga","choice":"satu, Pound, dua, Dolar, tiga, Yuro"},{
+ "pertanyaan":"Apa mata uang dari Austria?","benar":"Euro","benar2":"dua","choice":"satu, Pound, dua, Yuro, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Belanda?","benar":"Euro","benar2":"tiga","choice":"satu, Pound, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Belarus?","benar":"Rubel","benar2":"dua","choice":"satu, yuro, dua, Ruh bel, tiga, Ru pi yah"},{
+"pertanyaan":"Apa mata uang dari Belgia?","benar":"Euro","benar2":"satu","choice":"satu, yuro, dua, Shilling, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Bosnia?","benar":"Mark","benar2":"satu","choice":"satu, Mark, dua, Lev, tiga, Kuna"},{
+"pertanyaan":"Apa mata uang dari Bulgaria?","benar":"Lev","benar2":"tiga","choice":"satu, Kuna, dua, Koruna, tiga, Lev"},{
+"pertanyaan":"Apa mata uang dari Kroasia?","benar":"Kuna","benar2":"dua","choice":"satu, Kip, dua, Kuna, tiga, koruna"},{
+"pertanyaan":"Apa mata uang dari Ceko?","benar":"Koruna","benar2":"dua","choice":"satu, Kip, dua, Koruna, tiga, Koruna"},{
+"pertanyaan":"Apa mata uang dari Denmark?","benar":"Krona","benar2":"dua","choice":"satu, Kuna, dua, Krona, tiga, Koruna"},{
+"pertanyaan":"Apa mata uang dari Estonia?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Estonia?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Finlandia?","benar":"Euro","benar2":"tiga","choice":"satu, Pound, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Prancis?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Jerman?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Yunani?","benar":"Euro","benar2":"tiga","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Hongaria?","benar":"Forint","benar2":"satu","choice":"satu, Forint, dua, Krona, tiga, Kina"},{
+"pertanyaan":"Apa mata uang dari Islandia?","benar":"Krona","benar2":"dua","choice":"satu, Lek, dua, Krona, tiga, Dong"},{
+"pertanyaan":"Apa mata uang dari Irlandia?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Italia?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Pound, tiga, Peso"},{
+"pertanyaan":"Apa mata uang dari Latvia?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Liechtenstein?","benar":"Freng","benar2":"dua","choice":"satu, Pound, dua, Freng, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Lithuania?","benar":"Euro","benar2":"tiga","choice":"satu, Peso, dua, Pound, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Luksemburg?","benar":"Euro","benar2":"tiga","choice":"satu, Pound, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Makedoniya utara?","benar":"Denar","benar2":"tiga","choice":"satu, Dinar, dua, Dirham, tiga, Denar"},{
+"pertanyaan":"Apa mata uang dari Malta?","benar":"Euro","benar2":"dua","choice":"satu, Shilling, dua, Yuro, tiga, Peso"},{
+"pertanyaan":"Apa mata uang dari Moldova?","benar":"Leu","benar2":"dua","choice":"satu, Lek, dua, Leu, tiga, dong"},{
+"pertanyaan":"Apa mata uang dari Monako?","benar":"Euro","benar2":"dua","choice":"satu, Shilling, dua, Yuro, tiga, Peso"},{
+"pertanyaan":"Apa mata uang dari Monte negro?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Pound, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Norwegia?","benar":"Krona","benar2":"tiga","choice":"satu, Koruna, dua, Kip, tiga, Krona"},{
+"pertanyaan":"Apa mata uang dari Polandia?","benar":"Zloty","benar2":"dua","choice":"satu, Dong, dua, Zloty, tiga, Som"},{
+"pertanyaan":"Apa mata uang dari Portugal?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Pond, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Rumania?","benar":"Leu","benar2":"tiga","choice":"satu, Lek, dua, Dong, tiga, Leu"},{
+"pertanyaan":"Apa mata uang dari San Marino?","benar":"Euro","benar2":"dua","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Serbia?","benar":"Dinar","benar2":"satu","choice":"satu, Dinar, dua, Dirham, tiga, Daner"},{
+"pertanyaan":"Apa mata uang dari Slovakia?","benar":"Euro","benar2":"dua","choice":"satu, Ru peh, dua, Yuro, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Slovenia?","benar":"Euro","benar2":"tiga","choice":"satu, Shilling, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Spanyol?","benar":"Euro","benar2":"dua","choice":"satu, Pound, dua, Yuro, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Swedia?","benar":"Krona","benar2":"satu","choice":"satu, Krona, dua, Kip, tiga, Koruna"},{
+"pertanyaan":"Apa mata uang dari Swiss?","benar":"Freng","benar2":"satu","choice":"satu, Freng, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Ukraina?","benar":"Hryvnia","benar2":"dua","choice":"satu, Krona, dua, Hryvnia, tiga, Som"},{
+"pertanyaan":"Apa mata uang dari Inggris?","benar":"Pound","benar2":"tiga","choice":"satu, Dolar, dua, Yuro, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Vatikan?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Amerika Serikat?","benar":"Dolar","benar2":"tiga","choice":"satu, Yuro, dua, Pound, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Antigua dan Barbuda?","benar":"Dolar","benar2":"dua","choice":"satu, Peso, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Bahama?","benar":"Dolar","benar2":"tiga","choice":"satu, Pound. dua, Shilling, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Barbados?","benar":"Dolar","benar2":"dua","choice":"satu, Forint, dua, Dolar, tiga, Krona"},{
+"pertanyaan":"Apa mata uang dari Belize?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Manat, tiga, Lira"},{
+"pertanyaan":"Apa mata uang dari Dominika?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Denar, tiga, Dinar"},{
+"pertanyaan":"Apa mata uang dari Republik Dominika?","benar":"Peso","benar2":"tiga","choice":"satu, Yuan, dua, Kina, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari El Salvador?","benar":"Dolar","benar2":"dua","choice":"satu, Forint, dua, Dolar, tiga, Krona"},{
+"pertanyaan":"Apa mata uang dari Grenada?","benar":"Dolar","benar2":"dua","choice":"satu, Dirham, dua, Dolar, tiga, Denar"},{
+"pertanyaan":"Apa mata uang dari Guatemala?","benar":"Qetzal","benar2":"dua","choice":"satu, Pound, dua, Qetzal, tiga, Shilling"},{
+"pertanyaan":"Apa mata uang dari Haiti?","benar":"Gurd","benar2":"satu","choice":"satu, Gurd, dua, Lev, tiga, Zloty"},{
+"pertanyaan":"Apa mata uang dari Honduras?","benar":"Lempira","benar2":"satu","choice":"satu, Lempira, dua, Peso, tiga, Gurd"},{
+"pertanyaan":"Apa mata uang dari Jamaika?","benar":"Dolar","benar2":"tiga","choice":"satu, Kina, dua, Krona, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Kanada?","benar":"Dolar","benar2":"dua","choice":"satu, Leu, dua, Dolar, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Kosta Rika?","benar":"Colon","benar2":"dua","choice":"satu, Bhat, dua, Colon, tiga, Lira"},{
+"pertanyaan":"Apa mata uang dari Kuba?","benar":"Peso","benar2":"tiga","choice":"satu, Krona, dua, Freng, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Meksiko?","benar":"Peso","benar2":"satu","choice":"satu, Phe so, dua, Lempira, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Nikaragua?","benar":"Cordoba","benar2":"dua","choice":"satu, Colon, dua, Cordoba, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Panama?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Pound, tiga, Som"},{
+"pertanyaan":"Apa mata uang dari Saint Kitts dan Nevis?","benar":"Dolar","benar2":"dua","choice":"satu, Kina, dua, Dolar, tiga, Kuna"},{
+"pertanyaan":"Apa mata uang dari Saint Lucia?","benar":"Dolar","benar2":"tiga","choice":"satu, Mark, dua, Rubhel, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Saint Vinsent and Grenadins?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Eskudo, tiga, Metikal"},{
+"pertanyaan":"Apa mata uang dari Trinidad and Tobago?","benar":"Dolar","benar2":"dua","choice":"satu, Leu, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Argentina?","benar":"Peso","benar2":"tiga","choice":"satu, Yuro, dua, Dinar, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Bolivia?","benar":"Boliviano","benar2":"dua","choice":"satu, Kuna, dua, Boliviano, tiga, Mark"},{
+"pertanyaan":"Apa mata uang dari Brasil?","benar":"Real","benar2":"dua","choice":"satu, Dinar, dua, Real, tiga, Lek"},{
+"pertanyaan":"Apa mata uang dari Chili?","benar":"Peso","benar2":"satu","choice":"satu, Pheso, dua, Som, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Ekuador?","benar":"Dolar","benar2":"tiga","choice":"satu, Real, dua, Shilling, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Kepulauan Falkland?","benar":"Pound","benar2":"dua","choice":"satu, Pheso, dua, Pound, tiga, Freng"},{
+"pertanyaan":"Apa mata uang dari Guyana?","benar":"Dolar","benar2":"dua","choice":"satu, Kina, dua, Dolar, tiga, Krona"},{
+"pertanyaan":"Apa mata uang dari Guyana Prancis?","benar":"Euro","benar2":"satu","choice":"satu, Yuro, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Kolombia?","benar":"Peso","benar2":"satu","choice":"satu, Pheso, dua, Lempira, tiga, Gurd"},{
+"pertanyaan":"Apa mata uang dari Paraguay?","benar":"Guarani","benar2":"satu","choice":"satu, Guarani, dua, Pheso, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Peru?","benar":"Sol","benar2":"dua","choice":"satu, Leu, dua, Sol, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Surina me?","benar":"Dolar","benar2":"tiga","choice":"satu, Real, dua, Pheso, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Uruguay?","benar":"Peso","benar2":"tiga","choice":"satu, Sol, dua, Guarani, tiga, Pheso"},{
+"pertanyaan":"Apa mata uang dari Venezuela?","benar":"Bolivar","benar2":"dua","choice":"satu, Guaravani, dua, Bolivar, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Australia?","benar":"Dolar","benar2":"tiga","choice":"satu, Pound, dua, Shiling, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Fiji?","benar":"Dolar","benar2":"dua","choice":"satu, Yuan, dua, Dolar, tiga, Yen"},{
+"pertanyaan":"Apa mata uang dari Kiribati?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Yuro, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Kepulauan Marshall?","benar":"Dolar","benar2":"tiga","choice":"satu, Yuro, dua, Pound, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Federasi Mikronesia?","benar":"Dolar","benar2":"dua","choice":"satu, Pheso, dua, Dolar, tiga, Sol"},{
+"pertanyaan":"Apa mata uang dari Nauru?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Cordoba, tiga, Gurd"},{
+"pertanyaan":"Apa mata uang dari Selandia Baru?","benar":"Dolar","benar2":"dua","choice":"satu, Freng, dua, Dolar, tiga, Pound"},{
+"pertanyaan":"Apa mata uang dari Palau?","benar":"Dolar","benar2":"tiga","choice":"satu, Real, dua, Pheso, tiga, Dolar"},{
+"pertanyaan":"Apa mata uang dari Papua Nugini?","benar":"Kina","benar2":"dua","choice":"satu, Gurd, dua, Kina, tiga, Lempira"},{
+"pertanyaan":"Apa mata uang dari Samoa?","benar":"Tala","benar2":"satu","choice":"satu, Tala, dua, Cordoba, tiga, Pe so"},{
+"pertanyaan":"Apa mata uang dari Kepulauan Solomon?","benar":"Dolar","benar2":"satu","choice":"satu, Dolar, dua, Guarani, tiga, Yuro"},{
+"pertanyaan":"Apa mata uang dari Tonga?","benar":"Pa'angga","benar2":"dua","choice":"satu, Kina, dua, Pa'angga, tiga, Tala"},{
+"pertanyaan":"Apa mata uang dari Tuvalu?","benar":"Dolar","benar2":"tiga","choice":"satu, Boliviano, dua, Kina, tiga, Do lar"},{
+"pertanyaan":"Apa mata uang dari Vanuattu?","benar":"Vatu","benar2":"satu","choice":"satu, Vatu, dua, Kina, tiga, Pa'angga"}]

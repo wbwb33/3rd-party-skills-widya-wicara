@@ -52,17 +52,25 @@ new cron.CronJob('00 06 00 * * *', () => {
 }).start();
 
 /** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
-const dateRamadan = new Date();
-dateRamadan.setUTCFullYear(2021, 3, 9);
-dateRamadan.setUTCHours(17);
-dateRamadan.setUTCMinutes(0);
-dateRamadan.setUTCSeconds(0);
-new cron.CronJob(dateRamadan, () => {
-  // new cron.CronJob('00 08 00 * * *', () => {
-  new cron.CronJob('00 08 */2 * * *', () => {
+const startQuiz = new Date();
+startQuiz.setUTCFullYear(2020, 4, 18);
+startQuiz.setUTCHours(17);
+startQuiz.setUTCMinutes(0);
+startQuiz.setUTCSeconds(0);
+
+const now = new Date();
+
+if (now.getTime() >= startQuiz.getTime()) {
+  new cron.CronJob('00 08 00 * * *', () => {
     kuis.getQuizRamadan();
   }).start();
-}).start();
+} else {
+  new cron.CronJob(startQuiz, () => {
+    new cron.CronJob('00 08 00 * * *', () => {
+      kuis.getQuizRamadan();
+    }).start();
+  }).start();
+}
 
 /** get jadwal adzan for today at 01.00 */
 // new cron.CronJob('00 00 01 * * *', async () => {
@@ -116,9 +124,9 @@ const onStateChanged = (state: any, reason: any) => {
       : console.log('cache horoscope already exist');
     await igniteClient.disconnect();
 
+    console.log(process.env.DB_DATABASE);
     sequelize.addModels([kuis_score, kuis_score_ramadan]);
     await sequelize.sync({ force: false });
-    console.log(process.env.DB_DATABASE);
   } catch (e) {
     console.log(e);
   }

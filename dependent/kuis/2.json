@@ -1,193 +1,192 @@
-[{"pertanyaan": "Apa Ibukota dari Aljazair?","benar": "Aljir","benar2": "B","choice": "A. Jalfah .. B. Aljir .. C. Luanda"},
-{"pertanyaan": "Apa Ibukota dari Angola?","benar": "Luanda","benar2": "B","choice": "A. Benguela .. B. Luanda .. C. Huila"},
-{"pertanyaan": "Apa ibukota dari Benin?","benar": "Porto Novo","benar2": "C","choice": "A. Mono .. B. Alibori .. C. Porto Novo"},
-{"pertanyaan": "Apa Ibukota dari Bostwana?","benar": "Gaborone","benar2": "A","choice": "A. Gaborone .. B. Kanye .. C. Francistown"},
-{"pertanyaan": "Apa Ibukota dari Burkina Faso?","benar": "Ougadougou","benar2": "B","choice": "A. Dogon .. B. Ougadougou .. C. Gaborone"},
-{"pertanyaan": "Apa Ibukota dari Burundi?","benar": "Bujumbura","benar2": "A","choice": "A. Bujumbura .. B. Makamba .. C. Rutana"},
-{"pertanyaan": "Apa Ibukota dari Eritea?","benar": "Asmara","benar2": "C","choice": "A. Barentu .. B. Libreville .. C. Asmara"},
-{"pertanyaan": "Apa Ibukota dari Eswatini?","benar": "Mbabane","benar2": "A","choice": "A. Mbabane .. B. Asmara .. C. Banjul"},
-{"pertanyaan": "Apa Ibukota dari Etiopia?","benar": "Addis Ababa","benar2": "C","choice": "A. Amharik .. B. Accra .. C. Addis Ababa"},
-{"pertanyaan": "Apa Ibukota dari Gabon?","benar": "Libreville","benar2": "B","choice": "A. Frenchville .. B. Libreville .. C. Oyem"},
-{"pertanyaan": "Apa Ibukota dari Gambia?","benar": "Banjul","benar2": "C","choice": "A. Serekunda .. B. Kerewan .. C. Banjul"},
-{"pertanyaan": "Apa Ibukota dari Ghana?","benar": "Accra","benar2": "B","choice": "A. Tamale .. B. Accra .. C. Malabo"},
-{"pertanyaan": "Apa Ibukota dari Guinea?","benar": "Conarky","benar2": "A","choice": "A. Conarky .. B. Faranah .. C. Kankan"},
-{"pertanyaan": "Apa Ibukota dari Guinea-Bisau?","benar": "Bissau","benar2": "C","choice": "A. Nairobi .. B. Monrovia .. C. Bissau"},
-{"pertanyaan": "Apa Ibukota dari Guinea katulistiwa?","benar": "Malabo","benar2": "B","choice": "A. Bata .. B. Malabo .. C. Libia"},
-{"pertanyaan": "Apa Ibukota dari Jibouti?","benar": "Djibouti","benar2": "C","choice": "A. Nairobi .. B. Yoboki .. C. Djibouti"},
-{"pertanyaan": "Apa Ibukota dari Kamerun?","benar": "Yaounde","benar2": "B","choice": "A. Douala .. B. Yaounde .. C. Bamenda"},
-{"pertanyaan": "Apa Ibukota dari Kenya?","benar": "Nairobi","benar2": "A","choice": "A. Nairobi .. B. Rift Valley .. C. Kakamega"},
-{"pertanyaan": "Apa Ibukota dari Lesotho?","benar": "Maseru","benar2": "A","choice": "A. Maseru .. B. Accra .. C. Bissau"},
-{"pertanyaan": "Apa Ibukota dari Liberia?","benar": "Monrovia","benar2": "C","choice": "A. Harper .. B. Greenville .. C. Monrovia"},
-{"pertanyaan": "Apa Ibukota dari Libia?","benar": "Tripoli","benar2": "A","choice": "A. Tripoli .. B. Benghazi .. C. Al Bayda"},
-{"pertanyaan": "Apa ibukota dari Madagaskar?","benar": "Antananarivo","benar2": "B","choice": "A. New York .. B. Antananarivo .. C. Morondava"},
-{"pertanyaan": "Apa Ibukota dari Malawi?","benar": "Lilongwe","benar2": "A","choice": "A. Lilongwe .. B. Tripoli .. C. Maputo"},
-{"pertanyaan": "Apa Ibukota dari Mali?","benar": "Bamako","benar2": "C","choice": "A. Victoria .. B. Gaou .. C. Bamako"},
-{"pertanyaan": "Apa Ibukota dari Maroko?","benar": "Rabat","benar2": "A","choice": "A. Rabat .. B. Casablanca .. C. Agadir"},
-{"pertanyaan": "Apa Ibukota dari Mauritania?","benar": "Nouakchott","benar2": "B","choice": "A. Ater .. B. Nouakchott .. C. Kiffa"},
-{"pertanyaan": "Apa Ibukota dari Mauritius?","benar": "Port Louis","benar2": "C","choice": "A. Triolet .. B. Tamarin .. C. Port Louis"},
-{"pertanyaan": "Apa Ibukota dari Mesir?","benar": "Kairo","benar2": "B","choice": "A. Windhoek .. B. Kairo .. C. Abuja"},
-{"pertanyaan": "Apa Ibukota dari Mozambik?","benar": "Maputo","benar2": "A","choice": "A. Maputo .. B. Monrovia .. C. Maseru"},
-{"pertanyaan": "Apa Ibukota dari Namibia?","benar": "Windhoek","benar2": "B","choice": "A. Mogadishu .. B. Windhoek .. C. Luanda"},
-{"pertanyaan": "Apa Ibukota dari Niger?","benar": "Niamey","benar2": "C","choice": "A. Abuja .. B. Maradi .. C. Niamey"},
-{"pertanyaan": "Apa Ibukota dari Nigeria?","benar": "Abuja","benar2": "B","choice": "A. Maradi .. B. Abuja .. C. Lagos"},
-{"pertanyaan": "Apa Ibukota dari Pantai Gading?","benar": "Yamoussoukro","benar2": "A","choice": "A. Yamoussoukro .. B. Abidjan .. C. Daloa"},
-{"pertanyaan": "Apa Ibukota dari Republik Afrika Tengah?","benar": "Bangui","benar2": "A","choice": "A. Bangui .. B. Ouaka .. C. Ouham"},
-{"pertanyaan": "Apa Ibukota dari Republik Demokratis Kongo?","benar": "Kinshasa","benar2": "A","choice": "A. Kinshasa .. B. Brazaville .. C. Goma"},
-{"pertanyaan": "Apa Ibukota dari Republik Kongo?","benar": "Brazzaville","benar2": "B","choice": "A. Goma .. B. Brazzaville .. C. Kinsasha"},
-{"pertanyaan": "Apa Ibukota dari Rwanda?","benar": "Kigali","benar2": "C","choice": "A. Butare .. B. Gabiro .. C. Kigali"},
-{"pertanyaan": "Apa Ibukota dari Sao Tome dan Principle?","benar": "Sao Tome","benar2": "C","choice": "A. Santo Antonia .. B. Victoria .. C. Sao Tome"},
-{"pertanyaan": "Apa Ibukota dari Senegal?","benar": "Dakar","benar2": "C","choice": "A. Louga .. B. Matam .. C. Dakar"},
-{"pertanyaan": "Apa Ibukota dari Seychelles?","benar": "Victoria","benar2": "B","choice": "A. Louga .. B. Victoria .. C. Dodoma"},
-{"pertanyaan": "Apa Ibukota dari Sierra Leone?","benar": "Freetown","benar2": "B","choice": "A. Kenema .. B. Freetown .. C. Bo"},
-{"pertanyaan": "Apa Ibukota dari Somalia?","benar": "Mogadishu","benar2": "A","choice": "A. Mogadishu .. B. Tunis .. C. Kampala"},
-{"pertanyaan": "Apa Ibukota dari Sudan?","benar": "Khartoum","benar2": "C","choice": "A. Manama .. B. Dhaka .. C. Khartoum"},
-{"pertanyaan": "Apa Ibukota dari Sudan Selatan?","benar": "Juba","benar2": "A","choice": "A. Juba .. B. Adis Ababa .. C. Lome"},
-{"pertanyaan": "Apa Ibukota dari Tanjung Verde?","benar": "Praia","benar2": "A","choice": "A. Praia .. B. Praha .. C. Prague"},
-{"pertanyaan": "Apa Ibukota dari Tanzania?","benar": "Dodoma","benar2": "A","choice": "A. Dodoma .. B. Mogadishu .. C. Tunis"},
-{"pertanyaan": "Apa Ibukota dari Togo?","benar": "Lome","benar2": "C","choice": "A. Muskat .. B. Bishkek .. C. Lome"},
-{"pertanyaan": "Apa Ibukota dari Tunisia?","benar": "Tunis","benar2": "B","choice": "A. Harare .. B. Tunis .. C. Kampala"},
-{"pertanyaan": "Apa Ibukota dari Uganda?","benar": "Kampala","benar2": "B","choice": "A. Lusaka .. B. Kampala .. C. Dushanbe"},
-{"pertanyaan": "Apa Ibukota dari Zambia?","benar": "Lusaka","benar2": "A","choice": "A. Lusaka .. B. Dushanbe .. C. Kampala"},
-{"pertanyaan": "Apa Ibukota dari Zimbabwe?","benar": "Harare","benar2": "C","choice": "A. Kigali .. B. Khartoum .. C. Harare"},
-{"pertanyaan": "Apa Ibukota dari Afghanistan?","benar": "Kabul","benar2": "B","choice": "A. Nurestan .. B. Kabul .. C. Kapisa"},
-{"pertanyaan": "Apa Ibukota dari Arab Saudi?","benar": "Riyadh","benar2": "A","choice": "A. Riyadh .. B. Kabul .. C. Dhaka"},
-{"pertanyaan": "Apa Ibukota dari Armenia?","benar": "Yerevan","benar2": "C","choice": "A. Shirak .. B. Lusaka .. C. Yerevan"},
-{"pertanyaan": "Apa Ibukota dari Azerbaijan?","benar": "Baku","benar2": "B","choice": "A. Susa .. B. Baku .. C. Tartar"},
-{"pertanyaan": "Apa Ibukota dari Bahrain?","benar": "Manama","benar2": "A","choice": "A. Manama .. B. Bangui .. C. Ashgabat"},
-{"pertanyaan": "Apa Ibukota dari Bangladesh?","benar": "Dhaka","benar2": "C","choice": "A. Zagreb .. B. Thimpu .. C. Dhaka"},
-{"pertanyaan": "Apa Ibukota dari Bhutan?","benar": "Thimphu","benar2": "C","choice": "A. Bhutan .. B. Lusaka .. C. Thimphu"},
-{"pertanyaan": "Apa Ibukota dari Brunei Darussalam?","benar": "Bandar Seri Begawan","benar2": "B","choice": "A. Sukang dan Telingan .. B. Bandar Seri Begawan .. C. Bangar"},
-{"pertanyaan": "Apa Ibukota dari Filipina?","benar": "Manila","benar2": "B","choice": "A. Dhaka .. B. Manila .. C. Jakarta"},
-{"pertanyaan": "Apa Ibukota dari Georgia?","benar": "Tbilisi","benar2": "A","choice": "A. Tbilisi .. B. Nigeria .. C. Vadus"},
-{"pertanyaan": "Apa Ibukota dari India?","benar": "New Delhi","benar2": "C","choice": "A. Nursultan .. B. Phnom Penh .. C. New Delhi"},
-{"pertanyaan": "Apa Ibukota dari Indonesia?","benar": "Jakarta","benar2": "B","choice": "A. Phnom Penh .. B. Jakarta .. C. New Delhi"},
-{"pertanyaan": "Apa Ibukota dari Irak?","benar": "Baghdad","benar2": "A","choice": "A. Baghdad .. B. Teheran .. C. Persia"},
-{"pertanyaan": "Apa Ibukota dari Iran?","benar": "Teheran","benar2": "C","choice": "A. Persia .. B. Baghdad .. C. Teheran"},
-{"pertanyaan": "Apa Ibukota dari Jepang?","benar": "Tokyo","benar2": "B","choice": "A. Osaka .. B. Tokyo .. C. Kyoto"},
-{"pertanyaan": "Apa Ibukota dari Kamboja?","benar": "Phnom penh","benar2": "A","choice": "A. Phnom penh .. B. Pailin .. C. Koh Tang"},
-{"pertanyaan": "Apa Ibukota dari Kazakhstan","benar": "Nursultan","benar2": "B","choice": "A. Aktobe .. B. Nursultan .. C. Bishkek"},
-{"pertanyaan": "Apa Ibukota dari Korea Selatan?","benar": "Seoul","benar2": "A","choice": "A. Seoul .. B. Pyongyang .. C. Hanggang"},
-{"pertanyaan": "Apa Ibukota dari Korea Utara?","benar": "Pyongyang","benar2": "B","choice": "A. Hanggang .. B. Pyongyang .. C. Seoul"},
-{"pertanyaan": "Apa Ibukota dari Kuwait?","benar": "Kuwait City","benar2": "C","choice": "A. Hawalli .. B. Mina .. C. Kuwait City"},
-{"pertanyaan": "Apa Ibukota dari Kirgizstan?","benar": "Bishkek","benar2": "C","choice": "A. Karakol .. B. Osh .. C. Bishkek"},
-{"pertanyaan": "Apa Ibukota dari Laos?","benar": "Viantiane","benar2": "B","choice": "A. Attapu .. B. Viantiane .. C. Ulan Bator"},
-{"pertanyaan": "Apa Ibukota dari Lebanon?","benar": "Beirut","benar2": "A","choice": "A. Beirut .. B. Sidon .. C. Male"},
-{"pertanyaan": "Apa Ibukota dari Maladewa?","benar": "Male","benar2": "B","choice": "A. Kathmandu .. B. Male .. C. Sanaa"},
-{"pertanyaan": "Apa Ibukota dari Malaysia?","benar": "Kuala Lumpur","benar2": "A","choice": "A. Kuala Lumpur .. B. Putrajaya .. C. Selangor"},
-{"pertanyaan": "Apa Ibukota dari Mongolia?","benar": "Ulan Bator","benar2": "B","choice": "A. Muskat .. B. Ulan Bator .. C. Nikosia"},
-{"pertanyaan": "Apa Ibukota dari Myanmar?","benar": "Naypyidaw","benar2": "A","choice": "A. Naypyidaw .. B. Praia .. C. Tunis"},
-{"pertanyaan": "Apa Ibukota dari Nepal?","benar": "Kathmandu","benar2": "C","choice": "A. Bishkek .. B. Karol .. C. Kathmandu"},
-{"pertanyaan": "Apa Ibukota dari Oman?","benar": "Muskat","benar2": "B","choice": "A. Teheran .. B. Muskat .. C. Islamabad"},
-{"pertanyaan": "Apa Ibukota dari Pakistan?","benar": "Islamabad","benar2": "C","choice": "A. Sofia .. B. Tirana .. C. Islamabad"},
-{"pertanyaan": "Apa Ibukota dari Qatar?","benar": "Doha","benar2": "A","choice": "A. Doha .. B. Dukhan .. C. Al Wakrah"},
-{"pertanyaan": "Apa Ibukota dari Rusia?","benar": "Moskowa","benar2": "B","choice": "A. Vladivostok .. B. Moskowa .. C. Leningrad"},
-{"pertanyaan": "Apa Ibukota dari Singapura?","benar": "Kota Singapura","benar2": "C","choice": "A. Bukit Merah .. B. Bedok .. C. Kota Singapura"},
-{"pertanyaan": "Apa Ibukota dari Siprus?","benar": "Nikosia","benar2": "A","choice": "A. Nikosia .. B. Famagusta .. C. Lusaka"},
-{"pertanyaan": "Apa Ibukota dari Sri Lanka?","benar": "Sri Jayawardenapura Kotte","benar2": "B","choice": "A. Kolombo .. B. Sri Jayawardenapura Kotte .. C. Negombo"},
-{"pertanyaan": "Apa Ibukota dari Suriah?","benar": "Damaskus","benar2": "C","choice": "A. Nursultan .. B. Asghabat .. C. Damaskus"},
-{"pertanyaan": "Apa Ibukota dari Tajikistan?","benar": "Dushanbe","benar2": "B","choice": "A. Kofarnihon .. B. Dushanbe .. C. Chisinau"},
-{"pertanyaan": "Apa Ibukota dari Thailand?","benar": "Bangkok","benar2": "B","choice": "A. Chiang Mai .. B. Bangkok .. C. Phuket"},
-{"pertanyaan": "Apa Ibukota dari Timor-Leste?","benar": "Dili","benar2": "A","choice": "A. Dili .. B. Bratislava .. C. Jakarta"},
-{"pertanyaan": "Apa Ibukota dari Tiongkok?","benar": "Beijing","benar2": "C","choice": "A. Guangdong .. B. Shanghai .. C. Beijing"},
-{"pertanyaan": "Apa Ibukota dari Turki?","benar": "Ankara","benar2": "B","choice": "A. Bangui .. B. Ankara .. C. Harare"},
-{"pertanyaan": "Apa Ibukota dari Turkmenistan?","benar": "Ashgabat","benar2": "B","choice": "A. Tashkent .. B. Ashgabat .. C. Islamabad"},
-{"pertanyaan": "Apa Ibukota dari Uni Emirat Arab?","benar": "Abu Dhabi","benar2": "A","choice": "A. Abu Dhabi .. B. Dubai .. C. Mogadishu"},
-{"pertanyaan": "Apa Ibukota dari Uzbekistan","benar": "Tashkent","benar2": "A","choice": "A. Tashkent .. B. Ankara .. C. Ashgabat"},
-{"pertanyaan": "Apa Ibukota dari Vietnam Apa?","benar": "Hanoi","benar2": "A","choice": "A. Hanoi .. B. Nukus .. C. Amman"},
-{"pertanyaan": "Apa Ibukota dari Yamen?","benar": "Sanaa","benar2": "B","choice": "A. Termez .. B. Sanaa .. C. Tirana"},
-{"pertanyaan": "Apa Ibukota dari Yordania?","benar": "Amman","benar2": "C","choice": "A. Ankara .. B. Bangui .. C. Amman"},
-{"pertanyaan": "Apa Ibukota dari Albania?","benar": "Tirana","benar2": "C","choice": "A. Berat .. B. Fler .. C. Tirana"},
-{"pertanyaan": "Apa Ibukota dari Andorra?","benar": "Andorra la vella","benar2": "B","choice": "A. Canillo .. B. Andorra la vella .. C. Ordino"},
-{"pertanyaan": "Apa Ibukota dari Austria?","benar": "Wina","benar2": "C","choice": "A. Soldeu .. B. Salzburg .. C. Wina"},
-{"pertanyaan": "Apa Ibukota dari Belanda?","benar": "Amsterdam","benar2": "B","choice": "A. Utrecht .. B. Amsterdam .. C. Minsk"},
-{"pertanyaan": "Apa Ibukota dari Belarus?","benar": "Minsk","benar2": "A","choice": "A. Minsk .. B. Damaskus .. C. Moskowa"},
-{"pertanyaan": "Apa Ibukota dari Belgia?","benar": "Brussel","benar2": "C","choice": "A. Antwerpen .. B. Limburg .. C. Brussel"},
-{"pertanyaan": "Apa Ibukota dari Bosnia?","benar": "Sarajevo","benar2": "B","choice": "A. Zenica .. B. Sarajevo .. C. Mostar"},
-{"pertanyaan": "Apa Ibukota dari Bulgaria?","benar": "Sofia","benar2": "A","choice": "A. Sofia .. B. Zagreb .. C. Nikosia"},
-{"pertanyaan": "Apa Ibukota dari Kroasia?","benar": "Zagreb","benar2": "B","choice": "A. Athena .. B. Zagreb .. C. Helsinki"},
-{"pertanyaan": "Apa Ibukota dari Ceko?","benar": "Praha","benar2": "C","choice": "A. Prague .. B. Paris .. C. Praha"},
-{"pertanyaan": "Apa Ibukota dari Denmark?","benar": "Kopenhagen","benar2": "B","choice": "A. Hanoi .. B. Kopenhagen .. C. Estonia"},
-{"pertanyaan": "Apa Ibukota dari Estonia?","benar": "Tallinn","benar2": "A","choice": "A. Tallinn .. B. Riga  .. C. Helsinki"},
-{"pertanyaan": "Apa Ibukota dari Finlandia?","benar": "Helsinki","benar2": "A","choice": "A. Helsinki .. B. Athena .. C. Vadus"},
-{"pertanyaan": "Apa Ibukota dari Prancis?","benar": "Paris","benar2": "B","choice": "A. Kopenhagen .. B. Paris .. C. Praha"},
-{"pertanyaan": "Apa Ibukota dari Jerman?","benar": "Berlin","benar2": "C","choice": "A. Luksemburg .. B. Dublin .. C. Berlin"},
-{"pertanyaan": "Apa Ibukota dari Yunani?","benar": "Athena","benar2": "B","choice": "A. Tartu .. B. Athena .. C. Narva"},
-{"pertanyaan": "Apa ibukota dari Hongaria?","benar": "Budapest","benar2": "C","choice": "A. Slowakia .. B. Ukraina .. C. Budapest"},
-{"pertanyaan": "Apa Ibukota dari Islandia?","benar": "Reykjavik","benar2": "A","choice": "A. Reykjavik .. B. Riga .. C. Vadus"},
-{"pertanyaan": "Apa Ibukota dari Irlandia?","benar": "Dublin","benar2": "C","choice": "A. Latvia .. B. Slovenia .. C. Dublin"},
-{"pertanyaan": "Apa Ibukota dari Italia?","benar": "Roma","benar2": "B","choice": "A. Napoli .. B. Roma .. C. Venezia"},
-{"pertanyaan": "Apa Ibukota dari Latvia?","benar": "Riga","benar2": "A","choice": "A. Riga .. B. Tallin .. C. Bem"},
-{"pertanyaan": "Apa Ibukota dari Liechtenstein?","benar": "Vadus","benar2": "A","choice": "A. Vadus .. B. Yerevan .. C. Skopje"},
-{"pertanyaan": "Apa Ibukota dari Lithuania?","benar": "Vilnius","benar2": "A","choice": "A. Vilnius .. B. Warsawa .. C. Chisinau"},
-{"pertanyaan": "Apa Ibukota dari Luksemburg?","benar": "Kota Luksemburg","benar2": "B","choice": "A. Valletta .. B. Kota Luksemburg .. C. Tunis"},
-{"pertanyaan": "Apa Ibukota dari Makedonia utara?","benar": "Skopje","benar2": "B","choice": "A. Podgorica .. B. Skopje .. C. Bratislava"},
-{"pertanyaan": "Apa Ibukota dari Malta?","benar": "Valletta","benar2": "B","choice": "A. Budapest .. B. Valletta .. C. Athena"},
-{"pertanyaan": "Apa Ibukota dari Moldova?","benar": "Chisinau","benar2": "C","choice": "A. Berlin .. B. Praha .. C. Chisinau"},
-{"pertanyaan": "Apa Ibukota dari Monako?","benar": "Monaco","benar2": "C","choice": "A. Puerto Rico .. B. Slovakia .. C. Monaco"},
-{"pertanyaan": "Apa Ibukota dari Montenegro?","benar": "Podgorica","benar2": "C","choice": "A. Bukares .. B. Manila .. C. Podgorica"},
-{"pertanyaan": "Apa Ibukota dari Norwegia?","benar": "Oslo","benar2": "C","choice": "A. Lisbon .. B. Beogard .. C. Oslo"},
-{"pertanyaan": "Apa Ibukota dari Polandia?","benar": "Warsawa","benar2": "B","choice": "A. Moskowa .. B. Warsawa .. C. Brussel"},
-{"pertanyaan": "Apa Ibukota dari Portugal?","benar": "Lisboa","benar2": "A","choice": "A. Lisboa .. B. Kiev .. C. Belmopan"},
-{"pertanyaan": "Apa Ibukota dari Rumania?","benar": "Bukares","benar2": "B","choice": "A. Alburqueque .. B. Bukares .. C. Chile"},
-{"pertanyaan": "Apa Ibukota dari San Marino?","benar": "San Marino","benar2": "C","choice": "A. Kingston .. B. San Salvador .. C. San Marino"},
-{"pertanyaan": "Apa Ibukota dari Serbia?","benar": "Beogard","benar2": "B","choice": "A. Islamabad .. B. Beogard .. C. Dushenba"},
-{"pertanyaan": "Apa Ibukota dari Slovakia?","benar": "Bratislava","benar2": "A","choice": "A. Bratislava .. B. Copenhagen .. C. New Delhi"},
-{"pertanyaan": "Apa Ibukota dari Slovenia?","benar": "Ljubljana","benar2": "C","choice": "1.Nassau .. B. Kiev .. C. Ljubljana"},
-{"pertanyaan": "Apa Ibukota dari Spanyol?","benar": "Madrid","benar2": "B","choice": "A. Seoul .. B. Madrid .. C. Zagreb"},
-{"pertanyaan": "Apa Ibukota dari Swedia?","benar": "Stockholm","benar2": "A","choice": "A. Stockholm .. B. Kuala Lumpur .. C. Port Villa"},
-{"pertanyaan": "Apa Ibukota dari Swiss?","benar": "Bern","benar2": "B","choice": "A. Warsawa .. B. Bern .. C. Kiev"},
-{"pertanyaan": "Apa Ibukota dari Ukraina?","benar": "Kiev","benar2": "B","choice": "A. Damaskus .. B. Kiev .. C. Wina"},
-{"pertanyaan": "Apa Ibukota dari Inggris?","benar": "London","benar2": "C","choice": "A. Essex .. B. Kingston .. C. London"},
-{"pertanyaan": "Apa Ibukota dari Vatikan?","benar": "Vatikan","benar2": "A","choice": "A. Vatikan .. B. Saint Peter .. C. Male"},
-{"pertanyaan": "Apa Ibukota dari Amerika serikat?","benar": "Washington D.C","benar2": "A","choice": "A. Washington D.C .. B. New York .. C. California"},
-{"pertanyaan": "Apa Ibukota dari Antigua dan Barbuda?","benar": "St. John's","benar2": "C","choice": "A. St. John's .. B. Ankara .. C. Beirut"},
-{"pertanyaan": "Apa Ibukota dari Bahama?","benar": "Nassau","benar2": "B","choice": "A. Nassau .. B. Hawaii .. C. Bukares"},
-{"pertanyaan": "Apa Ibukota dari Barbados?","benar": "Bridgetown","benar2": "B","choice": "A. Bridgetown .. B. Belmopan .. C. Roseau"},
-{"pertanyaan": "Apa Ibukota dari Belize?","benar": "Belmopan","benar2": "C","choice": "A. Vatikan .. B. Santo Domingo .. C. Belmopan"},
-{"pertanyaan": "Apa Ibukota dari Dominika?","benar": "Roseau","benar2": "C","choice": "A. Bridgetown .. B. Saint Johns .. C. Roseau"},
-{"pertanyaan": "Apa Ibukota dari Republik Dominika?","benar": "Santo Domingo","benar2": "B","choice": "A. Guatemala .. B. Santo Domingo .. C. Honduras"},
-{"pertanyaan": "Apa Ibukota dari El Slavador?","benar": "San Salvador","benar2": "A","choice": "A. San Salvador .. B. Tegucigalpa .. C. Kingston"},
-{"pertanyaan": "Apa Ibukota dari Grenada?","benar": "St. george's","benar2": "C","choice": "A. Praya .. B. Kampala .. C. St. george's"},
-{"pertanyaan": "Apa Ibukota dari Guatemala?","benar": "Guatemala City","benar2": "B","choice": "A. Havana .. B. Guatemala City .. C. San Jose"},
-{"pertanyaan": "Apa Ibukota dari Haiti?","benar": "Port-au-prince","benar2": "B","choice": "A. Managua .. B. Port-au-prince .. C. Pyongyang"},
-{"pertanyaan": "Apa Ibukota dari Honduras?","benar": "Tegucigalpa","benar2": "B","choice": "A. Managua .. B. Tegucigalpa .. C. Panama"},
-{"pertanyaan": "Apa Ibukota dari Jamaika?","benar": "Kingston","benar2": "C","choice": "A. Kinshasa .. B. Kagali .. C. Kingston"},
-{"pertanyaan": "Apa Ibukota dari Kanada?","benar": "Ottawa","benar2": "B","choice": "A. Bratislava .. B. Ottawa .. C. Madrid"},
-{"pertanyaan": "Apa Ibukota dari Kosta Rika?","benar": "San Jose","benar2": "A","choice": "A. San Jose .. B. Cayenne .. C. Bogota"},
-{"pertanyaan": "Apa Ibukota dari Kuba?","benar": "Havana","benar2": "C","choice": "A. Port of Spain .. B. Stanley .. C. Havana"},
-{"pertanyaan": "Apa Ibukota dari Meksiko?","benar": "Mexico city","benar2": "C","choice": "A. Ottawa .. B. Spain .. C. Mexico city"},
-{"pertanyaan": "Apa Ibukota dari Nikaragua?","benar": "Managua","benar2": "B","choice": "A. Asuncion .. B. Managua .. C. Lima"},
-{"pertanyaan": "Apa Ibukota dari Panama?","benar": "Panama City","benar2": "B","choice": "A. Yaren .. B. Panama City .. C. Palikir"},
-{"pertanyaan": "Apa Ibukota dari Saint Kitts dan Nevis?","benar": "Basseterre","benar2": "C","choice": "A. Paramaribo .. B. Lima .. C. Basseterre"},
-{"pertanyaan": "Apa Ibukota dari Saint Lucia?","benar": "Catries","benar2": "C","choice": "A. Montevideo .. B. Caracas .. C. Catries"},
-{"pertanyaan": "Apa Ibukota dari Saint Vincent and Grenadines?","benar": "Kingstown","benar2": "A","choice": "A. Kingstown .. B. Vatikan .. C. Riga"},
-{"pertanyaan": "Apa Ibukota dari Trinidad and Tobago?","benar": "Port of Spain","benar2": "A","choice": "A. Port of Spain .. B. Dublin .. C. Roma"},
-{"pertanyaan": "Apa Ibukota dari Argentina?","benar": "Buenos Aires","benar2": "B","choice": "A. Vilnius .. B. Buenos Aires .. C. Valletta"},
-{"pertanyaan": "Apa Ibukota dari Bolivia?","benar": "Sucre","benar2": "C","choice": "A. Melekeok .. B. Apia .. C. Sucre"},
-{"pertanyaan": "Apa Ibukota dari Brasil?","benar": "Brasilia","benar2": "A","choice": "A. Brasilia .. B. Bern .. C. Stockholm"},
-{"pertanyaan": "Apa Ibukota dari Chili?","benar": "Santiago","benar2": "A","choice": "A. Santiago .. B. Lima .. C. Palikir"},
-{"pertanyaan": "Apa Ibukota dari Ekuador?","benar": "Quito","benar2": "C","choice": "A. Honiara .. B. Hawaii .. C. Quito"},
-{"pertanyaan": "Apa Ibukota dari Kepulauan Falkland?","benar": "Stanley","benar2": "B","choice": "A. Nassau .. B. Stanley .. C. Bridgetown"},
-{"pertanyaan": "Apa Ibukota dari Guyana?","benar": "Georgetown","benar2": "C","choice": "A. Quito .. B. Santiago .. C. Georgetown"},
-{"pertanyaan": "Apa Ibukota dari Guyana Prancis?","benar": "Cayenne","benar2": "B","choice": "A. Wellington .. B. Cayenne .. C. Suva"},
-{"pertanyaan": "Apa Ibukota dari Kolombia?","benar": "Bogota","benar2": "C","choice": "A. Kiev .. B. Oslo .. C. Bogota"},
-{"pertanyaan": "Apa Ibukota dari Paraguay?","benar": "Asuncion","benar2": "A","choice": "A. Asuncion .. B. Catries .. C. Suva"},
-{"pertanyaan": "Apa Ibukota dari Peru?","benar": "Lima","benar2": "B","choice": "A. Honiara .. B. Lima .. C. Melekok"},
-{"pertanyaan": "Apa Ibukota dari Suriname?","benar": "Paramaribo","benar2": "B","choice": "A. Asuncion .. B. Paramaribo .. C. Managua"},
-{"pertanyaan": "Apa Ibukota dari Uruguay?","benar": "Montevideo","benar2": "A","choice": "A. Montevideo .. B. Asuncion .. C. Bogota"},
-{"pertanyaan": "Apa Ibukota dari Venezuela?","benar": "Caracas","benar2": "B","choice": "A. Wellington .. B. Caracas .. C. Port Ville"},
-{"pertanyaan": "Apa Ibukota dari Australia?","benar": "Canberra","benar2": "C","choice": "A. Stanley .. B. Sydney .. C. Canberra"},
-{"pertanyaan": "Apa Ibukota dari Fiji?","benar": "Suva","benar2": "B","choice": "A. Bern .. B. Suva .. C. Ljubljana"},
-{"pertanyaan": "Apa Ibukota dari Kiribati?","benar": "Tarrawa selatan","benar2": "A","choice": "A. Tarrawa selatan .. B. Doha .. C. Pelabuhan Morresby"},
-{"pertanyaan": "Apa ibukota dari Kepulauan Marshall?","benar": "Majuro","benar2": "B","choice": "A. Sarajevo .. B. Majuro .. C. Apia"},
-{"pertanyaan": "Apa Ibukota dari Federasi Mikronesia?","benar": "Palikir","benar2": "C","choice": "A. Sarajevo .. B. Zagreb .. C. Palikir"},
-{"pertanyaan": "Apa Ibukota dari Nauru?","benar": "Yaren","benar2": "A","choice": "A. Yaren .. B. San Salvador .. C. Tegucigalpa"},
-{"pertanyaan": "Apa Ibukota dari Selandia Baru?","benar": "Wellington","benar2": "B","choice": "A. Roseau .. B. Wellington .. C. Canberra"},
-{"pertanyaan": "Apa Ibukota dari Palau?","benar": "Melekeok","benar2": "C","choice": "A. Cayenne .. B. Palikir .. C. Melekeok"},
-{"pertanyaan": "Apa Ibukota dari Papua Nugini?","benar": "Pelabuhan Moresby","benar2": "B","choice": "A. San Jose .. B. Pelabuhan Moresby .. C. Brasilia"},
-{"pertanyaan": "Apa Ibukota dari Samoa?","benar": "Apia","benar2": "A","choice": "A. Apia .. B. Bogota .. C. Sucre"},
-{"pertanyaan": "Apa Ibukota dari Kepulauan Solomon?","benar": "Honiara","benar2": "B","choice": "A. Quito .. B. Honiara .. C. Paramaribo"},
-{"pertanyaan": "Apa Ibukota dari Tonga?","benar": "Nuku'alofa","benar2": "A","choice": "A. Nuku'alofa .. B. Honiara  .. C. Apia"},
-{"pertanyaan": "Apa Ibukota dari Tuvalu?","benar": "Funafuti","benar2": "B","choice": "A. Majuro .. B. Funafuti .. C. Suva"},
-{"pertanyaan": "Apa Ibukota dari Vanuattu?","benar": "Port Villa","benar2": "C","choice": "A. Yaren .. B. Wellington .. C. Port Villa"}
-]
+[{"pertanyaan":"Apa Ibukota dari Aljazair?","benar":"Aljir","benar2":"dua","choice":"satu, Jalfah, dua, Aljir, tiga, Luanda"},{
+"pertanyaan":"Apa Ibukota dari Angola?","benar":"Luanda","benar2":"dua","choice":"satu, Benguela, dua, Luanda, tiga, Huila"},{
+"pertanyaan":"Apa ibukota dari Benin?","benar":"Porto Novo","benar2":"tiga","choice":"satu, Alibori, dua, Mono, tiga, Porto Novo"},{
+"pertanyaan":"Apa Ibukota dari Bostwana?","benar":"Gaborone","benar2":"satu","choice":"satu, Gaborone, dua, Ka nye, tiga, Dogon"},{
+"pertanyaan":"Apa Ibukota dari Burkina Faso?","benar":"Ougadougou","benar2":"dua","choice":"satu, Dogon, dua, Ougadougou, tiga, Gaborone"},{
+"pertanyaan":"Apa Ibukota dari Burundi?","benar":"Bujumbura","benar2":"satu","choice":"satu, Bu jumbura, dua, Makamba, tiga, Ru tana"},{
+"pertanyaan":"Apa Ibukota dari Erite ya?","benar":"Asmara","benar2":"tiga","choice":"satu, Ba rentu, dua, Libreville, tiga, Asmara"},{
+"pertanyaan":"Apa Ibukota dari Eswatini?","benar":"Mbabane","benar2":"satu","choice":"satu, Mbaba ne, dua, Asmara, tiga, Banjul"},{
+"pertanyaan":"Apa Ibukota dari Etiopia?","benar":"Addis Ababa","benar2":"tiga","choice":"satu, Amharik, dua, Akra, tiga, Addis Ababa"},{
+"pertanyaan":"Apa Ibukota dari Gabon?","benar":"Libreville","benar2":"dua","choice":"satu, Frenchville, dua, Libreville, tiga, Oyem"},{
+"pertanyaan":"Apa Ibukota dari Gambia?","benar":"Banjul","benar2":"tiga","choice":"satu, Paris, dua, Serekunda, tiga, Banjul"},{
+"pertanyaan":"Apa Ibukota dari Ghana?","benar":"Accra","benar2":"dua","choice":"satu, Tamale, dua, Akra, tiga, Malabo"},{
+"pertanyaan":"Apa Ibukota dari Gine ya?","benar":"Konekri","benar2":"satu","choice":"satu, Konekri, dua, Faranah, tiga, Kankan"},{
+"pertanyaan":"Apa Ibukota dari Gine ya bisaw?","benar":"Bissau","benar2":"tiga","choice":"satu, Nairobi, dua, Monrovia, tiga, Bissau"},{
+"pertanyaan":"Apa Ibukota dari Gine ya katulistiwa?","benar":"Malabo","benar2":"dua","choice":"satu, Bata, dua, Malabo, tiga, Libia"},{
+"pertanyaan":"Apa Ibukota dari Jibouti?","benar":"Djibouti","benar2":"tiga","choice":"satu, Nairobi, dua, Yoboki, tiga, Djibouti"},{
+"pertanyaan":"Apa Ibukota dari Kamerun?","benar":"Yaounde","benar2":"dua","choice":"satu, Douala, dua, Yaounde, tiga, Bamenda"},{
+"pertanyaan":"Apa Ibukota dari Kenya?","benar":"Nairobi","benar2":"satu","choice":"satu, Nairobi, dua, Rift Valley, tiga, Kakamega"},{
+"pertanyaan":"Apa Ibukota dari Lesotho?","benar":"Maseru","benar2":"satu","choice":"satu, Maseru, dua, Akra, tiga, Bissau"},{
+"pertanyaan":"Apa Ibukota dari Liberia?","benar":"Monrovia","benar2":"tiga","choice":"satu, Har per, dua, Green vil, tiga, Monrovia"},{
+"pertanyaan":"Apa Ibukota dari Libia?","benar":"Tripoli","benar2":"satu","choice":"satu, Tripoli, dua, Benghazi, tiga, Al Bayda"},{
+"pertanyaan":"Apa ibukota dari Madagaskar?","benar":"Antananarivo","benar2":"dua","choice":"satu, New York, dua, Antananarivo, tiga, Morondava"},{
+"pertanyaan":"Apa Ibukota dari Malawi?","benar":"Lilongwe","benar2":"satu","choice":"satu, Lilongwe, dua, Tripoli, tiga, Maputo"},{
+"pertanyaan":"Apa Ibukota dari Mali?","benar":"Bamako","benar2":"tiga","choice":"satu, Victoria, dua, Gaou, tiga, Bamako"},{
+"pertanyaan":"Apa Ibukota dari Maroko?","benar":"Rabat","benar2":"satu","choice":"satu, Rabat, dua, Kasablanka, tiga, Agadir"},{
+"pertanyaan":"Apa Ibukota dari Mauritania?","benar":"Nowakshot","benar2":"dua","choice":"satu, Ater, dua, Nowakshot, tiga, Kiffa"},{
+"pertanyaan":"Apa Ibukota dari Mauritius?","benar":"Port Louis","benar2":"tiga","choice":"satu, Triolet, dua, Tamarin, tiga, Port Louis"},{
+"pertanyaan":"Apa Ibukota dari Mesir?","benar":"Kairo","benar2":"dua","choice":"satu,Tamarin, dua, Kairo, tiga, Abuja"},{
+"pertanyaan":"Apa Ibukota dari Mozambik?","benar":"Maputo","benar2":"satu","choice":"satu, Maputo, dua, Monrovia, tiga, Maseru"},{
+"pertanyaan":"Apa Ibukota dari Namibia?","benar":"Windhoek","benar2":"dua","choice":"satu, Mogadi shu, dua, Win duk, tiga, Luanda"},{
+"pertanyaan":"Apa Ibukota dari Niger?","benar":"Niamey","benar2":"tiga","choice":"satu, Abuja, dua, Maradi, tiga, Niamey"},{
+"pertanyaan":"Apa Ibukota dari Nigeria?","benar":"Abuja","benar2":"dua","choice":"satu, Maradi, dua, Abuja, tiga, Lagos"},{
+"pertanyaan":"Apa Ibukota dari Pantai Gading?","benar":"Yamoussoukro","benar2":"satu","choice":"satu, Yamoussoukro, dua, Abidjan, tiga, Daloa"},{
+"pertanyaan":"Apa Ibukota dari Republik Afrika Tengah?","benar":"Bangi","benar2":"dua","choice":"satu, Ouaka, dua, Bangi, tiga, Ouham"},{
+"pertanyaan":"Apa Ibukota dari Republik Demokratis Kongo?","benar":"Kinshasa","benar2":"satu","choice":"satu, Kinshasa, dua, Brazaville, tiga, Goma"},{
+"pertanyaan":"Apa Ibukota dari Republik Kongo?","benar":"Brazzaville","benar2":"dua","choice":"satu, Goma, dua, Brazzaville, tiga, Kinsasha"},{
+"pertanyaan":"Apa Ibukota dari Rwanda?","benar":"Kigali","benar2":"tiga","choice":"satu, Butare, dua, Gabiro, tiga, Kigali"},{
+"pertanyaan":"Apa Ibukota dari Sao Tome dan Principel?","benar":"Sao Tome","benar2":"tiga","choice":"satu, Santo Antonia, dua, Victoria, tiga, Sao Tome"},{
+"pertanyaan":"Apa Ibukota dari Senegal?","benar":"Dakar","benar2":"tiga","choice":"satu, Louga, dua, Matam, tiga, Dakar"},{
+"pertanyaan":"Apa Ibukota dari Seysels?","benar":"Victoria","benar2":"dua","choice":"satu, Louga, dua, Victoria, tiga, Dodoma"},{
+"pertanyaan":"Apa Ibukota dari Sierra Leone?","benar":"Freetown","benar2":"dua","choice":"satu, Kenema, dua, Freetown, tiga, Bo"},{
+"pertanyaan":"Apa Ibukota dari Somalia?","benar":"Mogadishu","benar2":"satu","choice":"satu, Mogadishu, dua, Tunis, tiga, Kampala"},{
+"pertanyaan":"Apa Ibukota dari Sudan?","benar":"Khartoum","benar2":"tiga","choice":"satu, Mana ma, dua, Dhaka, tiga, Khartoum"},{
+"pertanyaan":"Apa Ibukota dari Sudan Selatan?","benar":"Juba","benar2":"satu","choice":"satu, Ju ba, dua, Adis Ababa, tiga, Lome"},{
+"pertanyaan":"Apa Ibukota dari Tanjung Verde?","benar":"Praia","benar2":"satu","choice":"satu, Praia, dua, Praha, tiga, Prague"},{
+"pertanyaan":"Apa Ibukota dari Tanzania?","benar":"Dodoma","benar2":"satu","choice":"satu, Dodoma, dua, Mogadishu, tiga, Tunis"},{
+"pertanyaan":"Apa Ibukota dari Togo?","benar":"Lome","benar2":"tiga","choice":"satu, Muskat, dua, Bishkek, tiga, Lome"},{
+"pertanyaan":"Apa Ibukota dari Tunisia?","benar":"Tunis","benar2":"dua","choice":"satu, Hara re, dua, Tunis, tiga, Kampala"},{
+"pertanyaan":"Apa Ibukota dari Uganda?","benar":"Kampala","benar2":"dua","choice":"satu, Lu sa ka, dua, Kampala, tiga, Du san be"},{
+"pertanyaan":"Apa Ibukota dari Zambia?","benar":"Lusaka","benar2":"satu","choice":"satu, Lu s aka, dua, Du san be, tiga, Kampala"},{
+"pertanyaan":"Apa Ibukota dari Zimbabwe?","benar":"Harare","benar2":"tiga","choice":"satu, Kigali, dua, Khartoum, tiga, Hara re"},{
+"pertanyaan":"Apa Ibukota dari Afghanistan?","benar":"Kabul","benar2":"tiga","choice":"satu, Nurestan, dua, Kapisa, tiga, Kabul"},{
+"pertanyaan":"Apa Ibukota dari Arab Saudi?","benar":"Riyadh","benar2":"satu","choice":"satu, Riyad, dua, Kapisa, tiga, Daka"},{
+"pertanyaan":"Apa Ibukota dari Armenia?","benar":"Yerevan","benar2":"tiga","choice":"satu, Shirak, dua, Lu saka, tiga, Yerevan"},{
+"pertanyaan":"Apa Ibukota dari Azerbaijan?","benar":"Baku","benar2":"dua","choice":"satu, Susa, dua, Baku, tiga, Tartar"},{
+"pertanyaan":"Apa Ibukota dari Bahrain?","benar":"Manama","benar2":"satu","choice":"satu, Ma na ma, dua, Banggi, tiga, Ashgabat"},{
+"pertanyaan":"Apa Ibukota dari Bangladesh?","benar":"Dhaka","benar2":"tiga","choice":"satu, Zagreb, dua, Thimpu, tiga, Daka"},{
+"pertanyaan":"Apa Ibukota dari Bhutan?","benar":"Thimphu","benar2":"tiga","choice":"satu, Bhutan, dua. Lu saka, tiga, Timpu"},{
+"pertanyaan":"Apa Ibukota dari Brunei Darussalam?","benar":"Bandar Seri Begawan","benar2":"dua","choice":"satu, Sukang dan Telingan, dua, Bandar Seri Begawan, tiga, Bangar"},{
+"pertanyaan":"Apa Ibukota dari Filipina?","benar":"Manila","benar2":"dua","choice":"satu, Daka, dua, Manila, tiga, Jakarta"},{
+"pertanyaan":"Apa Ibukota dari Jorjia?","benar":"tebilisi","benar2":"satu","choice":"satu, tebilisi, dua, Nigeria, tiga, Vadus"},{
+"pertanyaan":"Apa Ibukota dari India?","benar":"New Delhi","benar2":"tiga","choice":"satu, Nursultan, dua, Nom Pen, tiga, Nyu Delhi"},{
+"pertanyaan":"Apa Ibukota dari Indonesia?","benar":"Jakarta","benar2":"dua","choice":"satu, nom Pen, dua, Jakarta, tiga, Nyu Delhi"},{
+"pertanyaan":"Apa Ibukota dari Irak?","benar":"Baghdad","benar2":"satu","choice":"satu, Baghdad, dua, Teheran, tiga, Persia"},{
+"pertanyaan":"Apa Ibukota dari Iran?","benar":"Teheran","benar2":"tiga","choice":"satu, Persia, dua, Baghdad, tiga, Teheran"},{
+"pertanyaan":"Apa Ibukota dari Jepang?","benar":"Tokyo","benar2":"dua","choice":"satu, Osaka, dua, Tokyo, tiga, Kyoto"},{
+"pertanyaan":"Apa Ibukota dari Kamboja?","benar":"Phnom penh","benar2":"satu","choice":"satu, Phnom penh, dua, Pailin, tiga, Koh Tang"},{
+"pertanyaan":"Apa Ibukota dari Kazakhstan","benar":"Nursultan","benar2":"dua","choice":"satu, Akto be, dua, Nursultan, tiga, Biskek"},{
+"pertanyaan":"Apa Ibukota dari Korea Selatan?","benar":"Soul","benar2":"satu","choice":"satu, Soul, dua, Pyongyang, tiga, Hanggang"},{
+"pertanyaan":"Apa Ibukota dari Korea Utara?","benar":"Pyongyang","benar2":"dua","choice":"satu, Hanggang, dua, Pyongyang, tiga, Soul"},{
+"pertanyaan":"Apa Ibukota dari Kuwait?","benar":"Kuwait City","benar2":"tiga","choice":"satu, Hawalli, dua, Mina, tiga, Kuwait City"},{
+"pertanyaan":"Apa Ibukota dari Kirgizstan?","benar":"Bishkek","benar2":"tiga","choice":"satu, Karakol, dua, Degu, tiga, Biskek"},{
+"pertanyaan":"Apa Ibukota dari Laos?","benar":"Vientian","benar2":"dua","choice":"satu, Attapu, dua, Vientian, tiga, Ulan Bator"},{
+"pertanyaan":"Apa Ibukota dari Lebanon?","benar":"Beirut","benar2":"satu","choice":"satu, Beirut, dua, Sidon, tiga, Male"},{
+"pertanyaan":"Apa Ibukota dari Maladewa?","benar":"Male","benar2":"dua","choice":"satu, Kathmandu, dua, Male, tiga, Sana"},{
+"pertanyaan":"Apa Ibukota dari Malaysia?","benar":"Kuala Lumpur","benar2":"satu","choice":"satu, Kuala Lumpur, dua, Putrajaya, tiga, Selangor"},{
+"pertanyaan":"Apa Ibukota dari Mongolia?","benar":"Ulan Bator","benar2":"dua","choice":"satu, Muskat, dua, Ulan Bator, tiga, Ni kosia"},{
+"pertanyaan":"Apa Ibukota dari Myanmar?","benar":"Naypyidaw","benar2":"satu","choice":"satu, Neipyido, dua, Praia, tiga, Tunis"},{
+"pertanyaan":"Apa Ibukota dari Nepal?","benar":"Kathmandu","benar2":"tiga","choice":"satu, Biskek, dua, Karol, tiga, Kathmandu"},{
+"pertanyaan":"Apa Ibukota dari Oman?","benar":"Muskat","benar2":"dua","choice":"satu, Teheran, dua, Muskat, tiga, Islamabad"},{
+"pertanyaan":"Apa Ibukota dari Pakistan?","benar":"Islamabad","benar2":"tiga","choice":"satu, Sofia, dua, Tirana, tiga, Islamabad"},{
+"pertanyaan":"Apa Ibukota dari Qatar?","benar":"Doha","benar2":"satu","choice":"satu, Doha, dua, Dukhan, tiga, Al Wakrah"},{
+"pertanyaan":"Apa Ibukota dari Rusia?","benar":"Moskowa","benar2":"dua","choice":"satu, Vledivestok, dua, Moskowa, tiga, Leningrad"},{
+"pertanyaan":"Apa Ibukota dari Singapura?","benar":"Kota Singapura","benar2":"tiga","choice":"satu, Bukit Merah, dua, Bedok, tiga, Kota Singapura"},{
+"pertanyaan":"Apa Ibukota dari Siprus?","benar":"Nikosia","benar2":"satu","choice":"satu, Niko sia, dua, Famagusta, tiga, Lu saka"},{
+"pertanyaan":"Apa Ibukota dari Sri Lanka?","benar":"Sri Jayawardenapura Kotte","benar2":"dua","choice":"satu, Kolombo, dua, Sri Jayawardenapura Kotte, tiga, Negombo"},{
+"pertanyaan":"Apa Ibukota dari Suriah?","benar":"Damaskus","benar2":"tiga","choice":"satu, Nursultan, dua, Asghabat, tiga, Damaskus"},{
+"pertanyaan":"Apa Ibukota dari Tajikistan?","benar":"Dushanbe","benar2":"dua","choice":"satu, Kofarnihon, dua, Du san be, tiga, Chisinau"},{
+"pertanyaan":"Apa Ibukota dari Thailand?","benar":"Bangkok","benar2":"dua","choice":"satu, Chiang Mai, dua, Bangkok, tiga, Puket"},{
+"pertanyaan":"Apa Ibukota dari Timor-Leste?","benar":"Dili","benar2":"satu","choice":"satu, Dili, dua, Bratislava, tiga, Jakarta"},{
+"pertanyaan":"Apa Ibukota dari Tiongkok?","benar":"Beijing","benar2":"tiga","choice":"satu, Guangdong, dua, Syanghai, tiga, Beijing"},{
+"pertanyaan":"Apa Ibukota dari Turki?","benar":"Ankara","benar2":"dua","choice":"satu, Banggi, dua, Ankara, tiga, Hara re"},{
+"pertanyaan":"Apa Ibukota dari Turkmenistan?","benar":"Ashgabat","benar2":"dua","choice":"satu, Tashkent, dua, Ashgabat, tiga, Islamabad"},{
+"pertanyaan":"Apa Ibukota dari Uni Emirat Arab?","benar":"Abu Dhabi","benar2":"satu","choice":"satu, Abu Dhabi, dua, Dubai, tiga, Mogadishu"},{
+"pertanyaan":"Apa Ibukota dari Uzbekistan?","benar":"Tashkent","benar2":"satu","choice":"satu, Tashkent, dua, Ankara, tiga, Ashgabat"},{
+"pertanyaan":"Apa Ibukota dari Vietnam?","benar":"Hanoi","benar2":"satu","choice":"satu, Hanoi, dua, Nukus, tiga, Amman"},{
+"pertanyaan":"Apa Ibukota dari Yamen?","benar":"San a","benar2":"dua","choice":"satu, Termez, dua, Sana, tiga, Tirana"},{
+"pertanyaan":"Apa Ibukota dari Yordania?","benar":"Amman","benar2":"tiga","choice":"satu, Ankara, dua, Banggi, tiga, Amman"},{
+"pertanyaan":"Apa Ibukota dari Albania?","benar":"Tirana","benar2":"tiga","choice":"satu, Berat, dua,  Fler, tiga, Tirana"},{
+"pertanyaan":"Apa Ibukota dari Andorra?","benar":"Andorra la vella","benar2":"dua","choice":"satu, Keniyu, dua, Andorra la vella, tiga, Ordino"},{
+"pertanyaan":"Apa Ibukota dari Austria?","benar":"Wina","benar2":"tiga","choice":"satu, Sol deu, dua, Salz berg, tiga, Wi na"},{
+"pertanyaan":"Apa Ibukota dari Belanda?","benar":"Amsterdam","benar2":"dua","choice":"satu, yutrek, dua, Amsterdam, tiga, Minsk"},{
+"pertanyaan":"Apa Ibukota dari Belarus?","benar":"Minsk","benar2":"satu","choice":"satu, Minsk, dua, Damaskus, tiga, Moskowa"},{
+"pertanyaan":"Apa Ibukota dari Bhelgia?","benar":"Brussel","benar2":"tiga","choice":"satu, Anterpen, dua, Limbur, tiga, Brussel"},{
+"pertanyaan":"Apa Ibukota dari Bosnia?","benar":"Sarajevo","benar2":"dua","choice":"satu, Zhenika, dua, Sara jevo, tiga, Mostar"},{
+"pertanyaan":"Apa Ibukota dari Bulgaria?","benar":"Sofia","benar2":"satu","choice":"satu, Sofia, dua, Zag reb, tiga, Ni kosia"},{
+"pertanyaan":"Apa Ibukota dari Kroasia?","benar":"Zagreb","benar2":"dua","choice":"satu, Atena, dua, Zagreb, tiga, Helsinki"},{
+"pertanyaan":"Apa Ibukota dari Ceko?","benar":"Praha","benar2":"tiga","choice":"satu, Helsinki, dua, Paris, tiga, Praha"},{
+"pertanyaan":"Apa Ibukota dari Denmark?","benar":"Kopenhagen","benar2":"dua","choice":"satu, Hanoi, dua, Kopenhagen, tiga, Estonia"},{
+"pertanyaan":"Apa Ibukota dari Estonia?","benar":"Tallinn","benar2":"satu","choice":"satu, Tallinn, dua, Riga , tiga, Helsinki"},{
+"pertanyaan":"Apa Ibukota dari Finlandia?","benar":"Helsinki","benar2":"satu","choice":"satu, Helsinki, dua, Atena, tiga, Vadus"},{
+"pertanyaan":"Apa Ibukota dari Prancis?","benar":"Paris","benar2":"dua","choice":"satu, Kopenhagen, dua, Paris, tiga, Praha"},{
+"pertanyaan":"Apa Ibukota dari Jerman?","benar":"Berlin","benar2":"tiga","choice":"satu, Luk semburg, dua, Dublin, tiga, Bherlin"},{
+"pertanyaan":"Apa Ibukota dari Yunani?","benar":"Athena","benar2":"dua","choice":"satu, Tartu, dua, Atena, tiga, Narva"},{
+"pertanyaan":"Apa ibukota dari Hongaria?","benar":"Budapest","benar2":"tiga","choice":"satu, Slowakia, dua, Ukraina, tiga, Budapest"},{
+"pertanyaan":"Apa Ibukota dari Islandia?","benar":"Reykjavik","benar2":"satu","choice":"satu, Reyjavik, dua, Riga. tiga, Vadus"},{
+"pertanyaan":"Apa Ibukota dari Irlandia?","benar":"Dublin","benar2":"tiga","choice":"satu, Latvia, dua, Slovenia, tiga, Dublin"},{
+"pertanyaan":"Apa Ibukota dari Italia?","benar":"Roma","benar2":"dua","choice":"satu, Napoli, dua, Roma, tiga, Venezia"},{
+"pertanyaan":"Apa Ibukota dari Latvia?","benar":"Riga","benar2":"satu","choice":"satu, Riga, dua, Tallin, tiga, Venezia"},{
+"pertanyaan":"Apa Ibukota dari Liehtenstin?","benar":"Vadus","benar2":"satu","choice":"satu, Vadus, dua, Yerevan, tiga, Skopje"},{
+"pertanyaan":"Apa Ibukota dari Lithuania?","benar":"Vilnius","benar2":"satu","choice":"satu, Vil nius, dua, Warsawa, tiga, Cisinau"},{
+"pertanyaan":"Apa Ibukota dari Laksemburg?","benar":"Kota Luksemburg","benar2":"dua","choice":"satu, Valetta, dua, Kota Laksemburg, tiga, Tunis"},{
+"pertanyaan":"Apa Ibukota dari Makedonia utara?","benar":"Skopje","benar2":"dua","choice":"satu, Valletta, dua, Skopje, tiga, Bratislava"},{
+"pertanyaan":"Apa Ibukota dari Malta?","benar":"Valletta","benar2":"dua","choice":"satu, Budapest, dua, Valletta, tiga, Atena"},{
+"pertanyaan":"Apa Ibukota dari Moldova?","benar":"Chisinau","benar2":"tiga","choice":"satu, Bherlin, dua, Praha, tiga, Cisinau"},{
+"pertanyaan":"Apa Ibukota dari Monako?","benar":"Monaco","benar2":"tiga","choice":"satu, Puerto Rico, dua, Slovakia, tiga, Monako"},{
+"pertanyaan":"Apa Ibukota dari Montenegro?","benar":"Podgorica","benar2":"tiga","choice":"satu, Bukares, dua, Manila, tiga, Podgorika"},{
+"pertanyaan":"Apa Ibukota dari Norwegia?","benar":"Oslo","benar2":"tiga","choice":"satu, Lisbon, dua, Beogard, tiga, Os lo"},{
+"pertanyaan":"Apa Ibukota dari Polandia?","benar":"Warsawa","benar2":"dua","choice":"satu, Moskowa, dua, Warsawa, tiga, Brussel"},{
+"pertanyaan":"Apa Ibukota dari Portugal?","benar":"Lisboa","benar2":"satu","choice":"satu, Lisboa, dua, Khiev, tiga, Bhel mopan"},{
+"pertanyaan":"Apa Ibukota dari Rumania?","benar":"Bukares","benar2":"dua","choice":"satu, Lisboa, dua, Bukares, tiga, Chili"},{
+"pertanyaan":"Apa Ibukota dari San Marino?","benar":"San Marino","benar2":"tiga","choice":"satu, Kingston, dua, San Salvador, tiga, San Marino"},{
+"pertanyaan":"Apa Ibukota dari Sherbia?","benar":"Beogard","benar2":"dua","choice":"satu, Islam abad, dua, Beo gard, tiga, Dus henba"},{
+"pertanyaan":"Apa Ibukota dari Slovakia?","benar":"Bratislava","benar2":"satu","choice":"satu, Bratislava, dua, Kopenhagen, tiga, Nyu Delhi"},{
+"pertanyaan":"Apa Ibukota dari Slovenia?","benar":"Lyublyana","benar2":"tiga","choice":"satu, Nassau, dua, Khiev, tiga, Liubliana"},{
+"pertanyaan":"Apa Ibukota dari Spanyol?","benar":"Madrid","benar2":"dua","choice":"satu, Soul, dua, Madrid, tiga, Zagreb"},{
+"pertanyaan":"Apa Ibukota dari Swedia?","benar":"Stockholm","benar2":"satu","choice":"satu, Stockholm, dua, Kuala Lumpur, tiga, Port Vill"},{
+"pertanyaan":"Apa Ibukota dari Swiss?","benar":"Bern","benar2":"dua","choice":"satu, Warsawa, dua, Bhirn, tiga, Khiev"},{
+"pertanyaan":"Apa Ibukota dari Ukraina?","benar":"Kiev","benar2":"dua","choice":"satu, Damaskus, dua, Khiev, tiga, Wi na"},{
+"pertanyaan":"Apa Ibukota dari Inggris?","benar":"London","benar2":"tiga","choice":"satu, Es sex, dua, King. ston, tiga, London"},{
+"pertanyaan":"Apa Ibukota dari Vatikan?","benar":"Vatikan","benar2":"satu","choice":"satu, Vhatikan, dua, Saint Piter, tiga, Male"},{
+"pertanyaan":"Apa Ibukota dari Amerika serikat?","benar":"Washington Di Si","benar2":"satu","choice":"satu, Washing ton Di Si, dua, Nyu York, tiga, Kalifornia"},{
+"pertanyaan":"Apa Ibukota dari Antigua dan Barbuda?","benar":"Saint Johns","benar2":"tiga","choice":"satu, Saint Johns, dua, Ankara, tiga, Beirut"},{
+"pertanyaan":"Apa Ibukota dari Bahama?","benar":"Nassau","benar2":"dua","choice":"satu, Nassau, dua, Hawaii, tiga, Bukares"},{
+"pertanyaan":"Apa Ibukota dari Barbados?","benar":"Bridgetown","benar2":"dua","choice":"satu, brid taun, dua, Bhelmopan, tiga, Rosea"},{
+"pertanyaan":"Apa Ibukota dari Bhe liz?","benar":"Belmopan","benar2":"tiga","choice":"satu, Vhatikan, dua, Santo Domingo, tiga, Bhelmopan"},{
+"pertanyaan":"Apa Ibukota dari Dominika?","benar":"Roseau","benar2":"tiga","choice":"satu, Bridtaun, dua, Saint Johns, tiga, Rosea"},{
+"pertanyaan":"Apa Ibukota dari Republik Dominika?","benar":"Santo Domingo","benar2":"dua","choice":"satu, Guatemala, dua, Santo Domingo, tiga, Honduras"},{
+"pertanyaan":"Apa Ibukota dari El Salvador?","benar":"San Salvador","benar2":"satu","choice":"satu, San Salvador, dua, Tegukigalpa, tiga, King ston"},{
+"pertanyaan":"Apa Ibukota dari Grenada?","benar":"St. george's","benar2":"tiga","choice":"satu, Praya, dua, Kampala, tiga, Saint jord"},{
+"pertanyaan":"Apa Ibukota dari Guatemala?","benar":"Guatemala City","benar2":"dua","choice":"satu,  Havana, dua, Guatemala Sity, tiga, San Jose"},{
+"pertanyaan":"Apa Ibukota dari Haiti?","benar":"Port-au-prince","benar2":"dua","choice":"satu, Managua, dua, Port-au-princ, tiga, Pyongyang"},{
+"pertanyaan":"Apa Ibukota dari Honduras?","benar":"Tegucigalpa","benar2":"dua","choice":"satu, Managua, dua, Tegucigalpa, tiga, Panama"},{
+"pertanyaan":"Apa Ibukota dari Jamaika?","benar":"Kingston","benar2":"tiga","choice":"satu, Kinshasa, dua, Kagali, tiga, Kingston"},{
+"pertanyaan":"Apa Ibukota dari Kanada?","benar":"Ottawa","benar2":"dua","choice":"satu, Bratislava, dua, Ottawa, tiga, Madrid"},{
+"pertanyaan":"Apa Ibukota dari Kosta Rika?","benar":"San Jose","benar2":"satu","choice":"satu, San ho se, dua, Kay yen, tiga, Bogota"},{
+"pertanyaan":"Apa Ibukota dari Kuba?","benar":"Havana","benar2":"tiga","choice":"satu, Port of Spain, dua, Stan lei, tiga, Havana"},{
+"pertanyaan":"Apa Ibukota dari Meksiko?","benar":"Mexico city","benar2":"tiga","choice":"satu, Ottawa, dua, Spain, tiga, Mexico city"},{
+"pertanyaan":"Apa Ibukota dari Nikaragua?","benar":"Managua","benar2":"dua","choice":"satu, asunsyon, dua, Managua, tiga, Lima"},{
+"pertanyaan":"Apa Ibukota dari Panama?","benar":"Panama City","benar2":"dua","choice":"satu, Yaren, dua, Panama siti, tiga, Palikir"},{
+"pertanyaan":"Apa Ibukota dari Saint Kitts dan Nevis?","benar":"Bassterr","benar2":"tiga","choice":"satu, Para maribo, dua, Lima, tiga, Bassterr"},{
+"pertanyaan":"Apa Ibukota dari Saint Lusia?","benar":"Catries","benar2":"tiga","choice":"satu, Monte video, dua, Karacas, tiga, Katries"},{
+"pertanyaan":"Apa Ibukota dari Saint Vinsent dan Grenadins?","benar":"Kingstown","benar2":"satu","choice":"satu, Kingstown, dua, Vatikan, tiga, Riga"},{
+"pertanyaan":"Apa Ibukota dari Trinidad en Tobago?","benar":"Port of Spain","benar2":"satu","choice":"satu, Port of Spain, dua, Dablin, tiga, Roma"},{
+"pertanyaan":"Apa Ibukota dari Argentina?","benar":"Buenos Aires","benar2":"dua","choice":"satu, Vil nius, dua, Buenos Aires, tiga, Val letta"},{
+"pertanyaan":"Apa Ibukota dari Bolivia?","benar":"Sucre","benar2":"tiga","choice":"satu, Me lekyok, dua, Apia, tiga, Sucre"},{
+"pertanyaan":"Apa Ibukota dari Brasil?","benar":"Brasilia","benar2":"satu","choice":"satu, Brasilia, dua, Bern, tiga, Stockholm"},{
+"pertanyaan":"Apa Ibukota dari Chili?","benar":"Santiago","benar2":"satu","choice":"satu, Santiago, dua, Lima, tiga, Palikir"},{
+"pertanyaan":"Apa Ibukota dari Ekuador?","benar":"Qito","benar2":"tiga","choice":"satu, Honiara, dua, Hawaii, tiga, Qito"},{
+"pertanyaan":"Apa Ibukota dari Kepulauan Falkland?","benar":"Stanley","benar2":"dua","choice":"satu, Nassau, dua, Stanley, tiga, Brij tawn"},{
+"pertanyaan":"Apa Ibukota dari Guyana?","benar":"Georgetown","benar2":"tiga","choice":"satu, Qito, dua, Santiago, tiga, Jorjtown"},{
+"pertanyaan":"Apa Ibukota dari Guyana Prancis?","benar":"Kay yen","benar2":"dua","choice":"satu,  Wellington, dua, Kay yen, tiga,  Suva"},{
+"pertanyaan":"Apa Ibukota dari Kolombia?","benar":"Bogota","benar2":"tiga","choice":"satu, Kiyev, dua, Os lo, tiga, Bogota"},{
+"pertanyaan":"Apa Ibukota dari Paraguay?","benar":"Asunsyon","benar2":"satu","choice":"satu, Asunsyon, dua, Katris, tiga, Suva"},{
+"pertanyaan":"Apa Ibukota dari Peru?","benar":"Lima","benar2":"dua","choice":"satu, Honiara, dua, Lima, tiga, Melekyok"},{
+"pertanyaan":"Apa Ibukota dari Surina me?","benar":"Paramaribo","benar2":"dua","choice":"satu, Asunsyon, dua, Para maribo, tiga, Managua"},{
+"pertanyaan":"Apa Ibukota dari Uruguay?","benar":"Montevideo","benar2":"satu","choice":"satu, Monte video, dua, asunsyon, tiga, Bogota"},{
+"pertanyaan":"Apa Ibukota dari Venezuela?","benar":"Caracas","benar2":"dua","choice":"satu, Wellington, dua, Karacas, tiga, Port Vill"},{
+"pertanyaan":"Apa Ibukota dari Australia?","benar":"Canberra","benar2":"tiga","choice":"satu, Stanley, dua, Sydney, tiga, Kanberra"},{
+"pertanyaan":"Apa Ibukota dari Fiji?","benar":"Suva","benar2":"dua","choice":"satu, Bern, dua, Suva, tiga, Lyublyana"},{
+"pertanyaan":"Apa Ibukota dari Kiribati?","benar":"Tarrawa selatan","benar2":"satu","choice":"satu, Tarrawa selatan, dua, Doha, tiga, Pelabuhan Morresby"},{
+"pertanyaan":"Apa ibukota dari Kepulauan Marshall?","benar":"Majuro","benar2":"dua","choice":"satu, Sarajevo, dua, Majuro, tiga, Apia"},{
+"pertanyaan":"Apa Ibukota dari Federasi Mikronesia?","benar":"Palikir","benar2":"tiga","choice":"satu, Sarajevo, dua, Zagreb, tiga, Palikir"},{
+"pertanyaan":"Apa Ibukota dari Nauru?","benar":"Yaren","benar2":"satu","choice":"satu, Yaren, dua, San Salvador, tiga, Teguci galpa"},{
+"pertanyaan":"Apa Ibukota dari Selandia Baru?","benar":"Wellington","benar2":"dua","choice":"satu, Rosow, dua, Wellington, tiga, Kanberra"},{
+"pertanyaan":"Apa Ibukota dari Palau?","benar":"Melekyok","benar2":"tiga","choice":"satu, Kayenne, dua, Palikir, tiga, Melekyok"},{
+"pertanyaan":"Apa Ibukota dari Papua Nugini?","benar":"Pelabuhan Moresby","benar2":"dua","choice":"satu, San hos se, dua, Pelabuhan Moresby, tiga, Brasilia"},{
+"pertanyaan":"Apa Ibukota dari Samoa?","benar":"Apia","benar2":"satu","choice":"satu, Apia, dua, Bogota, tiga, Sucre"},{
+"pertanyaan":"Apa Ibukota dari Kepulauan Solomon?","benar":"Honiara","benar2":"dua","choice":"satu, Qito, dua, Honiara, tiga, Para maribo"},{
+"pertanyaan":"Apa Ibukota dari Tonga?","benar":"Nuku'alofa","benar2":"satu","choice":"satu, Nuku'alofa, dua, Honiara, tiga, Apia"},{
+"pertanyaan":"Apa Ibukota dari Tuvalu?","benar":"Funafuti","benar2":"dua","choice":"satu, Majuro, dua, Funafuti, tiga, Suva"},{
+"pertanyaan":"Apa Ibukota dari Vanuattu?","benar":"Port Vill","benar2":"tiga","choice":"satu, Yaren, dua, Wellington, tiga, Port Vill"}]

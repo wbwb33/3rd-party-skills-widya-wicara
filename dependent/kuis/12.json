@@ -1,77 +1,76 @@
-[{"pertanyaan": "siapa penemu teori relativitas?","benar": "Albert Einstein","benar2": "A","choice": "A. Albert Einstein .. B. Alessandro Volta .. C. Alexander Graham Bell"},
-{"pertanyaan": "siapa penemu Batu Baterai?","benar": "Alessandro Volta","benar2": "B","choice": "A. Albert Einstein .. B. Alessandro Volta .. C. Alexander Graham Bell"},
-{"pertanyaan": "siapa penemu Telepon?","benar": "Alexander Graham Bell","benar2": "C","choice": "A. Albert Einstein .. B. Alessandro Volta .. C. Alexander Graham Bell"},
-{"pertanyaan": "siapa penemu Piringan Hitam?","benar": "Alexander Graham Bell","benar2": "C","choice": "A. Albert Einstein .. B. Alessandro Volta .. C. Alexander Graham Bell"},
-{"pertanyaan": "siapa penemu dinamit?","benar": "Alfred Nobel","benar2": "B","choice": "A. Antonie Van Leeuwenhook .. B. Alfred Nobel .. C. Artur Fischer"},
-{"pertanyaan": "siapa penemu Lensa?","benar": "Antonie Van Leeuwenhook","benar2": "A","choice": "A. Antonie Van Leeuwenhook .. B. Alfred Nobel .. C. Artur Fischer"},
-{"pertanyaan": "Siapa penemu Dowel Fischer?","benar": "Artur Fischer","benar2": "A","choice": "A. Antonie Van Leeuwenhook .. B. Alfred Nobel .. C. Artur Fischer"},
-{"pertanyaan": "siapa penemu Lensa Kacamata?","benar": "Benyamin Franklin","benar2": "A","choice": "A. Benyamin Franklin .. B. Blaise Pascal .. C. Benjamin Holt"},
-{"pertanyaan": "siapa penemu Traktor?","benar": "Benjamin Holt","benar2": "C","choice": "A. Benyamin Franklin .. B. Blaise Pascal .. C. Benjamin Holt"},
-{"pertanyaan": "siapa penemu Mesin hitung?","benar": "Blaise Pascal","benar2": "B","choice": "A. Benyamin Franklin .. B. Blaise Pascal .. C. Benjamin Holt"},
-{"pertanyaan": "siapa penemu kertas?","benar": "Cai Lun","benar2": "B","choice": "A. Christian Buschmann .. B. Cai Lun .. C. Christopher Sholes"},
-{"pertanyaan": "siapa penemu Harmonika?","benar": "Christian Buschmann","benar2": "A","choice": "A. Christian Buschmann .. B. Cai Lun .. C. Christopher Sholes"},
-{"pertanyaan": "siapa penemu Akordion?","benar": "Christian Buschmann","benar2": "A","choice": "A. Christian Buschmann .. B. Cai Lun .. C. Christopher Sholes"},
-{"pertanyaan": "siapa penemu mesin ketik?","benar": "Christopher Sholes","benar2": "C","choice": "A. Christian Buschmann .. B. Cai Lun .. C. Christopher Sholes"},
-{"pertanyaan": "siapa penemu radio?","benar": "C. Marconi","benar2": "A","choice": "A. C. Marconi .. B. Emil Berliner .. C. Felix Hoffman"},
-{"pertanyaan": "siapa penemu Kapal Selam?","benar": "Cornelius Van Drebel","benar2": "A","choice": "A. Cornelius Van Drebel .. B. Ernst August Friedrich .. C. Dmitri Mendeleev"},
-{"pertanyaan": "siapa penemu Tabel Periodik?","benar": "Dmitri Mendeleev","benar2": "C","choice": "A. Cornelius Van Drebel .. B. Ernst August Friedrich .. C. Dmitri Mendeleev"},
-{"pertanyaan": "siapa Bapak Aljabar?","benar": "Diophantus","benar2": "B","choice": "A. Gottlieb Daimler .. B. Diophantus .. C. Irving Langmuir"},
-{"pertanyaan": "siapa yang mengembangkan penelitian Vaksin Cacar?","benar": "Edward Jenner","benar2": "A","choice": "A. Edward Jenner .. B. Gottlieb Daimler .. C. Fritz Pfleumer"},
-{"pertanyaan": "Siapa penemu Lift?","benar": "Elis G. Otis","benar2": "B","choice": "A. Levi Strauss .. B. Elis G. Otis .. C. Julius Lothar Meyer"},
-{"pertanyaan": "siapa penemu alat rekaman piringan hitam?","benar": "Emil Berliner","benar2": "C","choice": "A. C. Marconi .. B. Emil Berliner .. C. Felix Hoffman"},
-{"pertanyaan": "siapa penemu Tank?","benar": "Ernest Swinton","benar2": "A","choice": "A. Ernest Swinton .. B. George Eastman .. C. Evangelista Torricelli"},
-{"pertanyaan": "siapa penemu mikroskop elektron?","benar": "Ernst August Friedrich","benar2": "B","choice": "A. Cornelius Van Drebel .. B. Ernst August Friedrich .. C. Dmitri Mendeleev"},
-{"pertanyaan": "siapa penemu Barometer air Raksa?","benar": "Evangelista Torricelli","benar2": "C","choice": "A. Ernest Swinton .. B. George Eastman .. C. Evangelista Torricelli"},
-{"pertanyaan": "siapa penemu Aspirin","benar": "Felix Hoffman","benar2": "C","choice": "A. C. Marconi .. B. Emil Berliner .. C. Felix Hoffman"},
-{"pertanyaan": "siapa penemu mesin jet turbo?","benar": "Frank Whittle","benar2": "A","choice": "A. Frank Whittle .. B. Gottlieb Daimler .. C. Peter Henlein"},
-{"pertanyaan": "siapa penemu Sepeda?","benar": "Friedrich Karl Von Drais","benar2": "A","choice": "A. Friedrich Karl Von Drais .. B. Nikola Tesla .. C. Werner Von Siemens"},
-{"pertanyaan": "siapa penemu Pita rekam?","benar": "Fritz Pfleumer","benar2": "C","choice": "A. Edward Jenner .. B. Gottlieb Daimler .. C. Fritz Pfleumer"},
-{"pertanyaan": "siapa penemu Termometer?","benar": "Galileo Galilei","benar2": "A","choice": "A. Galileo Galilei .. B. Antonie Van Leeuwenhook .. C. Rudolf Diesel"},
-{"pertanyaan": "siapa penemu Film gulung?","benar": "George Eastman","benar2": "B","choice": "A. Ernest Swinton .. B. George Eastman .. C. Evangelista Torricelli"},
-{"pertanyaan": "siapa penemu mobil?","benar": "Gottlieb Daimler","benar2": "A","choice": "A. Gottlieb Daimler .. B. Diophantus .. C. Irving Langmuir"},
-{"pertanyaan": "siapa penemu mesin pembakaran internal?","benar": "Gattlieb Daimler","benar2": "B","choice": "A. Edward Jenner .. B. Gottlieb Daimler .. C. Fritz Pfleumer"},
-{"pertanyaan": "siapa penemu Teleskop?","benar": "Hans Lippershey","benar2": "A","choice": "A. Hans Lippershey .. B. Zacharias Jansen .. C. Otto Han"},
-{"pertanyaan": "siapa penemu mesin jet?","benar": "Hans Von Ohain","benar2": "A","choice": "A. Hans Von Ohain .. B. Henrich Focke .. C. Heinrich Gobel"},
-{"pertanyaan": "siapa pengembang sistem propulsi poros turbo untuk helikopter?","benar": "Henrich Focke","benar2": "B","choice": "A. Hans Von Ohain .. B. Henrich Focke .. C. Heinrich Gobel"},
-{"pertanyaan": "siapa penemu bola cahaya?","benar": "Heinrich Gobel","benar2": "C","choice": "A. Hans Von Ohain .. B. Henrich Focke .. C. Heinrich Gobel"},
-{"pertanyaan": "siapa penemu Teori Gelombang elektromagnetik cahaya?","benar": "Heinrich Hertz","benar2": "B","choice": "A. Hugo Junkers .. B. Heinrich Hertz .. C. Igor Ivanoch Sikorsky"},
-{"pertanyaan": "siapa penemu Elektromagnetik?","benar": "Heirinch Hertz","benar2": "B","choice": "A. Hugo Junkers .. B. Heinrich Hertz .. C. Igor Ivanoch Sikorsky"},
-{"pertanyaan": "siapa penemu pesawat udara dari bahan logam?","benar": "Hugo Junkers","benar2": "A","choice": "A. Hugo Junkers .. B. Heinrich Hertz .. C. Igor Ivanoch Sikorsky"},
-{"pertanyaan": "siapa penemu motor diesel untuk penerbangan?","benar": "Hugo Junkers","benar2": "A","choice": "A. Hugo Junkers .. B. Heinrich Hertz .. C. Igor Ivanoch Sikorsky"},
-{"pertanyaan": "Siapa penemu Helikopter Modern?","benar": "Igor Ivanoch Sikorsky","benar2": "C","choice": "A. Hugo Junkers .. B. Heinrich Hertz .. C. Igor Ivanoch Sikorsky"},
-{"pertanyaan": "siapa penemu kawat pijar?","benar": "Irving Langmuir","benar2": "C","choice": "A. Gottlieb Daimler .. B. Diophantus .. C. Irving Langmuir"},
-{"pertanyaan": "siapa penemu tabung vacum tinggi?","benar": "Irving Langmuir","benar2": "C","choice": "A. Gottlieb Daimler .. B. Diophantus .. C. Irving Langmuir"},
-{"pertanyaan": "siapa penemu hukum gravitasi?","benar": "Isaac Newton","benar2": "B","choice": "A. Murdocks .. B. Isaac Newton .. C. Michael Farady"},
-{"pertanyaan": "siapa penemu balon hidrogen?","benar": "Jacques Charles","benar2": "A","choice": "A. Jacques Charles .. B. Josep dan J. Montgolfier .. C. Joseph Lister dan 1st Baron Lister"},
-{"pertanyaan": "siapa penemu mesin uap?","benar": "James Watt","benar2": "A","choice": "A. James Watt .. B. J.L. Baird dan C.F. Jenkins .. C. Johannes Gutenberg"},
-{"pertanyaan": "siapa penemu Televisi?","benar": "J.L. Baird dan C.F. Jenkins","benar2": "B","choice": "A. James Watt .. B. J.L. Baird dan C.F. Jenkins .. C. Johannes Gutenberg"},
-{"pertanyaan": "siapa penemu mesin cetak?","benar": "Johannes Gutenberg","benar2": "C","choice": "A. James Watt .. B. J.L. Baird dan C.F. Jenkins .. C. Johannes Gutenberg"},
-{"pertanyaan": "siapa penemu Balon berudara panas?","benar": "Josep dan J. Montgolfier","benar2": "B","choice": "A. Jacques Charles .. B. Josep dan J. Montgolfier .. C. Joseph Lister dan 1st Baron Lister"},
-{"pertanyaan": "siapa penemu Antisetik untuk pembedahan?","benar": "Joseph Lister dan 1st Baron Lister","benar2": "C","choice": "A. Jacques Charles .. B. Josep dan J. Montgolfier .. C. Joseph Lister dan 1st Baron Lister"},
-{"pertanyaan": "siapa yang menciptakan tabel periodik unsur-unsur kimia?","benar": "Julius Lothar Meyer","benar2": "C","choice": "A. Levi Strauss .. B. Elis G. Otis .. C. Julius Lothar Meyer"},
-{"pertanyaan": "siapa penemu Teknologi MP3?","benar": "Karlheinz Barndenburg","benar2": "B","choice": "A. Murdocks .. B. Karlheinz Barndenburg .. C. Thomas Alva Edison"},
-{"pertanyaan": "Siapa penemu bahan celana jeans?","benar": "Levi Strauss","benar2": "A","choice": "A. Levi Strauss .. B. Elis G. Otis .. C. Julius Lothar Meyer"},
-{"pertanyaan": "siapa penemu Kamera Poalroid?","benar": "Edwin Land","benar2": "C","choice": "A. Michael Farady .. B. Murdocks .. C. Edwin Land"},
-{"pertanyaan": "siapa penemu Vaksinasi?","benar": "Louis Pasteur","benar2": "A","choice": "A. Louis Pasteur .. B. Nikolaus Otto .. C. Edwin Land"},
-{"pertanyaan": "siapa penemu dinamo?","benar": "Michael Farady","benar2": "A","choice": "A. Michael Farady .. B. Nikolaus Otto .. C. Edwin Land"},
-{"pertanyaan": "siapa penemu Kereta api?","benar": "Murdocks","benar2": "A","choice": "A. Murdocks .. B. Karlheinz Barndenburg .. C. Thomas Alva Edison"},
-{"pertanyaan": "Siapa penemu Mesin Pembakaran dalam?","benar": "Nikolaus Otto","benar2": "B","choice": "A. Michael Farady .. B. Nikolaus Otto .. C. Edwin Land"},
-{"pertanyaan": "siapa penemu Motor Listrik?","benar": "Nikola Tesla","benar2": "A","choice": "A. Nikola Tesla .. B. Friedrich Karl Von Drais .. C. Werner Von Siemens"},
-{"pertanyaan": "siapa penemu Komputer?","benar": "Konrad Zuse","benar2": "B","choice": "A. Hugo Junkers .. B. Konrad Zuse .. C. Heinrich Gobel"},
-{"pertanyaan": "siapa yang menmukan fisi nuklir?","benar": "Otto Hahn","benar2": "C","choice": "A. Hans Lippershey .. B. Zacharias Jansen .. C. Otto Hahn"},
-{"pertanyaan": "siapa yang menciptakan penerbangan meluncur?","benar": "Otto Lilienthal","benar2": "C","choice": "A. Rudolf Diesel .. B. Rene Laennec .. C. Otto Lienthal"},
-{"pertanyaan": "siapa penemu jam saku?","benar": "Peter Henlein","benar2": "C","choice": "A. Frank Whittle .. B. Gottlieb Daimler .. C. Peter Henlein"},
-{"pertanyaan": "penemu Stetoskop?","benar": "Rene Laennec","benar2": "B","choice": "A. Rudolf Diesel .. B. Rene Laennec .. C. Otto Lienthal"},
-{"pertanyaan": "siapa yang menemukan mesin pembakaran?","benar": "Rudolf Diesel","benar2": "A","choice": "A. Rudolf Diesel .. B. Rene Laennec .. C. Otto Lienthal"},
-{"pertanyaan": "siapa penemu Korek api?","benar": "Robert Koyle dan John Walker","benar2": "B","choice": "A. Samuel Hahnemann .. B. Robert Koyle dan John Walker .. C. Samuel F.B Morse"},
-{"pertanyaan": "siapa penemu Homeopati?","benar": "Samuel Hahnemann","benar2": "A","choice": "A. Samuel Hahnemann .. B. Robert Koyle dan John Walker .. C. Samuel F.B Morse"},
-{"pertanyaan": "siapa penemu Telegrap?","benar": "Samuel F.B Morse","benar2": "C","choice": "A. Samuel Hahnemann .. B. Robert Koyle dan John Walker .. C. Samuel F.B Morse"},
-{"pertanyaan": "siapa penemu Bola lampu?","benar": "Thomas Alva Edison","benar2": "C","choice": "A. Murdocks .. B. Karlheinz Barndenburg .. C. Thomas Alva Edison"},
-{"pertanyaan": "siapa penemu Proyektor Film?","benar": "Thomas Alva Edison","benar2": "B","choice": "A. Werner Von Siemens .. B. Thomas Alva Edison .. C. Wernher Von Braun"},
-{"pertanyaan": "siapa pengembang Teknologi Roket?","benar": "Wernher Von Braun","benar2": "C","choice": "A. Werner Von Siemens .. B. Thomas Alva Edison .. C. Wernher Von Braun"},
-{"pertanyaan": "siapa pendiri perusahaan Listrik dan Telekomunikasi Siemens?","benar": "Werner Von Siemens","benar2": "C","choice": "A. Nikola Tesla .. B. Friedrich Karl Von Drais .. C. Werner Von Siemens"},
-{"pertanyaan": "siapa penemu Pesawat terbang?","benar": "Wilbur dan Orville Wright","benar2": "C","choice": "A. Wiliarn Sturgeon .. B. Zacharias Jansen .. C. Wilbur dan Orville Wright"},
-{"pertanyaan": "siapa penemu Sinar-X?","benar": "Wilhelm Conrad Rontgen","benar2": "A","choice": "A. Wilhelm Conrad Rontgen .. B. Zacharias Jansen .. C. Wilbur dan Orville Wright"},
-{"pertanyaan": "siapa penemu Elektromagnet?","benar": "Wiliarn Sturgeon","benar2": "A","choice": "A. Wiliarn Sturgeon .. B. Zacharias Jansen .. C. Wilbur dan Orville Wright"},
-{"pertanyaan": "siapa penemu Mikroskop?","benar": "Zacharias Jansen","benar2": "B","choice": "A. Hans Lippershey .. B. Zacharias Jansen .. C. Otto Han"}
-]
+[{"pertanyaan":"siapa penemu teori relativitas?","benar":"Albert Einstein","benar2":"satu","choice":"satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"},{
+"pertanyaan":"siapa penemu Batu Baterai?","benar":"Alessandro Volta","benar2":"dua","choice":"satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"},{
+"pertanyaan":"siapa penemu Telepon?","benar":"Alexander Graham Bell","benar2":"tiga","choice":"satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"},{
+"pertanyaan":"siapa penemu Piringan Hitam?","benar":"Alexander Graham Bell","benar2":"tiga","choice":"satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"},{
+"pertanyaan":"siapa penemu dinamit?","benar":"Alfred Nobel","benar2":"dua","choice":"satu, Antonie Van Leeuwenhook, dua, Alfred Nobel, tiga, Artur Fischer"},{
+"pertanyaan":"siapa penemu Lensa?","benar":"Antonie Van Leeuwenhook","benar2":"satu","choice":"satu, Antonie Van Leeuwenhook, dua, Alfred Nobel, tiga, Artur Fischer"},{
+"pertanyaan":"Siapa penemu Dowel Fischer?","benar":"Artur Fischer","benar2":"satu","choice":"satu, Antonie Van Leeuwenhook, dua, Alfred Nobel, tiga, Artur Fischer"},{
+"pertanyaan":"siapa penemu Lensa Kacamata?","benar":"Benyamin Franklin","benar2":"satu","choice":"satu, Benyamin Franklin, dua, Blais Paskal, tiga, Benjamin Holt"},{
+"pertanyaan":"siapa penemu Traktor?","benar":"Benjamin Holt","benar2":"tiga","choice":"satu, Benyamin Franklin, dua, Blais Paskal, tiga, Benjamin Holt"},{
+"pertanyaan":"siapa penemu Mesin hitung?","benar":"Blais Paskal","benar2":"dua","choice":"satu, Benyamin Franklin, dua, Blais Paskal, tiga, Benjamin Holt"},{
+"pertanyaan":"siapa penemu kertas?","benar":"Cai Lun","benar2":"dua","choice":"satu, Christian Buschmann, dua, Cai Lun, tiga, Christopher Sholes"},{
+"pertanyaan":"siapa penemu Harmonika?","benar":"Christian Buschmann","benar2":"satu","choice":"satu, Christian Buschmann, dua, Cai Lun, tiga, Christopher Sholes"},{
+"pertanyaan":"siapa penemu Akordion?","benar":"Christian Buschmann","benar2":"satu","choice":"satu, Christian Buschmann, dua, Cai Lun, tiga, Christopher Sholes"},{
+"pertanyaan":"siapa penemu mesin ketik?","benar":"Christopher Sholes","benar2":"tiga","choice":"satu, Christian Buschmann, dua, Cai Lun, tiga, Christopher Sholes"},{
+"pertanyaan":"siapa penemu radio?","benar":"Che, Marconi","benar2":"satu","choice":"satu, Che, Marconi, dua, Emil Berliner, tiga, Felix Hoffman"},{
+"pertanyaan":"siapa penemu Kapal Selam?","benar":"Cornelius Van Drebel","benar2":"satu","choice":"satu, Cornelius Van Dre bel, dua, Er nest August Friedrikh, tiga, Demitri Mendelev"},{
+"pertanyaan":"siapa penemu Ta bel Periodik?","benar":"Dmitri Mendeleev","benar2":"tiga","choice":"satu, Cornelius Van Dre bel, dua, Er nest August Friedrikh, tiga, Demitri Mendelev"},{
+"pertanyaan":"siapa Bapak Aljabar?","benar":"Diophantus","benar2":"dua","choice":"satu, Gott lieb Daimler, dua, Diophantus, tiga, Irving Langmuir"},{
+"pertanyaan":"siapa yang mengembangkan penelitian Vaksin Cacar?","benar":"Edward Jenner","benar2":"satu","choice":"satu, Edward Jenner, dua, Gott lieb Daimler, tiga, Fritz Pfleumer"},{
+"pertanyaan":"Siapa penemu Lift?","benar":"Elis Ji. Otis","benar2":"dua","choice":"satu, Levi Strauss, dua, Elis Ji. Otis, tiga, Julius Lothar Meyer"},{
+"pertanyaan":"siapa penemu alat rekaman piringan hitam?","benar":"Emil Berliner","benar2":"tiga","choice":"satu, Che, Marconi, dua, Emil Berliner, tiga, Felix Hoffman"},{
+"pertanyaan":"siapa penemu Tenk?","benar":"Ernest Swinton","benar2":"satu","choice":"satu, Ernest Swinton, dua, Jorje isman, tiga, Evan jelista Torriselli"},{
+"pertanyaan":"siapa penemu mikroskop elektron?","benar":"Ernst August Friedrich","benar2":"dua","choice":"satu, Cornelius Van Dre bel, dua, Er nest August Friedrikh, tiga, Demitri Mendelev"},{
+"pertanyaan":"siapa penemu Barometer air Raksa?","benar":"Evangelista Torricelli","benar2":"tiga","choice":"satu, Ernest Swinton, dua, Jorj isman, tiga, Evan jelista Torriselli"},{
+"pertanyaan":"siapa penemu Aspirin","benar":"Felix Hoffman","benar2":"tiga","choice":"satu, Che, Marconi, dua, Emil Berliner, tiga, Felix Hoffman"},{
+"pertanyaan":"siapa penemu mesin jet turbo?","benar":"Frank Whittle","benar2":"satu","choice":"satu, Frank Whitt li, dua, Gottlieb Daimler, tiga, Peter Henlein"},{
+"pertanyaan":"siapa penemu Sepeda?","benar":"Friedrich Karl Von Drais","benar2":"satu","choice":"satu, Friedrich Karl Von Drais, dua, Nikola Tesla, tiga, Werner Von Siemens"},{
+"pertanyaan":"siapa penemu Pita rekam?","benar":"Fritz Pfleumer","benar2":"tiga","choice":"satu, Edward Jenner, dua, Gott lieb Daimler, tiga, Fritz Pfleumer"},{
+"pertanyaan":"siapa penemu Termometer?","benar":"Galileo Galilei","benar2":"satu","choice":"satu, Gali leo Galilei, dua, Antonie Van Leeuwenhook, tiga, Rudolf Diesel"},{
+"pertanyaan":"siapa penemu Film gulung?","benar":"George Eastman","benar2":"dua","choice":"satu, Ernest Swinton, dua, Jorje isman, tiga, Evan jelista Torriselli"},{
+"pertanyaan":"siapa penemu mobil?","benar":"Gottlieb Daimler","benar2":"satu","choice":"satu, Gott lieb Daimler, dua, Diophantus, tiga, Irving Langmuir"},{
+"pertanyaan":"siapa penemu mesin pembakaran internal?","benar":"Gattlieb Daimler","benar2":"dua","choice":"satu, Edward Jenner, dua, Gott lieb Daimler, tiga, Fritz Pfleumer"},{
+"pertanyaan":"siapa penemu Teleskop?","benar":"Hans Lippershey","benar2":"satu","choice":"satu, Hans Lippershey, dua, Zacharias Jansen, tiga, Otto Han"},{
+"pertanyaan":"siapa penemu mesin jet?","benar":"Hans Von Ohain","benar2":"satu","choice":"satu, Hans Von Ohain, dua, Henrich Focke, tiga, Heinrich Gobel"},{
+"pertanyaan":"siapa pengembang sistem propulsi poros turbo untuk helikopter?","benar":"Henrich Focke","benar2":"dua","choice":"satu, Hans Von Ohain, dua, Henrich Focke, tiga, Heinrich Gobel"},{
+"pertanyaan":"siapa penemu bola cahaya?","benar":"Heinrich Gobel","benar2":"tiga","choice":"satu, Hans Von Ohain, dua, Henrich Focke, tiga, Heinrich Gobel"},{
+"pertanyaan":"siapa penemu Teori Gelombang elektromagnetik cahaya?","benar":"Heinrich Hertz","benar2":"dua","choice":"satu, Hugo Junkers, dua, Heinrich Hertz, tiga, Igor Ivanoch Sikorsky"},{
+"pertanyaan":"siapa penemu Elektromagnetik?","benar":"Heirinch Hertz","benar2":"dua","choice":"satu, Hugo Junkers, dua, Heinrich Hertz, tiga, Igor Ivanoch Sikorsky"},{
+"pertanyaan":"siapa penemu pesawat udara dari bahan logam?","benar":"Hugo Junkers","benar2":"satu","choice":"satu, Hugo Junkers, dua, Heinrich Hertz, tiga, Igor Ivanoch Sikorsky"},{
+"pertanyaan":"siapa penemu motor diesel untuk penerbangan?","benar":"Hugo Junkers","benar2":"satu","choice":"satu, Hugo Junkers, dua, Heinrich Hertz, tiga, Igor Ivanoch Sikorsky"},{
+"pertanyaan":"Siapa penemu Helikopter Modern?","benar":"Igor Ivanoch Sikorsky","benar2":"tiga","choice":"satu, Hugo Junkers, dua, Heinrich Hertz, tiga, Igor Ivanoch Sikorsky"},{
+"pertanyaan":"siapa penemu kawat pijar?","benar":"Irving Langmuir","benar2":"tiga","choice":"satu, Gott lieb Daimler, dua, Diophantus, tiga, Irving Langmuir"},{
+"pertanyaan":"siapa penemu ta bung vakum tinggi?","benar":"Irving Langmuir","benar2":"tiga","choice":"satu, Gott lieb Daimler, dua, Diophantus, tiga, Irving Langmuir"},{
+"pertanyaan":"siapa penemu hukum gravitasi?","benar":"Isac Newton","benar2":"dua","choice":"satu, Murdocks, dua, Isac Nyuwton, tiga, Michael Farady"},{
+"pertanyaan":"siapa penemu balon hidrogen?","benar":"Jacques Charles","benar2":"satu","choice":"satu, Jacques Charles, dua, Josep dan Je Montgolfier, tiga, Joseph Lister dan Ferst Baron Lister"},{
+"pertanyaan":"siapa penemu mesin uap?","benar":"James Watt","benar2":"satu","choice":"satu, Jeims Watt, dua, Je eL. Baird dan Ce eF Jeyn kins, tiga, Johannes Gutenberg"},{
+"pertanyaan":"siapa penemu Televisi?","benar":"J.L. Baird dan C. F. Jenkins","benar2":"dua","choice":"satu, Jeims Watt, dua, Je eL. Baird dan Ce eF Jeyn kins, tiga, Johannes Gutenberg"},{
+"pertanyaan":"siapa penemu mesin cetak?","benar":"Johannes Gutenberg","benar2":"tiga","choice":"satu, Jeims Watt, dua, Je eL. Baird dan Ce eF Jeyn kins, tiga, Johannes Gutenberg"},{
+"pertanyaan":"siapa penemu Balon berudara panas?","benar":"Josep dan J. Montgolfier","benar2":"dua","choice":"satu, Jacques Charles, dua, Josep dan Je Montgolfier, tiga, Joseph Lister dan Ferst Baron Lister"},{
+"pertanyaan":"siapa penemu Antiseptik untuk pembedahan?","benar":"Joseph Lister dan 1st Baron Lister","benar2":"tiga","choice":"satu, Jacques Charles, dua, Josep dan Je Montgolfier, tiga, Joseph Lister dan Ferst Baron Lister"},{
+"pertanyaan":"siapa yang menciptakan tabel periodik unsur-unsur kimia?","benar":"Julius Lothar Meyer","benar2":"tiga","choice":"satu, Levi Strauss, dua, Elis Ji. Otis, tiga, Julius Lothar Meyer"},{
+"pertanyaan":"siapa penemu Teknologi eyM P tri?","benar":"Karlheinz Barndenburg","benar2":"dua","choice":"satu, Murdocks, dua, Karl heins Barndenburg, tiga, Thomas Alva Edison"},{
+"pertanyaan":"Siapa penemu bahan celana jins?","benar":"Levi Strauss","benar2":"satu","choice":"satu, Levi Strauss, dua, Elis Ji. Otis, tiga, Julius Lothar Meyer"},{
+"pertanyaan":"siapa penemu Kamera Poalroid?","benar":"Edwin Land","benar2":"tiga","choice":"satu, Michael Farady, dua, Murdocks, tiga, Edwin Land"},{
+"pertanyaan":"siapa penemu Vaksinasi?","benar":"Louis Pasteur","benar2":"satu","choice":"satu, Louis Pasteur, dua, Nikolaus Otto, tiga, Edwin Land"},{
+"pertanyaan":"siapa penemu dinamo?","benar":"Michael Farady","benar2":"satu","choice":"satu, Michael Farady, dua, Nikolaus Otto, tiga, Edwin Land"},{
+"pertanyaan":"siapa penemu Kereta api?","benar":"Murdocks","benar2":"satu","choice":"satu, Murdocks, dua, Karlheinz Barndenburg, tiga, Thomas Alva Edison"},{
+"pertanyaan":"Siapa penemu Mesin Pembakaran dalam?","benar":"Nikolaus Otto","benar2":"dua","choice":"satu, Michael Farady, dua, Nikolaus Otto, tiga, Edwin Land"},{
+"pertanyaan":"siapa penemu Motor Listrik?","benar":"Nikola Tesla","benar2":"satu","choice":"satu, Nikola Tesla, dua, Fredrih Karl Von Drais, tiga, Werner Von Simens"},{
+"pertanyaan":"siapa penemu Komputer?","benar":"Konrad Zuse","benar2":"dua","choice":"satu, Hugo Jankers, dua, Konrad Zuse, tiga, Heinrih Gobel"},{
+"pertanyaan":"siapa yang menmukan fisi nuklir?","benar":"Otto Hahn","benar2":"tiga","choice":"satu, Hans Lippershey, dua, Zacharias Jansen, tiga, Otto Hahn"},{
+"pertanyaan":"siapa yang menciptakan penerbangan meluncur?","benar":"Otto Lilienthal","benar2":"tiga","choice":"satu, Rudolf Disel, dua, Re ne Laennec, tiga, Otto Lin thal"},{
+"pertanyaan":"siapa penemu jam saku?","benar":"Peter Henlein","benar2":"tiga","choice":"satu, Frank Witel, dua, Gotlib Daimler, tiga, Peter Henlein"},{
+"pertanyaan":"siapa penemu Stetoskop?","benar":"Rene Laennec","benar2":"dua","choice":"satu, Rudolf Disel, dua, Re ne Laennec, tiga, Otto Lin thal"},{
+"pertanyaan":"siapa yang menemukan mesin pembakaran?","benar":"Rudolf Diesel","benar2":"satu","choice":"satu, Rudolf Disel, dua, Re ne Laennec, tiga, Otto Lin thal"},{
+"pertanyaan":"siapa penemu Korek api?","benar":"Robert Koyle dan John Walker","benar2":"dua","choice":"satu, Samuel Hahnemann, dua, Robert Koyle dan John Walker, tiga, Samuel efbe Morse"},{
+"pertanyaan":"siapa penemu Homeyopati?","benar":"Samuel Hahnemann","benar2":"satu","choice":"satu, Samuel Hahnemann, dua, Robert Koyle dan John Walker, tiga, Samuel efbe Morse"},{
+"pertanyaan":"siapa penemu Telegrap?","benar":"Samuel F.B Morse","benar2":"tiga","choice":"satu, Samuel Hahnemann, dua, Robert Koyle dan John Walker, tiga, Samuel efbe Morse"},{
+"pertanyaan":"siapa penemu Bola lampu?","benar":"Thomas Alva Edison","benar2":"tiga","choice":"satu, Murdocks, dua, Karlheinz Barndenburg, tiga, Thomas Alva Edison"},{
+"pertanyaan":"siapa penemu Proyektor Film?","benar":"Thomas Alva Edison","benar2":"dua","choice":"satu, Werner Von Simens, dua, Thomas Alva Edison, tiga, Wernher Von Braun"},{
+"pertanyaan":"siapa pengembang Teknologi Roket?","benar":"Wernher Von Braun","benar2":"tiga","choice":"satu, Werner Von Simens, dua, Thomas Alva Edison, tiga, Wernher Von Braun"},{
+"pertanyaan":"siapa pendiri perusaha an Listrik dan Telekomunikasi Siemens?","benar":"Werner Von Siemens","benar2":"tiga","choice":"satu, Nikola Tesla, dua, Fredrih Karl Von Drais, tiga, Werner Von Simens"},{
+"pertanyaan":"siapa penemu Pesawat terbang?","benar":"Wilbur dan Orville Wright","benar2":"tiga","choice":"satu, Wiliarn Sturgeon, dua, Zacharias Jansen, tiga, Wilbur dan Orville Wright"},{
+"pertanyaan":"siapa penemu Sinar eX?","benar":"Wilhelm Conrad Rontgen","benar2":"satu","choice":"satu, Wiliarn Sturgeon, dua, Zacharias Jansen, tiga, Wilbur dan Orville Wright"},{
+"pertanyaan":"siapa penemu Elektromagnet?","benar":"Wiliarn Sturgeon","benar2":"satu","choice":"satu, Wiliarn Sturgeon, dua, Zacharias Jansen, tiga, Wilbur dan Orville Wright"},{
+"pertanyaan":"siapa penemu Mikroskop?","benar":"Zacharias Jansen","benar2":"dua","choice":"satu, Hans Lippershey, dua, Zacharias Jansen, tiga, Otto Han"}]
