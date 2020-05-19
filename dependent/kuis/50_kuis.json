@@ -1,0 +1,302 @@
+[
+  {
+    "pertanyaan": "Dimana letak Ibukota provinsi Aceh?",
+    "benar": "Banda Aceh",
+    "benar2": "dua",
+    "choice": "satu, Meulaboh, dua, Banda Aceh, tiga, Aceh Jaya"
+  },
+  {
+    "pertanyaan": "Dimana letak Ibukota provinsi Sumatra Utara?",
+    "benar": "Medan",
+    "benar2": "satu",
+    "choice": "satu, Medan, dua, Tebing Tinggi, tiga, Pangkalpinang"
+  },
+  {
+    "pertanyaan": "Dimana letak Ibukota provinsi Sumatra Barat?",
+    "benar": "Padang",
+    "benar2": "dua",
+    "choice": "satu, Bandar Lampung, dua, Pa dang, tiga, Palembang"
+  },
+  {
+    "pertanyaan": "Dimana letak Ibukota provinsi Riau?",
+    "benar": "Pekanbaru",
+    "benar2": "satu",
+    "choice": "satu, Pekan baru, dua, Palembang, tiga, Jambi"
+  },
+  {
+    "pertanyaan": "Apa Ibukota dari Angola?",
+    "benar": "Luanda",
+    "benar2": "dua",
+    "choice": "satu, Benguela, dua, Luanda, tiga, Huila"
+  },
+  {
+    "pertanyaan": "Apa ibukota dari Benin?",
+    "benar": "Porto Novo",
+    "benar2": "tiga",
+    "choice": "satu, Alibori, dua, Mono, tiga, Porto Novo"
+  },
+  {
+    "pertanyaan": "Apa Ibukota dari Bostwana?",
+    "benar": "Gaborone",
+    "benar2": "satu",
+    "choice": "satu, Gaborone, dua, Ka nye, tiga, Dogon"
+  },
+  {
+    "pertanyaan": "Apa Ibukota dari Burkina Faso?",
+    "benar": "Ougadougou",
+    "benar2": "dua",
+    "choice": "satu, Dogon, dua, Ougadougou, tiga, Gaborone"
+  },
+  {
+    "pertanyaan": "Apa mata uang dari Alja zair?",
+    "benar": "Dinar",
+    "benar2": "dua",
+    "choice": "satu, Rand, dua, Dinar, tiga, Dirham"
+  },
+  {
+    "pertanyaan": "Apa mata uang dari Angola?",
+    "benar": "Kwanza",
+    "benar2": "tiga",
+    "choice": "satu, Freng, dua, Pula, tiga, Kwanza"
+  },
+  {
+    "pertanyaan": "Apa mata uang dari Benin?",
+    "benar": "Freng",
+    "benar2": "dua",
+    "choice": "satu, Pula, dua, Freng, tiga, Kwanza"
+  },
+  {
+    "pertanyaan": "Apa mata uang dari Bostwana?",
+    "benar": "Pula",
+    "benar2": "satu",
+    "choice": "satu, Pula, dua, Freng, tiga, Shilling"
+  },
+  {
+    "pertanyaan": "Berapa tinggi Puncak Jaya?",
+    "benar": "4860 mdpl",
+    "benar2": "dua",
+    "choice": "satu, 4150 meter, dua, 4860 meter, tiga, 2034 meter"
+  },
+  {
+    "pertanyaan": "Berapa tinggi Puncak Trikora?",
+    "benar": "4730 mdpl",
+    "benar2": "satu",
+    "choice": "satu, 4730 meter, dua, 2885 meter, tiga, 3030 meter"
+  },
+  {
+    "pertanyaan": "Berapa tinggi Puncak Iden berg?",
+    "benar": "4643 mdpl",
+    "benar2": "tiga",
+    "choice": "satu, 3765 meter, dua, 3805 meter, tiga, 4643 meter"
+  },
+  {
+    "pertanyaan": "Berapa tinggi Puncak Dom?",
+    "benar": "1332 mdpl",
+    "benar2": "dua",
+    "choice": "satu, 2190 meter, dua, 1332 meter, tiga, 2645 meter"
+  },
+  {
+    "pertanyaan": " Danau toba ada di provinsi mana?",
+    "benar": "Sumatra Utara",
+    "benar2": "tiga",
+    "choice": "satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"
+  },
+  {
+    "pertanyaan": " Danau Airhitam ada di provinsi mana?",
+    "benar": "Sumatra Selatan",
+    "benar2": "tiga",
+    "choice": "satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Selatan"
+  },
+  {
+    "pertanyaan": "Danau Akuelot ada di provinsi mana?",
+    "benar": "Nanggroe Aceh Darussalam.",
+    "benar2": "dua",
+    "choice": "satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"
+  },
+  {
+    "pertanyaan": " Danau Anggil Giji ada di provinsi mana?",
+    "benar": "Papua",
+    "benar2": "satu",
+    "choice": "satu, Papua, dua, Nanggroe Aceh Darussalam, tiga, Sumatra Utara"
+  },
+  {
+    "pertanyaan": "Ilmu yang mempelajari tentang cuaca disebut apa?",
+    "benar": "Meteorologi",
+    "benar2": "dua",
+    "choice": "satu, Kartografi, dua, Meteo rologi, tiga, Klima tologi"
+  },
+  {
+    "pertanyaan": "Ilmu yang mempelajari tentang iklim disebut apa?",
+    "benar": "Klimatologi",
+    "benar2": "tiga",
+    "choice": "satu, Psikologi, dua, Hidrologi, tiga, Klima tologi"
+  },
+  {
+    "pertanyaan": "Ilmu yang mempelajari mengenai perairan yang ada di bumi disebut apa?",
+    "benar": "Hidrologi",
+    "benar2": "dua",
+    "choice": "satu, Psikologi, dua, Hidrologi, tiga, Klima tologi"
+  },
+  {
+    "pertanyaan": "Ilmu yang mempelajari mengenai pikiran dan perilaku manusia disebut apa?",
+    "benar": "Psikologi",
+    "benar2": "satu",
+    "choice": "satu, Psikologi, dua, Hidrologi, tiga, Klima tologi"
+  },
+  {
+    "pertanyaan": "Klub manakah yang tersukses di liga premier?",
+    "benar": "Manchester United",
+    "benar2": "satu",
+    "choice": "satu, Menchester yunaited, dua, Menchester siti, tiga, Liverpool"
+  },
+  {
+    "pertanyaan": "Di negera mana Piala Dunia FIFA pertama kali dilaksanakan?",
+    "benar": "Uruguay",
+    "benar2": "dua",
+    "choice": "satu, Brasil, dua, Uruguay, tiga, Inggris"
+  },
+  {
+    "pertanyaan": "Seperti apa bentuk lapangan Bulutangkis?",
+    "benar": "persegi panjang",
+    "benar2": "dua",
+    "choice": "satu, Persegi, dua, Persegi panjang, tiga, Bujur Sangkar"
+  },
+  {
+    "pertanyaan": "Negara mana yang paling banyak menjuarai Piala Dunia?",
+    "benar": "Brasil",
+    "benar2": "satu",
+    "choice": "satu, Brasil, dua, Jerman, tiga, Italia"
+  },
+  {
+    "pertanyaan": "apa makanan khas Sumatera Utara?",
+    "benar": "Bika Ambon",
+    "benar2": "dua",
+    "choice": "satu, Seruit, dua, Bika Ambon, tiga, Pendap"
+  },
+  {
+    "pertanyaan": "satu, Ayam Cinca nee, dua, Rendang, tiga, Ikan Patin",
+    "benar": "Rendang",
+    "benar2": "tiga",
+    "choice": "satu, Ayam Cincane, dua, Rendang, tiga, Ikan Patin"
+  },
+  {
+    "pertanyaan": " apa makanan khas Jambi?",
+    "benar": "Ikan Patin",
+    "benar2": "satu",
+    "choice": "satu, Ikan Patin, dua, Sate Bandeng, tiga, Bubur Pedas Sambas"
+  },
+  {
+    "pertanyaan": " apa makanan khas Bengkulu?",
+    "benar": "Pendap",
+    "benar2": "satu",
+    "choice": "satu, Pendap, dua, Mie Bangka, tiga, Seruit"
+  },
+  {
+    "pertanyaan": "Siapa nama Presiden pertama di Indonesia?",
+    "benar": "Ir. Soekarno",
+    "benar2": "satu",
+    "choice": "satu, Insinyur Soekarno, dua, Jenderal Purnawirawan Suharto, tiga, Ju suf Habibie"
+  },
+  {
+    "pertanyaan": "Siapa nama Presiden kedua di Indonesia?",
+    "benar": "Jend. Purn. Soeharto",
+    "benar2": "dua",
+    "choice": "satu, Insinyur Soekarno, dua, Jenderal Purnawirawan Suharto, tiga, Ju suf Habibie"
+  },
+  {
+    "pertanyaan": "Siapa nama Presiden ketiga di Indonesia?",
+    "benar": "Jusuf Habibie",
+    "benar2": "tiga",
+    "choice": "satu, Insinyur Soekarno, dua, Jenderal Purnawirawan Suharto, tiga, Ju suf Habibie"
+  },
+  {
+    "pertanyaan": "Siapa nama Presiden ke empat di Indonesia?",
+    "benar": "Kyai Haji Abdurrahman Wahid atau Gus Dur",
+    "benar2": "dua",
+    "choice": "satu, Meg awati Sukarno Putri, dua, Kyai Haji Abdurrahman Wahid atau Gus Dur, tiga, Jo ko Widodo"
+  },
+  {
+    "pertanyaan": "Planet manakah yang memiliki cincin sebagai salah satu ciri khasnya?",
+    "benar": "Saturnus",
+    "benar2": "satu",
+    "choice": "satu, Jupiter, dua, Saturnus, tiga, Mars ."
+  },
+  {
+    "pertanyaan": "Planet manakah yang memiliki satelit yang dinamakan dengan Ariel?",
+    "benar": "Uranus",
+    "benar2": "dua",
+    "choice": "satu, Vhe nus, dua, Uranus, tiga, Saturnus"
+  },
+  {
+    "pertanyaan": "Dari beberapa pilihan yang akan disebutkan, Manakah yang merupakan bagian dari satelit milik Uranus?",
+    "benar": "Oberon",
+    "benar2": "satu",
+    "choice": "satu, Oberon, dua, Yuropa, tiga, Kallisto"
+  },
+  {
+    "pertanyaan": "Disebut apakah waktu yang diperlukan bumi untuk berputar pada porosnya?",
+    "benar": "Rotasi",
+    "benar2": "dua",
+    "choice": "satu, Evolusi, dua, Revolusi, tiga, Rotasi"
+  },
+  {
+    "pertanyaan": "Kapan PBB di dirikan?",
+    "benar": "24 Oktober 1945",
+    "benar2": "satu",
+    "choice": "satu, 24 Oktober Seribu sembilanratus empat puluh lima, dua, 1 Januari Seribu sembilanratus empat puluh dua, tiga, 25 April Seribu sembilanratus empat puluh lima"
+  },
+  {
+    "pertanyaan": "Di mana PBB didirikan?",
+    "benar": "San Fransisco, Amerika Serikat",
+    "benar2": "dua",
+    "choice": "satu, Tokyo, Jepang, dua, San Fransisco, Amerika Serikat, tiga, Bandung, Indonesia"
+  },
+  {
+    "pertanyaan": "Berapa jumlah negara yang saat ini telah menjadi anggota PBB?",
+    "benar": "193 Negara",
+    "benar2": "tiga",
+    "choice": "satu, 26 negara, dua, 51 negara, tiga, 193 Negara"
+  },
+  {
+    "pertanyaan": "siapa penemu Batu Baterai?",
+    "benar": "Alessandro Volta",
+    "benar2": "dua",
+    "choice": "satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"
+  },
+  {
+    "pertanyaan": "siapa penemu Telepon?",
+    "benar": "Alexander Graham Bell",
+    "benar2": "tiga",
+    "choice": "satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"
+  },
+  {
+    "pertanyaan": "siapa penemu Piringan Hitam?",
+    "benar": "Alexander Graham Bell",
+    "benar2": "tiga",
+    "choice": "satu, Albert Einstein, dua, Alessandro Volta, tiga, Alexander Graham Bell"
+  },
+  {
+    "pertanyaan": "siapa penemu dinamit?",
+    "benar": "Alfred Nobel",
+    "benar2": "dua",
+    "choice": "satu, Antonie Van Leeuwenhook, dua, Alfred Nobel, tiga, Artur Fischer"
+  },
+  {
+    "pertanyaan": "Pada tanggal berapa hari Pers Nasional diperingati?",
+    "benar": "9 Februari",
+    "benar2": "dua",
+    "choice": "satu, 6 Februari, dua, 9 Februari, tiga, 12 Februari"
+  },
+  {
+    "pertanyaan": "Hari Valentain jatuh pada tanggal berapa?",
+    "benar": "14 Februari",
+    "benar2": "tiga",
+    "choice": "satu, 12 Februari, dua, 13 Februari, tiga, 14 Februari"
+  },
+  {
+    "pertanyaan": "Pada tanggal 21 April diperingati sebagai hari apa?",
+    "benar": "Hari Kartini",
+    "benar2": "tiga",
+    "choice": "satu, Hari Kebangkitan Indonesia, dua, Hari Pahlawan Indonesia, tiga, Hari Kartini"
+  }
+]

@@ -47,14 +47,14 @@ class Kuis {
       var ini = await this.isDone(uuid).then(async (thisRes)  => {
         if(!thisRes[0]) {
           await this.createNewIdAndPlay(uuid);
-          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "yes", "data": ${JSON.stringify(quizToday)}}`);
         } 
         else if(thisRes[0].done_today) {
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
         } 
         else {
-          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
         }
       });
@@ -63,12 +63,27 @@ class Kuis {
 
     else {
       /** uncomment for unlimited attempt */
-      const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+      const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
       var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
       /** end */
     }
 
     res.send(ini);
+  }
+
+  /** this function will get called IF ONLY we get chance to play quiz today (from isDone) */
+  private getTodayQuizFifty = async (): Promise<object> => {
+    return new Promise((resolve, reject) => {
+      fs.readFile(`dependent/kuis/50_kuis.json`, (err, data) => {
+        if (err) {
+          console.log('cannot get 50 kuis');
+        } else {
+          const randomId = Math.floor(Math.random()*49);
+          const parsedData:IKuis[] = JSON.parse(data.toString());
+          resolve(parsedData[randomId]);
+        }
+      });
+    })
   }
 
   /** this function will get called IF ONLY we get chance to play quiz today (from isDone) */
