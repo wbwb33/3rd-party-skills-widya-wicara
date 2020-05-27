@@ -14,8 +14,7 @@ versioner:
   image: dennbagas/win-semver
   stage: Versioner
   rules:
-    - if: $CI_COMMIT_MESSAGE =~ /(\[build\])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build\])/ && $CI_COMMIT_BRANCH == "development"
-    - when: never
+    - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   tags:
     - bastion-runner
   # only: 
@@ -54,7 +53,7 @@ install dependencies:
   image: node:12.13.0-alpine
   stage: Install Dependencies
   rules:
-    - when: on_success
+    - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   tags:
     - bastion-runner
   # only:
@@ -120,7 +119,7 @@ Docker build:
     - docker:dind
   stage: Build Image and Push
   rules:
-    - when: on_success
+    - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   # only:
   #   refs:
   #     - development
@@ -168,7 +167,7 @@ update version:
   image: dennbagas/win-semver
   stage: Update Version
   rules:
-    - when: on_success
+    - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   # only:
   #   refs:
   #     - development
