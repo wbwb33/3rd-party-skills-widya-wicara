@@ -14,7 +14,7 @@ versioner:
   image: dennbagas/win-semver
   stage: Versioner
   rules:
-    - if: $CI_COMMIT_MESSAGE =~ /[build]/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /[build]/ && $CI_COMMIT_BRANCH == "development"
+    - if: $CI_COMMIT_MESSAGE =~ /[build]/
     - when: never
   tags:
     - bastion-runner
