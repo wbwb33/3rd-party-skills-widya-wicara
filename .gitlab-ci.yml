@@ -18,7 +18,7 @@ versioner:
     - when: never
   tags:
     - bastion-runner
-  # only:
+  # only: 
   #   refs:
   #     - development
   #     - release
