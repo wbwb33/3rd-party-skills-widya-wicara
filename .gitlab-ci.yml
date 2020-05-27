@@ -17,35 +17,13 @@ versioner:
     - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   tags:
     - bastion-runner
-  # only:
-  #   refs:
-  #     - development
-  #     - release
-  #   variables:
-  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   script:
-    # - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "release" ]]; then ENV_LEVEL="prod"; fi
-    # - echo $ENV_LEVEL
-    # - INITIATE_URL="$URL_VERSIONER/ver/get/$ENV_LEVEL"
-    # - GET_ALL=$(curl --request GET "$INITIATE_URL")
-    # - MAJOR_VERSION=$(echo "$GET_ALL" | jq '.major')
-    # - MINOR_VERSION=$(echo "$GET_ALL" | jq '.minor')
-    # - PATCH_VERSION=$(echo "$GET_ALL" | jq '.patch')
-    # - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
-    # - echo "before, $SEM_VERSION"
-    # - if [[ "$CI_COMMIT_MESSAGE" =~ (update-patch) ]]; then PATCH_VERSION=$((PATCH_VERSION+1)); elif [[ "$CI_COMMIT_MESSAGE" =~ (update-minor) ]]; then MINOR_VERSION=$((MINOR_VERSION+1)); elif [[ "$CI_COMMIT_MESSAGE" =~ (update-major) ]]; then MAJOR_VERSION=$((MAJOR_VERSION+1)); fi
-    # - SEM_VERSION="$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
-    # - echo "after, $SEM_VERSION"
-    # - echo $SEM_VERSION > version
-    # - echo $ENV_LEVEL > env_level
     - BUILD_LEVEL=$(eval $ENV_LEVEL)
     - NEXT_VERSION=$(win bump --build-level $BUILD_LEVEL)
     - echo $NEXT_VERSION
     - echo $NEXT_VERSION > next
   artifacts:
     paths:
-      # - version
-      # - env_level
       - next
     expire_in: 30 mins
 
@@ -56,62 +34,12 @@ install dependencies:
     - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
   tags:
     - bastion-runner
-  # only:
-  #   refs:
-  #     - development
-  #     - release
-  tags:
-    - bastion-runner
   cache: 
     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
     paths:
       - node_modules/
   script:
     - npm ci
-
-# docker build dev:
-#   stage: Build Image and Push
-#   only:
-#     refs:
-#       - development
-#     variables:
-#       - $CI_COMMIT_MESSAGE =~ /build-/
-#   cache: 
-#     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-#     paths:
-#       - node_modules/
-#     policy: pull
-#   before_script:
-#     - VERSION=$(cat ./version)
-#     - echo $VERSION
-#     - export TAG=$DOCKER_REPO/$TAGGING_DEV:$VERSION
-#     - echo $TAG
-#   script:  
-#     - docker build -t $TAG .
-#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-#     - docker push $TAG && docker image rm $TAG
-
-# docker build prod:
-#   stage: Build Image and Push
-#   only:
-#     refs:
-#       - release
-#     variables:
-#       - $CI_COMMIT_MESSAGE =~ /build-/
-#   cache: 
-#     key: $CI_COMMIT_REF_SLUG-$CI_PROJECT_DIR
-#     paths:
-#       - node_modules/
-#     policy: pull
-#   before_script:
-#     - VERSION=$(cat ./version)
-#     - echo $VERSION
-#     - export TAG=$DOCKER_REPO/$TAGGING_PROD:$VERSION
-#     - echo $TAG
-#   script:  
-#     - docker build -t $TAG .
-#     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin "$DOCKER_REPO"
-#     - docker push $TAG && docker image rm $TAG
 
 Docker build:
   image: docker:latest
@@ -120,12 +48,6 @@ Docker build:
   stage: Build Image and Push
   rules:
     - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
-  # only:
-  #   refs:
-  #     - development
-  #     - release
-  #   variables:
-  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   tags:
     - bastion-runner 
   cache: 
@@ -144,36 +66,11 @@ Docker build:
     - echo "$DOCKER_ALI_PASSWORD" | docker login -u "$DOCKER_ALI_USER" --password-stdin $DOCKER_REPO
     - docker push $TAG && docker image rm $TAG
 
-# update version:
-#   stage: Update Version
-#   only:
-#     refs:
-#       - development
-#       - release
-#     variables:
-#       - $CI_COMMIT_MESSAGE =~ /update-/
-#   image: dennbagas/win-semver
-#   before_script:
-#     - ENV_LEVEL=$(cat ./env_level)
-#     - echo $CI_COMMIT_MESSAGE
-#     - if [[ "$CI_COMMIT_MESSAGE" =~ (update-patch) ]]; then VER_LEVEL="patch"; elif [[ "$CI_COMMIT_MESSAGE" =~ (update-minor) ]]; then VER_LEVEL="minor"; elif [[ "$CI_COMMIT_MESSAGE" =~ (update-major) ]]; then VER_LEVEL="major"; fi
-#     - echo $VER_LEVEL
-#   script:
-#     - INITIATE_URL="$URL_VERSIONER/ver/update"
-#     - UPDATE_VERSION=$(curl --request POST "$INITIATE_URL" -H "token:$AUTH_VERSIONER" -d "env=$ENV_LEVEL&spec=$VER_LEVEL")
-#     - echo $UPDATE_VERSION
-
 update version:
   image: dennbagas/win-semver
   stage: Update Version
   rules:
     - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"
-  # only:
-  #   refs:
-  #     - development
-  #     - release
-  #   variables:
-  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   tags:
     - bastion-runner
   script:
