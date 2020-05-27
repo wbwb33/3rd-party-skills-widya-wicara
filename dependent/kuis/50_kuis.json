@@ -174,9 +174,9 @@
     "choice": "satu, Seruit, dua, Bika Ambon, tiga, Pendap"
   },
   {
-    "pertanyaan": "satu, Ayam Cinca nee, dua, Rendang, tiga, Ikan Patin",
+    "pertanyaan": "Apa makanan khas Sumatra Barat?",
     "benar": "Rendang",
-    "benar2": "tiga",
+    "benar2": "dua",
     "choice": "satu, Ayam Cincane, dua, Rendang, tiga, Ikan Patin"
   },
   {
@@ -218,7 +218,7 @@
   {
     "pertanyaan": "Planet manakah yang memiliki cincin sebagai salah satu ciri khasnya?",
     "benar": "Saturnus",
-    "benar2": "satu",
+    "benar2": "dua",
     "choice": "satu, Jupiter, dua, Saturnus, tiga, Mars ."
   },
   {
@@ -236,7 +236,7 @@
   {
     "pertanyaan": "Disebut apakah waktu yang diperlukan bumi untuk berputar pada porosnya?",
     "benar": "Rotasi",
-    "benar2": "dua",
+    "benar2": "tiga",
     "choice": "satu, Evolusi, dua, Revolusi, tiga, Rotasi"
   },
   {
