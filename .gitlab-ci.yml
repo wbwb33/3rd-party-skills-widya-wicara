@@ -13,15 +13,17 @@ stages:
 versioner:
   image: dennbagas/win-semver
   stage: Versioner
-  only:
-    refs:
-      - development
-      - release
-    variables:
-      # - $CI_COMMIT_MESSAGE =~ /update-/
-      - $CI_COMMIT_MESSAGE =~ /[build]/
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ /[build]/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /[build]/ && $CI_COMMIT_BRANCH == "development"
+    - when: never
   tags:
     - bastion-runner
+  # only:
+  #   refs:
+  #     - development
+  #     - release
+  #   variables:
+  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   script:
     # - if [[ "$CI_COMMIT_REF_NAME" == "development" ]]; then ENV_LEVEL="dev"; elif [[ "$CI_COMMIT_REF_NAME" == "release" ]]; then ENV_LEVEL="prod"; fi
     # - echo $ENV_LEVEL
@@ -51,14 +53,14 @@ versioner:
 install dependencies:
   image: node:12.13.0-alpine
   stage: Install Dependencies
+  rules:
+    - when: on_success
   tags:
     - bastion-runner
-  only:
-    refs:
-      - development
-      - release
-    # variables:
-    #   - $CI_COMMIT_MESSAGE =~ /update-/
+  # only:
+  #   refs:
+  #     - development
+  #     - release
   tags:
     - bastion-runner
   cache: 
@@ -117,12 +119,14 @@ Docker build:
   services:
     - docker:dind
   stage: Build Image and Push
-  only:
-    refs:
-      - development
-      - release
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /[build]/
+  rules:
+    - when: on_success
+  # only:
+  #   refs:
+  #     - development
+  #     - release
+  #   variables:
+  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   tags:
     - bastion-runner 
   cache: 
@@ -163,12 +167,14 @@ Docker build:
 update version:
   image: dennbagas/win-semver
   stage: Update Version
-  only:
-    refs:
-      - development
-      - release
-    variables:
-      - $CI_COMMIT_MESSAGE =~ /[build]/
+  rules:
+    - when: on_success
+  # only:
+  #   refs:
+  #     - development
+  #     - release
+  #   variables:
+  #     - $CI_COMMIT_MESSAGE =~ /[build]/
   tags:
     - bastion-runner
   script:
