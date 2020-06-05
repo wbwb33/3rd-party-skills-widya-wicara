@@ -12,12 +12,14 @@ import {
 } from './types';
 import async from 'async';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class BMKG {
   public get = async () => {
     console.log('getting weather data...');
     const a = await this.getDataFromXMLs();
-    await this.saveToIgnite(a);
+    await this.saveToDb(a);
+    // await this.saveToIgnite(a);
   }
 
   public getDataFromXMLs = async (): Promise<FormattedWeatherData[]> => {
@@ -65,6 +67,34 @@ class BMKG {
         },
       );
     })
+  }
+
+  /** save to db */
+  private saveToDb = async(dataToSave:FormattedWeatherData[]) => {
+    try {
+      // const oneDataWeather = JSON.parse(`[{"id":1}]`);
+      // oneDataWeather[0].str = JSON.stringify(data);
+      await third_party.findAll({
+        where: {
+          skill: 'weather'
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: 'weather', data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: 'weather'
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource weather');
+    }
   }
 
   /** save to ignite */

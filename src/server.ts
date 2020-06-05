@@ -16,6 +16,7 @@ import { JadwalAdzan } from './db/models/jadwal_adzan';
 import { kuis_score } from './db/models/kuis';
 import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
 import { reminder } from './db/models/reminder';
+import { third_party } from './db/models/third_party';
 
 /** ambil variabel PORT dari .env */
 const { PORT = 3000 } = process.env;
@@ -101,31 +102,31 @@ const onStateChanged = (state: any, reason: any) => {
 /** functions that get executed only at FIRST TIME */
 (async () => {
   try {
-    const igniteClient = new IgniteClient(onStateChanged);
+    // const igniteClient = new IgniteClient(onStateChanged);
 
-    await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
-    !(await kuis.cacheCheckRamadan(igniteClient))
-      ? console.log('cache kuis ramadan not exist')
-      : console.log('cache kuis ramadan already exist');
-    !(await kuis.cacheCheck(igniteClient))
-      ? console.log('cache kuis not exist')
-      : console.log('cache kuis already exist');
-    !(await hargaPangan.cacheCheck(igniteClient))
-      ? console.log('cache pangan not exist')
-      : console.log('cache pangan already exist');
-    !(await weather.cacheCheck(igniteClient))
-      ? console.log('cache weather not exist')
-      : console.log('cache weather already exist');
-    !(await hargaEmas.cacheCheck(igniteClient))
-      ? console.log('cache harga emas not exist')
-      : console.log('cache harga emas already exist');
-    !(await horoscope.cacheCheck(igniteClient))
-      ? console.log('cache horoscope not exist')
-      : console.log('cache horoscope already exist');
-    await igniteClient.disconnect();
+    // await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
+    // !(await kuis.cacheCheckRamadan(igniteClient))
+    //   ? console.log('cache kuis ramadan not exist')
+    //   : console.log('cache kuis ramadan already exist');
+    // !(await kuis.cacheCheck(igniteClient))
+    //   ? console.log('cache kuis not exist')
+    //   : console.log('cache kuis already exist');
+    // !(await hargaPangan.cacheCheck(igniteClient))
+    //   ? console.log('cache pangan not exist')
+    //   : console.log('cache pangan already exist');
+    // !(await weather.cacheCheck(igniteClient))
+    //   ? console.log('cache weather not exist')
+    //   : console.log('cache weather already exist');
+    // !(await hargaEmas.cacheCheck(igniteClient))
+    //   ? console.log('cache harga emas not exist')
+    //   : console.log('cache harga emas already exist');
+    // !(await horoscope.cacheCheck(igniteClient))
+    //   ? console.log('cache horoscope not exist')
+    //   : console.log('cache horoscope already exist');
+    // await igniteClient.disconnect();
 
     console.log(process.env.DB_DATABASE);
-    sequelize.addModels([kuis_score, kuis_score_ramadan]);
+    sequelize.addModels([kuis_score, kuis_score_ramadan, third_party]);
     await sequelize.sync({ force: false });
   } catch (e) {
     console.log(e);

@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { kuis_score_ramadan } from '../../db/models/kuis_ramadhan';
 import { igniteSupport } from '../../ignite_support';
 import { IKuis } from './types';
+import { third_party } from '../../db/models/third_party';
 
 class Kuis {
 
@@ -14,14 +15,16 @@ class Kuis {
       var ini = await this.isDone(uuid).then(async (thisRes)  => {
         if(!thisRes[0]) {
           await this.createNewIdAndPlay(uuid);
-          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          // const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = await this.getDataFromDb(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "first": "yes", "data": ${JSON.stringify(quizToday)}}`);
         } 
         else if(thisRes[0].done_today) {
           return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "no"}`);
         } 
         else {
-          const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          // const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = await this.getDataFromDb(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
         }
       });
@@ -30,12 +33,31 @@ class Kuis {
 
     else {
       /** for unlimited attempt */
-      const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+      // const quizToday = await this.getTodayQuiz(Math.floor(Math.random()*10));
+      const quizToday = await this.getDataFromDb(Math.floor(Math.random()*10));
       var ini = JSON.parse(`{"status": "success", "skill": "kuis-ramadhan", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
       /** end */
     }
 
     res.send(ini);
+  }
+
+  /** get from db */
+  private getDataFromDb = async (oneToTen: number) : Promise<object> => {
+    const a = await third_party.findOne({
+      where : {
+        skill: 'kuis_ramadan'
+      },
+      attributes: ['data'],
+      raw: true
+    }).then(result => {
+      return result!.data
+    });
+
+    return new Promise(async (resolve, reject) => {
+      const tmp = JSON.parse(a);
+      resolve(tmp[oneToTen])
+    })
   }
 
   /** this function will get called IF ONLY we get chance to play quiz today (from isDone) */

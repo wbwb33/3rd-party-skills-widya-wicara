@@ -3,6 +3,7 @@ import request from 'request-promise';
 import fs from 'fs';
 import async from 'async';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class HoroscopeData {
   public get = async () => {
@@ -44,21 +45,25 @@ class HoroscopeData {
 
         // call the api with the iteration
         const task = await request(element)
-          .then((htmlString: HoroscopeType) => {
+          .then((htmlString) => {
             // push the data arrived into the array
             // dataArray.push(htmlString);
-            const tmp: OneBigStringForHoroscopeCache = {
-              id: (id+1),
-              str: JSON.stringify(htmlString)
-            };
-            return tmp;
+            // const tmp: OneBigStringForHoroscopeCache = {
+            //   id: (id+1),
+            //   str: JSON.stringify(htmlString)
+            // };
+            // return tmp;
+            // if(id==1) htmlString.replace(/(\r\n|\n|\r)/g,"").replace('"{','{').replace('}"','}');
+            // return JSON.parse(htmlString.replace(/(\r\n|\n|\r)/g,"").replace(" : ",":"));
+            // console.log(JSON.parse(htmlString));
+            return (htmlString.replace(/(\r\n|\n|\r)/g,""));
           })
           .catch(err => {
             console.log(err);
           });
-        // console.log(task);
-        await igniteSupport.insertGeneralByIdWithoutClient(task, new OneBigStringForHoroscopeCache(), 'cacheHoroscope', (id+1));
-        // callback();
+
+        await this.saveToDb((task),id+1);
+        // await igniteSupport.insertGeneralByIdWithoutClient(task, new OneBigStringForHoroscopeCache(), 'cacheHoroscope', (id+1));
       },
       (err: any) => {
         if (err) {
@@ -77,6 +82,32 @@ class HoroscopeData {
         }
       },
     );
+  }
+
+  /** save to db */
+  private saveToDb = async(dataToSave:any, id:number) => {
+    try {
+      await third_party.findAll({
+        where: {
+          skill: `horoskop_${id}`
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: `horoskop_${id}`, data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: `horoskop_${id}`
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource horoskop');
+    }
   }
 
   /** cek if cache exist */

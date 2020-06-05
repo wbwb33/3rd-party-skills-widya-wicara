@@ -3,6 +3,7 @@ import { Request, Response } from 'express-serve-static-core';
 import { HoroscopeType, Content, Section, OneBigStringForHoroscopeCache } from './types';
 import Str from '../../utils/string';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class Horoscope {
   public index = async (req: Request, res: Response) => {
@@ -18,9 +19,11 @@ class Horoscope {
     }
 
     if (raw_sign) {
-      const data = await igniteSupport.getCacheByIdWithoutClient('cacheHoroscope',+raw_sign,new OneBigStringForHoroscopeCache());
-      const tmp: HoroscopeType = JSON.parse(data.str);
-      const parsed = JSON.parse(tmp.toString());
+      const data = await this.getDataFromDb(+raw_sign);
+      const parsed = JSON.parse(data);
+      // const data = await igniteSupport.getCacheByIdWithoutClient('cacheHoroscope',+raw_sign,new OneBigStringForHoroscopeCache());
+      // const tmp: HoroscopeType = JSON.parse(data.str);
+      // const parsed = JSON.parse(tmp.toString());
 
       const filteredContent = category
         ? parsed.content.map(
@@ -123,7 +126,24 @@ class Horoscope {
       //   }
       // });
     
-  };
+  }
+
+  private getDataFromDb = async(id:number): Promise<string> => {
+    const a = await third_party.findOne({
+      where : {
+        skill: `horoskop_${id}`
+      },
+      attributes: ['data'],
+      raw: true
+    }).then(result => {
+      return result!.data
+    });
+
+    return new Promise(async (resolve, reject) => {
+      // console.log(JSON.parse(a));
+      resolve(a.replace(/(\\")/g,'"').replace(/("{)/g,'{').replace(/(}")/g,'}').replace(' : ',':'));
+    })
+  }
 }
 
 const horoscope = new Horoscope();

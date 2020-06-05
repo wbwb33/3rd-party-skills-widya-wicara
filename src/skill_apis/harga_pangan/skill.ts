@@ -2,6 +2,7 @@ import { Request, Response } from 'express-serve-static-core';
 import fs from 'fs';
 import {IHargaPanganPerProvinsi} from './types';
 import {igniteSupport} from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class HargaPanganSkill {
   public getHargaPanganFromCache = async (req:Request,res:Response) => {
@@ -10,7 +11,8 @@ class HargaPanganSkill {
     else {
       const indexReq = +req.query.msg; /** accepted index 1-34 */
       if(indexReq>=1&&indexReq<=34){
-        const dataHarga = await this.readCacheFile((indexReq));
+        // const dataHarga = await this.readCacheFile((indexReq));
+        const dataHarga = await this.getDataFromDb(indexReq);
         res.send(JSON.parse(JSON.stringify(dataHarga)));
       }
       else {
@@ -27,6 +29,23 @@ class HargaPanganSkill {
       //   res.send(JSON.parse(JSON.stringify(dataHarga)));
       // }
     }
+  }
+  
+  /** get from db */
+  private getDataFromDb = async (id:number) : Promise<object> => {
+    const a = await third_party.findOne({
+      where : {
+        skill: `harga_pangan_${id}`
+      },
+      attributes: ['data'],
+      raw: true
+    }).then(result => {
+      return result!.data
+    });
+
+    return new Promise(async (resolve, reject) => {
+      resolve(JSON.parse(a))
+    })
   }
 
   private readCacheFile = async (index:number): Promise<IHargaPanganPerProvinsi> => {

@@ -4,6 +4,7 @@ import fs from 'fs';
 import async from 'async';
 import {IHargaPanganPerProvinsi} from './types';
 import {igniteSupport} from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class HargaPangan {
   public get = async () => {   
@@ -116,7 +117,8 @@ class HargaPangan {
               minyak:minyak,
               gula:gula
             };
-            await igniteSupport.insertGeneralByIdWithoutClient(fin,new IHargaPanganPerProvinsi(),"cacheHargaPangan",(id+1));
+            // await igniteSupport.insertGeneralByIdWithoutClient(fin,new IHargaPanganPerProvinsi(),"cacheHargaPangan",(id+1));
+            await this.saveToDb(fin,(id+1));
             // return fin;
           })
           .catch(error => {
@@ -130,6 +132,32 @@ class HargaPangan {
       }
     ));
     return errorIds;
+  }
+
+  /** save to db */
+  private saveToDb = async(dataToSave:IHargaPanganPerProvinsi, id:number) => {
+    try {
+      await third_party.findAll({
+        where: {
+          skill: `harga_pangan_${id}`
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: `harga_pangan_${id}`, data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: `harga_pangan_${id}`
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource kuis umum');
+    }
   }
 
   public get2 = async () => {

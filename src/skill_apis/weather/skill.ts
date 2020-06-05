@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { FixedWeather, OneBigStringForWeatherCache } from './types';
 import Str from '../../utils/string';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class Weather {
   public index = async (req: Request, res: Response) => {
@@ -17,7 +18,7 @@ class Weather {
     const day = req.query.hari;
 
     if (rawcity) {
-      const fixedWeather: FixedWeather[] = await this.getDataFromCache();
+      const fixedWeather: FixedWeather[] = await this.getDataFromDb();
       const weatherData = fixedWeather
         .filter((element: FixedWeather) => element.kota.includes(city))
         .map((element: FixedWeather) => {
@@ -63,6 +64,22 @@ class Weather {
     const data = await igniteSupport.getCacheByNameWithoutClient('cacheWeather',new OneBigStringForWeatherCache());
     return new Promise((resolve, reject) => {
       resolve(JSON.parse(data![0].str))
+    })
+  }
+
+  private getDataFromDb = async () : Promise<FixedWeather[]> => {
+    const a = await third_party.findOne({
+      where : {
+        skill: 'weather'
+      },
+      attributes: ['data'],
+      raw: true
+    }).then(result => {
+      return result!.data
+    });
+
+    return new Promise(async (resolve, reject) => {
+      resolve(JSON.parse(a))  
     })
   }
 }

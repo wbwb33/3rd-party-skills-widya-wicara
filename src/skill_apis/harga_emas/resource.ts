@@ -3,11 +3,13 @@ import $ from 'cheerio';
 import fs from 'fs';
 import { OneBigStringForHargaEmasCache } from './types';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class HargaEmas {
   public get = async () => {
     const tmp = await this.getHargaEmasFromWeb();
-    await this.saveToIgnite(tmp);
+    await this.saveToDb(tmp);
+    // await this.saveToIgnite(tmp);
   };
 
   private getHargaEmasFromWeb = async () :Promise<any> => {
@@ -51,6 +53,32 @@ class HargaEmas {
       })
   }
 
+  /** save to db */
+  private saveToDb = async(dataToSave:any) => {
+    try {
+      await third_party.findAll({
+        where: {
+          skill: 'harga_emas'
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: 'harga_emas', data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: 'harga_emas'
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource harga emas');
+    }
+  }
+
   /** save to ignite */
   private saveToIgnite = async(data:any) => {
     try {
@@ -60,7 +88,7 @@ class HargaEmas {
       await igniteSupport.insertGeneralWithoutClient(oneDataHargaEmas,new OneBigStringForHargaEmasCache(),'cacheHargaEmas');
     }
     catch (err) {
-      console.log(err.message+' at resource weather');
+      console.log(err.message+' at resource harga emas');
     }
   }
 

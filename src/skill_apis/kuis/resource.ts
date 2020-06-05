@@ -3,6 +3,7 @@ import { kuis_score } from '../../db/models/kuis';
 import { kuis_score_ramadan } from '../../db/models/kuis_ramadhan';
 import { IKuisOnly, IKuis } from './types';
 import { igniteSupport } from '../../ignite_support';
+import { third_party } from '../../db/models/third_party';
 
 class KuisData {
   /** delete TEN used quiz from dependent */
@@ -51,7 +52,8 @@ class KuisData {
   /** main function for NEW DAY, get kuis from dependent, save to cache */
   public get = async () => {
     const data = await this.getTodayQuiz();
-    await this.saveToIgnite(data);
+    // await this.saveToIgnite(data);
+    await this.saveToDb(data);
     await this.updateNewDay();
   }
   
@@ -69,6 +71,32 @@ class KuisData {
         done_today: true
       }
     });
+  }
+
+  /** save to db */
+  private saveToDb = async(dataToSave:IKuis[]) => {
+    try {
+      await third_party.findAll({
+        where: {
+          skill: 'kuis_umum'
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: 'kuis_umum', data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: 'kuis_umum'
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource kuis umum');
+    }
   }
 
   /** save to ignite */
@@ -135,8 +163,35 @@ class KuisData {
   /** main function for NEW DAY, get kuis from dependent, save to cache */
   public getQuizRamadan = async () => {
     const data = await this.getTodayQuizRamadan();
-    await this.saveToIgniteRamadan(data);
+    // await this.saveToIgniteRamadan(data);
+    await this.saveToDbRamadan(data);
     await this.updateNewDayRamadan();
+  }
+
+  /** save to db */
+  private saveToDbRamadan = async(dataToSave:IKuis[]) => {
+    try {
+      await third_party.findAll({
+        where: {
+          skill: 'kuis_ramadan'
+        },
+      }).then(async (data) => {
+        if(!data[0]){
+          await third_party.create({skill: 'kuis_ramadan', data: ''});
+        }
+
+        await third_party.update({
+          data: JSON.stringify(dataToSave)
+        }, {
+          where: {
+            skill: 'kuis_ramadan'
+          }
+        })
+      })
+    }
+    catch (err) {
+      console.log(err.message+' at resource kuis ramadan');
+    }
   }
 
   /** save to ignite */

@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { kuis_score } from '../../db/models/kuis';
 import { igniteSupport } from '../../ignite_support';
 import { IKuis } from './types';
+import { third_party } from '../../db/models/third_party';
 
 class Kuis {
   /** for debugging purpose only */
@@ -47,14 +48,16 @@ class Kuis {
       var ini = await this.isDone(uuid).then(async (thisRes)  => {
         if(!thisRes[0]) {
           await this.createNewIdAndPlay(uuid);
-          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+          // const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getDataFromDb(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "yes", "data": ${JSON.stringify(quizToday)}}`);
         } 
         else if(thisRes[0].done_today) {
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "no"}`);
         } 
         else {
-          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+          // const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+          const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getDataFromDb(Math.floor(Math.random()*10));
           return JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
         }
       });
@@ -63,7 +66,8 @@ class Kuis {
 
     else {
       /** uncomment for unlimited attempt */
-      const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+      // const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getTodayQuiz(Math.floor(Math.random()*10));
+      const quizToday = req.query.fifty=="fifty"?await this.getTodayQuizFifty():await this.getDataFromDb(Math.floor(Math.random()*10));
       var ini = JSON.parse(`{"status": "success", "skill": "kuis", "allow": "yes", "first": "no", "data": ${JSON.stringify(quizToday)}}`);
       /** end */
     }
@@ -83,6 +87,24 @@ class Kuis {
           resolve(parsedData[randomId]);
         }
       });
+    })
+  }
+
+  /** get from db */
+  private getDataFromDb = async (oneToTen: number) : Promise<object> => {
+    const a = await third_party.findOne({
+      where : {
+        skill: 'kuis_umum'
+      },
+      attributes: ['data'],
+      raw: true
+    }).then(result => {
+      return result!.data
+    });
+
+    return new Promise(async (resolve, reject) => {
+      const tmp = JSON.parse(a);
+      resolve(tmp[oneToTen])
     })
   }
 
