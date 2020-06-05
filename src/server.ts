@@ -99,6 +99,16 @@ const onStateChanged = (state: any, reason: any) => {
   }
 };
 
+/** backup ramadan */
+new cron.CronJob('00 00 */1 * * *', async () => {
+  const igniteClient = new IgniteClient(onStateChanged);
+  await igniteClient.connect(new IgniteClientConfiguration(BASE_IGNITE));
+  !(await kuis.cacheCheckRamadan(igniteClient))
+    ? await kuis.getQuizRamadanBackup()
+    : console.log('cache kuis ramadan already exist');
+  await igniteClient.disconnect();
+}).start();
+
 /** functions that get executed only at FIRST TIME */
 (async () => {
   try {

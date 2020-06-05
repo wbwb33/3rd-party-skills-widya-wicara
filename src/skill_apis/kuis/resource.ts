@@ -160,12 +160,32 @@ class KuisData {
     });
   }
 
+  /** backup plan */
+  public getQuizRamadanBackup = async () => {
+    fs.readFile(`dependent/kuis/ramadhan_cache.json`, async (err, data) => {
+      if (err) {
+        console.log('data dependent kuis ramadan not found');
+      } else {
+        await this.saveToIgniteRamadan(JSON.parse(data.toString()));
+      }
+    });
+  }
+
+
   /** main function for NEW DAY, get kuis from dependent, save to cache */
   public getQuizRamadan = async () => {
     const data = await this.getTodayQuizRamadan();
     // await this.saveToIgniteRamadan(data);
     await this.saveToDbRamadan(data);
     await this.updateNewDayRamadan();
+
+    fs.writeFile(`dependent/kuis/ramadhan_cache.json`, JSON.stringify(data), (err) => {
+      if(err){
+        console.log('cannot write new cache data kuis ramadan');
+      } else {
+        console.log("done write new cache data with deleted used quizes ramadan");
+      }
+    });
   }
 
   /** save to db */
