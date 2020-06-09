@@ -103,7 +103,7 @@ class NewsApi {
     else {
       //curl
       out = "curl";
-      const a = (req.query.full)?await this.getDataFromUrl(url,true):await this.getDataFromUrl(url);
+      const a = (req.query.full)?await this.getDataFromUrl(url,true):(req.query.startAtPage>0)?await this.getDataFromUrl(url,false,req.query.startAtPage):await this.getDataFromUrl(url);
       const b = JSON.parse(`{"action":"news-api.${about}","data":${JSON.stringify(a)}}`);
       (req.query.full)?res.send(a):(JSON.stringify(a)=="[]")?res.sendError("Request News API error (ECONNRESET)"):res.sendOK(b);
     }
@@ -111,7 +111,7 @@ class NewsApi {
     // console.log(`out: ${out}, about: ${about}, url: ${url}`);
   }
 
-  private getDataFromUrl = async(url: string, full?: boolean) => {
+  private getDataFromUrl = async(url: string, full?: boolean, startAtPage?: number) => {
     let dataFinal: DataOutput[] = [];
 
     var options = {
@@ -120,7 +120,7 @@ class NewsApi {
     };
     const task = await rp(options)
       .then((dataUrl: NewsApiType) => {
-        let i=0;
+        let i=(startAtPage)?(startAtPage*3):0;
         let j=0;
         const tmp = dataUrl.articles;
         do {

@@ -28,7 +28,7 @@ versioner:
     expire_in: 30 mins
 
 install dependencies:
-  image: node:12.13.0-alpine
+  image: node:lts-alpine
   stage: Install Dependencies
   rules:
     - if: $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_MESSAGE =~ /(\[build])/ && $CI_COMMIT_BRANCH == "development"

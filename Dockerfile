@@ -1,5 +1,5 @@
 # Create node image
-FROM node:12.13.0-alpine
+FROM node:lts-alpine
 
 # Create app directory
 WORKDIR /app
