@@ -122,7 +122,7 @@ class NewsApi {
       .then((dataUrl: NewsApiType) => {
         let i=(startAtPage)?(startAtPage*3):0;
         let j=0;
-        const tmp = dataUrl.articles;
+        const tmp = dataUrl.articles.filter((article) => article.content!=null);
         do {
           if(tmp[i].content&&tmp[i].source){
             dataFinal.push({
