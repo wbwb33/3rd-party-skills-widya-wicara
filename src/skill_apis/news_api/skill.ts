@@ -130,6 +130,7 @@ class NewsApi {
               source: tmp[i].source.name,
               author: tmp[i].author||"anonim",
               title: tmp[i].title,
+              url: tmp[i].url,
               content: tmp[i].content.replace(/\r?\n?\"|\r?\n|\r/g, " ").replace(/ *\([^)]*\)*/g, "").replace(/ *\[[^\]]*]/g, "").replace(/\'\"/g, "").replace(/ *\&[^\;]*\;/g,"")
             })
             j++;
