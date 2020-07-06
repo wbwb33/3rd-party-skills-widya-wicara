@@ -5,7 +5,7 @@ import { NewsApiType, DataOutput } from './types';
 class NewsApi {
   public main = async(req:Request, res:Response) => {
     const msg = req.query.msg;
-    const apiKey = "fe5b467d45584b77838b6e0d4dedd46d";
+    const apiKey = process.env.NEWS_API_KEY;
 
     let pre = msg.includes("dong")?msg.split("dong")[0]:msg;
 
@@ -50,7 +50,7 @@ class NewsApi {
       
       tgl=tmp[0].replace(/[^0-9]/g,"");
       if(tgl){
-        tgl=tgl.length==2?tgl:`${d.getMonth()+1}`;
+        // tgl=tgl.length==2?tgl:`${d.getDate()}`;
         tgl=+tgl<9?`0${tgl}`:`${tgl}`;
         tgl_from=tgl;
         tgl_to=tgl;
@@ -60,7 +60,6 @@ class NewsApi {
         // tgl_to=d.getDate()<10?`0${d.getDate()}`:`${d.getDate()}`;
         tgl_to=`${tmp_max_date}`;
       }
-
       thn=tmp[1].replace(/[^0-9]/g,"");
       thn=thn==""?`${d.getFullYear()}`:thn;
 

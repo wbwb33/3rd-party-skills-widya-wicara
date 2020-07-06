@@ -69,5 +69,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "nodemonConfig": {
+    "ignore": ["node_modules/*"]
   }
 }
