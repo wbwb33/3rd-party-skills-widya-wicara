@@ -1,6 +1,7 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
 import * as dotenv from 'dotenv';
+import https from 'https';
 dotenv.config();
 
 class AlarmSkill {
@@ -19,6 +20,14 @@ class AlarmSkill {
 
   private postToPlatform = async (username: string, dsn: string, scheduleTime: string, alertToken: string) => {
     return new Promise( async (resolve, reject) => {
+
+      const agent = new https.Agent({
+        ecdhCurve: 'auto',
+        ciphers: 'ALL',
+        secureProtocol: 'TLS_method',
+        rejectUnauthorized: false,
+      });
+      
       const { PLATFORM_URL } = process.env;
 
       var options = {
@@ -37,9 +46,9 @@ class AlarmSkill {
                 assetUrl: 'File://usr/misc/resources/alarm/WidyawicaraAlarm03.mp3',
               },
             ],
-          },
-
-        }
+          }
+        },
+        agent
       };
 
       console.log(options);
