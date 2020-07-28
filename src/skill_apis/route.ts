@@ -10,8 +10,9 @@ import ReminderSkill from './reminder/skill';
 import HargaEmasSkill from './harga_emas/skill';
 import HargaPanganSkill from './harga_pangan/skill';
 import currencySkill from './currency/skill';
-import { newsApi } from './news_api/skill';
 import KuisRamadhan from './kuis/skill.ramadan';
+import { newsApi } from './news_api/skill';
+import { alarmSkill } from './alarm/skill';
 
 const route = new Endpoint();
 
@@ -36,6 +37,7 @@ export default [
   route.get('/news-api',newsApi.main),
   route.get('/play-quiz-ramadhan', KuisRamadhan.canWePlayQuiz),
   route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
+  route.post('/set-alarm', alarmSkill.index),
   // route.post('/kuis-answered', Kuis.updateScore),
   // route.post('/play-quiz', Kuis.canWePlayQuiz)
 ];
