@@ -37,7 +37,7 @@ export default [
   route.get('/news-api',newsApi.main),
   route.get('/play-quiz-ramadhan', KuisRamadhan.canWePlayQuiz),
   route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
-  route.post('/set-alarm', alarmSkill.index),
+  route.get('/set-alarm', alarmSkill.index),
   // route.post('/kuis-answered', Kuis.updateScore),
   // route.post('/play-quiz', Kuis.canWePlayQuiz)
 ];

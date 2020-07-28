@@ -10,6 +10,7 @@ class AlarmSkill {
     const scheduleTime = req.body.scheduleTime;
     const alertToken = req.body.alertToken;
 
+    console.log(username+dsn+scheduleTime+alertToken);
     const response = await this.postToPlatform(username,dsn,scheduleTime,alertToken);
 
     res.send(JSON.parse(`{"status": "success", "message": "Set Alarm", "response": "${response}"}`));
