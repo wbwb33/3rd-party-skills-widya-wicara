@@ -24,7 +24,7 @@ class AlarmSkill {
       var options = {
         method: 'POST',
         uri: `${PLATFORM_URL}/api/device/v1/alarm`,
-        body: {
+        form: {
           header: { namespace: 'Alerts', name: 'SetAlert' },
           payload: {
             username,
