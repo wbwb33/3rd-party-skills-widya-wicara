@@ -99,6 +99,8 @@ class AlarmSkill {
         },
         httpsAgent: agent,
         responseType: 'json',
+        timeout: 100000,
+        validateStatus: (status) => (status >= 200 && status < 300)
       }).then((body) => {
           console.log(`ALARM SET: ${JSON.stringify(body)}`);
           resolve(JSON.stringify(body));
