@@ -102,8 +102,8 @@ class AlarmSkill {
         timeout: 100000,
         validateStatus: (status) => (status >= 200 && status < 300)
       }).then((body) => {
-          console.log(`ALARM SET: ${JSON.stringify(body)}`);
-          resolve(JSON.stringify(body));
+          console.log(`ALARM SET: ${body}`);
+          resolve(body);
       }).catch((err) => {
           console.log(err);
           reject(err);
