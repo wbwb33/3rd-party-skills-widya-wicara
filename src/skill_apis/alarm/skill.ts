@@ -1,5 +1,6 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
+import Axios, { AxiosResponse } from 'axios';
 import * as dotenv from 'dotenv';
 import https from 'https';
 dotenv.config();
@@ -12,7 +13,8 @@ class AlarmSkill {
     const alertToken = req.body.alertToken;
 
     console.log(username+dsn+scheduleTime+alertToken);
-    const response = await this.postToPlatform(username,dsn,scheduleTime,alertToken);
+    // const response = await this.postToPlatform(username,dsn,scheduleTime,alertToken);
+    const response = await this.postToPlatformAxios(username,dsn,scheduleTime,alertToken);
 
     res.send(JSON.parse(`{"status": "success", "message": "Set Alarm", "response": "${response}"}`));
 
@@ -59,6 +61,48 @@ class AlarmSkill {
           resolve(JSON.stringify(body));
         })
         .catch((err) => {
+          console.log(err);
+          reject(err);
+        });
+    })
+  }
+
+  private postToPlatformAxios = async (username: string, dsn: string, scheduleTime: string, alertToken: string) => {
+    return new Promise( async (resolve, reject) => {
+
+      const agent = new https.Agent({
+        ecdhCurve: 'auto',
+        ciphers: 'ALL',
+        secureProtocol: 'TLS_method',
+        rejectUnauthorized: false,
+      });
+      
+      const { PLATFORM_URL } = process.env;
+
+      await Axios.request({
+        url: `${PLATFORM_URL}/api/device/v1/alarm`,
+        method: 'POST',
+        data: {
+          header: { namespace: 'Alerts', name: 'SetAlert' },
+          payload: {
+            username,
+            deviceUUID: dsn,
+            scheduleTime,
+            alertToken,
+            assets: [
+              {
+                assetId: 'alarm1',
+                assetUrl: 'File://usr/misc/resources/alarm/WidyawicaraAlarm03.mp3',
+              },
+            ],
+          },
+        },
+        httpsAgent: agent,
+        responseType: 'json',
+      }).then((body) => {
+          console.log(`ALARM SET: ${JSON.stringify(body)}`);
+          resolve(JSON.stringify(body));
+      }).catch((err) => {
           console.log(err);
           reject(err);
         });
