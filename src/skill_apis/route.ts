@@ -13,6 +13,7 @@ import currencySkill from './currency/skill';
 import KuisRamadhan from './kuis/skill.ramadan';
 import { newsApi } from './news_api/skill';
 import { alarmSkill } from './alarm/skill';
+import { kuis_ } from './kuis_/skill';
 
 const route = new Endpoint();
 
@@ -38,6 +39,8 @@ export default [
   route.get('/play-quiz-ramadhan', KuisRamadhan.canWePlayQuiz),
   route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
   route.get('/set-alarm', alarmSkill.index),
+  route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
+  route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
   // route.post('/kuis-answered', Kuis.updateScore),
   // route.post('/play-quiz', Kuis.canWePlayQuiz)
 ];
