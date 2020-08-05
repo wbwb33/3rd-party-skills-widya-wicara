@@ -14,6 +14,7 @@ import KuisRamadhan from './kuis/skill.ramadan';
 import { newsApi } from './news_api/skill';
 import { alarmSkill } from './alarm/skill';
 import { kuis_ } from './kuis_/skill';
+import newsApiBbcSkill from './news_api_bbc/skill';
 
 const route = new Endpoint();
 
@@ -41,6 +42,5 @@ export default [
   route.get('/set-alarm', alarmSkill.index),
   route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
-  // route.post('/kuis-answered', Kuis.updateScore),
-  // route.post('/play-quiz', Kuis.canWePlayQuiz)
+  route.get('/news-api/bbc',newsApiBbcSkill.index)
 ];

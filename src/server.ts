@@ -2,20 +2,19 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import http from 'http';
 import cron from 'cron';
-import weather from './skill_apis/weather/resource';
 import expressApp from './app';
+
+import weather from './skill_apis/weather/resource';
 import horoscope from './skill_apis/horoscope/resource';
 import kuis from './skill_apis/kuis/resource';
-import jadwalAdzan from './skill_apis/jadwal_salat/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
 import hargaPangan from './skill_apis/harga_pangan/resource';
+import newsApiBbc from './skill_apis/news_api_bbc/resource';
 
 /** import sequelize connection and the models */
 import { sequelize } from './sequelize';
-import { JadwalAdzan } from './db/models/jadwal_adzan';
 import { kuis_score } from './db/models/kuis';
 import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
-import { reminder } from './db/models/reminder';
 import { third_party } from './db/models/third_party';
 
 /** ambil variabel PORT dari .env */
@@ -52,6 +51,11 @@ new cron.CronJob('00 06 00 * * *', () => {
   kuis.get();
 }).start();
 
+/** get news bbc for today and save it to db at 06.30 */
+// new cron.CronJob('00 30 06 * * *', () => {
+//   newsApiBbc.get();
+// }).start();
+
 /** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
 const startQuiz = new Date();
 startQuiz.setUTCFullYear(2020, 4, 18);
@@ -72,16 +76,6 @@ if (now.getTime() >= startQuiz.getTime()) {
     }).start();
   }).start();
 }
-
-/** get jadwal adzan for today at 01.00 */
-// new cron.CronJob('00 00 01 * * *', async () => {
-//   try {
-//     const d = new Date();
-//     await jadwalAdzan.index();
-//   } catch (e) {
-//     console.log(e);
-//   }
-// });
 
 /** ignite support */
 import IgniteClient from 'apache-ignite-client';
