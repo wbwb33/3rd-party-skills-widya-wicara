@@ -1,12 +1,13 @@
+import { Request, Response } from 'express-serve-static-core';
 import crypto from 'crypto-js';
 import ignite from 'apache-ignite-client';
 
 class NewsApiBbcSkill {
 
-  public index = async(): Promise<object> => {
+  public index = async(req:Request, res:Response) => {
     const data = JSON.parse(await this.getFromCache());
     console.log("Get BBC Audio list","GettingResource");
-    return data;
+    res.send(data);
   }
 
   private getFromCache = async(): Promise<string> => {
