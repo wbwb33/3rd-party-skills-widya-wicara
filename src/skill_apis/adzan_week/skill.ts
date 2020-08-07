@@ -9,6 +9,7 @@ class AdzanWeekSkill {
     const addZero = async(int:number) => { return int>9?`${int}`:`0${int}`}
 
     const kota = req.query.kota;
+    const offset = isNaN(+req.query.offset)?7:+req.query.offset;
     const year = req.query.year;
     const month = await addZero(req.query.month);
     const day = await addZero(req.query.day);
@@ -16,7 +17,11 @@ class AdzanWeekSkill {
 
     const tanggal = `${year}-${month}-${day}`;
 
-    const tmp: any = await this.getFromApiBanghasan(kota,tanggal);
+    const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal);
+
+    const flatten = tmp.flat(1);
+
+    // const flatten = moment('2020-08-12T04:31:00+0700').utc();
  
     // const arrayHasilApi = [
     //   "2020-08-07T04:32:00+0000",
@@ -51,10 +56,10 @@ class AdzanWeekSkill {
     //   "2020-08-12T18:52:00+0000"
     // ];
 
-    res.send(tmp.flat(1));
+    res.send(flatten);
   }
 
-  private getFromApiBanghasan = async(kota: number, tanggal: string) => {
+  private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string) => {
     return new Promise( async (resolve, reject) => {
       const tanggalNextSix = [
         moment(tanggal,"YYYY-MM-DD").add(1,'days').format('YYYY-MM-DD'),
@@ -65,19 +70,19 @@ class AdzanWeekSkill {
         moment(tanggal,"YYYY-MM-DD").add(6,'days').format('YYYY-MM-DD'),
       ]
 
-      const dataToReturn = await this.asyncGet(tanggalNextSix,kota);
+      const dataToReturn = await this.asyncGet(tanggalNextSix,kota,offset);
 
       resolve(dataToReturn);
     })
   }
 
-  private asyncGet = async(array: any, kota:number) => {
+  private asyncGet = async(array: any, kota:number, offset:number) => {
     return new Promise( async (resolve,reject) => {
       let dataToReturn: any[] = [];
       
       let requests = await array.map((item: any) => {
         return new Promise( async(resolve,reject) => {
-          try {dataToReturn.push(await this.asyncGet2Step(kota,item,resolve));}
+          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,resolve));}
           catch (error) {console.log(error);}
         });
       })
@@ -86,16 +91,18 @@ class AdzanWeekSkill {
     })
   }
 
-  private asyncGet2Step = async(kota:number,item:string, cb: any) => {
+  private asyncGet2Step = async(kota:number,offset:number,item:string, cb: any) => {
     let dataToReturn: string[] = [];
+    let zeroOffset = ((Math.abs(offset)+'').length>1)?Math.abs(offset):`0${Math.abs(offset)}`;
+    let isoOffset = (offset<0)?`:00-${zeroOffset}00`:`:00+${zeroOffset}00`;
 
     await rp({uri:`http://api.banghasan.com/sholat/format/json/jadwal/kota/${kota}/tanggal/${item}`,json:true})
       .then((body) => {
-        dataToReturn.push(item+'T'+body.jadwal.data.subuh+':00+0000');
-        dataToReturn.push(item+'T'+body.jadwal.data.dzuhur+':00+0000');
-        dataToReturn.push(item+'T'+body.jadwal.data.ashar+':00+0000');
-        dataToReturn.push(item+'T'+body.jadwal.data.maghrib+':00+0000');
-        dataToReturn.push(item+'T'+body.jadwal.data.isya+':00+0000');
+        dataToReturn.push(moment(item+'T'+body.jadwal.data.subuh+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
+        dataToReturn.push(moment(item+'T'+body.jadwal.data.dzuhur+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
+        dataToReturn.push(moment(item+'T'+body.jadwal.data.ashar+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
+        dataToReturn.push(moment(item+'T'+body.jadwal.data.maghrib+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
+        dataToReturn.push(moment(item+'T'+body.jadwal.data.isya+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
         cb();
       })
       .catch(err => {
