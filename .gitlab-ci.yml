@@ -40,7 +40,7 @@ install dependencies:
       - node_modules/
   script:
     - npm ci
-
+ 
 Docker build:
   image: docker:latest
   services:
