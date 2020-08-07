@@ -17,7 +17,7 @@ class AdzanWeekSkill {
     const tanggal = `${year}-${month}-${day}`;
 
     const tmp: any = await this.getFromApiBanghasan(kota,tanggal);
-
+ 
     // const arrayHasilApi = [
     //   "2020-08-07T04:32:00+0000",
     //   "2020-08-07T11:47:00+0000",
