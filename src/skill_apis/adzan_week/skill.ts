@@ -1,7 +1,7 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
 import * as dotenv from 'dotenv';
-import moment from 'moment';
+import moment, { unix } from 'moment';
 dotenv.config();
 
 class AdzanWeekSkill {
@@ -20,6 +20,10 @@ class AdzanWeekSkill {
     const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal);
 
     const flatten = tmp.flat(1);
+
+    const sorter = flatten.sort((a: any,b: any)=>{
+      return (moment(a).unix()) - (moment(b).unix());
+    })
 
     // const flatten = moment('2020-08-12T04:31:00+0700').utc();
  
@@ -56,7 +60,7 @@ class AdzanWeekSkill {
     //   "2020-08-12T18:52:00+0000"
     // ];
 
-    res.send(flatten);
+    res.send(sorter);
   }
 
   private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string) => {
