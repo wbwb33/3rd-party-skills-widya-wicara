@@ -5,6 +5,47 @@ import moment, { unix } from 'moment';
 dotenv.config();
 
 class AdzanWeekSkill {
+  public setTodayToApps = async (req: Request, res: Response) => {
+    const addZero = async(int:number) => { return int>9?`${int}`:`0${int}`}
+    
+    const uuid = req.query.uuid;
+    const subuh = req.query.subuh;
+    const dzuhur = req.query.dzuhur;
+    const ashar = req.query.ashar;
+    const maghrib = req.query.maghrib;
+    const isya = req.query.isya;
+    const year = req.query.year;
+    const month = await addZero(req.query.month);
+    const day = await addZero(req.query.day);
+    const offset = isNaN(+req.query.offset)?7:+req.query.offset;
+
+    const subuhFormatter = `${year}-${month}-${day}`+'T'+subuh+`:00+0${offset}00`;
+    const dzuhurFormatter = `${year}-${month}-${day}`+'T'+dzuhur+`:00+0${offset}00`;
+    const asharFormatter = `${year}-${month}-${day}`+'T'+ashar+`:00+0${offset}00`;
+    const maghribFormatter = `${year}-${month}-${day}`+'T'+maghrib+`:00+0${offset}00`;
+    const isyaFormatter = `${year}-${month}-${day}`+'T'+isya+`:00+0${offset}00`;
+
+    const subuhPlatform = moment(subuhFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    const dzuhurPlatform = moment(dzuhurFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    const asharPlatform = moment(asharFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+
+    const subuhApps = `${year}-${month}-${day}`+' '+subuh+':00';
+    const dzuhurApps = `${year}-${month}-${day}`+' '+dzuhur+':00';
+    const asharApps = `${year}-${month}-${day}`+' '+ashar+':00';
+    const maghribApps = `${year}-${month}-${day}`+' '+maghrib+':00';
+    const isyaApps = `${year}-${month}-${day}`+' '+isya+':00';
+
+    this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
+    this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
+    this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
+    this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
+    this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+
+    return(JSON.parse(`{"status":"success"}`));
+  }
+
   public index = async (req: Request, res: Response) => {
     const addZero = async(int:number) => { return int>9?`${int}`:`0${int}`}
 

@@ -42,6 +42,7 @@ export default [
   route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
   route.get('/set-alarm', alarmSkill.index),
   route.get('/adzan-week', adzanWeekSkill.index),
+  route.get('/adzan-week/set-today-to-apps', adzanWeekSkill.setTodayToApps),
   route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
   route.get('/news-api/bbc',newsApiBbcSkill.index)
