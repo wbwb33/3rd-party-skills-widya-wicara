@@ -13,11 +13,12 @@ class AdzanWeekSkill {
     const year = req.query.year;
     const month = await addZero(req.query.month);
     const day = await addZero(req.query.day);
-    // const uuid = req.query.uuid;
+    const uuid = req.query.uuid;
+    const setDay = req.query.setday?req.query.setday:7;
 
     const tanggal = `${year}-${month}-${day}`;
 
-    const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal);
+    const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal,uuid,setDay);
 
     const flatten = tmp.flat(1);
 
@@ -63,30 +64,34 @@ class AdzanWeekSkill {
     res.send(sorter);
   }
 
-  private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string) => {
+  private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string, uuid: string, setDay:number) => {
     return new Promise( async (resolve, reject) => {
-      const tanggalNextSix = [
-        moment(tanggal,"YYYY-MM-DD").add(1,'days').format('YYYY-MM-DD'),
-        moment(tanggal,"YYYY-MM-DD").add(2,'days').format('YYYY-MM-DD'),
-        moment(tanggal,"YYYY-MM-DD").add(3,'days').format('YYYY-MM-DD'),
-        moment(tanggal,"YYYY-MM-DD").add(4,'days').format('YYYY-MM-DD'),
-        moment(tanggal,"YYYY-MM-DD").add(5,'days').format('YYYY-MM-DD'),
-        moment(tanggal,"YYYY-MM-DD").add(6,'days').format('YYYY-MM-DD'),
-      ]
+      let tanggalNextSix: any[] = [];
+        // moment(tanggal,"YYYY-MM-DD").add(1,'days').format('YYYY-MM-DD'),
+        // moment(tanggal,"YYYY-MM-DD").add(2,'days').format('YYYY-MM-DD'),
+        // moment(tanggal,"YYYY-MM-DD").add(3,'days').format('YYYY-MM-DD'),
+        // moment(tanggal,"YYYY-MM-DD").add(4,'days').format('YYYY-MM-DD'),
+        // moment(tanggal,"YYYY-MM-DD").add(5,'days').format('YYYY-MM-DD'),
+        // moment(tanggal,"YYYY-MM-DD").add(6,'days').format('YYYY-MM-DD'),
+      // ]
 
-      const dataToReturn = await this.asyncGet(tanggalNextSix,kota,offset);
+      for(let i=0;i<(setDay-1);i++){
+        tanggalNextSix.push(moment(tanggal,"YYYY-MM-DD").add((i+1),'days').format('YYYY-MM-DD'));
+      }
+
+      const dataToReturn = await this.asyncGet(tanggalNextSix,kota,offset,uuid);
 
       resolve(dataToReturn);
     })
   }
 
-  private asyncGet = async(array: any, kota:number, offset:number) => {
+  private asyncGet = async(array: any, kota:number, offset:number, uuid:string) => {
     return new Promise( async (resolve,reject) => {
       let dataToReturn: any[] = [];
       
       let requests = await array.map((item: any) => {
         return new Promise( async(resolve,reject) => {
-          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,resolve));}
+          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,uuid,resolve));}
           catch (error) {console.log(error);}
         });
       })
@@ -95,18 +100,42 @@ class AdzanWeekSkill {
     })
   }
 
-  private asyncGet2Step = async(kota:number,offset:number,item:string, cb: any) => {
+  private asyncGet2Step = async(kota:number,offset:number,item:string,uuid:string,cb:any) => {
     let dataToReturn: string[] = [];
     let zeroOffset = ((Math.abs(offset)+'').length>1)?Math.abs(offset):`0${Math.abs(offset)}`;
     let isoOffset = (offset<0)?`:00-${zeroOffset}00`:`:00+${zeroOffset}00`;
 
     await rp({uri:`http://api.banghasan.com/sholat/format/json/jadwal/kota/${kota}/tanggal/${item}`,json:true})
       .then((body) => {
-        dataToReturn.push(moment(item+'T'+body.jadwal.data.subuh+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
-        dataToReturn.push(moment(item+'T'+body.jadwal.data.dzuhur+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
-        dataToReturn.push(moment(item+'T'+body.jadwal.data.ashar+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
-        dataToReturn.push(moment(item+'T'+body.jadwal.data.maghrib+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
-        dataToReturn.push(moment(item+'T'+body.jadwal.data.isya+isoOffset).utc().format("YYYY-MM-DDTHH:mm:00+0000"));
+        const subuhFormatter = item+'T'+body.jadwal.data.subuh+isoOffset;
+        const dzuhurFormatter = item+'T'+body.jadwal.data.dzuhur+isoOffset;
+        const asharFormatter = item+'T'+body.jadwal.data.ashar+isoOffset;
+        const maghribFormatter = item+'T'+body.jadwal.data.maghrib+isoOffset;
+        const isyaFormatter = item+'T'+body.jadwal.data.isya+isoOffset;
+
+        const subuhPlatform = moment(subuhFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        const dzuhurPlatform = moment(dzuhurFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        const asharPlatform = moment(asharFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+
+        const subuhApps = item+' '+body.jadwal.data.subuh+':00';
+        const dzuhurApps = item+' '+body.jadwal.data.dzuhur+':00';
+        const asharApps = item+' '+body.jadwal.data.ashar+':00';
+        const maghribApps = item+' '+body.jadwal.data.maghrib+':00';
+        const isyaApps = item+' '+body.jadwal.data.isya+':00';
+        
+        dataToReturn.push(subuhPlatform);
+        dataToReturn.push(dzuhurPlatform);
+        dataToReturn.push(asharPlatform);
+        dataToReturn.push(maghribPlatform);
+        dataToReturn.push(isyaPlatform);
+
+        this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
+        this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
+        this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
+        this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
+        this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
         cb();
       })
       .catch(err => {
@@ -114,6 +143,30 @@ class AdzanWeekSkill {
       })
 
     return dataToReturn;
+  }
+
+  private asyncPostToApps = async(dateTimeApps: string, dateTimePlatform: string, namaSalat: string, uuid: string) => {
+    var options = {
+      method: 'GET',
+      uri: `http://${process.env.BASE_BACKEND}/function/reminder`,
+      form: {
+        label:`waktu ${namaSalat} telah tiba`,
+        ringtone:'default.mp3',
+        datetime:dateTimeApps,
+        device_uuid:uuid,
+        alert_token:`${uuid}-${namaSalat}${dateTimePlatform}`
+      }
+    }
+
+    await rp(options)
+      .then(function (body) {
+        // success
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    // console.log(`succesfully added 1 week of jadwal salat to Apps with id: ${uuid}`);
   }
 
 }
