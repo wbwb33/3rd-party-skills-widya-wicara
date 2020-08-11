@@ -3,6 +3,7 @@ import rp from 'request-promise';
 import * as dotenv from 'dotenv';
 import moment from 'moment';
 import adzanWeekResource from './resource';
+import { response } from 'express';
 dotenv.config();
 
 class AdzanWeekSkill {
@@ -46,7 +47,7 @@ class AdzanWeekSkill {
 
     adzanWeekResource.createOrUpdateUuid(uuid, 1);
 
-    return(JSON.parse(`{"status":"success"}`));
+    res.send(JSON.parse(`{"status":"success", "action":"set-jadwal-salat-today-to-apps"}`));
   }
 
   public index = async (req: Request, res: Response) => {
@@ -207,6 +208,7 @@ class AdzanWeekSkill {
     await rp(options)
       .then(function (body) {
         // success
+        console.log(`successfully added 1 day of jadwal salat to Apps with id: ${uuid}`);
       })
       .catch(function (err) {
         console.log(err);
