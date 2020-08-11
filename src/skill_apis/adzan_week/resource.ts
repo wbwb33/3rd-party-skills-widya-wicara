@@ -9,6 +9,7 @@ import { CreateAdzanStatus} from '../../@types/skills/adzan_status_type';
 class AdzanWeekResource {
   public createOrUpdateUuid = async (uuid: string, last: number) => {
 
+    const week = last==7?true:false;
     const lastYear = moment().add(last,'days').format('YYYY');
     const lastMonth = moment().add(last,'days').format('M');
     const lastDay = moment().add(last,'days').format('D');
@@ -20,13 +21,13 @@ class AdzanWeekResource {
     })
       .then((body) => { 
         return AdzanStatus.update({
-          lastYear,lastMonth,lastDay
+          lastYear,lastMonth,lastDay,week
         }, {
           where: {
             uuid
         }})
           .then((body) => { 
-            console.log("sukses update");
+            console.log("sukses update status adzan by uuid");
             return;
           })
           .catch((err) => { console.log(err);})

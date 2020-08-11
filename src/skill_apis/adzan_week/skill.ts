@@ -208,7 +208,6 @@ class AdzanWeekSkill {
     await rp(options)
       .then(function (body) {
         // success
-        console.log(`successfully added 1 day of jadwal salat to Apps with id: ${uuid}`);
       })
       .catch(function (err) {
         console.log(err);
