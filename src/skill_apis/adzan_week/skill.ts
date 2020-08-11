@@ -1,7 +1,8 @@
 import { Request, Response } from 'express-serve-static-core';
 import rp from 'request-promise';
 import * as dotenv from 'dotenv';
-import moment, { unix } from 'moment';
+import moment from 'moment';
+import adzanWeekResource from './resource';
 dotenv.config();
 
 class AdzanWeekSkill {
@@ -42,6 +43,8 @@ class AdzanWeekSkill {
     this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
     this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
     this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+
+    adzanWeekResource.createOrUpdateUuid(uuid, 1);
 
     return(JSON.parse(`{"status":"success"}`));
   }
@@ -101,6 +104,8 @@ class AdzanWeekSkill {
     //   "2020-08-12T17:41:00+0000",
     //   "2020-08-12T18:52:00+0000"
     // ];
+
+    adzanWeekResource.createOrUpdateUuid(uuid, 7);
 
     res.send(sorter);
   }
@@ -209,6 +214,21 @@ class AdzanWeekSkill {
 
     // console.log(`succesfully added 1 week of jadwal salat to Apps with id: ${uuid}`);
   }
+
+  public getStatus = async(req: Request, res: Response) => {
+    const a = await adzanWeekResource.get(req.query.uuid);
+
+    if(a == null) var message = `not-found`;
+    else var message = `${a.week==true?"1 minggu":"1 hari"}`;
+
+    res.send(`{"status":"success","action":"get-status-set-adzan","message":"${message}"}`)
+  }
+
+
+  // public createOrUpdateUuid = async( req: Request, res: Response) => {
+  //   adzanWeekResource.createOrUpdateUuid(req.query.uuid, req.query.last);
+  //   res.send({});
+  // }
 
 }
 

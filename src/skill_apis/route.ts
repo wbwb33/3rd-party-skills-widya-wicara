@@ -45,5 +45,7 @@ export default [
   route.get('/adzan-week/set-today-to-apps', adzanWeekSkill.setTodayToApps),
   route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
-  route.get('/news-api/bbc',newsApiBbcSkill.index)
+  route.get('/news-api/bbc',newsApiBbcSkill.index),
+
+  route.get('/adzan-week/test1', adzanWeekSkill.getStatus),
 ];

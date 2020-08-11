@@ -9,13 +9,14 @@ import horoscope from './skill_apis/horoscope/resource';
 import kuis from './skill_apis/kuis/resource';
 import hargaEmas from './skill_apis/harga_emas/resource';
 import hargaPangan from './skill_apis/harga_pangan/resource';
-import newsApiBbc from './skill_apis/news_api_bbc/resource';
+import adzanWeekResource from './skill_apis/adzan_week/resource';
 
 /** import sequelize connection and the models */
 import { sequelize } from './sequelize';
 import { kuis_score } from './db/models/kuis';
 import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
 import { third_party } from './db/models/third_party';
+import { AdzanStatus } from './db/models/adzan_status';
 
 /** ambil variabel PORT dari .env */
 const { PORT = 3000 } = process.env;
@@ -51,10 +52,10 @@ new cron.CronJob('00 06 00 * * *', () => {
   kuis.get();
 }).start();
 
-/** get news bbc for today and save it to db at 06.30 */
-// new cron.CronJob('00 30 06 * * *', () => {
-//   newsApiBbc.get();
-// }).start();
+/** cek status jadwal salat all uuids at 00.08 */
+new cron.CronJob('00 08 00 * * *', () => {
+  adzanWeekResource.reset();
+}).start();
 
 /** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
 const startQuiz = new Date();
@@ -130,7 +131,7 @@ new cron.CronJob('00 00 */1 * * *', async () => {
     // await igniteClient.disconnect();
 
     console.log(process.env.DB_DATABASE);
-    sequelize.addModels([kuis_score, kuis_score_ramadan, third_party]);
+    sequelize.addModels([kuis_score, kuis_score_ramadan, third_party, AdzanStatus]);
     await sequelize.sync({ force: false });
   } catch (e) {
     console.log(e);
