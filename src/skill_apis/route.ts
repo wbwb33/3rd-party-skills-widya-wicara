@@ -15,6 +15,7 @@ import { newsApi } from './news_api/skill';
 import { alarmSkill } from './alarm/skill';
 import { kuis_ } from './kuis_/skill';
 import { adzanWeekSkill } from './adzan_week/skill';
+import { tanggalHijriSkill } from './tanggal_hijri/skill';
 import newsApiBbcSkill from './news_api_bbc/skill';
 
 const route = new Endpoint();
@@ -46,6 +47,7 @@ export default [
   route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
   route.get('/news-api/bbc',newsApiBbcSkill.index),
+  route.get('/convert-to-hijri',tanggalHijriSkill.convertToHijri),
 
   route.get('/adzan-week/test1', adzanWeekSkill.getStatus),
 ];
