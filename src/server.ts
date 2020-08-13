@@ -18,6 +18,9 @@ import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
 import { third_party } from './db/models/third_party';
 import { AdzanStatus } from './db/models/adzan_status';
 
+import moment from 'moment';
+moment.locale('en');
+
 /** ambil variabel PORT dari .env */
 const { PORT = 3000 } = process.env;
 
