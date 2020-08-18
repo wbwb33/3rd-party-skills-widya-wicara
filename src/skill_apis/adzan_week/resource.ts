@@ -38,31 +38,31 @@ class AdzanWeekResource {
     }).catch((err) => { console.log(err); })
   }
 
-  public reset = async () => {
-    const nowYear = moment().format('YYYY');
-    const nowMonth = moment().format('M');
-    const nowDay = moment().format('D');
+  // public reset = async () => {
+  //   const nowYear = moment().format('YYYY');
+  //   const nowMonth = moment().format('M');
+  //   const nowDay = moment().format('D');
 
-    AdzanStatus.findAll({
-      attributes: ['id'],
-      where: {
-        lastYear: nowYear,
-        lastMonth: nowMonth,
-        lastDay: nowDay
-      }, raw: true
-    }).then((body) => {
-      if(body.length==0) return;
-      body.map(index => {
-        AdzanStatus.destroy({
-          where: {
-            id: index.id
-          }
-        }).then((body) => {
-          console.log(`sukses delete adzan state, id: ${index.id}`);
-        }).catch((err) => { console.log(err);})
-      });
-    }).catch((err) => { console.log(err); })
-  }
+  //   AdzanStatus.findAll({
+  //     attributes: ['id'],
+  //     where: {
+  //       lastYear: nowYear,
+  //       lastMonth: nowMonth,
+  //       lastDay: nowDay
+  //     }, raw: true
+  //   }).then((body) => {
+  //     if(body.length==0) return;
+  //     body.map(index => {
+  //       AdzanStatus.destroy({
+  //         where: {
+  //           id: index.id
+  //         }
+  //       }).then((body) => {
+  //         console.log(`sukses delete adzan state, id: ${index.id}`);
+  //       }).catch((err) => { console.log(err);})
+  //     });
+  //   }).catch((err) => { console.log(err); })
+  // }
 
   public decrement = async () => {
     await AdzanStatus.increment({ last_subuh: -1},{ where: {last_subuh: { [Op.gt]: 1}}});

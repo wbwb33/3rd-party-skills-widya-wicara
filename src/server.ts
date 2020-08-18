@@ -55,9 +55,9 @@ new cron.CronJob('00 06 00 * * *', () => {
   kuis.get();
 }).start();
 
-/** cek status jadwal salat all uuids at 00.08 */
-new cron.CronJob('00 08 00 * * *', () => {
-  adzanWeekResource.reset();
+/** cek status jadwal salat all uuids at 00.10 */
+new cron.CronJob('00 10 00 * * *', () => {
+  adzanWeekResource.decrement();
 }).start();
 
 /** get kuis ramadan for today and save it to db at 00.08, start from 22 apr */
