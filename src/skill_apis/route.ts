@@ -48,6 +48,9 @@ export default [
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
   route.get('/news-api/bbc',newsApiBbcSkill.index),
   route.get('/convert-to-hijri',tanggalHijriSkill.convertToHijri),
+  route.get('/convert-to-masehi',tanggalHijriSkill.convertToMasehi),
 
-  route.get('/adzan-week/test1', adzanWeekSkill.getStatus),
+  route.get('/adzan-week/get-status', adzanWeekSkill.getStatus),
+  route.get('/adzan-week/create', adzanWeekSkill.createOrUpdateUuid),
+  route.get('/adzan-week/decrementer', adzanWeekSkill.decrementer),
 ];

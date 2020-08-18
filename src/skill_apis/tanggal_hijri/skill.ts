@@ -17,6 +17,17 @@ class TanggalHijriSkill {
     res.send(JSON.parse(`{"status":"success", "hijriah":"${dateH}", "bulan": "${monthHString[+monthH-1]}"}`));
   }
 
+  public convertToMasehi = async (req: Request, res: Response) => {
+    
+    const dateH = req.query.date;
+    const dateM = momentHijri(dateH,"iYYYY-iM-iD").format('YYYY-MM-DD');
+    const monthM = momentHijri(dateH,"iYYYY-iM-iD").format('M');
+
+    const monthMString = ["januari","februari","maret","april","mei","juni","juli","agustus","september","oktober","november","desember"];
+    
+    res.send(JSON.parse(`{"status":"success", "masehi":"${dateM}", "bulan": "${monthMString[+monthM-1]}"}`));
+  }
+
 }
 
 export const tanggalHijriSkill = new TanggalHijriSkill();
