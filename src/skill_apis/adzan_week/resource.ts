@@ -1,18 +1,11 @@
-import rp from 'request-promise';
-import $ from 'cheerio';
-import fs from 'fs';
-import async from 'async';
 import { AdzanStatus } from '../../db/models/adzan_status';
 import moment from 'moment';
+import { Op } from 'sequelize';
 import { CreateAdzanStatus} from '../../@types/skills/adzan_status_type';
+import { where } from 'sequelize/types';
 
 class AdzanWeekResource {
-  public createOrUpdateUuid = async (uuid: string, last: number) => {
-
-    const week = last==7?true:false;
-    const lastYear = moment().add(last,'days').format('YYYY');
-    const lastMonth = moment().add(last,'days').format('M');
-    const lastDay = moment().add(last,'days').format('D');
+  public createOrUpdateUuid = async (uuid: string, salat: string, amount: number) => {
 
     AdzanStatus.findOrCreate({
       where:{
@@ -21,7 +14,7 @@ class AdzanWeekResource {
     })
       .then((body) => { 
         return AdzanStatus.update({
-          lastYear,lastMonth,lastDay,week
+          [`last_${salat}`]:amount
         }, {
           where: {
             uuid
@@ -32,16 +25,15 @@ class AdzanWeekResource {
           })
           .catch((err) => { console.log(err);})
       })
-      .catch((err) => { console.log(err);});
+      .catch((err) => { console.log(err.message);});
 
   }
 
   public get = async (uuid: string) => {
     return await AdzanStatus.findOne({
-      attributes: ['week'],
       where: {uuid}, raw: true
     }).then((body) => {
-      if(typeof body == null ) return;
+      if(body == null ) return "not-found";
       return body;
     }).catch((err) => { console.log(err); })
   }
@@ -70,6 +62,15 @@ class AdzanWeekResource {
         }).catch((err) => { console.log(err);})
       });
     }).catch((err) => { console.log(err); })
+  }
+
+  public decrement = async () => {
+    await AdzanStatus.increment({ last_subuh: -1},{ where: {last_subuh: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_dzuhur: -1},{ where: {last_dzuhur: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_ashar: -1},{ where: {last_ashar: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_maghrib: -1},{ where: {last_maghrib: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_isya: -1},{ where: {last_isya: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_all: -1},{ where: {last_all: { [Op.gt]: 1}}});
   }
 
 }

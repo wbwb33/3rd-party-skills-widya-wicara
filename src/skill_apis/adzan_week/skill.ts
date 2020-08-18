@@ -11,41 +11,64 @@ class AdzanWeekSkill {
     const addZero = async(int:number) => { return int>9?`${int}`:`0${int}`}
     
     const uuid = req.query.uuid;
-    const subuh = req.query.subuh;
-    const dzuhur = req.query.dzuhur;
-    const ashar = req.query.ashar;
-    const maghrib = req.query.maghrib;
-    const isya = req.query.isya;
     const year = req.query.year;
     const month = await addZero(req.query.month);
     const day = await addZero(req.query.day);
     const offset = isNaN(+req.query.offset)?7:+req.query.offset;
+    const specific = req.query.specific; // bool
 
-    const subuhFormatter = `${year}-${month}-${day}`+'T'+subuh+`:00+0${offset}00`;
-    const dzuhurFormatter = `${year}-${month}-${day}`+'T'+dzuhur+`:00+0${offset}00`;
-    const asharFormatter = `${year}-${month}-${day}`+'T'+ashar+`:00+0${offset}00`;
-    const maghribFormatter = `${year}-${month}-${day}`+'T'+maghrib+`:00+0${offset}00`;
-    const isyaFormatter = `${year}-${month}-${day}`+'T'+isya+`:00+0${offset}00`;
+    if(specific) {
+      const salat = req.query.salat; // str
+      const jam = req.query.jam; // HH:mm
 
-    const subuhPlatform = moment(subuhFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-    const dzuhurPlatform = moment(dzuhurFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-    const asharPlatform = moment(asharFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-    const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-    const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+      let formatter = `${year}-${month}-${day}`+'T'+jam+`:00+0${offset}00`;
+      let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+      let dataApps = `${year}-${month}-${day}`+' '+jam+':00';
+      this.asyncPostToApps(dataApps,dataPlatform,salat,uuid);
+      adzanWeekResource.createOrUpdateUuid(uuid,salat, 1);
+    }
 
-    const subuhApps = `${year}-${month}-${day}`+' '+subuh+':00';
-    const dzuhurApps = `${year}-${month}-${day}`+' '+dzuhur+':00';
-    const asharApps = `${year}-${month}-${day}`+' '+ashar+':00';
-    const maghribApps = `${year}-${month}-${day}`+' '+maghrib+':00';
-    const isyaApps = `${year}-${month}-${day}`+' '+isya+':00';
+    else {
+      const subuh = req.query.subuh; // HH:mm
+      const dzuhur = req.query.dzuhur; // HH:mm
+      const ashar = req.query.ashar; // HH:mm
+      const maghrib = req.query.maghrib; // HH:mm
+      const isya = req.query.isya; // HH:mm
+      const array = [subuh,dzuhur,ashar,maghrib,isya];
+      const arrayStr = ["subuh","dzuhur","ashar","maghrib","isya"];
 
-    this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
-    this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
-    this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
-    this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
-    this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+      for(let i=0;i<array.length;i++){
+        let formatter = `${year}-${month}-${day}`+'T'+array[i]+`:00+0${offset}00`;
+        let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        let dataApps = `${year}-${month}-${day}`+' '+array[i]+':00';
+        this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
+        adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
+      }
+    }
 
-    adzanWeekResource.createOrUpdateUuid(uuid, 1);
+    // const subuhFormatter = `${year}-${month}-${day}`+'T'+subuh+`:00+0${offset}00`;
+    // const dzuhurFormatter = `${year}-${month}-${day}`+'T'+dzuhur+`:00+0${offset}00`;
+    // const asharFormatter = `${year}-${month}-${day}`+'T'+ashar+`:00+0${offset}00`;
+    // const maghribFormatter = `${year}-${month}-${day}`+'T'+maghrib+`:00+0${offset}00`;
+    // const isyaFormatter = `${year}-${month}-${day}`+'T'+isya+`:00+0${offset}00`;
+
+    // const subuhPlatform = moment(subuhFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    // const dzuhurPlatform = moment(dzuhurFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    // const asharPlatform = moment(asharFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    // const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+    // const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+
+    // const subuhApps = `${year}-${month}-${day}`+' '+subuh+':00';
+    // const dzuhurApps = `${year}-${month}-${day}`+' '+dzuhur+':00';
+    // const asharApps = `${year}-${month}-${day}`+' '+ashar+':00';
+    // const maghribApps = `${year}-${month}-${day}`+' '+maghrib+':00';
+    // const isyaApps = `${year}-${month}-${day}`+' '+isya+':00';
+
+    // this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
+    // this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
+    // this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
+    // this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
+    // this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
 
     res.send(JSON.parse(`{"status":"success", "action":"set-jadwal-salat-today-to-apps"}`));
   }
@@ -105,8 +128,6 @@ class AdzanWeekSkill {
     //   "2020-08-12T17:41:00+0000",
     //   "2020-08-12T18:52:00+0000"
     // ];
-
-    adzanWeekResource.createOrUpdateUuid(uuid, 7);
 
     res.send(sorter);
   }
@@ -219,17 +240,22 @@ class AdzanWeekSkill {
   public getStatus = async(req: Request, res: Response) => {
     const a = await adzanWeekResource.get(req.query.uuid);
 
-    if(a == null) var message = `not-found`;
-    else var message = `${a.week==true?"1 minggu":"1 hari"}`;
+    // if(a == null) var message = `not-found`;
+    // else var message = `${a.week==true?"1 minggu":"1 hari"}`;
 
-    res.send(`{"status":"success","action":"get-status-set-adzan","message":"${message}"}`)
+    res.send(`{"status":"success","action":"get-status-set-adzan","data":${JSON.stringify(a)}}`);
   }
 
 
-  // public createOrUpdateUuid = async( req: Request, res: Response) => {
-  //   adzanWeekResource.createOrUpdateUuid(req.query.uuid, req.query.last);
-  //   res.send({});
-  // }
+  public createOrUpdateUuid = async( req: Request, res: Response) => {
+    adzanWeekResource.createOrUpdateUuid(req.query.uuid, req.query.salat, req.query.amount);
+    res.send({});
+  }
+
+  public decrementer = async( req: Request, res: Response) => {
+    adzanWeekResource.decrement();
+    res.send({});
+  }
 
 }
 

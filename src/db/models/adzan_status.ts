@@ -10,16 +10,27 @@ export class AdzanStatus extends Model<AdzanStatus> {
   @Column
   uuid!: string;
 
+  @Default(0)
   @Column
-  lastDay!: number;
+  last_subuh!: number;
 
+  @Default(0)
   @Column
-  lastMonth!: number;
+  last_dzuhur!: number;
 
+  @Default(0)
   @Column
-  lastYear!: number;
+  last_ashar!: number;
 
-  @Default(true)
+  @Default(0)
   @Column
-  week!: boolean;
+  last_maghrib!: number;
+
+  @Default(0)
+  @Column
+  last_isya!: number;
+
+  @Default(0)
+  @Column
+  last_all!: number;
 }
