@@ -52,5 +52,4 @@ export default [
 
   route.get('/adzan-week/get-status', adzanWeekSkill.getStatus),
   route.get('/adzan-week/create', adzanWeekSkill.createOrUpdateUuid),
-  route.get('/adzan-week/decrementer', adzanWeekSkill.decrementer),
 ];

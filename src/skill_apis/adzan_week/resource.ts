@@ -65,12 +65,12 @@ class AdzanWeekResource {
   // }
 
   public decrement = async () => {
-    await AdzanStatus.increment({ last_subuh: -1},{ where: {last_subuh: { [Op.gt]: 1}}});
-    await AdzanStatus.increment({ last_dzuhur: -1},{ where: {last_dzuhur: { [Op.gt]: 1}}});
-    await AdzanStatus.increment({ last_ashar: -1},{ where: {last_ashar: { [Op.gt]: 1}}});
-    await AdzanStatus.increment({ last_maghrib: -1},{ where: {last_maghrib: { [Op.gt]: 1}}});
-    await AdzanStatus.increment({ last_isya: -1},{ where: {last_isya: { [Op.gt]: 1}}});
-    await AdzanStatus.increment({ last_all: -1},{ where: {last_all: { [Op.gt]: 1}}});
+    await AdzanStatus.increment({ last_subuh: -1},{ where: {last_subuh: { [Op.gt]: 0}}});
+    await AdzanStatus.increment({ last_dzuhur: -1},{ where: {last_dzuhur: { [Op.gt]: 0}}});
+    await AdzanStatus.increment({ last_ashar: -1},{ where: {last_ashar: { [Op.gt]: 0}}});
+    await AdzanStatus.increment({ last_maghrib: -1},{ where: {last_maghrib: { [Op.gt]: 0}}});
+    await AdzanStatus.increment({ last_isya: -1},{ where: {last_isya: { [Op.gt]: 0}}});
+    await AdzanStatus.increment({ last_all: -1},{ where: {last_all: { [Op.gt]: 0}}});
   }
 
 }
