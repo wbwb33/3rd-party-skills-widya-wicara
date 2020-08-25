@@ -83,10 +83,11 @@ class AdzanWeekSkill {
     const day = await addZero(req.query.day);
     const uuid = req.query.uuid;
     const setDay = req.query.setday?req.query.setday:7;
+    const salat = req.query.salat;
 
     const tanggal = `${year}-${month}-${day}`;
 
-    const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal,uuid,setDay);
+    const tmp: any = await this.getFromApiBanghasan(kota,offset,tanggal,uuid,setDay,salat);
 
     const flatten = tmp.flat(1);
 
@@ -94,45 +95,10 @@ class AdzanWeekSkill {
       return (moment(a).unix()) - (moment(b).unix());
     })
 
-    // const flatten = moment('2020-08-12T04:31:00+0700').utc();
- 
-    // const arrayHasilApi = [
-    //   "2020-08-07T04:32:00+0000",
-    //   "2020-08-07T11:47:00+0000",
-    //   "2020-08-07T15:08:00+0000",
-    //   "2020-08-07T17:41:00+0000",
-    //   "2020-08-07T18:53:00+0000",
-    //   "2020-08-08T04:31:00+0000",
-    //   "2020-08-08T11:47:00+0000",
-    //   "2020-08-08T15:08:00+0000",
-    //   "2020-08-08T17:41:00+0000",
-    //   "2020-08-08T18:52:00+0000",
-    //   "2020-08-09T04:31:00+0000",
-    //   "2020-08-09T11:47:00+0000",
-    //   "2020-08-09T15:08:00+0000",
-    //   "2020-08-09T17:41:00+0000",
-    //   "2020-08-09T18:52:00+0000",
-    //   "2020-08-10T04:31:00+0000",
-    //   "2020-08-10T11:47:00+0000",
-    //   "2020-08-10T15:07:00+0000",
-    //   "2020-08-10T17:41:00+0000",
-    //   "2020-08-10T18:52:00+0000",
-    //   "2020-08-11T04:31:00+0000",
-    //   "2020-08-11T11:47:00+0000",
-    //   "2020-08-11T15:07:00+0000",
-    //   "2020-08-11T17:41:00+0000",
-    //   "2020-08-11T18:52:00+0000",
-    //   "2020-08-12T04:31:00+0000",
-    //   "2020-08-12T11:46:00+0000",
-    //   "2020-08-12T15:07:00+0000",
-    //   "2020-08-12T17:41:00+0000",
-    //   "2020-08-12T18:52:00+0000"
-    // ];
-
     res.send(sorter);
   }
 
-  private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string, uuid: string, setDay:number) => {
+  private getFromApiBanghasan = async(kota: number, offset: number, tanggal: string, uuid: string, setDay:number, salat: string) => {
     return new Promise( async (resolve, reject) => {
       let tanggalNextSix: any[] = [];
         // moment(tanggal,"YYYY-MM-DD").add(1,'days').format('YYYY-MM-DD'),
@@ -147,19 +113,19 @@ class AdzanWeekSkill {
         tanggalNextSix.push(moment(tanggal,"YYYY-MM-DD").add((i+1),'days').format('YYYY-MM-DD'));
       }
 
-      const dataToReturn = await this.asyncGet(tanggalNextSix,kota,offset,uuid);
+      const dataToReturn = await this.asyncGet(tanggalNextSix,kota,offset,uuid,salat);
 
       resolve(dataToReturn);
     })
   }
 
-  private asyncGet = async(array: any, kota:number, offset:number, uuid:string) => {
+  private asyncGet = async(array: any, kota:number, offset:number, uuid:string, salat:string) => {
     return new Promise( async (resolve,reject) => {
       let dataToReturn: any[] = [];
       
       let requests = await array.map((item: any) => {
         return new Promise( async(resolve,reject) => {
-          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,uuid,resolve));}
+          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,uuid,salat,resolve));}
           catch (error) {console.log(error);}
         });
       })
@@ -168,7 +134,7 @@ class AdzanWeekSkill {
     })
   }
 
-  private asyncGet2Step = async(kota:number,offset:number,item:string,uuid:string,cb:any) => {
+  private asyncGet2Step = async(kota:number,offset:number,item:string,uuid:string,salat:string,cb:any) => {
     let dataToReturn: string[] = [];
     let zeroOffset = ((Math.abs(offset)+'').length>1)?Math.abs(offset):`0${Math.abs(offset)}`;
     let isoOffset = (offset<0)?`:00-${zeroOffset}00`:`:00+${zeroOffset}00`;
@@ -199,11 +165,20 @@ class AdzanWeekSkill {
         dataToReturn.push(maghribPlatform);
         dataToReturn.push(isyaPlatform);
 
-        this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
-        this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
-        this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
-        this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
-        this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+        if(salat=="all"){
+          this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
+          this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
+          this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
+          this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
+          this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+        } else {
+          if(salat=="subuh") this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
+          else if(salat=="dzuhur") this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
+          else if(salat=="ashar") this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
+          else if(salat=="maghrib") this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
+          else if(salat=="isya") this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+        }
+
         cb();
       })
       .catch(err => {
