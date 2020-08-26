@@ -17,7 +17,7 @@ class AdzanWeekSkill {
     const offset = isNaN(+req.query.offset)?7:+req.query.offset;
     const specific = req.query.specific; // bool
 
-    if(specific) {
+    if(specific==true) {
       const salat = req.query.salat; // str
       const jam = req.query.jam; // HH:mm
 
