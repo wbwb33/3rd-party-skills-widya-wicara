@@ -16,6 +16,7 @@ import { sequelize } from './sequelize';
 import { kuis_score } from './db/models/kuis';
 import { kuis_score_ramadan } from './db/models/kuis_ramadhan';
 import { third_party } from './db/models/third_party';
+import { status_game } from './db/models/status_game';
 import { AdzanStatus } from './db/models/adzan_status';
 
 import moment from 'moment';
@@ -134,7 +135,12 @@ new cron.CronJob('00 00 */1 * * *', async () => {
     // await igniteClient.disconnect();
 
     console.log(process.env.DB_DATABASE);
-    sequelize.addModels([kuis_score, kuis_score_ramadan, third_party, AdzanStatus]);
+
+    /** uncomment if u want to alter single table */
+    // sequelize.addModels([status_game]);
+    // await sequelize.sync({ force: false, alter: true });
+
+    sequelize.addModels([kuis_score, kuis_score_ramadan, third_party, AdzanStatus, status_game]);
     await sequelize.sync({ force: false });
   } catch (e) {
     console.log(e);

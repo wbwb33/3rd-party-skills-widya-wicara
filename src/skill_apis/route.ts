@@ -17,6 +17,7 @@ import { kuis_ } from './kuis_/skill';
 import { adzanWeekSkill } from './adzan_week/skill';
 import { tanggalHijriSkill } from './tanggal_hijri/skill';
 import newsApiBbcSkill from './news_api_bbc/skill';
+import { statusGame } from './status_game/skill';
 
 const route = new Endpoint();
 
@@ -52,4 +53,6 @@ export default [
 
   route.get('/adzan-week/get-status', adzanWeekSkill.getStatus),
   route.get('/adzan-week/create', adzanWeekSkill.createOrUpdateUuid),
+
+  route.get('/cek-status-game', statusGame.cekStatus),
 ];
