@@ -234,6 +234,30 @@ class AdzanWeekSkill {
     res.send({});
   }
 
+
+  /** debug */
+  public getReminderByUuid = async( req: Request, res: Response) => {
+    var options = {
+      method: 'GET',
+      uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
+      form: {
+        device_uuid:req.query.uuid
+      }
+    }
+
+    const data = await rp(options)
+      .then(function (body) {
+        // success
+        return body;
+      })
+      .catch(function (err) {
+        console.log(err);
+        return 'error: '+err.message;
+      });
+    
+    res.send(data);
+  }
+
 }
 
 export const adzanWeekSkill = new AdzanWeekSkill();
