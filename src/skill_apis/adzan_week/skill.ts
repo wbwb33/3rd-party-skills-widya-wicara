@@ -23,7 +23,7 @@ class AdzanWeekSkill {
 
       let formatter = `${year}-${month}-${day}`+'T'+jam+`:00+0${offset}00`;
       let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-      let dataApps = `${year}-${month}-${day}`+' '+jam+':00';
+      let dataApps = `${year}-${month}-${day}`+' '+jam;
       this.asyncPostToApps(dataApps,dataPlatform,salat,uuid);
       adzanWeekResource.createOrUpdateUuid(uuid,salat, 1);
     }
@@ -40,7 +40,7 @@ class AdzanWeekSkill {
       for(let i=0;i<array.length;i++){
         let formatter = `${year}-${month}-${day}`+'T'+array[i]+`:00+0${offset}00`;
         let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        let dataApps = `${year}-${month}-${day}`+' '+array[i]+':00';
+        let dataApps = `${year}-${month}-${day}`+' '+array[i];
         this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
         adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
       }
@@ -153,11 +153,11 @@ class AdzanWeekSkill {
         const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
         const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
 
-        const subuhApps = item+' '+body.jadwal.data.subuh+':00';
-        const dzuhurApps = item+' '+body.jadwal.data.dzuhur+':00';
-        const asharApps = item+' '+body.jadwal.data.ashar+':00';
-        const maghribApps = item+' '+body.jadwal.data.maghrib+':00';
-        const isyaApps = item+' '+body.jadwal.data.isya+':00';
+        const subuhApps = item+' '+body.jadwal.data.subuh;
+        const dzuhurApps = item+' '+body.jadwal.data.dzuhur;
+        const asharApps = item+' '+body.jadwal.data.ashar;
+        const maghribApps = item+' '+body.jadwal.data.maghrib;
+        const isyaApps = item+' '+body.jadwal.data.isya;
         
         dataToReturn.push(subuhPlatform);
         dataToReturn.push(dzuhurPlatform);
@@ -194,10 +194,12 @@ class AdzanWeekSkill {
       uri: `http://${process.env.BASE_BACKEND}/function/reminder`,
       form: {
         label:`waktu ${namaSalat} telah tiba`,
-        ringtone:'default.mp3',
+        ringtone:'File://usr/misc/resources/alarm/WidyawicaraAlarm01.mp3',
         datetime:dateTimeApps,
         device_uuid:uuid,
-        alert_token:`${uuid}-${namaSalat}${dateTimePlatform}`
+        is_repeat: false,
+        repeat_type: 'daily',
+        repeat_count: -1
       }
     }
 
