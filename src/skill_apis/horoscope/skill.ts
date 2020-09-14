@@ -141,7 +141,7 @@ class Horoscope {
 
     return new Promise(async (resolve, reject) => {
       // console.log(JSON.parse(a));
-      resolve(a.replace(/(\\")/g,'"').replace(/("{)/g,'{').replace(/(}")/g,'}').replace(' : ',':'));
+      resolve(a.replace(/(\\")/g,'"').replace(/("{)/g,'{').replace(/(}")/g,'}').replace(' : ',':').replace(/(\\\\")/g,''));
     })
   }
 }
