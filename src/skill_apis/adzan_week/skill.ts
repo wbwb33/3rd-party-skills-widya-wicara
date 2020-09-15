@@ -206,6 +206,7 @@ class AdzanWeekSkill {
     await rp(options)
       .then(function (body) {
         // success
+        console.log(`Set Adzan, uuid: ${uuid}, salat: ${namaSalat}, result: ${body}`);
       })
       .catch(function (err) {
         console.log(err);
