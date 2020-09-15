@@ -43,17 +43,16 @@ export default [
   route.get('/play-quiz-ramadhan', KuisRamadhan.canWePlayQuiz),
   route.get('/kuis-answered-ramadhan', KuisRamadhan.updateScore),
   route.get('/set-alarm', alarmSkill.index),
-  route.get('/adzan-week', adzanWeekSkill.index),
-  route.get('/adzan-week/set-today-to-apps', adzanWeekSkill.setTodayToApps),
   route.get('/play-quiz-kemerdekaan', kuis_.playQuiz),
   route.get('/set-user-playing-today-kemerdekaan', kuis_.setUserPlayingToday),
   route.get('/news-api/bbc',newsApiBbcSkill.index),
   route.get('/convert-to-hijri',tanggalHijriSkill.convertToHijri),
   route.get('/convert-to-masehi',tanggalHijriSkill.convertToMasehi),
 
+  route.get('/adzan-week', adzanWeekSkill.index),
   route.get('/adzan-week/get-status', adzanWeekSkill.getStatus),
   route.get('/adzan-week/create', adzanWeekSkill.createOrUpdateUuid),
-  route.get('/adzan-week/get-reminder', adzanWeekSkill.getReminderByUuid),
+  route.get('/adzan-week/set-today-to-apps', adzanWeekSkill.setTodayToApps),
 
   route.get('/cek-status-game', statusGame.cekStatus),
 ];

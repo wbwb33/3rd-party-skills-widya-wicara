@@ -215,12 +215,12 @@ class AdzanWeekSkill {
   }
 
   public getStatus = async(req: Request, res: Response) => {
-    const a = await adzanWeekResource.get(req.query.uuid);
+    // const a = await adzanWeekResource.get(req.query.uuid);
 
     // if(a == null) var message = `not-found`;
     // else var message = `${a.week==true?"1 minggu":"1 hari"}`;
-
-    res.send(`{"status":"success","action":"get-status-set-adzan","data":${JSON.stringify(a)}}`);
+    const a = await this.getReminderByUuid(req.query.uuid);
+    res.send(`{"status":"success","action":"get-status-set-adzan","data":${a}}`);
   }
 
 
@@ -236,26 +236,52 @@ class AdzanWeekSkill {
 
 
   /** debug */
-  public getReminderByUuid = async( req: Request, res: Response) => {
+  private getReminderByUuid = async(uuid: string) => {
     var options = {
       method: 'GET',
       uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
       form: {
-        device_uuid:req.query.uuid
+        device_uuid:uuid
       }
     }
+    // var options = 'http://localhost:3030/get-reminder';
 
     const data = await rp(options)
       .then(function (body) {
         // success
-        return body;
+        return JSON.parse(body);
       })
       .catch(function (err) {
         console.log(err);
         return 'error: '+err.message;
       });
-    
-    res.send(data);
+
+    const filtered = await this.filterAndMap(data.message.data);
+    return `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(filtered)}}`;
+  }
+
+  private filterAndMap = async(data:any[]) => {
+    const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
+      .map(datetime => data.find((a:any) => a.datetime === datetime));
+      
+    const salats = ["subuh","dzuhur","ashar","maghrib","isya"];
+
+    const filterer = salats
+      .map((salat:string) => {
+        const tmp = deleteDuplicate
+          .filter((obj: any) => obj.label.includes(`waktu ${salat} telah tiba`))
+          .map((obj:any) => moment(obj.datetime, 'YYYY-MM-DD HH:mm:ss').diff(moment().format('YYYY-MM-DD'), 'days'));
+        const max = [Math.max(...tmp)][0];
+        return { salat, max};
+      });
+
+    const reducer = filterer.reduce((map: any, obj: {salat: string; max: number;}) => (map[obj.salat] = obj.max, map), {});
+
+    /**
+     * reduce from [{salat: 'subuh', max: 2},{}....] to { subuh: 2, ....}
+     */
+
+    return reducer;
   }
 
 }
