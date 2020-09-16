@@ -37,13 +37,28 @@ class AdzanWeekSkill {
       const array = [subuh,dzuhur,ashar,maghrib,isya];
       const arrayStr = ["subuh","dzuhur","ashar","maghrib","isya"];
 
-      for(let i=0;i<array.length;i++){
-        let formatter = `${year}-${month}-${day}`+'T'+array[i]+`:00+0${offset}00`;
-        let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        let dataApps = `${year}-${month}-${day}`+' '+array[i];
-        this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
-        adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
-      }
+      /** method with delay */
+      array.forEach((item:any,i:number) => {
+        setTimeout(
+          () => {
+            let formatter = `${year}-${month}-${day}`+'T'+item+`:00+0${offset}00`;
+            let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+            let dataApps = `${year}-${month}-${day}`+' '+item;
+            this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
+            adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
+          },
+          100*i
+        );
+      })
+
+      /** default */
+      // for(let i=0;i<array.length;i++){
+      //   let formatter = `${year}-${month}-${day}`+'T'+array[i]+`:00+0${offset}00`;
+      //   let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+      //   let dataApps = `${year}-${month}-${day}`+' '+array[i];
+      //   this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
+      //   adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
+      // }
     }
 
     // const subuhFormatter = `${year}-${month}-${day}`+'T'+subuh+`:00+0${offset}00`;
