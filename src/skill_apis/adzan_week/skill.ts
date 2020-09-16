@@ -257,7 +257,7 @@ class AdzanWeekSkill {
     // if(a == null) var message = `not-found`;
     // else var message = `${a.week==true?"1 minggu":"1 hari"}`;
     const a = await this.getReminderByUuid(req.query.uuid);
-    res.send(`{"status":"success","action":"get-status-set-adzan","data":${a}}`);
+    res.send(a);
   }
 
 
@@ -286,12 +286,21 @@ class AdzanWeekSkill {
     const data = await rp(options)
       .then(async(body) => {
         // success
-        const tmp = await this.filterAndMap(JSON.parse(body).message.data);
-        return `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(tmp)}}`;
+        const parsed = JSON.parse(body);
+        let result = '';
+
+        if(parsed.status=="error"){
+          result = `{ "uuid":"${uuid}", "statusActive": "uuid-not-found"}`;
+        } else {
+          const tmp = await this.filterAndMap(parsed.message.data);
+          result =  `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(tmp)}}`;
+        }
+
+        return `{"status":"success","action":"get-status-set-adzan","data":${result}}`;
       })
       .catch(function (err) {
         console.log(err.message);
-        return `{ "status":"error", "message":"error at get reminder by uuid from backend apps", "error":"${err.message}"}`;
+        return `{"status":"error","action":"get-status-set-adzan","message":"error at get reminder by uuid from backend apps","error":"${err.message}"}`;
       });
     
     return data;
