@@ -299,7 +299,7 @@ class AdzanWeekSkill {
         return `{"status":"success","action":"get-status-set-adzan","data":${result}}`;
       })
       .catch(function (err) {
-        console.log(err.message);
+        console.log(err.message+' lalala');
         return `{"status":"error","action":"get-status-set-adzan","message":"error at get reminder by uuid from backend apps","error":"${err.message}"}`;
       });
     
