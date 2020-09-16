@@ -121,16 +121,29 @@ class AdzanWeekSkill {
 
   private asyncGet = async(array: any, kota:number, offset:number, uuid:string, salat:string) => {
     return new Promise( async (resolve,reject) => {
-      let dataToReturn: any[] = [];
-      
-      let requests = await array.map((item: any) => {
-        return new Promise( async(resolve,reject) => {
-          try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,uuid,salat,resolve));}
-          catch (error) {console.log(error);}
-        });
+      /** method with delay to resolve similarity between alert token */
+      let requests = await array.forEach((item:any,index:number) => {
+        setTimeout(
+          () => {
+            this.asyncGet2Step(kota,offset,item,uuid,salat,resolve)
+          },
+          1000*index
+        );
       })
+
+      resolve(['success']);
+
+      /** default */
+      // let dataToReturn: any[] = [];
+
+      // let requests = await array.map((item: any) => {
+      //   return new Promise( async(resolve,reject) => {
+      //     try {dataToReturn.push(await this.asyncGet2Step(kota,offset,item,uuid,salat,resolve));}
+      //     catch (error) {console.log(error);}
+      //   });
+      // })
     
-      Promise.all(requests).then(() => resolve(dataToReturn!));
+      // Promise.all(requests).then(() => resolve(dataToReturn!));
     })
   }
 
@@ -166,11 +179,19 @@ class AdzanWeekSkill {
         dataToReturn.push(isyaPlatform);
 
         if(salat=="all"){
-          this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
-          this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
-          this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid);
-          this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid);
-          this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
+          /** method with delay */
+          setTimeout(() => this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid), 150);
+          setTimeout(() => this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid), 300);
+          setTimeout(() => this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid), 450);
+          setTimeout(() => this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid), 600);
+          setTimeout(() => this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid), 750);
+
+          /** default */
+          // this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid)
+          // this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid)
+          // this.asyncPostToApps(asharApps,asharPlatform,'ashar',uuid)
+          // this.asyncPostToApps(maghribApps,maghribPlatform,'maghrib',uuid)
+          // this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid)
         } else {
           if(salat=="subuh") this.asyncPostToApps(subuhApps,subuhPlatform,'subuh',uuid);
           else if(salat=="dzuhur") this.asyncPostToApps(dzuhurApps,dzuhurPlatform,'dzuhur',uuid);
@@ -179,7 +200,8 @@ class AdzanWeekSkill {
           else if(salat=="isya") this.asyncPostToApps(isyaApps,isyaPlatform,'isya',uuid);
         }
 
-        cb();
+        /** uncomment this if default method */
+        // cb(); 
       })
       .catch(err => {
         console.log("err");
@@ -206,12 +228,11 @@ class AdzanWeekSkill {
     await rp(options)
       .then(function (body) {
         // success
-        console.log(`Set Adzan, uuid: ${uuid}, salat: ${namaSalat}, result: ${body}`);
       })
       .catch(function (err) {
         console.log(err);
       });
-
+    
     // console.log(`succesfully added 1 week of jadwal salat to Apps with id: ${uuid}`);
   }
 
@@ -248,41 +269,57 @@ class AdzanWeekSkill {
     // var options = 'http://localhost:3030/get-reminder';
 
     const data = await rp(options)
-      .then(function (body) {
+      .then(async(body) => {
         // success
-        return JSON.parse(body);
+        const tmp = await this.filterAndMap(JSON.parse(body).message.data);
+        return `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(tmp)}}`;
       })
       .catch(function (err) {
-        console.log(err);
-        return 'error: '+err.message;
+        console.log(err.message);
+        return `{ "status":"error", "message":"error at get reminder by uuid from backend apps", "error":"${err.message}"}`;
       });
+    
+    return data;
 
-    const filtered = await this.filterAndMap(data.message.data);
-    return `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(filtered)}}`;
+    // const filtered = await this.filterAndMap(data)
+    //   .then((body) => {
+    //     return `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(body)}}`;
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.message);
+    //     return `{ "status":"error", "message":"error at get reminder by uuid from backend apps", "error":"${err.message}"}`;
+    //   });
+    
   }
 
   private filterAndMap = async(data:any[]) => {
-    const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
-      .map(datetime => data.find((a:any) => a.datetime === datetime));
-      
-    const salats = ["subuh","dzuhur","ashar","maghrib","isya"];
+    try {
 
-    const filterer = salats
-      .map((salat:string) => {
-        const tmp = deleteDuplicate
-          .filter((obj: any) => obj.label.includes(`waktu ${salat} telah tiba`))
-          .map((obj:any) => moment(obj.datetime, 'YYYY-MM-DD HH:mm:ss').diff(moment().format('YYYY-MM-DD'), 'days'));
-        const max = [Math.max(...tmp)][0];
-        return { salat, max};
-      });
+      const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
+        .map(datetime => data.find((a:any) => a.datetime === datetime));
+        
+      const salats = ["subuh","dzuhur","ashar","maghrib","isya"];
 
-    const reducer = filterer.reduce((map: any, obj: {salat: string; max: number;}) => (map[obj.salat] = obj.max, map), {});
+      const filterer = salats
+        .map((salat:string) => {
+          const tmp = deleteDuplicate
+            .filter((obj: any) => obj.label.includes(`waktu ${salat} telah tiba`))
+            .map((obj:any) => moment(obj.datetime, 'YYYY-MM-DD HH:mm:ss').diff(moment().format('YYYY-MM-DD'), 'days'));
+          let max = [Math.max(...tmp)][0];
+          max = Math.abs(max)==Infinity?0:max;
+          return { salat, max};
+        });
 
-    /**
-     * reduce from [{salat: 'subuh', max: 2},{}....] to { subuh: 2, ....}
-     */
+      const reducer = filterer.reduce((map: any, obj: {salat: string; max: number;}) => (map[obj.salat] = obj.max, map), {});
 
-    return reducer;
+      /**
+       * reduce from [{salat: 'subuh', max: 2},{}....] to { subuh: 2, ....}
+       */
+
+      return reducer;
+    } catch (error) {
+      return error.message;
+    }
   }
 
 }
