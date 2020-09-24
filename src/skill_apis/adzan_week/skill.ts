@@ -231,12 +231,13 @@ class AdzanWeekSkill {
       uri: `http://${process.env.BASE_BACKEND}/function/reminder`,
       form: {
         label:`waktu ${namaSalat} telah tiba`,
-        ringtone:'File://usr/misc/resources/alarm/WidyawicaraAlarm01.mp3',
+        ringtone:(namaSalat=='subuh')?'File://usr/misc/resources/alarm/WidyaWicaraAdzanSubuh.mp3':'File://usr/misc/resources/alarm/WidyaWicaraAdzanDhuhurAsharMaghribIsya.mp3',
         datetime:dateTimeApps,
         device_uuid:uuid,
         is_repeat: false,
         repeat_type: 'daily',
-        repeat_count: -1
+        repeat_count: -1,
+        reminder_category: 'jadwal_sholat'
       }
     }
 
