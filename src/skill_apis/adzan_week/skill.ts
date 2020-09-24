@@ -244,6 +244,7 @@ class AdzanWeekSkill {
     await rp(options)
       .then(function (body) {
         // success
+        console.log(`success send data to apps, ${namaSalat}, ${dateTimeApps}, ${uuid}`);
       })
       .catch(function (err) {
         console.log(err);
