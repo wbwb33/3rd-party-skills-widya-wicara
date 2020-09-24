@@ -22,10 +22,11 @@ class AdzanWeekSkill {
       const jam = req.query.jam; // HH:mm
 
       let formatter = `${year}-${month}-${day}`+'T'+jam+`:00+0${offset}00`;
-      let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+      let dataPlatform = moment(formatter).utc().format("x");
+      // let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
       let dataApps = `${year}-${month}-${day}`+' '+jam;
       this.asyncPostToApps(dataApps,dataPlatform,salat,uuid);
-      adzanWeekResource.createOrUpdateUuid(uuid,salat, 1);
+      // adzanWeekResource.createOrUpdateUuid(uuid,salat, 1);
     }
 
     else {
@@ -42,10 +43,11 @@ class AdzanWeekSkill {
         setTimeout(
           () => {
             let formatter = `${year}-${month}-${day}`+'T'+item+`:00+0${offset}00`;
-            let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+            let dataPlatform = moment(formatter).utc().format("x");
+            // let dataPlatform = moment(formatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
             let dataApps = `${year}-${month}-${day}`+' '+item;
             this.asyncPostToApps(dataApps,dataPlatform,arrayStr[i],uuid);
-            adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
+            // adzanWeekResource.createOrUpdateUuid(uuid,arrayStr[i], 1);
           },
           100*i
         );
@@ -175,11 +177,12 @@ class AdzanWeekSkill {
         const maghribFormatter = item+'T'+body.jadwal.data.maghrib+isoOffset;
         const isyaFormatter = item+'T'+body.jadwal.data.isya+isoOffset;
 
-        const subuhPlatform = moment(subuhFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        const dzuhurPlatform = moment(dzuhurFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        const asharPlatform = moment(asharFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        const maghribPlatform = moment(maghribFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
-        const isyaPlatform = moment(isyaFormatter).utc().format("YYYY-MM-DDTHH:mm:00+0000");
+        /** it was like this YYYY-MM-DDTHH:mm:00+0000 */
+        const subuhPlatform = moment(subuhFormatter).utc().format("x");
+        const dzuhurPlatform = moment(dzuhurFormatter).utc().format("x");
+        const asharPlatform = moment(asharFormatter).utc().format("x");
+        const maghribPlatform = moment(maghribFormatter).utc().format("x");
+        const isyaPlatform = moment(isyaFormatter).utc().format("x");
 
         const subuhApps = item+' '+body.jadwal.data.subuh;
         const dzuhurApps = item+' '+body.jadwal.data.dzuhur;
@@ -237,7 +240,8 @@ class AdzanWeekSkill {
         is_repeat: false,
         repeat_type: 'daily',
         repeat_count: -1,
-        reminder_category: 'JADWAL_SHOLAT'
+        reminder_category: 'JADWAL_SHOLAT',
+        alert_token: `reminder-${namaSalat}-${uuid}-${dateTimePlatform}`
       }
     }
 
