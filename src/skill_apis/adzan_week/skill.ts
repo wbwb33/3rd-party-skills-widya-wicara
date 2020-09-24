@@ -237,7 +237,7 @@ class AdzanWeekSkill {
         is_repeat: false,
         repeat_type: 'daily',
         repeat_count: -1,
-        reminder_category: 'jadwal_sholat'
+        reminder_category: 'JADWAL_SHOLAT'
       }
     }
 
