@@ -4,6 +4,7 @@ import * as dotenv from 'dotenv';
 import moment from 'moment';
 import adzanWeekResource from './resource';
 import { response } from 'express';
+import { filter } from 'compression';
 dotenv.config();
 
 class AdzanWeekSkill {
@@ -296,10 +297,10 @@ class AdzanWeekSkill {
         let result = '';
 
         if(parsed.status=="error"){
-          result = `{ "uuid":"${uuid}", "statusActive": "uuid-not-found"}`;
+          result = `{ "uuid":"${uuid}", "allowed": "uuid-not-found"}`;
         } else {
           const tmp = await this.filterAndMap(parsed.message.data);
-          result =  `{ "uuid":"${uuid}", "statusActive": ${JSON.stringify(tmp)}}`;
+          result =  `{ "uuid":"${uuid}", "allowed": ${JSON.stringify(tmp)}}`;
         }
 
         return `{"status":"success","action":"get-status-set-adzan","data":${result}}`;
@@ -327,7 +328,7 @@ class AdzanWeekSkill {
 
       const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
         .map(datetime => data.find((a:any) => a.datetime === datetime));
-        
+
       const salats = ["subuh","dzuhur","ashar","maghrib","isya"];
 
       const filterer = salats
@@ -335,12 +336,24 @@ class AdzanWeekSkill {
           const tmp = deleteDuplicate
             .filter((obj: any) => obj.label.includes(`waktu ${salat} telah tiba`))
             .map((obj:any) => moment(obj.datetime, 'YYYY-MM-DD HH:mm:ss').diff(moment().format('YYYY-MM-DD'), 'days'));
-          let max = [Math.max(...tmp)][0];
-          max = Math.abs(max)==Infinity?0:max;
-          return { salat, max};
+          // console.log(tmp);
+          // let max = [Math.max(...tmp)][0];
+          // max = Math.abs(max)==Infinity?0:max;
+          // return { salat, max};
+
+          const today = (tmp.includes(0)) ? 'no' : 'yes';
+          const week = (tmp.some(el => el > 0)) ? 'no' : 'yes';
+          return { salat, today, week };
+          // return { [salat]: { today, week } };
         });
 
-      const reducer = filterer.reduce((map: any, obj: {salat: string; max: number;}) => (map[obj.salat] = obj.max, map), {});
+      filterer.push({ 
+        salat: 'all',
+        today: filterer.some(val => val.today == 'no')?'no':'yes',
+        week: filterer.some(val => val.week == 'no')?'no':'yes'
+      });
+
+      const reducer = filterer.reduce((map: any, obj: {salat: string; today: string; week: string;}) => (map[obj.salat] = { today: obj.today, week: obj.week }, map), {});
 
       /**
        * reduce from [{salat: 'subuh', max: 2},{}....] to { subuh: 2, ....}
