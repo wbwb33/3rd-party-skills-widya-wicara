@@ -281,14 +281,14 @@ class AdzanWeekSkill {
 
   /** debug */
   private getReminderByUuid = async(uuid: string) => {
-    // var options = {
-    //   method: 'GET',
-    //   uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
-    //   form: {
-    //     device_uuid:uuid
-    //   }
-    // }
-    var options = 'http://localhost:3030/get-reminder';
+    var options = {
+      method: 'GET',
+      uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
+      form: {
+        device_uuid:uuid
+      }
+    }
+    // var options = 'http://localhost:3030/get-reminder';
 
     const data = await rp(options)
       .then(async(body) => {
