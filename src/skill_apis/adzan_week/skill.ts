@@ -281,14 +281,14 @@ class AdzanWeekSkill {
 
   /** debug */
   private getReminderByUuid = async(uuid: string) => {
-    var options = {
-      method: 'GET',
-      uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
-      form: {
-        device_uuid:uuid
-      }
-    }
-    // var options = 'http://localhost:3030/get-reminder';
+    // var options = {
+    //   method: 'GET',
+    //   uri: `http://${process.env.BASE_BACKEND}/function/reminder/find`,
+    //   form: {
+    //     device_uuid:uuid
+    //   }
+    // }
+    var options = 'http://localhost:3030/get-reminder';
 
     const data = await rp(options)
       .then(async(body) => {
@@ -337,23 +337,22 @@ class AdzanWeekSkill {
             .filter((obj: any) => obj.label.includes(`waktu ${salat} telah tiba`))
             .map((obj:any) => moment(obj.datetime, 'YYYY-MM-DD HH:mm:ss').diff(moment().format('YYYY-MM-DD'), 'days'));
           // console.log(tmp);
-          // let max = [Math.max(...tmp)][0];
-          // max = Math.abs(max)==Infinity?0:max;
-          // return { salat, max};
+          let max = [Math.max(...tmp)][0];
+          max = Math.abs(max)==Infinity?0:max;
 
           const today = (tmp.includes(0)) ? 'no' : 'yes';
           const week = (tmp.some(el => el > 0)) ? 'no' : 'yes';
-          return { salat, today, week };
-          // return { [salat]: { today, week } };
+          return { salat, today, week, max };
         });
 
       filterer.push({ 
         salat: 'all',
         today: filterer.some(val => val.today == 'no')?'no':'yes',
-        week: filterer.some(val => val.week == 'no')?'no':'yes'
+        week: filterer.some(val => val.week == 'no')?'no':'yes',
+        max: Math.max(...(filterer.map(val => val.max)))
       });
 
-      const reducer = filterer.reduce((map: any, obj: {salat: string; today: string; week: string;}) => (map[obj.salat] = { today: obj.today, week: obj.week }, map), {});
+      const reducer = filterer.reduce((map: any, obj: {salat: string; today: string; week: string; max: number;}) => (map[obj.salat] = { today: obj.today, week: obj.week, max: obj.max }, map), {});
 
       /**
        * reduce from [{salat: 'subuh', max: 2},{}....] to { subuh: 2, ....}
