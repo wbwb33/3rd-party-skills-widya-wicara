@@ -3,8 +3,7 @@ import rp from 'request-promise';
 import * as dotenv from 'dotenv';
 import moment from 'moment';
 import adzanWeekResource from './resource';
-import { response } from 'express';
-import { filter } from 'compression';
+import redis from 'redis';
 dotenv.config();
 
 class AdzanWeekSkill {
@@ -230,6 +229,10 @@ class AdzanWeekSkill {
   }
 
   private asyncPostToApps = async(dateTimeApps: string, dateTimePlatform: string, namaSalat: string, uuid: string) => {
+    const tmpToken = `reminder-${namaSalat}-${uuid}-${dateTimePlatform}`;
+    const cekToken = await this.cekReminderTokenAvailability(tmpToken,uuid);
+    if(cekToken) return;
+    
     var options = {
       method: 'GET',
       uri: `http://${process.env.BASE_BACKEND}/function/reminder`,
@@ -242,7 +245,7 @@ class AdzanWeekSkill {
         repeat_type: 'daily',
         repeat_count: -1,
         reminder_category: 'JADWAL_SHOLAT',
-        alert_token: `reminder-${namaSalat}-${uuid}-${dateTimePlatform}`
+        alert_token: tmpToken
       }
     }
 
@@ -256,6 +259,17 @@ class AdzanWeekSkill {
       });
     
     // console.log(`succesfully added 1 week of jadwal salat to Apps with id: ${uuid}`);
+  }
+
+  private cekReminderTokenAvailability = async(token:string, uuid:string) => {
+    const data = await this.getFromRedis(uuid);
+
+    if(data==null) return false;
+
+    const searchToken = data.filter((obj:any) => obj.alert_token==token);
+
+    if(searchToken.length==0) return false;
+    else return true;
   }
 
   public getStatus = async(req: Request, res: Response) => {
@@ -288,8 +302,7 @@ class AdzanWeekSkill {
         device_uuid:uuid
       }
     }
-    // var options = 'http://localhost:3030/get-reminder';
-
+    
     const data = await rp(options)
       .then(async(body) => {
         // success
@@ -299,7 +312,7 @@ class AdzanWeekSkill {
         if(parsed.status=="error"){
           result = `{ "uuid":"${uuid}", "allowed": "uuid-not-found"}`;
         } else {
-          const tmp = await this.filterAndMap(parsed.message.data);
+          const tmp = await this.filterAndMap(parsed.message.data, uuid);
           result =  `{ "uuid":"${uuid}", "allowed": ${JSON.stringify(tmp)}}`;
         }
 
@@ -323,12 +336,14 @@ class AdzanWeekSkill {
     
   }
 
-  private filterAndMap = async(data:any[]) => {
+  private filterAndMap = async(data:any[], uuid:string) => {
     try {
 
       const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
         .map(datetime => data.find((a:any) => a.datetime === datetime));
-
+      
+      this.setToRedis(JSON.stringify(deleteDuplicate),uuid);
+      
       const salats = ["subuh","dzuhur","ashar","maghrib","isya"];
 
       const filterer = salats
@@ -362,6 +377,26 @@ class AdzanWeekSkill {
     } catch (error) {
       return error.message;
     }
+  }
+
+  private setToRedis = async(data:string, uuid:string) => {
+    const client = redis.createClient(process.env.REDIS_URL!);
+
+    client.set(`by-devwibi-reminder-${uuid}`, data);
+    client.expire(`by-devwibi-reminder-${uuid}`, 60 * 30);
+    
+    client.quit();
+  }
+
+  private getFromRedis = async(uuid:string): Promise<any> => {
+    return new Promise(resolve => {
+      const client = redis.createClient(process.env.REDIS_URL!);
+      client.get(`by-devwibi-reminder-${uuid}`, (err, reply) => {
+        client.quit();
+        if (err) resolve(null);
+        resolve(reply);
+      });
+    });
   }
 
 }
