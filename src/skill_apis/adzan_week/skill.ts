@@ -302,7 +302,7 @@ class AdzanWeekSkill {
         device_uuid:uuid
       }
     }
-    
+
     const data = await rp(options)
       .then(async(body) => {
         // success
@@ -332,7 +332,7 @@ class AdzanWeekSkill {
     //   .catch((err) => {
     //     console.log(err.message);
     //     return `{ "status":"error", "message":"error at get reminder by uuid from backend apps", "error":"${err.message}"}`;
-    //   });
+    //   }); 
     
   }
 
