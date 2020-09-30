@@ -231,6 +231,7 @@ class AdzanWeekSkill {
   private asyncPostToApps = async(dateTimeApps: string, dateTimePlatform: string, namaSalat: string, uuid: string) => {
     const tmpToken = `reminder-${namaSalat}-${uuid}-${dateTimePlatform}`;
     const cekToken = await this.cekReminderTokenAvailability(tmpToken,uuid);
+    console.log(`Cek Token, ${tmpToken}, with UUID, ${uuid} : ${cekToken}`);
     if(cekToken) return;
     
     var options = {
