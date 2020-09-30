@@ -352,7 +352,8 @@ class AdzanWeekSkill {
     try {
 
       const deleteDuplicate = Array.from(new Set(data.map((a:any) => a.datetime)))
-        .map(datetime => data.find((a:any) => a.datetime === datetime));
+        .map(datetime => data.find((a:any) => a.datetime === datetime))
+        .filter((obj: any) => obj.state.includes(`ONSCHEDULE`));
       
       this.setToRedis(JSON.stringify(deleteDuplicate),uuid);
       
