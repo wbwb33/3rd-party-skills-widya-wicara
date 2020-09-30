@@ -262,6 +262,16 @@ class AdzanWeekSkill {
     // console.log(`succesfully added 1 week of jadwal salat to Apps with id: ${uuid}`);
   }
 
+  public debugAdzanWeek = async(req: Request, res: Response) => {
+    const tmpToken = `reminder-isya-3366622638689267799-1601552700000`;
+    const uuid = '3366622638689267799';
+    const cekToken = await this.cekReminderTokenAvailability(tmpToken,uuid);
+    console.log(`Cek Token, ${tmpToken}, with UUID, ${uuid} : ${cekToken}`);
+    if(cekToken) return res.send();
+    
+    console.log("halo");
+  }
+
   private cekReminderTokenAvailability = async(token:string, uuid:string) => {
     const data = await this.getFromRedis(uuid);
 
@@ -303,6 +313,7 @@ class AdzanWeekSkill {
         device_uuid:uuid
       }
     }
+    // var options = 'http://localhost:3030/get-reminder';
 
     const data = await rp(options)
       .then(async(body) => {
@@ -395,7 +406,7 @@ class AdzanWeekSkill {
       client.get(`by-devwibi-reminder-${uuid}`, (err, reply) => {
         client.quit();
         if (err) resolve(null);
-        resolve(reply);
+        resolve(JSON.parse(reply!));
       });
     });
   }

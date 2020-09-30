@@ -53,6 +53,7 @@ export default [
   route.get('/adzan-week/get-status', adzanWeekSkill.getStatus),
   route.get('/adzan-week/create', adzanWeekSkill.createOrUpdateUuid),
   route.get('/adzan-week/set-today-to-apps', adzanWeekSkill.setTodayToApps),
+  route.get('/adzan-week/debug', adzanWeekSkill.debugAdzanWeek),
 
   route.get('/cek-status-game', statusGame.cekStatus),
 ];
