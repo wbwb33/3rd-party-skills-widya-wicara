@@ -4,21 +4,27 @@ Backend Service untuk 3rd Party Skills API widya wicara smart speaker.
 
 ## Table of Contents
 
-- [Skills](#skills)
-  - [Horoscope](#horoscope)
-  - [Weather](#weather)
+- [Widya Wicara 3rd Party Skills](#widya-wicara-3rd-party-skills)
+  - [Table of Contents](#table-of-contents)
+  - [Skills](#skills)
+    - [Horoscope](#horoscope)
+    - [Weather](#weather)
+    - [Alarm](#alarm)
+    - [Currency Converter](#currency-converter)
+    - [Find City](#find-city)
+    - [Harga Emas](#harga-emas)
 
 ## Skills
 
-Untuk sestiap skill widya wicara menggunakan endpoint:
+Untuk setiap skill widya wicara menggunakan endpoint:
 
 ```
-https://skills.widyawicara.com/
+http://localhost:5000/
 ```
 
 ### Horoscope
 
-Endpoint: `https://skills.widyawicara.com/horoscope` <br />
+Endpoint: `http://localhost:5000/horoscope` <br />
 Method: `GET` <br />
 Skill weather menggunakan data 3rd Party API:
 
@@ -47,23 +53,70 @@ Untuk parameter `cat` adalah kategori horoscope `(pekerjaan, cinta, suasana hati
 Skill horoscope menggunakan susunan endpoint sebagai berikut:
 
 ```
-https://skills.widyawicara.com/horoscope?sign=libra&cat=pekerjaan&hari=lusa
+http://localhost:5000/horoscope?sign=libra&cat=pekerjaan&hari=lusa
 ```
 
 ### Weather
 
-Endpoint: `https://skills.widyawicara.com/weather` <br />
+Endpoint: `http://localhost:5000/weather` <br />
 Method: `GET` <br />
 Skill weather menggunakan data dari BMKG. Data ini otomatis update setiap hari. Ada beberapa parameter ketika request, yaitu `kota` dan `hari`. Parameter `kota` bersifat mandatory. Untuk parameter `hari` yaitu `(besok, lusa)` ketika tidak di isi maka akan otomatis mendapatkan data hari ini.
 
 Skill weather menggunakan susunan endpoint sebagai berikut:
 
 ```
-https://skills.widyawicara.com/weather?kota=yogyakarta&hari=besok
+http://localhost:5000/weather?kota=yogyakarta&hari=besok
 ```
+
+### Alarm
+
+Endpoint: `http://localhost:5000/set-alarm` <br />
+Method: `GET`/`POST` <br />
+Skill alarm untuk memasang alarm dengan perintah suara.
+
+Body (`application/x-www-form-urlencoded`):
+```
+username: "username1"
+dsn: "dsn1"
+scheduleTime: 2020-10-20T12:12:12+0000
+alertToken: "token1"
+```
+
+### Currency Converter
+
+Endpoint: `http://localhost:5000/currency` <br />
+Method: `GET` <br />
+Skill untuk konversi mata uang.
+
+Query:
+```
+input: 1 dolar berapa rupiah
+
+http://localhost:5000/currency?msg=1%20dolar%20berapa%20rupiah
+```
+
+### Find City
+
+Endpoint: `http://localhost:5000/cek-city` <br />
+Method: `GET` <br />
+Skill untuk mencari nama kota/kab indonesia di input pesan.
+
+Query:
+```
+input: cuaca di sleman
+
+http://localhost:5000/cek-city?msg=cuaca%20di%20sleman
+```
+
+### Harga Emas
+
+Endpoint: `http://localhost:5000//harga-emas` <br />
+Method: `GET` <br />
+Skill untuk mendapatkan harga emas terkini. Harga emas secara otomatis di dapatkan oleh API setiap pukul 12 malam. Sumber berasal dari link `https://harga-emas.org/`
+
 
 ---
 
 Widya Wicara Skills Backend Services. <br />
-<small>Version: 0.2.0</small> <br />
-<small>doc by: Bagas Alfiandhi N</small> <br />
+<small>Version: 1.1.10</small> <br />
+<small>doc by: Wibisana Wiratama</small> <br />
