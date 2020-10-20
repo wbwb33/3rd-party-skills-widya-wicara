@@ -13,6 +13,11 @@ Backend Service untuk 3rd Party Skills API widya wicara smart speaker.
     - [Currency Converter](#currency-converter)
     - [Find City](#find-city)
     - [Harga Emas](#harga-emas)
+    - [Harga Pangan](#harga-pangan)
+    - [Berita News API](#berita-news-api)
+    - [Berita Podcast BBC](#berita-podcast-bbc)
+    - [Konversi Tanggal Hijriah](#konversi-tanggal-hijriah)
+    - [Konversi Tanggal Masehi](#konversi-tanggal-masehi)
 
 ## Skills
 
@@ -110,12 +115,55 @@ http://localhost:5000/cek-city?msg=cuaca%20di%20sleman
 
 ### Harga Emas
 
-Endpoint: `http://localhost:5000//harga-emas` <br />
+Endpoint: `http://localhost:5000/harga-emas` <br />
 Method: `GET` <br />
 Skill untuk mendapatkan harga emas terkini. Harga emas secara otomatis di dapatkan oleh API setiap pukul 12 malam. Sumber berasal dari link `https://harga-emas.org/`
 
+### Harga Pangan
 
----
+Endpoint: `http://localhost:5000/harga-pangan-skill` <br />
+Method: `GET` <br />
+Skill untuk mendapatkan harga pangan terkini. Harga pangan secara otomatis di dapatkan oleh API setiap pukul 12 malam. Sumber berasal dari link `https://hargapangan.id`. Query input berupa angka 1-34 yang merupakan indeks provinsi.
+
+Query:
+```
+input: 1
+
+http://localhost:5000/harga-pangan-skill?msg=1
+```
+
+### Berita News API
+
+Endpoint: `http://localhost:5000/news-api` <br />
+Method: `GET` <br />
+Skill untuk mendapatkan berita sesuai dengan topik yang diinginkan. Input berupa teks biasa yang akan diolah untuk didapatkan topik yang diinginkan. Sumber berasal dari link `https://newsapi.org`.
+
+Query:
+```
+input: berita utama hari ini
+
+http://localhost:5000/news-api?msg=berita%20utama%20hari%20ini
+```
+
+### Berita Podcast BBC
+
+Endpoint: `http://localhost:5000/news-api/bbc` <br />
+Method: `GET` <br />
+Skill untuk mendapatkan audio berupa berita dalam bentuk podcast. Sumber didapatkan dari link `http://podcasts.files.bbci.co.uk`.
+
+### Konversi Tanggal Hijriah
+
+Endpoint: `http://localhost:5000/convert-to-hijri` <br />
+Method: `GET` <br />
+Skill untuk mengkonversi tanggal masehi dengan format `(tahun)-(bulan)-(tanggal)` ke tanggal hijriah dengan format yang sama.
+
+### Konversi Tanggal Masehi
+
+Endpoint: `http://localhost:5000/convert-to-masehi` <br />
+Method: `GET` <br />
+Skill untuk mengkonversi tanggal hijriah dengan format `(tahun)-(bulan)-(tanggal)` ke tanggal masehi dengan format yang sama.
+
+#
 
 Widya Wicara Skills Backend Services. <br />
 <small>Version: 1.1.10</small> <br />
